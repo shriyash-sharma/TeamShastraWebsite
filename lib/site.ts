@@ -19,7 +19,8 @@ export const footerItems = [
   { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Account Deletion", href: "/account-deletion" },
   { label: "Terms", href: "/terms" },
   { label: "Open App", href: appUrl },
   { label: "Login", href: loginUrl },
@@ -34,6 +35,8 @@ export const pages = [
   { path: "/blog", priority: 0.8, changeFrequency: "weekly" as const },
   { path: "/about", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
+  { path: "/privacy", priority: 0.4, changeFrequency: "yearly" as const },
+  { path: "/account-deletion", priority: 0.4, changeFrequency: "yearly" as const },
   { path: "/privacy-policy", priority: 0.35, changeFrequency: "yearly" as const },
   { path: "/terms", priority: 0.35, changeFrequency: "yearly" as const }
 ];
