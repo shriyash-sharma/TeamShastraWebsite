@@ -11,6 +11,9 @@ export function Footer() {
             <Image src="/brand/teamshastra_full_logo_light.svg" width={178} height={48} alt="TeamShastra" />
           </Link>
           <p className="footer-note">Marketing on teamshastra.com. Authenticated product on app.teamshastra.com.</p>
+          <p className="footer-credit">
+            Project by <a href="https://shriyashsharma.com/projects/teamshastra-field-workforce-management-saas" target="_blank" rel="noopener">Shriyash Sharma</a>
+          </p>
         </div>
         <div className="footer-links">
           {footerItems.map((item) => item.href.startsWith("http") ? (

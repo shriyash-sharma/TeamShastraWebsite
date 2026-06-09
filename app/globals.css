@@ -75,6 +75,9 @@ h3 { font-size: 1.18rem; }
 .site-footer { border-top: 1px solid var(--line); padding: 36px 0; background: #ffffff; }
 .footer-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; }
 .footer-note { color: var(--muted); margin: 8px 0 0; font-size: 0.95rem; }
+.footer-credit { color: var(--muted); margin: 6px 0 0; font-size: 0.92rem; }
+.footer-credit a { color: var(--brand-dark); font-weight: 760; }
+.footer-credit a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 @media (max-width: 920px) {
   .nav-shell { align-items: flex-start; flex-direction: column; padding: 14px 0; }
