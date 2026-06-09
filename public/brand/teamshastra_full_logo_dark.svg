@@ -1,0 +1,15 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="320" fill="#020817"/>
+<g transform="translate(40,40)">
+<rect x="0" y="0" width="180" height="180" rx="40" fill="#071B5A"/>
+<rect x="76" y="22" width="28" height="28" rx="4" transform="rotate(45 76 22)" fill="#F59E0B"/>
+<path d="M30 65H88L74 92H44C36 92 30 86 30 78V65Z" fill="white"/>
+<path d="M150 65H92L106 92H136C144 92 150 86 150 78V65Z" fill="white"/>
+<path d="M90 68C98 68 104 74 104 82V152L76 132V82C76 74 82 68 90 68Z" fill="#2563EB"/>
+<circle cx="48" cy="118" r="12" fill="#2563EB"/>
+<circle cx="132" cy="118" r="12" fill="#14B8A6"/>
+</g>
+<text x="270" y="150" font-size="92" font-family="Arial, Helvetica, sans-serif" font-weight="700" fill="white">Team</text>
+<text x="560" y="150" font-size="92" font-family="Arial, Helvetica, sans-serif" font-weight="700" fill="#2563EB">Shastra</text>
+<text x="275" y="210" font-size="28" font-family="Arial, Helvetica, sans-serif" letter-spacing="8" fill="#CBD5E1">WORKFORCE • OPERATIONS • MASTERY</text>
+</svg>

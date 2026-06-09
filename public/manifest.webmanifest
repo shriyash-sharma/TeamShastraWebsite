@@ -1,0 +1,12 @@
+{
+  "name": "TeamShastra",
+  "short_name": "TeamShastra",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfdfc",
+  "theme_color": "#176f58",
+  "icons": [
+    { "src": "/brand/teamshastra_app_icon.svg", "sizes": "512x512", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/brand/teamshastra_maskable_icon.svg", "sizes": "512x512", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

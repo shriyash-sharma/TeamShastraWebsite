@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Deploy this file as https://app.teamshastra.com/robots.txt.
+# Also send X-Robots-Tag: noindex, nofollow on authenticated app responses when possible.

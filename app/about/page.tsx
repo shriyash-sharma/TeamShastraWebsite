@@ -1,0 +1,10 @@
+import type { Metadata } from "next";
+import { loginUrl, pageMetadata, signupUrl } from "@/lib/site";
+
+export const metadata: Metadata = pageMetadata("/about", "About | TeamShastra", "Learn about TeamShastra, a field service management software company with a public marketing site and separate authenticated application.");
+
+export default function AboutPage() {
+  return (
+    <main><section className="page-hero"><div className="section-inner"><span className="eyebrow">About</span><h1>TeamShastra helps service teams run field operations with less friction.</h1><p className="page-lead">The public website is built to rank, educate, and convert. The application domain is built for authenticated users who create companies and manage field work.</p><div className="hero-actions"><a className="button primary" href={signupUrl}>Start Free</a><a className="button secondary" href={loginUrl}>Login</a></div></div></section><section className="section"><div className="section-inner split-grid"><div><h2>One brand, two clear surfaces.</h2><p className="section-copy">teamshastra.com is the public marketing website for SEO, keywords, lead generation, and product education. app.teamshastra.com is the application platform for login, signup, company creation, and authenticated daily use.</p></div><div className="card"><h3>Conversion path</h3><ul className="list"><li>Visitor reads the marketing website.</li><li>Visitor clicks Start Free.</li><li>Visitor lands on app.teamshastra.com/signup.</li><li>Visitor creates a company and uses TeamShastra.</li></ul></div></div></section><section className="section alt"><div className="section-inner banner"><div><h2>Ready to use TeamShastra?</h2><p>Account creation happens on the application platform.</p></div><a className="button primary" href={signupUrl}>Launch Your Team</a></div></section></main>
+  );
+}
