@@ -16,7 +16,7 @@ export function Header() {
         </div>
         <div className="nav-actions">
           <a className="button secondary" href={loginUrl}>Login</a>
-          <a className="button primary" href={signupUrl}>Start Free</a>
+          <a className="button primary" href={signupUrl}>Join Beta</a>
         </div>
       </nav>
     </header>

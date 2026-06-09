@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { footerItems } from "@/lib/site";
+import { betaStatus, footerItems, releaseNote } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -10,7 +10,7 @@ export function Footer() {
           <Link className="brand" href="/" aria-label="TeamShastra home">
             <Image src="/brand/teamshastra_full_logo_light.svg" width={178} height={48} alt="TeamShastra" />
           </Link>
-          <p className="footer-note">Marketing on teamshastra.com. Authenticated product on app.teamshastra.com.</p>
+          <p className="footer-note">{betaStatus} {releaseNote}</p>
           <p className="footer-credit">
             Project by <a href="https://shriyashsharma.com/projects/teamshastra-field-workforce-management-saas" target="_blank" rel="noopener">Shriyash Sharma</a>
           </p>

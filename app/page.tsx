@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { appUrl, loginUrl, pageMetadata, signupUrl } from "@/lib/site";
+import { appUrl, betaStatus, loginUrl, pageMetadata, releaseNote, signupUrl } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata(
   "/",
   "TeamShastra | Field Service Management Software",
-  "TeamShastra helps field service teams schedule jobs, dispatch technicians, track work, and create companies on the application platform."
+  "TeamShastra is in public beta for field service teams testing scheduling, dispatch, work tracking, and company workflows before production release."
 );
 
 const structuredData = {
@@ -46,18 +46,19 @@ export default function Home() {
       <section className="hero">
         <div className="section-inner hero-grid">
           <div>
-            <span className="eyebrow">Public marketing website: teamshastra.com</span>
+            <span className="eyebrow">Public beta · Planned release July 1, 2026</span>
             <h1>TeamShastra</h1>
-            <p className="hero-copy">Field service management software for teams that need cleaner scheduling, faster dispatch, better job visibility, and a direct path from visitor to company creation in the application.</p>
+            <p className="hero-copy">Field service management software for teams testing cleaner scheduling, faster dispatch, better job visibility, and company workflows before production launch.</p>
             <div className="hero-actions" aria-label="Primary calls to action">
-              <a className="button primary" href={signupUrl}>Start Free</a>
+              <a className="button primary" href={signupUrl}>Join Beta</a>
               <a className="button secondary" href={loginUrl}>Login</a>
               <a className="button ghost" href={appUrl}>Open App</a>
             </div>
+            <p className="beta-note">{betaStatus} {releaseNote}</p>
             <div className="trust-row" aria-label="TeamShastra domain strategy">
               <span>Marketing site indexed</span>
               <span>Application separated</span>
-              <span>Signup routes to app.teamshastra.com</span>
+              <span>Beta signup routes to app.teamshastra.com</span>
             </div>
           </div>
           <div className="product-board" aria-label="TeamShastra application preview">
@@ -86,7 +87,7 @@ export default function Home() {
           </div>
           <div className="card-grid">
             <article className="card"><div className="icon-box">01</div><h3>Schedule and dispatch</h3><p>Plan visits, assign technicians, and keep routes visible from one operational view.</p></article>
-            <article className="card"><div className="icon-box">02</div><h3>Create companies</h3><p>New users start free on the app domain, create a company, and begin configuring teams.</p></article>
+            <article className="card"><div className="icon-box">02</div><h3>Create test companies</h3><p>Beta users can create a company on the app domain and evaluate setup before production use.</p></article>
             <article className="card"><div className="icon-box">03</div><h3>Track service work</h3><p>See job status, customer context, notes, and team activity as work moves through the day.</p></article>
           </div>
         </div>
@@ -94,10 +95,10 @@ export default function Home() {
       <section className="section alt">
         <div className="section-inner banner">
           <div>
-            <h2>Launch your team on the application platform.</h2>
-            <p>Every conversion CTA on the marketing website sends visitors to the signup flow at app.teamshastra.com.</p>
+            <h2>Test TeamShastra before the production release.</h2>
+            <p>{betaStatus} {releaseNote} Beta CTAs send visitors to signup at app.teamshastra.com.</p>
           </div>
-          <a className="button primary" href={signupUrl}>Launch Your Team</a>
+          <a className="button primary" href={signupUrl}>Join Beta</a>
         </div>
       </section>
     </main>

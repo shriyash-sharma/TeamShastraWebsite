@@ -41,6 +41,7 @@ h3 { font-size: 1.18rem; }
 .hero-copy, .section-copy, .page-lead { color: var(--muted); font-size: 1.08rem; }
 .hero-copy { max-width: 650px; margin: 22px 0 0; }
 .hero-actions, .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+.beta-note { max-width: 690px; margin: 16px 0 0; color: var(--muted); font-size: 0.98rem; font-weight: 680; }
 .trust-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; color: var(--muted); font-weight: 680; }
 .trust-row span { border-left: 3px solid var(--accent); padding-left: 10px; }
 .product-board { min-height: 460px; padding: 22px; border: 1px solid rgba(220, 228, 223, 0.85); border-radius: 8px; background: rgba(255, 255, 255, 0.9); box-shadow: var(--shadow); }

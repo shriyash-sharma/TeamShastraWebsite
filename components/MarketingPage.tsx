@@ -1,4 +1,4 @@
-import { loginUrl, signupUrl, type MarketingPage as MarketingPageContent } from "@/lib/site";
+import { betaStatus, loginUrl, releaseNote, signupUrl, type MarketingPage as MarketingPageContent } from "@/lib/site";
 
 type Props = {
   content: MarketingPageContent;
@@ -16,6 +16,7 @@ export function MarketingPage({ content }: Props) {
             <a className="button primary" href={signupUrl}>{content.cta}</a>
             <a className="button secondary" href={loginUrl}>Login</a>
           </div>
+          <p className="beta-note">{betaStatus} {releaseNote}</p>
         </div>
       </section>
       <section className="section">
