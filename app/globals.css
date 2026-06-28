@@ -91,6 +91,55 @@ h3 { font-size: 1.18rem; }
 .legal-callout { margin: 24px 0 0; padding: 18px; border-radius: 8px; background: #e8f6ef; }
 .legal-footer { margin-top: 32px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; }
 
+/* SEO landing pages */
+.seo-breadcrumbs { margin-bottom: 16px; }
+.seo-breadcrumbs ol { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: 0.88rem; color: var(--muted); }
+.seo-breadcrumbs a { color: var(--brand-dark); font-weight: 650; }
+.seo-breadcrumbs a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.seo-breadcrumb-sep { color: var(--muted); margin: 0 2px; }
+.seo-prose { max-width: 820px; }
+.seo-prose h2 { margin-bottom: 16px; }
+.seo-prose h3 { margin: 28px 0 12px; color: var(--brand-dark); }
+.seo-prose p { color: var(--muted); margin: 0 0 16px; }
+.seo-prose a { color: var(--brand-dark); font-weight: 760; text-decoration: underline; text-underline-offset: 3px; }
+.seo-use-case { margin: 28px 0; padding: 22px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+.seo-use-case h3 { margin: 0 0 6px; font-size: 1.15rem; }
+.seo-use-case-industry { color: var(--brand); font-weight: 700; font-size: 0.88rem; margin: 0 0 12px; }
+.seo-use-case p { color: var(--muted); margin: 0 0 10px; }
+.seo-case-study { border: 1px solid var(--line); border-radius: 8px; padding: 28px; background: var(--panel); }
+.seo-case-study h3 { margin: 0; font-size: 1.3rem; }
+.seo-case-location { color: var(--muted); margin: 6px 0 20px; }
+.seo-case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 20px; }
+.seo-case-grid h4 { margin: 0 0 12px; color: var(--brand-dark); font-size: 1rem; }
+.seo-results-list li { color: var(--brand-dark); }
+.seo-disclaimer { margin: 0; padding: 14px; border-radius: 8px; background: #fff8ee; color: var(--muted); font-size: 0.92rem; }
+.seo-feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.seo-benefits-list li { margin-bottom: 6px; }
+.seo-area-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.seo-area-tag { display: inline-flex; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); font-size: 0.9rem; font-weight: 650; color: var(--brand-dark); }
+.seo-faq-list { display: grid; gap: 12px; max-width: 820px; }
+.seo-faq-item { border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; background: var(--panel); }
+.seo-faq-item summary { cursor: pointer; font-weight: 760; color: var(--ink); list-style: none; }
+.seo-faq-item summary::-webkit-details-marker { display: none; }
+.seo-faq-item p { margin: 12px 0 0; color: var(--muted); }
+.seo-internal-links { display: flex; flex-wrap: wrap; gap: 10px 16px; }
+.seo-internal-links a { color: var(--brand-dark); font-weight: 650; font-size: 0.92rem; text-decoration: underline; text-underline-offset: 3px; }
+.seo-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.seo-cta-note { margin-top: 12px; color: rgba(255, 255, 255, 0.75); font-size: 0.88rem; }
+.seo-cta-ghost { color: #ffffff !important; border-color: rgba(255, 255, 255, 0.4) !important; }
+.seo-inline-cta { padding: 28px; border: 1px solid var(--line); border-radius: 8px; background: var(--soft); }
+.seo-index-group { margin-bottom: 48px; }
+.seo-index-group h2 { margin-bottom: 20px; }
+.seo-index-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.seo-index-card { border: 1px solid var(--line); border-radius: 8px; padding: 18px; background: var(--panel); }
+.seo-index-card h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.seo-index-card h3 a { color: var(--brand-dark); }
+.seo-index-card h3 a:hover { text-decoration: underline; }
+.seo-index-card > p { color: var(--muted); font-size: 0.88rem; margin: 0 0 12px; }
+.seo-index-links { display: flex; flex-wrap: wrap; gap: 8px 12px; }
+.seo-index-links a { font-size: 0.82rem; color: var(--brand); font-weight: 650; }
+.seo-index-links a:hover { text-decoration: underline; }
+
 @media (max-width: 920px) {
   .nav-shell { align-items: flex-start; flex-direction: column; padding: 14px 0; }
   .hero-grid, .split-grid, .section-head, .banner, .footer-inner { grid-template-columns: 1fr; }
@@ -104,6 +153,7 @@ h3 { font-size: 1.18rem; }
   .nav-links, .nav-actions, .hero-actions, .cta-actions { width: 100%; }
   .button { flex: 1 1 150px; }
   .board-columns, .card-grid { grid-template-columns: 1fr; }
+  .seo-case-grid, .seo-index-grid, .seo-feature-grid { grid-template-columns: 1fr; }
   .section { padding: 58px 0; }
   .banner { padding: 26px; }
   .legal-card { padding: 24px; }

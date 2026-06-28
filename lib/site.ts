@@ -5,11 +5,13 @@ export const appUrl = "https://app.teamshastra.com";
 export const loginUrl = `${appUrl}/login`;
 export const signupUrl = `${appUrl}/signup`;
 export const betaStatus = "TeamShastra is in public beta and not yet recommended for production use.";
-export const releaseDate = "July 1, 2026";
+export const releaseDate = "September 1, 2026";
 export const releaseNote = `Planned production release: ${releaseDate}.`;
 
 export const navItems = [
   { label: "Features", href: "/features" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Locations", href: "/locations" },
   { label: "Industries", href: "/industries" },
   { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
@@ -19,6 +21,8 @@ export const navItems = [
 
 export const footerItems = [
   { label: "Features", href: "/features" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Locations", href: "/locations" },
   { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -33,6 +37,8 @@ export const footerItems = [
 export const pages = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },
   { path: "/features", priority: 0.9, changeFrequency: "monthly" as const },
+  { path: "/solutions", priority: 0.88, changeFrequency: "weekly" as const },
+  { path: "/locations", priority: 0.88, changeFrequency: "weekly" as const },
   { path: "/industries", priority: 0.85, changeFrequency: "monthly" as const },
   { path: "/pricing", priority: 0.85, changeFrequency: "monthly" as const },
   { path: "/blog", priority: 0.8, changeFrequency: "weekly" as const },
