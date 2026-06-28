@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { SeoPageContent } from "@/lib/seo/types";
+import { dedupeFeatureHighlights } from "@/lib/seo/feature-highlights";
 import { betaStatus, loginUrl, releaseNote, signupUrl } from "@/lib/site";
 import { SeoBreadcrumbs } from "./SeoBreadcrumbs";
 import { SeoCaseStudy } from "./SeoCaseStudy";
@@ -17,6 +18,12 @@ export function SeoLandingPage({ content }: Props) {
   const faqTitle = content.cityName
     ? `FAQs about ${content.eyebrow} in ${content.cityName}`
     : `FAQs about ${content.eyebrow}`;
+
+  const featureHighlights = dedupeFeatureHighlights(content.featureHighlights);
+  const internalLinks = content.internalLinks.filter(
+    (link, index, links) =>
+      links.findIndex((item) => item.href === link.href && item.label === link.label) === index
+  );
 
   return (
     <main className="seo-page">
@@ -85,8 +92,8 @@ export function SeoLandingPage({ content }: Props) {
             <p className="section-copy">How TeamShastra helps businesses manage attendance, field teams, work orders, and service operations.</p>
           </div>
           <div className="card-grid seo-feature-grid">
-            {content.featureHighlights.map((feature) => (
-              <article className="card" key={feature.title}>
+            {featureHighlights.map((feature, index) => (
+              <article className="card" key={`feature-highlight-${index}`}>
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
               </article>
@@ -119,8 +126,8 @@ export function SeoLandingPage({ content }: Props) {
             <p className="section-copy">Explore more TeamShastra solutions, city pages, and product information.</p>
           </div>
           <nav className="seo-internal-links" aria-label="Related pages">
-            {content.internalLinks.map((link) => (
-              <Link key={link.href + link.label} href={link.href}>{link.label}</Link>
+            {internalLinks.map((link, index) => (
+              <Link key={`${link.href}-${index}`} href={link.href}>{link.label}</Link>
             ))}
           </nav>
         </div>

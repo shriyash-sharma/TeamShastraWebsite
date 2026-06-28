@@ -3,25 +3,8 @@ import { featureMap } from "./features";
 import { getSolution } from "./solutions";
 import { buildCityFeatureSlug } from "./slugs";
 import { standardBenefits } from "./cities/tier1-part1";
+import { dedupeFeatureHighlights, mergeFeatureHighlights, platformFeatures } from "./feature-highlights";
 import type { FeatureProfile, SeoPageContent, SolutionPage, CityProfile } from "./types";
-
-const platformFeatures = [
-  { title: "Attendance & GPS", description: "Location-verified check-in and punch-out for field staff, guards, and site workers with geofencing support." },
-  { title: "Geofencing", description: "Define approved work zones at customer sites, warehouses, factories, and project locations." },
-  { title: "Leave & shift management", description: "Plan rosters, manage leave approvals, and ensure dispatchers know who is available." },
-  { title: "Field technician tracking", description: "Real-time visibility into technician location, job status, and daily activity." },
-  { title: "Customer management", description: "Maintain customer site history, contacts, open issues, and AMC contract details." },
-  { title: "Work orders", description: "Create, assign, track, and close digital work orders with status updates for managers and customers." },
-  { title: "Preventive maintenance", description: "Schedule recurring PM visits for AMC contracts, equipment, and facility maintenance." },
-  { title: "Digital service reports", description: "Structured checklists, photo evidence, parts usage, and notes replace paper job sheets." },
-  { title: "Customer signatures", description: "Capture digital sign-off at site for installation, repair, and maintenance jobs." },
-  { title: "Photos & offline sync", description: "Attach before/after photos; field teams work offline and sync when connectivity returns." },
-  { title: "Notifications", description: "Alert technicians and supervisors when jobs are assigned, delayed, or completed." },
-  { title: "Reports & analytics", description: "Measure completion rates, utilization, SLA performance, and operational throughput." },
-  { title: "Role-based permissions", description: "Control access by team, branch, or business unit for supervisors and managers." },
-  { title: "Multi-company support", description: "Manage multiple branches, clients, or business units from one account." },
-  { title: "PWA, Android & web", description: "Mobile-first workflows for field staff on Android and web, with PWA support." }
-];
 
 function expandWhyParagraphs(city: CityProfile, feature: FeatureProfile): string[] {
   const areas = city.localAreas.slice(0, 5).join(", ");
@@ -113,7 +96,7 @@ export function buildCityFeatureContent(featureSlug: string, citySlug: string): 
   const title = `${feature.headline} in ${city.name} | TeamShastra`;
   const metaDescription = feature.metaDescriptionTemplate.replace("{city}", city.name);
 
-  const featureHighlights = [...feature.featureHighlights, ...platformFeatures.slice(0, 6)];
+  const featureHighlights = mergeFeatureHighlights(feature.featureHighlights, platformFeatures);
 
   const expandedFaqs = [
     ...city.faqs,
@@ -202,7 +185,7 @@ export function buildSolutionContent(solutionSlug: string): SeoPageContent | nul
     industries: solution.industries,
     useCases: solution.useCases,
     caseStudy: solution.caseStudy,
-    featureHighlights: platformFeatures,
+    featureHighlights: dedupeFeatureHighlights(platformFeatures),
     benefits: standardBenefits,
     localAreas: [],
     faqs: expandedFaqs,
