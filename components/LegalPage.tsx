@@ -33,7 +33,7 @@ export function LegalPage({ title, updatedAt, intro, sections, children }: Legal
         ))}
         <footer className="legal-footer">
           <p>© 2026 TeamShastra · Operated by Shriyash Sharma · <a href="https://teamshastra.com">teamshastra.com</a></p>
-          <p>Support: <a href="mailto:support@teamshastra.com">support@teamshastra.com</a></p>
+          <p>Support: <a href="mailto:care@teamshastra.com">care@teamshastra.com</a></p>
         </footer>
       </section>
     </main>
