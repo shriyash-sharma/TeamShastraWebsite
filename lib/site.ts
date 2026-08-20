@@ -12,8 +12,8 @@ export const legalUpdatedAt = "August 20, 2026";
 /** Brand operated by the founder until a registered entity is formed. */
 export const legalOperator = "Shriyash Sharma, operating under the brand TeamShastra";
 export const legalJurisdiction = "India";
-export const supportEmail = "support@teamshastra.com";
-export const privacyEmail = "support@teamshastra.com";
+export const supportEmail = "care@teamshastra.com";
+export const privacyEmail = "care@teamshastra.com";
 export const transactionalFromEmail = "noreply@mail.teamshastra.com";
 export const googleAnalyticsId = "G-QJ5430L068";
 /** Matches the live DNS TXT google-site-verification record. */
