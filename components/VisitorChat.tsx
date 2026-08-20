@@ -22,6 +22,7 @@ type ChatMessage = {
   sender_kind: string;
   sender_is_staff: boolean;
   created_at: string;
+  pending?: boolean;
 };
 
 function loadSession(): Session | null {
@@ -104,7 +105,22 @@ export function VisitorChat() {
       }
       if (!resp.ok) return;
       const data = (await resp.json()) as { items?: ChatMessage[] };
-      setMessages(data.items ?? []);
+      const server = data.items ?? [];
+      setMessages((prev) => {
+        const pending = prev.filter((msg) => msg.pending);
+        if (pending.length === 0) return server;
+        const unmatched = server
+          .filter((msg) => !msg.sender_is_staff && msg.sender_kind !== "staff")
+          .map((msg) => (msg.body ?? "").trim());
+        const leftover = pending.filter((msg) => {
+          const body = (msg.body ?? "").trim();
+          const index = unmatched.indexOf(body);
+          if (index === -1) return true;
+          unmatched.splice(index, 1);
+          return false;
+        });
+        return leftover.length === 0 ? server : [...server, ...leftover];
+      });
     },
     [headers]
   );
@@ -187,26 +203,44 @@ export function VisitorChat() {
   }
 
   async function send(body: string) {
-    if (!session || !body.trim()) return;
-    setBusy(true);
+    if (!session) return;
+    const text = body.trim();
+    if (!text) return;
+    const localId = `local-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const optimistic: ChatMessage = {
+      id: localId,
+      body: text,
+      sender_kind: "visitor",
+      sender_is_staff: false,
+      created_at: new Date().toISOString(),
+      pending: true
+    };
+    setDraft("");
     setError("");
+    setMessages((prev) => [...prev, optimistic]);
+    window.setTimeout(() => inputRef.current?.focus(), 0);
+
     try {
       const resp = await fetch(`${supportApiBase}/visitor/messages`, {
         method: "POST",
         headers: headers(session.session_token),
-        body: JSON.stringify({ body: body.trim() })
+        body: JSON.stringify({ body: text })
       });
       const data = await resp.json();
       if (!resp.ok) {
+        setMessages((prev) => prev.filter((msg) => msg.id !== localId));
+        setDraft(text);
         setError(errorMessage(data, "Message could not be sent."));
         return;
       }
-      setDraft("");
-      await refreshMessages(session.session_token);
+      const saved = data as ChatMessage;
+      setMessages((prev) =>
+        prev.map((msg) => (msg.id === localId ? { ...saved, pending: false } : msg))
+      );
     } catch {
+      setMessages((prev) => prev.filter((msg) => msg.id !== localId));
+      setDraft(text);
       setError("Message could not be sent.");
-    } finally {
-      setBusy(false);
     }
   }
 
@@ -333,11 +367,13 @@ export function VisitorChat() {
                   return (
                     <div
                       key={msg.id}
-                      className={mine ? "visitor-bubble mine" : "visitor-bubble theirs"}
+                      className={`${mine ? "visitor-bubble mine" : "visitor-bubble theirs"}${msg.pending ? " pending" : ""}`}
                       data-testid={mine ? "visitor-chat-mine" : "visitor-chat-theirs"}
                     >
                       {msg.body}
-                      <span className="visitor-bubble-time">{formatTime(msg.created_at)}</span>
+                      <span className="visitor-bubble-time">
+                        {msg.pending ? "Sending…" : formatTime(msg.created_at)}
+                      </span>
                     </div>
                   );
                 })}
@@ -347,7 +383,6 @@ export function VisitorChat() {
                 <button
                   type="button"
                   className="visitor-chat-callback"
-                  disabled={busy}
                   data-testid="visitor-chat-callback"
                   onClick={() => {
                     setCallbackSent(true);
@@ -379,13 +414,12 @@ export function VisitorChat() {
                   onChange={(e) => setDraft(e.target.value)}
                   placeholder="Write a message…"
                   maxLength={4000}
-                  disabled={busy}
                   aria-label="Message"
                 />
                 <button
                   className="visitor-chat-send"
                   type="submit"
-                  disabled={busy || !draft.trim()}
+                  disabled={!draft.trim()}
                   data-testid="visitor-chat-send"
                   aria-label="Send message"
                 >
