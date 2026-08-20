@@ -72,9 +72,9 @@ export default function Home() {
             <p className="section-copy">TeamShastra connects office teams, technicians, supervisors, and customers without mixing the public website with authenticated application workflows.</p>
           </div>
           <div className="card-grid">
-            <article className="card"><div className="icon-box">01</div><h3>Work orders</h3><p>Create jobs, assign technicians, update status, add photos, and share a completion report.</p></article>
-            <article className="card"><div className="icon-box">02</div><h3>Team and attendance</h3><p>Invite staff, check in and out, and let managers review the day.</p></article>
-            <article className="card"><div className="icon-box">03</div><h3>Customers and billing</h3><p>Keep customer records, send quotations and invoices, and chat with TeamShastra if you need help.</p></article>
+            <article className="card"><div className="icon-box">01</div><h3>Work orders</h3><p>Create jobs, assign technicians, track today&apos;s board, and keep before/after photos on the timeline.</p></article>
+            <article className="card"><div className="icon-box">02</div><h3>Team and attendance</h3><p>Invite staff, check in and out, and let managers see who is on duty.</p></article>
+            <article className="card"><div className="icon-box">03</div><h3>Sales, expenses, reports</h3><p>Quotations, invoices, field expenses, and summaries — with chat support when you need help.</p></article>
           </div>
         </div>
       </section>
