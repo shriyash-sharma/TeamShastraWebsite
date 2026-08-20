@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AppScreenshotGallery, HeroAppPreview } from "@/components/AppScreenshots";
 import { appUrl, betaStatus, loginUrl, pageMetadata, releaseNote, signupUrl } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata(
@@ -61,22 +62,7 @@ export default function Home() {
               <span>Beta signup routes to app.teamshastra.com</span>
             </div>
           </div>
-          <div className="product-board" aria-label="TeamShastra application preview">
-            <div className="board-top"><strong>Dispatch Command Center</strong><span className="status-pill">Live operations</span></div>
-            <div className="board-columns">
-              <div className="metric-stack">
-                <div className="metric-row"><span>Jobs today</span><span className="metric-value">42</span></div>
-                <div className="metric-row"><span>On time</span><span className="metric-value">94%</span></div>
-                <div className="metric-row"><span>Open quotes</span><span className="metric-value">18</span></div>
-                <div className="metric-row"><span>Teams active</span><span className="metric-value">7</span></div>
-              </div>
-              <div className="route-stack">
-                <div className="route-card"><div><strong>Install inspection</strong><br /><span className="section-copy">Assigned to North Crew</span></div><span className="route-time">09:30</span></div>
-                <div className="route-card"><div><strong>Preventive service</strong><br /><span className="section-copy">Parts checked, route optimized</span></div><span className="route-time">11:15</span></div>
-                <div className="route-card"><div><strong>Customer follow-up</strong><br /><span className="section-copy">Invoice ready for review</span></div><span className="route-time">14:00</span></div>
-              </div>
-            </div>
-          </div>
+          <HeroAppPreview />
         </div>
       </section>
       <section className="section" id="features">
@@ -92,6 +78,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <AppScreenshotGallery />
       <section className="section alt">
         <div className="section-inner banner">
           <div>
