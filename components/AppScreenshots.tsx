@@ -13,6 +13,7 @@ export function HeroAppPreview() {
             height={1599}
             sizes="(max-width: 920px) 220px, 240px"
             priority={index === 1}
+            style={{ width: "100%", height: "auto" }}
           />
         </figure>
       ))}
@@ -34,7 +35,14 @@ export function AppScreenshotGallery() {
           {appScreenshots.map((shot) => (
             <figure className="shot-card" key={shot.src}>
               <div className="phone-frame phone-frame-gallery">
-                <Image src={shot.src} alt={shot.alt} width={714} height={1599} sizes="180px" />
+                <Image
+                  src={shot.src}
+                  alt={shot.alt}
+                  width={714}
+                  height={1599}
+                  sizes="180px"
+                  style={{ width: "100%", height: "auto" }}
+                />
               </div>
               <figcaption>
                 <strong>{shot.title}</strong>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { AppHashRedirect } from "@/components/AppHashRedirect";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           `}
         </Script>
         <Header />
+        <AppHashRedirect />
         {children}
         <Footer />
         <VisitorChat />
