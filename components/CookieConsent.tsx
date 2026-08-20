@@ -78,10 +78,20 @@ export function CookieConsent() {
           <Link href="/privacy">Privacy</Link>
         </p>
         <div className="cookie-banner-actions">
-          <button type="button" className="button secondary" onClick={() => choose("declined")}>
+          <button
+            type="button"
+            className="button secondary"
+            data-testid="cookie-decline"
+            onClick={() => choose("declined")}
+          >
             Decline
           </button>
-          <button type="button" className="button primary" onClick={() => choose("accepted")}>
+          <button
+            type="button"
+            className="button primary"
+            data-testid="cookie-accept"
+            onClick={() => choose("accepted")}
+          >
             Accept analytics
           </button>
         </div>

@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
-import { apiBaseUrl } from "@/lib/api";
+import Link from "next/link";
+import { supportApiBase } from "@/lib/api";
 
 const STORAGE_KEY = "ts_visitor_support_v1";
 const CALLBACK_WAIT_MS = 60_000;
@@ -38,11 +39,21 @@ function saveSession(session: Session) {
 }
 
 function errorMessage(payload: unknown, fallback: string): string {
-  if (payload && typeof payload === "object" && "detail" in payload) {
-    const detail = (payload as { detail: unknown }).detail;
-    if (typeof detail === "string") return detail;
+  if (!payload || typeof payload !== "object" || !("detail" in payload)) {
+    return fallback;
+  }
+  const detail = (payload as { detail: unknown }).detail;
+  if (typeof detail === "string") return detail;
+  if (Array.isArray(detail) && detail[0] && typeof detail[0] === "object" && "msg" in detail[0]) {
+    return String((detail[0] as { msg: string }).msg);
   }
   return fallback;
+}
+
+function formatTime(iso: string): string {
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return "";
+  return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 }
 
 export function VisitorChat() {
@@ -58,10 +69,20 @@ export function VisitorChat() {
   const [showCallback, setShowCallback] = useState(false);
   const [callbackSent, setCallbackSent] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setSession(loadSession());
   }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
 
   const headers = useCallback((token: string) => {
     return {
@@ -72,7 +93,7 @@ export function VisitorChat() {
 
   const refreshMessages = useCallback(
     async (token: string) => {
-      const resp = await fetch(`${apiBaseUrl}/api/v1/support/visitor/messages?limit=200`, {
+      const resp = await fetch(`${supportApiBase}/visitor/messages?limit=200`, {
         headers: headers(token)
       });
       if (resp.status === 401) {
@@ -100,6 +121,12 @@ export function VisitorChat() {
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, open]);
+
+  useEffect(() => {
+    if (open && session) {
+      window.setTimeout(() => inputRef.current?.focus(), 50);
+    }
+  }, [open, session]);
 
   useEffect(() => {
     if (!session || callbackSent || messages.length === 0) {
@@ -135,7 +162,7 @@ export function VisitorChat() {
     setBusy(true);
     setError("");
     try {
-      const resp = await fetch(`${apiBaseUrl}/api/v1/support/visitor/start`, {
+      const resp = await fetch(`${supportApiBase}/visitor/start`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -164,7 +191,7 @@ export function VisitorChat() {
     setBusy(true);
     setError("");
     try {
-      const resp = await fetch(`${apiBaseUrl}/api/v1/support/visitor/messages`, {
+      const resp = await fetch(`${supportApiBase}/visitor/messages`, {
         method: "POST",
         headers: headers(session.session_token),
         body: JSON.stringify({ body: body.trim() })
@@ -183,47 +210,134 @@ export function VisitorChat() {
     }
   }
 
+  function resetSession() {
+    localStorage.removeItem(STORAGE_KEY);
+    setSession(null);
+    setMessages([]);
+    setCallbackSent(false);
+    setShowCallback(false);
+    setError("");
+  }
+
   return (
     <div className="visitor-chat">
       {open ? (
-        <section className="visitor-chat-panel" aria-label="Chat with TeamShastra">
+        <section
+          className="visitor-chat-panel"
+          aria-label="Chat with TeamShastra"
+          data-testid="visitor-chat-panel"
+        >
           <header className="visitor-chat-head">
-            <strong>Chat with TeamShastra</strong>
-            <button type="button" className="visitor-chat-close" onClick={() => setOpen(false)} aria-label="Close chat">
+            <div className="visitor-chat-identity">
+              <span className="visitor-chat-avatar" aria-hidden="true">
+                TS
+              </span>
+              <div>
+                <strong>TeamShastra</strong>
+                <span className="visitor-chat-status">
+                  <span className="visitor-chat-dot" /> Usually replies in a few minutes
+                </span>
+              </div>
+            </div>
+            <button
+              type="button"
+              className="visitor-chat-close"
+              onClick={() => setOpen(false)}
+              aria-label="Close chat"
+              data-testid="visitor-chat-close"
+            >
               ×
             </button>
           </header>
           {!session ? (
             <form className="visitor-chat-form" onSubmit={(e) => void startChat(e)}>
-              <p>Share your email and mobile number to start. A TeamShastra admin will see this as a visitor chat.</p>
+              <p>
+                Tell us how to reach you, then start chatting. A TeamShastra admin will see this as a
+                visitor conversation.
+              </p>
               <label>
-                Name (optional)
-                <input value={name} onChange={(e) => setName(e.target.value)} maxLength={80} />
+                Name <span>(optional)</span>
+                <input
+                  data-testid="visitor-chat-name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  maxLength={80}
+                  placeholder="Your name"
+                  autoComplete="name"
+                />
               </label>
               <label>
                 Email
-                <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input
+                  data-testid="visitor-chat-email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@company.com"
+                  autoComplete="email"
+                />
               </label>
               <label>
                 Mobile number
-                <input type="tel" required value={phone} onChange={(e) => setPhone(e.target.value)} />
+                <input
+                  data-testid="visitor-chat-phone"
+                  type="tel"
+                  required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="98765 43210"
+                  autoComplete="tel"
+                  inputMode="tel"
+                />
+                <em className="visitor-chat-hint">10-digit Indian mobile, or include country code</em>
               </label>
-              {error ? <p className="visitor-chat-error">{error}</p> : null}
-              <button className="button primary" type="submit" disabled={busy}>
-                {busy ? "Starting…" : "Start chat"}
+              {error ? (
+                <p className="visitor-chat-error" data-testid="visitor-chat-error">
+                  {error}
+                </p>
+              ) : null}
+              <button
+                className="button primary visitor-chat-cta"
+                type="submit"
+                disabled={busy}
+                data-testid="visitor-chat-start"
+              >
+                {busy ? "Connecting…" : "Start chat"}
               </button>
+              <p className="visitor-chat-legal">
+                By starting, you agree we may use this email and number to reply.{" "}
+                <Link href="/privacy">Privacy</Link>
+              </p>
             </form>
           ) : (
             <>
-              <div className="visitor-chat-messages">
+              <div className="visitor-chat-meta">
+                <span>
+                  Chatting as <strong>{session.visitor_email}</strong>
+                </span>
+                <button type="button" className="visitor-chat-reset" onClick={resetSession}>
+                  New chat
+                </button>
+              </div>
+              <div className="visitor-chat-messages" data-testid="visitor-chat-thread">
                 {messages.length === 0 ? (
-                  <p className="visitor-chat-empty">Send a message and we will reply here.</p>
+                  <div className="visitor-bubble theirs">
+                    Hi{session.visitor_name ? ` ${session.visitor_name}` : ""} — how can we help
+                    your field team today?
+                    <span className="visitor-bubble-time">Now</span>
+                  </div>
                 ) : null}
                 {messages.map((msg) => {
                   const mine = !msg.sender_is_staff && msg.sender_kind !== "staff";
                   return (
-                    <div key={msg.id} className={mine ? "visitor-bubble mine" : "visitor-bubble theirs"}>
+                    <div
+                      key={msg.id}
+                      className={mine ? "visitor-bubble mine" : "visitor-bubble theirs"}
+                      data-testid={mine ? "visitor-chat-mine" : "visitor-chat-theirs"}
+                    >
                       {msg.body}
+                      <span className="visitor-bubble-time">{formatTime(msg.created_at)}</span>
                     </div>
                   );
                 })}
@@ -234,6 +348,7 @@ export function VisitorChat() {
                   type="button"
                   className="visitor-chat-callback"
                   disabled={busy}
+                  data-testid="visitor-chat-callback"
                   onClick={() => {
                     setCallbackSent(true);
                     void send(`Please call me on ${session.visitor_phone}.`);
@@ -242,8 +357,14 @@ export function VisitorChat() {
                   No reply yet — ask us to call {session.visitor_phone}
                 </button>
               ) : null}
-              {callbackSent ? <p className="visitor-chat-note">We will call you back on {session.visitor_phone}.</p> : null}
-              {error ? <p className="visitor-chat-error">{error}</p> : null}
+              {callbackSent ? (
+                <p className="visitor-chat-note">We will call you back on {session.visitor_phone}.</p>
+              ) : null}
+              {error ? (
+                <p className="visitor-chat-error" data-testid="visitor-chat-error">
+                  {error}
+                </p>
+              ) : null}
               <form
                 className="visitor-chat-composer"
                 onSubmit={(e) => {
@@ -252,13 +373,22 @@ export function VisitorChat() {
                 }}
               >
                 <input
+                  ref={inputRef}
+                  data-testid="visitor-chat-input"
                   value={draft}
                   onChange={(e) => setDraft(e.target.value)}
-                  placeholder="Message"
+                  placeholder="Write a message…"
                   maxLength={4000}
                   disabled={busy}
+                  aria-label="Message"
                 />
-                <button className="button primary" type="submit" disabled={busy || !draft.trim()}>
+                <button
+                  className="visitor-chat-send"
+                  type="submit"
+                  disabled={busy || !draft.trim()}
+                  data-testid="visitor-chat-send"
+                  aria-label="Send message"
+                >
                   Send
                 </button>
               </form>
@@ -266,8 +396,26 @@ export function VisitorChat() {
           )}
         </section>
       ) : null}
-      <button type="button" className="visitor-chat-launch" onClick={() => setOpen((value) => !value)}>
-        {open ? "Close chat" : "Chat with us"}
+      <button
+        type="button"
+        className="visitor-chat-launch"
+        onClick={() => setOpen((value) => !value)}
+        data-testid="visitor-chat-launch"
+        aria-expanded={open}
+      >
+        <span className="visitor-chat-launch-icon" aria-hidden="true">
+          {open ? (
+            "×"
+          ) : (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M5 6.8A2.8 2.8 0 0 1 7.8 4h8.4A2.8 2.8 0 0 1 19 6.8v6.4A2.8 2.8 0 0 1 16.2 16H10l-4.2 3.2A.8.8 0 0 1 4.5 18.6V6.8Z"
+                fill="currentColor"
+              />
+            </svg>
+          )}
+        </span>
+        <span>{open ? "Close" : "Chat with us"}</span>
       </button>
     </div>
   );
