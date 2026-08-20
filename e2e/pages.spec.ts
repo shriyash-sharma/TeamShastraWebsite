@@ -12,6 +12,10 @@ test("home shows chat launcher and core CTAs", async ({ page }) => {
   await expect(page.getByTestId("hero-app-preview").getByRole("img").first()).toBeVisible();
   await expect(page.getByTestId("app-screenshot-gallery")).toBeVisible();
   await expect(page.getByTestId("visitor-chat-launch")).toBeVisible();
+  const noHorizontalScroll = await page.evaluate(
+    () => document.documentElement.scrollWidth <= window.innerWidth + 4
+  );
+  expect(noHorizontalScroll).toBe(true);
   await expect(page.getByRole("link", { name: "Join Beta" }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: "Login" }).first()).toBeVisible();
 });
@@ -22,6 +26,12 @@ test("features page describes visitor chat", async ({ page }) => {
   await expect(page.getByTestId("app-screenshot-gallery")).toBeVisible();
   await expect(page.getByText(/visitor chat on this site/i)).toBeVisible();
   await expect(page.getByText(/Work orders/i).first()).toBeVisible();
+});
+
+test("login path sends people to the app", async ({ page }) => {
+  const response = await page.goto("/login", { waitUntil: "commit" });
+  expect(page.url()).toMatch(/app\.teamshastra\.com/);
+  expect(response?.status() ?? 200).toBeLessThan(400);
 });
 
 test("contact page points people to chat", async ({ page }) => {
