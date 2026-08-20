@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { MarketingPage } from "@/components/MarketingPage";
 import { marketingPages, pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = pageMetadata("/features", "Features | TeamShastra", "Explore TeamShastra features for scheduling, dispatch, job tracking, company setup, and field service operations.");
+export const metadata: Metadata = pageMetadata("/features", "Features | TeamShastra", "TeamShastra features: work orders, attendance, customers, quotations, invoices, expenses, reports, and support chat for field service teams.");
 
 export default function FeaturesPage() {
   return <MarketingPage content={marketingPages.features} />;

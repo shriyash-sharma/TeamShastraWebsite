@@ -90,12 +90,12 @@ export const features: FeatureProfile[] = [
     name: "Employee Tracking",
     shortName: "Employee Tracking",
     headline: "Employee Tracking Software",
-    description: "Real-time visibility into field employee location, job progress, and daily activity.",
+    description: "Visibility into field job status and visit check-ins, job progress, and daily activity.",
     metaTitleSuffix: "Employee Tracking Software",
     metaDescriptionTemplate:
       "Employee tracking software for {city} field teams. Monitor site visits, job progress, attendance, and daily activity in real time.",
     heroLead:
-      "Real-time employee tracking for sales, service, delivery, and inspection teams that spend most of the day away from the office.",
+      "Field visit verification for sales, service, delivery, and inspection teams that spend most of the day away from the office.",
     focusAreas: ["Live location", "Visit verification", "Route history", "Activity logs"],
     featureHighlights: [
       { title: "Field employee tracking", description: "See which team members are on site, in transit, or available for the next assignment." },

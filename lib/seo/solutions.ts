@@ -91,7 +91,7 @@ export const solutions: SolutionPage[] = [
     metaDescription: "Technician management software for Indian service companies. Dispatch, track, and manage field technicians with GPS, work orders, and digital service reports.",
     eyebrow: "Technician Management",
     headline: "Technician Management Software for Service Companies",
-    lead: "Manage field technicians from assignment to completion — dispatch, GPS tracking, work orders, photo reports, and customer sign-off in one platform.",
+    lead: "Manage field technicians from assignment to completion — dispatch, work orders, GPS check-in, photo reports, and customer sign-off in one platform.",
     challenges: ["No visibility into technician location and job status", "Skill mismatch — wrong technician sent to jobs", "Paperwork and photo evidence lost after visits", "Customer complaints about delayed or missed visits", "Technician utilization not measured", "Training and certification not linked to job assignment"],
     industries: [
       { name: "HVAC & electrical", description: "Licensed technicians for installation and repair." },
@@ -106,7 +106,7 @@ export const solutions: SolutionPage[] = [
     caseStudy: { companyName: "TechServe India (illustrative example)", location: "India", problem: ["Phone-based dispatch", "No technician tracking", "Lost service records"], results: ["45% faster dispatch", "30% better utilization", "Digital service history per customer"] },
     faqs: [
       { question: "Can technicians be assigned based on skills?", answer: "Yes. Skill tags help dispatchers route jobs to qualified technicians." },
-      { question: "Does TeamShastra track technician location?", answer: "Yes. Real-time location and job status visibility for supervisors." },
+      { question: "Does TeamShastra show technician job status?", answer: "Yes. Job status visibility and punch-time GPS check-ins for supervisors — not continuous background tracking." },
       { question: "Can customers sign off on completed work?", answer: "Yes. Digital signatures capture customer acceptance at site." }
     ],
     relatedCitySlugs: ["mumbai", "delhi", "pune", "bengaluru"],
@@ -118,8 +118,8 @@ export const solutions: SolutionPage[] = [
     metaDescription: "Field employee tracking software for Indian businesses. Monitor site visits, job progress, attendance, and daily activity for sales and service teams.",
     eyebrow: "Field Employee Tracking",
     headline: "Field Employee Tracking for Sales and Service Teams",
-    lead: "Real-time visibility into field employee location, visit verification, and daily activity for businesses that manage teams outside the office.",
-    challenges: ["No proof that field staff visited assigned locations", "Sales reps' territory coverage unknown", "Service teams' daily routes not optimized", "Privacy concerns with always-on tracking", "Multi-city field teams with no central dashboard"],
+    lead: "Visibility into field job status and visit check-ins, visit verification, and daily activity for businesses that manage teams outside the office.",
+    challenges: ["No proof that field staff visited assigned locations", "Sales reps' territory coverage unknown", "Service teams' daily routes not optimized", "Privacy concerns with continuous background tracking", "Multi-city field teams with no central dashboard"],
     industries: [
       { name: "Sales & distribution", description: "FMCG, pharma, and retail sales teams." },
       { name: "Service operations", description: "Field service and repair teams." },
@@ -128,7 +128,7 @@ export const solutions: SolutionPage[] = [
     ],
     useCases: [{ title: "FMCG sales territory tracking", industry: "FMCG", problem: "30 reps, 500 retailers, no visit proof.", solution: "Retailer geofence check-in with visit notes.", benefits: ["Visit verification", "Territory coverage", "Order linkage"] }],
     caseStudy: { companyName: "RouteWise India (illustrative example)", location: "India", problem: ["No visit verification", "Unknown territory gaps"], results: ["28% more verified visits", "Better territory planning"] },
-    faqs: [{ question: "Is field tracking privacy-compliant?", answer: "Yes. Tracking can be configured for work hours with role-based supervisor access." }],
+    faqs: [{ question: "Is field tracking privacy-compliant?", answer: "Yes. Location is captured only at attendance check-in/out (and optional office-radius checks). There is no continuous background GPS tracking; access is role-based within your company." }],
     relatedCitySlugs: ["delhi", "mumbai", "bengaluru", "pune"],
     relatedSolutionSlugs: ["attendance-management-software-india", "sales-team-management-software", "employee-tracking-bengaluru"]
   },

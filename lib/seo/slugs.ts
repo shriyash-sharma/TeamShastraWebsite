@@ -62,6 +62,7 @@ export const reservedSlugs = new Set([
   "privacy-policy",
   "account-deletion",
   "terms",
+  "cookies",
   "locations",
   "solutions"
 ]);

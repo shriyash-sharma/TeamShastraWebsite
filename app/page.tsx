@@ -46,7 +46,7 @@ export default function Home() {
       <section className="hero">
         <div className="section-inner hero-grid">
           <div>
-            <span className="eyebrow">Public beta · Planned release July 1, 2026</span>
+            <span className="eyebrow">Public beta · Planned release September 1, 2026</span>
             <h1>TeamShastra</h1>
             <p className="hero-copy">Field service management software for teams testing cleaner scheduling, faster dispatch, better job visibility, and company workflows before production launch.</p>
             <div className="hero-actions" aria-label="Primary calls to action">
@@ -86,9 +86,9 @@ export default function Home() {
             <p className="section-copy">TeamShastra connects office teams, technicians, supervisors, and customers without mixing the public website with authenticated application workflows.</p>
           </div>
           <div className="card-grid">
-            <article className="card"><div className="icon-box">01</div><h3>Schedule and dispatch</h3><p>Plan visits, assign technicians, and keep routes visible from one operational view.</p></article>
-            <article className="card"><div className="icon-box">02</div><h3>Create test companies</h3><p>Beta users can create a company on the app domain and evaluate setup before production use.</p></article>
-            <article className="card"><div className="icon-box">03</div><h3>Track service work</h3><p>See job status, customer context, notes, and team activity as work moves through the day.</p></article>
+            <article className="card"><div className="icon-box">01</div><h3>Work orders</h3><p>Create jobs, assign technicians, update status, add photos, and share a completion report.</p></article>
+            <article className="card"><div className="icon-box">02</div><h3>Team and attendance</h3><p>Invite staff, check in and out, and let managers review the day.</p></article>
+            <article className="card"><div className="icon-box">03</div><h3>Customers and billing</h3><p>Keep customer records, send quotations and invoices, and chat with TeamShastra if you need help.</p></article>
           </div>
         </div>
       </section>
