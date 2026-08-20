@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { betaStatus, footerItems, releaseNote } from "@/lib/site";
+import { CookieSettingsButton } from "@/components/CookieConsent";
+import { betaStatus, footerItems, releaseNote, supportEmail } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -13,6 +14,11 @@ export function Footer() {
           <p className="footer-note">{betaStatus} {releaseNote}</p>
           <p className="footer-credit">
             Project by <a href="https://shriyashsharma.com/projects/teamshastra-field-workforce-management-saas" target="_blank" rel="noopener">Shriyash Sharma</a>
+          </p>
+          <p className="footer-credit">
+            Support: <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
+            {" · "}
+            <CookieSettingsButton />
           </p>
         </div>
         <div className="footer-links">

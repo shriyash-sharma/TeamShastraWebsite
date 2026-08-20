@@ -43,7 +43,7 @@ X-Robots-Tag: noindex, nofollow
 
 ## Google Search Console readiness
 
-- Add the production Search Console token by replacing `replace-with-google-search-console-token` in the page metadata.
+- Search Console verification is configured via DNS TXT and `googleSiteVerification` in `lib/site.ts`.
 - Submit `https://teamshastra.com/sitemap.xml` in Search Console.
 - Verify the `https://teamshastra.com/` property using DNS, HTML file, or the included meta tag approach.
 - Keep `https://app.teamshastra.com/` out of SEO targeting and avoid submitting an app sitemap.

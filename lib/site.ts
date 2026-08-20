@@ -7,6 +7,22 @@ export const signupUrl = `${appUrl}/signup`;
 export const betaStatus = "TeamShastra is in public beta and not yet recommended for production use.";
 export const releaseDate = "September 1, 2026";
 export const releaseNote = `Planned production release: ${releaseDate}.`;
+export const legalUpdatedAt = "August 20, 2026";
+
+/** Brand operated by the founder until a registered entity is formed. */
+export const legalOperator = "Shriyash Sharma, operating under the brand TeamShastra";
+export const legalJurisdiction = "India";
+export const supportEmail = "support@teamshastra.com";
+export const privacyEmail = "support@teamshastra.com";
+export const transactionalFromEmail = "noreply@mail.teamshastra.com";
+export const googleAnalyticsId = "G-QJ5430L068";
+/** Matches the live DNS TXT google-site-verification record. */
+export const googleSiteVerification = "eEtcmo7R51YXMtRBAWsnqhK7yDAPGXuZBpxihQL4Fbk";
+
+export const privacyUrl = `${marketingUrl}/privacy`;
+export const termsUrl = `${marketingUrl}/terms`;
+export const cookiesUrl = `${marketingUrl}/cookies`;
+export const accountDeletionUrl = `${marketingUrl}/account-deletion`;
 
 export const navItems = [
   { label: "Features", href: "/features" },
@@ -27,8 +43,9 @@ export const footerItems = [
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
   { label: "Privacy Policy", href: "/privacy" },
-  { label: "Account Deletion", href: "/account-deletion" },
   { label: "Terms", href: "/terms" },
+  { label: "Cookies", href: "/cookies" },
+  { label: "Account Deletion", href: "/account-deletion" },
   { label: "Open App", href: appUrl },
   { label: "Login", href: loginUrl },
   { label: "Join Beta", href: signupUrl }
@@ -47,7 +64,8 @@ export const pages = [
   { path: "/privacy", priority: 0.4, changeFrequency: "yearly" as const },
   { path: "/account-deletion", priority: 0.4, changeFrequency: "yearly" as const },
   { path: "/privacy-policy", priority: 0.35, changeFrequency: "yearly" as const },
-  { path: "/terms", priority: 0.35, changeFrequency: "yearly" as const }
+  { path: "/terms", priority: 0.35, changeFrequency: "yearly" as const },
+  { path: "/cookies", priority: 0.35, changeFrequency: "yearly" as const }
 ];
 
 export function pageMetadata(path: string, title: string, description: string): Metadata {
@@ -59,7 +77,7 @@ export function pageMetadata(path: string, title: string, description: string): 
     metadataBase: new URL(marketingUrl),
     alternates: { canonical: url },
     robots: { index: true, follow: true },
-    verification: { google: "replace-with-google-search-console-token" },
+    verification: { google: googleSiteVerification },
     openGraph: {
       type: "website",
       siteName: "TeamShastra",
@@ -91,16 +109,16 @@ export type MarketingPage = {
 export const marketingPages: Record<string, MarketingPage> = {
   features: {
     eyebrow: "Features",
-    title: "Everything field teams need to test field-service workflows before launch.",
-    description: "TeamShastra is open for public beta testing so teams can try scheduling, dispatch, company setup, and field-work tracking before the planned production release.",
+    title: "What TeamShastra does, in plain language.",
+    description: "A short, honest list of what field teams can do in the app today. Company setup, jobs, attendance, customers, quotes, and support — not a catalogue of future ideas.",
     cta: "Join Beta",
     cards: [
-      { marker: "S", title: "Scheduling", text: "Assign jobs, balance workloads, and plan the day with clear availability." },
-      { marker: "D", title: "Dispatch", text: "Route technicians, update work orders, and keep field activity visible." },
-      { marker: "C", title: "Company setup", text: "Create a test company on the app platform and evaluate the workflow before production use." },
-      { marker: "R", title: "Reporting", text: "Measure job completion, technician utilization, and service pipeline health." },
-      { marker: "M", title: "Mobile work", text: "Give field users access to the context they need before and during each visit." },
-      { marker: "A", title: "Admin controls", text: "Manage teams, roles, and account settings behind authenticated access." }
+      { marker: "1", title: "Work orders", text: "Create a job, assign a technician, track status, add comments and photos, and share a completion report." },
+      { marker: "2", title: "Team & attendance", text: "Invite technicians and managers. Check in and out (works offline). Managers can review and correct attendance." },
+      { marker: "3", title: "Customers", text: "Keep a customer directory, link jobs, see due visits, and optionally share selected jobs in a customer portal." },
+      { marker: "4", title: "Quotes & invoices", text: "Maintain an item list, send quotations, create invoices, and record payments." },
+      { marker: "5", title: "Expenses & reports", text: "Log field expenses and cash given to staff. Owners and managers can view reports and revenue." },
+      { marker: "6", title: "Alerts & support", text: "Push notifications for jobs and comments. Chat with TeamShastra from the app, or start a visitor chat on this site with your email and mobile number." }
     ],
     bannerTitle: "Test TeamShastra in public beta.",
     bannerText: "Beta signup routes to the application domain. Production use is not recommended until the planned release.",
