@@ -84,13 +84,13 @@ export function pageMetadata(path: string, title: string, description: string): 
       title,
       description,
       url,
-      images: [{ url: "/brand/teamshastra_app_icon.svg", width: 512, height: 512, alt: "TeamShastra logo" }]
+      images: [{ url: "/screenshots/01-home-dashboard.jpg", width: 714, height: 1599, alt: "TeamShastra home dashboard" }]
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/brand/teamshastra_app_icon.svg"]
+      images: ["/screenshots/01-home-dashboard.jpg"]
     }
   };
 }

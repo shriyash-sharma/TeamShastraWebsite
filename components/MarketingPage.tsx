@@ -1,10 +1,12 @@
+import type { ReactNode } from "react";
 import { betaStatus, loginUrl, releaseNote, signupUrl, type MarketingPage as MarketingPageContent } from "@/lib/site";
 
 type Props = {
   content: MarketingPageContent;
+  children?: ReactNode;
 };
 
-export function MarketingPage({ content }: Props) {
+export function MarketingPage({ content, children }: Props) {
   return (
     <main>
       <section className="page-hero">
@@ -30,6 +32,7 @@ export function MarketingPage({ content }: Props) {
           ))}
         </div>
       </section>
+      {children}
       <section className="section alt">
         <div className="section-inner banner">
           <div>
