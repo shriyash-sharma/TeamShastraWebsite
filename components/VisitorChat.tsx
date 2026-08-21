@@ -1,12 +1,17 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type FormEvent, type PointerEvent } from "react";
 import Link from "next/link";
 import { supportApiBase } from "@/lib/api";
 
 const STORAGE_KEY = "ts_visitor_support_v1";
+const POSITION_KEY = "ts_visitor_chat_pos_v1";
 const CALLBACK_WAIT_MS = 60_000;
 const POLL_MS = 4000;
+const DRAG_MEDIA = "(min-width: 721px)";
+const DRAG_PAD = 8;
+
+type ChatPosition = { left: number; top: number };
 
 type Session = {
   conversation_id: string;
@@ -37,6 +42,38 @@ function loadSession(): Session | null {
 
 function saveSession(session: Session) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
+}
+
+function canDragChat() {
+  return window.matchMedia(DRAG_MEDIA).matches;
+}
+
+function loadPosition(): ChatPosition | null {
+  try {
+    const raw = localStorage.getItem(POSITION_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as { left?: unknown; top?: unknown };
+    if (typeof parsed.left !== "number" || typeof parsed.top !== "number") return null;
+    if (!Number.isFinite(parsed.left) || !Number.isFinite(parsed.top)) return null;
+    return { left: parsed.left, top: parsed.top };
+  } catch {
+    return null;
+  }
+}
+
+function savePosition(position: ChatPosition) {
+  localStorage.setItem(POSITION_KEY, JSON.stringify(position));
+}
+
+function clampPosition(left: number, top: number, el: HTMLElement): ChatPosition {
+  const width = el.offsetWidth;
+  const height = el.offsetHeight;
+  const maxLeft = Math.max(DRAG_PAD, window.innerWidth - width - DRAG_PAD);
+  const maxTop = Math.max(DRAG_PAD, window.innerHeight - height - DRAG_PAD);
+  return {
+    left: Math.min(Math.max(DRAG_PAD, left), maxLeft),
+    top: Math.min(Math.max(DRAG_PAD, top), maxTop)
+  };
 }
 
 function errorMessage(payload: unknown, fallback: string): string {
@@ -71,10 +108,28 @@ export function VisitorChat() {
   const [callbackSent, setCallbackSent] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const positionRef = useRef<ChatPosition | null>(null);
+  const dragRef = useRef<{
+    pointerId: number;
+    offsetX: number;
+    offsetY: number;
+    startLeft: number;
+    startTop: number;
+    moved: boolean;
+  } | null>(null);
+  const [position, setPosition] = useState<ChatPosition | null>(null);
+  const [dragging, setDragging] = useState(false);
 
   useEffect(() => {
     setSession(loadSession());
+    if (!canDragChat()) return;
+    setPosition(loadPosition());
   }, []);
+
+  useEffect(() => {
+    positionRef.current = position;
+  }, [position]);
 
   useEffect(() => {
     if (!open) return;
@@ -84,6 +139,75 @@ export function VisitorChat() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
+
+  useEffect(() => {
+    function reclamp() {
+      if (!canDragChat()) {
+        setPosition(null);
+        return;
+      }
+      if (!open) return;
+      const el = rootRef.current;
+      setPosition((prev) => {
+        const next = prev ?? loadPosition();
+        if (!next || !el) return next;
+        return clampPosition(next.left, next.top, el);
+      });
+    }
+    reclamp();
+    window.addEventListener("resize", reclamp);
+    return () => window.removeEventListener("resize", reclamp);
+  }, [open]);
+
+  function endDrag(event: PointerEvent<HTMLElement>) {
+    const drag = dragRef.current;
+    if (!drag || event.pointerId !== drag.pointerId) return;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+    if (drag.moved && positionRef.current) {
+      savePosition(positionRef.current);
+    }
+    dragRef.current = null;
+    setDragging(false);
+  }
+
+  function onHeadPointerDown(event: PointerEvent<HTMLElement>) {
+    if (event.button !== 0 || !canDragChat()) return;
+    const target = event.target as HTMLElement | null;
+    if (target?.closest(".visitor-chat-close")) return;
+    const root = rootRef.current;
+    if (!root) return;
+    const rect = root.getBoundingClientRect();
+    dragRef.current = {
+      pointerId: event.pointerId,
+      offsetX: event.clientX - rect.left,
+      offsetY: event.clientY - rect.top,
+      startLeft: rect.left,
+      startTop: rect.top,
+      moved: false
+    };
+    setPosition({ left: rect.left, top: rect.top });
+    event.preventDefault();
+    event.currentTarget.setPointerCapture(event.pointerId);
+  }
+
+  function onHeadPointerMove(event: PointerEvent<HTMLElement>) {
+    const drag = dragRef.current;
+    const root = rootRef.current;
+    if (!drag || !root || event.pointerId !== drag.pointerId) return;
+    const left = event.clientX - drag.offsetX;
+    const top = event.clientY - drag.offsetY;
+    if (!drag.moved) {
+      if (Math.hypot(left - drag.startLeft, top - drag.startTop) < 4) return;
+      drag.moved = true;
+      setDragging(true);
+    }
+    event.preventDefault();
+    const next = clampPosition(left, top, root);
+    positionRef.current = next;
+    setPosition(next);
+  }
 
   const headers = useCallback((token: string) => {
     return {
@@ -253,15 +377,29 @@ export function VisitorChat() {
     setError("");
   }
 
+  const moved = Boolean(open && position);
+
   return (
-    <div className="visitor-chat">
+    <div
+      ref={rootRef}
+      className={`visitor-chat${moved ? " is-moved" : ""}${dragging ? " is-dragging" : ""}`}
+      style={open && position ? { left: position.left, top: position.top } : undefined}
+    >
       {open ? (
         <section
           className="visitor-chat-panel"
           aria-label="Chat with TeamShastra"
           data-testid="visitor-chat-panel"
         >
-          <header className="visitor-chat-head">
+          <header
+            className="visitor-chat-head"
+            onPointerDown={onHeadPointerDown}
+            onPointerMove={onHeadPointerMove}
+            onPointerUp={endDrag}
+            onPointerCancel={endDrag}
+            onLostPointerCapture={endDrag}
+            title="Drag to move"
+          >
             <div className="visitor-chat-identity">
               <span className="visitor-chat-avatar" aria-hidden="true">
                 TS
