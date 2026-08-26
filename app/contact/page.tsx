@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import {
   appUrl,
   betaStatus,
+  legalAdmin,
+  legalOperator,
   loginUrl,
   pageMetadata,
   releaseNote,
@@ -39,6 +41,12 @@ export default function ContactPage() {
       </section>
       <section className="section">
         <div className="section-inner contact-panel">
+          <div className="contact-item">
+            <strong>Operator</strong>
+            <p className="section-copy">
+              TeamShastra is operated by {legalOperator}. Named administrator: {legalAdmin}.
+            </p>
+          </div>
           <div className="contact-item">
             <strong>Chat</strong>
             <p className="section-copy">

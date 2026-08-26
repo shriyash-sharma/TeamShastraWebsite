@@ -7,10 +7,15 @@ export const signupUrl = `${appUrl}/signup`;
 export const betaStatus = "TeamShastra is in public beta and not yet recommended for production use.";
 export const releaseDate = "September 1, 2026";
 export const releaseNote = `Planned production release: ${releaseDate}.`;
-export const legalUpdatedAt = "August 20, 2026";
+export const legalUpdatedAt = "August 26, 2026";
 
-/** Brand operated by the founder until a registered entity is formed. */
-export const legalOperator = "Shriyash Sharma, operating under the brand TeamShastra";
+/** Legal operator of the TeamShastra brand. */
+export const legalOperator =
+  "Shri CCTV And Home Automation Services, operating under the brand TeamShastra";
+export const legalAdmin = "Jagrati Mukati";
+/** Contributor credits on About only — not the legal operator. */
+export const engineeringCredit = "Shriyash Sharma";
+export const qeCredit = "Jagrati Mukati";
 export const legalJurisdiction = "India";
 export const supportEmail = "care@teamshastra.com";
 export const privacyEmail = "care@teamshastra.com";

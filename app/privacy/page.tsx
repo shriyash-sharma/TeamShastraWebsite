@@ -5,6 +5,7 @@ import {
   accountDeletionUrl,
   cookiesUrl,
   legalJurisdiction,
+  legalAdmin,
   legalOperator,
   legalUpdatedAt,
   pageMetadata,
@@ -28,7 +29,7 @@ export default function PrivacyPage() {
       sections={[
         {
           title: "Who We Are",
-          body: `TeamShastra is operated by ${legalOperator}. Governing law and primary place of business: ${legalJurisdiction}. For privacy questions, email ${privacyEmail}.`
+          body: `TeamShastra is operated by ${legalOperator}. Named administrator for privacy and support requests: ${legalAdmin}. Governing law and primary place of business: ${legalJurisdiction}. For privacy questions, email ${privacyEmail}.`
         },
         {
           title: "Data We Collect",
@@ -77,6 +78,16 @@ export default function PrivacyPage() {
         {
           title: "Sharing",
           body: "We do not sell personal data. Data is visible to authorized users within your company (and portal guests where your company invites them). Processors listed above handle data only to provide TeamShastra. We may disclose data if required by law or to protect users, the service, or legal rights."
+        },
+        {
+          title: "Business Data, Copies, and Data Loss",
+          items: [
+            "You retain rights to the business data you enter (customers, jobs, invoices, attendance, and related records). We host and process it only to provide the service.",
+            "The live company is stored on our servers. Deleting the app from a phone does not delete your workspace; sign in again to download it.",
+            "Owners may download a ZIP of CSV records from Company settings when that module is enabled. That file is a copy you keep. It is not a backup that can be restored into TeamShastra.",
+            "TeamShastra does not currently offer restore-from-file. Keeping independent records (exports, paper, or your own files) is your responsibility.",
+            "To the maximum extent permitted by law we are not liable for data loss, data discrepancy, or loss arising from software issues. During public beta, do not rely on TeamShastra as your only system of record."
+          ]
         },
         {
           title: "Retention",
