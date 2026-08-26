@@ -5,6 +5,7 @@ import {
   appUrl,
   betaStatus,
   legalJurisdiction,
+  legalAdmin,
   legalOperator,
   legalUpdatedAt,
   marketingUrl,
@@ -29,7 +30,7 @@ export default function TermsPage() {
       sections={[
         {
           title: "Operator",
-          body: `TeamShastra is operated by ${legalOperator}. These Terms are governed by the laws of ${legalJurisdiction}, without regard to conflict-of-law rules. Courts in India have exclusive jurisdiction, subject to mandatory consumer protections that cannot be waived.`
+          body: `TeamShastra is operated by ${legalOperator}. Named administrator: ${legalAdmin}. These Terms are governed by the laws of ${legalJurisdiction}, without regard to conflict-of-law rules. Courts in India have exclusive jurisdiction, subject to mandatory consumer protections that cannot be waived.`
         },
         {
           title: "The Service",
@@ -57,6 +58,15 @@ export default function TermsPage() {
         {
           title: "Customer Data and Privacy",
           body: `You retain rights to your business data. You grant us a limited license to host, process, and display that data solely to provide the service. Our Privacy Policy at ${privacyUrl} explains personal-data practices. You are responsible for having a lawful basis to upload employee, customer, and third-party data into TeamShastra.`
+        },
+        {
+          title: "Copies and Data Loss",
+          items: [
+            "We host your workspace on our servers. Signing in on a new device downloads the live company. That is not the same as a restorable backup file.",
+            "When enabled, owners may download a ZIP of CSV records. That download is a copy for your records only. It cannot be restored into the app.",
+            "You are solely responsible for keeping independent copies of business records you need. We are not responsible for data loss, data discrepancy, or loss caused by software issues.",
+            "Do not rely on public beta as your only system of record for regulated or mission-critical operations."
+          ]
         },
         {
           title: "Location and Attendance Features",

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CookieSettingsButton } from "@/components/CookieConsent";
-import { betaStatus, footerItems, releaseNote, supportEmail } from "@/lib/site";
+import { betaStatus, footerItems, legalOperator, releaseNote, supportEmail } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -12,9 +12,7 @@ export function Footer() {
             <Image src="/brand/teamshastra_full_logo_light.svg" width={178} height={48} alt="TeamShastra" />
           </Link>
           <p className="footer-note">{betaStatus} {releaseNote}</p>
-          <p className="footer-credit">
-            Project by <a href="https://shriyashsharma.com/projects/teamshastra-field-workforce-management-saas" target="_blank" rel="noopener">Shriyash Sharma</a>
-          </p>
+          <p className="footer-credit">Operated by {legalOperator}</p>
           <p className="footer-credit">
             Support: <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
             {" · "}
