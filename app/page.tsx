@@ -49,7 +49,15 @@ export default function Home() {
           <div>
             <span className="eyebrow">Public beta · Planned release September 1, 2026</span>
             <h1>TeamShastra</h1>
-            <p className="hero-copy">Field service management software for teams testing cleaner scheduling, faster dispatch, better job visibility, and company workflows before production launch.</p>
+            <p className="hero-tagline">
+              <span>From Job to Payment,</span>
+              <span>All in One Place.</span>
+            </p>
+            <ul className="hero-flow" aria-label="What TeamShastra covers">
+              {["Jobs", "Teams", "Attendance", "Photos", "Billing", "Expenses"].map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
             <div className="hero-actions" aria-label="Primary calls to action">
               <a className="button primary" href={signupUrl}>Join Beta</a>
               <a className="button secondary" href={loginUrl}>Login</a>
