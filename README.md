@@ -56,4 +56,4 @@ X-Robots-Tag: noindex, nofollow
 
 ## Conversion goal
 
-Visitor reads the marketing website, clicks Join Beta, lands on `https://app.teamshastra.com/signup`, creates a test company, and evaluates TeamShastra before the planned production release.
+Visitor reads the marketing website, clicks Join Beta, lands on `https://app.teamshastra.com/signup`, creates a test company, and evaluates TeamShastra during public beta.

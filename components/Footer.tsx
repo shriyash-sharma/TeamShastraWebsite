@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CookieSettingsButton } from "@/components/CookieConsent";
-import { betaStatus, footerItems, legalOperator, releaseNote, supportEmail } from "@/lib/site";
+import { betaStatus, footerItems, legalOperator, supportEmail } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -11,7 +11,7 @@ export function Footer() {
           <Link className="brand" href="/" aria-label="TeamShastra home">
             <Image src="/brand/teamshastra_full_logo_light.svg" width={178} height={48} alt="TeamShastra" />
           </Link>
-          <p className="footer-note">{betaStatus} {releaseNote}</p>
+          <p className="footer-note">{betaStatus}</p>
           <p className="footer-credit">Operated by {legalOperator}</p>
           <p className="footer-credit">
             Support: <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
