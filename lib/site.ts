@@ -5,8 +5,6 @@ export const appUrl = "https://app.teamshastra.com";
 export const loginUrl = `${appUrl}/login`;
 export const signupUrl = `${appUrl}/signup`;
 export const betaStatus = "TeamShastra is in public beta and not yet recommended for production use.";
-export const releaseDate = "September 1, 2026";
-export const releaseNote = `Planned production release: ${releaseDate}.`;
 export const legalUpdatedAt = "August 26, 2026";
 
 /** Legal operator of the TeamShastra brand. */
@@ -126,7 +124,7 @@ export const marketingPages: Record<string, MarketingPage> = {
       { marker: "6", title: "Alerts & support", text: "Push notifications for jobs and comments. Chat with TeamShastra from the app, or start a visitor chat on this site with your email and mobile number." }
     ],
     bannerTitle: "Test TeamShastra in public beta.",
-    bannerText: "Beta signup routes to the application domain. Production use is not recommended until the planned release.",
+    bannerText: "Beta signup routes to the application domain. Production use is not recommended during public beta.",
     bannerCta: "Join Beta"
   },
   industries: {
@@ -143,20 +141,20 @@ export const marketingPages: Record<string, MarketingPage> = {
       { title: "Inspection operations", text: "Standardize checklists, evidence, and status tracking." }
     ],
     bannerTitle: "Public beta testing is open.",
-    bannerText: "Create a beta workspace on the app domain and help validate the product before production release.",
+    bannerText: "Create a beta workspace on the app domain and help validate the product during public beta.",
     bannerCta: "Join Beta"
   },
   blog: {
     eyebrow: "Blog",
     title: "Rank-ready resources for field service operators.",
-    description: "This page is included in sitemap coverage so TeamShastra can publish updates during public beta and ahead of production release.",
+    description: "This page is included in sitemap coverage so TeamShastra can publish updates during public beta.",
     cta: "Join Beta",
     cards: [
       { title: "How to reduce dispatch delays", text: "Practical ways to keep technicians, jobs, and customer expectations aligned." },
       { title: "What to track in field service software", text: "Metrics that help managers understand throughput, utilization, and service quality." },
       { title: "Why marketing and app domains should stay separate", text: "Use public pages for discovery and protected app routes for authenticated workflows." }
     ],
-    bannerTitle: "Follow the beta as it moves toward launch.",
+    bannerTitle: "Follow the beta as it evolves.",
     bannerText: "CTA links from articles route to beta signup on the application domain.",
     bannerCta: "Join Beta"
   }

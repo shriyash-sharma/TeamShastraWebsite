@@ -1,4 +1,4 @@
-import { betaStatus, loginUrl, releaseNote, signupUrl } from "@/lib/site";
+import { betaStatus, loginUrl, signupUrl } from "@/lib/site";
 
 type Props = {
   title?: string;
@@ -8,7 +8,7 @@ type Props = {
 
 export function SeoCta({
   title = "Ready to modernize your field operations?",
-  text = "Join the TeamShastra public beta, create a test workspace, and evaluate workforce management workflows before the planned production release.",
+  text = "Join the TeamShastra public beta, create a test workspace, and evaluate workforce management workflows.",
   variant = "banner"
 }: Props) {
   if (variant === "banner") {
@@ -18,7 +18,7 @@ export function SeoCta({
           <div>
             <h2>{title}</h2>
             <p>{text}</p>
-            <p className="seo-cta-note">{betaStatus} {releaseNote}</p>
+            <p className="seo-cta-note">{betaStatus}</p>
           </div>
           <div className="seo-cta-actions">
             <a className="button primary" href={signupUrl}>Start Free Trial</a>

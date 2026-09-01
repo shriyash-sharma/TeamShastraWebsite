@@ -11,7 +11,6 @@ import {
   marketingUrl,
   pageMetadata,
   privacyUrl,
-  releaseNote,
   supportEmail
 } from "@/lib/site";
 
@@ -26,7 +25,7 @@ export default function TermsPage() {
     <LegalPage
       title="TeamShastra Terms of Service"
       updatedAt={legalUpdatedAt}
-      intro={`${betaStatus} ${releaseNote} These Terms govern access to ${marketingUrl}, ${appUrl}, and the TeamShastra mobile applications. By creating an account, joining a company workspace, or using the service, you agree to these Terms.`}
+      intro={`${betaStatus} These Terms govern access to ${marketingUrl}, ${appUrl}, and the TeamShastra mobile applications. By creating an account, joining a company workspace, or using the service, you agree to these Terms.`}
       sections={[
         {
           title: "Operator",

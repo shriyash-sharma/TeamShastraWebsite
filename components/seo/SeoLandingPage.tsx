@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { SeoPageContent } from "@/lib/seo/types";
 import { dedupeFeatureHighlights } from "@/lib/seo/feature-highlights";
-import { betaStatus, loginUrl, releaseNote, signupUrl } from "@/lib/site";
+import { betaStatus, loginUrl, signupUrl } from "@/lib/site";
 import { SeoBreadcrumbs } from "./SeoBreadcrumbs";
 import { SeoCaseStudy } from "./SeoCaseStudy";
 import { SeoCta } from "./SeoCta";
@@ -40,7 +40,7 @@ export function SeoLandingPage({ content }: Props) {
             <a className="button secondary" href={loginUrl}>Book Demo</a>
             <a className="button ghost" href="/contact">Request Pricing</a>
           </div>
-          <p className="beta-note">{betaStatus} {releaseNote}</p>
+          <p className="beta-note">{betaStatus}</p>
         </div>
       </section>
 

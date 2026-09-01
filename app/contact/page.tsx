@@ -6,7 +6,6 @@ import {
   legalOperator,
   loginUrl,
   pageMetadata,
-  releaseNote,
   signupUrl,
   supportEmail
 } from "@/lib/site";
@@ -27,7 +26,7 @@ export default function ContactPage() {
           <span className="eyebrow">Contact</span>
           <h1>Talk to TeamShastra or join the public beta.</h1>
           <p className="page-lead">
-            {betaStatus} {releaseNote} Use this page for beta questions, privacy or deletion requests, and support.
+            {betaStatus} Use this page for beta questions, privacy or deletion requests, and support.
           </p>
           <div className="hero-actions">
             <a className="button primary" href={signupUrl}>
@@ -88,7 +87,7 @@ export default function ContactPage() {
         <div className="section-inner banner">
           <div>
             <h2>Join the public beta.</h2>
-            <p>Test TeamShastra before the planned production release and share feedback as the platform evolves.</p>
+            <p>Test TeamShastra in public beta and share feedback as the platform evolves.</p>
           </div>
           <a className="button primary" href={signupUrl}>
             Join Beta

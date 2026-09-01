@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { AppScreenshotGallery, HeroAppPreview } from "@/components/AppScreenshots";
-import { appUrl, betaStatus, loginUrl, pageMetadata, releaseNote, signupUrl } from "@/lib/site";
+import { appUrl, betaStatus, loginUrl, pageMetadata, signupUrl } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata(
   "/",
   "TeamShastra | Field Service Management Software",
-  "TeamShastra is in public beta for field service teams testing scheduling, dispatch, work tracking, and company workflows before production release."
+  "TeamShastra is in public beta for field service teams testing scheduling, dispatch, work tracking, and company workflows."
 );
 
 const structuredData = {
@@ -47,7 +47,7 @@ export default function Home() {
       <section className="hero">
         <div className="section-inner hero-grid">
           <div>
-            <span className="eyebrow">Public beta · Planned release September 1, 2026</span>
+            <span className="eyebrow">Public beta</span>
             <h1>TeamShastra</h1>
             <p className="hero-tagline">
               <span>From Job to Payment,</span>
@@ -63,7 +63,7 @@ export default function Home() {
               <a className="button secondary" href={loginUrl}>Login</a>
               <a className="button ghost" href={appUrl}>Open App</a>
             </div>
-            <p className="beta-note">{betaStatus} {releaseNote}</p>
+            <p className="beta-note">{betaStatus}</p>
             <div className="trust-row" aria-label="TeamShastra domain strategy">
               <span>Marketing site indexed</span>
               <span>Application separated</span>
@@ -90,8 +90,8 @@ export default function Home() {
       <section className="section alt">
         <div className="section-inner banner">
           <div>
-            <h2>Test TeamShastra before the production release.</h2>
-            <p>{betaStatus} {releaseNote} Beta CTAs send visitors to signup at app.teamshastra.com.</p>
+            <h2>Test TeamShastra in public beta.</h2>
+            <p>{betaStatus} Beta CTAs send visitors to signup at app.teamshastra.com.</p>
           </div>
           <a className="button primary" href={signupUrl}>Join Beta</a>
         </div>
