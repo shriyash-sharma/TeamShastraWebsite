@@ -1,5 +1,5 @@
 import type { SeoPageContent } from "@/lib/seo/types";
-import { marketingUrl, signupUrl } from "@/lib/site";
+import { marketingUrl, playStoreUrl } from "@/lib/site";
 
 type Props = {
   content: SeoPageContent;
@@ -13,7 +13,8 @@ export function SeoStructuredData({ content }: Props) {
       "@type": "Organization",
       "@id": `${marketingUrl}/#organization`,
       name: "TeamShastra",
-      url: marketingUrl
+      url: marketingUrl,
+      sameAs: [playStoreUrl]
     },
     {
       "@type": "BreadcrumbList",
@@ -29,7 +30,10 @@ export function SeoStructuredData({ content }: Props) {
       name: "TeamShastra",
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web, Android",
-      offers: { "@type": "Offer", url: signupUrl },
+      downloadUrl: playStoreUrl,
+      installUrl: playStoreUrl,
+      sameAs: [playStoreUrl],
+      offers: { "@type": "Offer", url: playStoreUrl, price: "0", priceCurrency: "INR" },
       ...(content.cityName
         ? { areaServed: { "@type": "City", name: content.cityName, containedInPlace: { "@type": "Country", name: "India" } } }
         : { areaServed: { "@type": "Country", name: "India" } })

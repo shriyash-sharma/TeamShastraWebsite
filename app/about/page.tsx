@@ -4,6 +4,7 @@ import {
   engineeringCredit,
   loginUrl,
   pageMetadata,
+  playStoreUrl,
   qeCredit,
   signupUrl
 } from "@/lib/site";
@@ -25,10 +26,13 @@ export default function AboutPage() {
             {betaStatus} The public website explains the product. Signup, login, and company workspaces live on app.teamshastra.com.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href={signupUrl}>
+            <a className="button primary" href={playStoreUrl}>
+              Get it on Google Play
+            </a>
+            <a className="button secondary" href={signupUrl}>
               Get started
             </a>
-            <a className="button secondary" href={loginUrl}>
+            <a className="button ghost" href={loginUrl}>
               Login
             </a>
           </div>
@@ -46,8 +50,8 @@ export default function AboutPage() {
             <h3>How to start</h3>
             <ul className="list">
               <li>Visitor reads the marketing website.</li>
-              <li>Visitor clicks Get started.</li>
-              <li>Visitor lands on app.teamshastra.com/signup.</li>
+              <li>Visitor downloads the Android app on Google Play, or clicks Get started for the web app.</li>
+              <li>Web signup lands on app.teamshastra.com/signup.</li>
               <li>Visitor creates a company workspace and begins using TeamShastra.</li>
             </ul>
           </div>
@@ -82,9 +86,14 @@ export default function AboutPage() {
               {betaStatus}
             </p>
           </div>
-          <a className="button primary" href={signupUrl}>
-            Get started
-          </a>
+          <div className="hero-actions">
+            <a className="button primary" href={playStoreUrl}>
+              Get it on Google Play
+            </a>
+            <a className="button secondary" href={signupUrl}>
+              Get started
+            </a>
+          </div>
         </div>
       </section>
     </main>

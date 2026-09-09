@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { betaStatus, loginUrl, pageMetadata, signupUrl } from "@/lib/site";
+import { betaStatus, loginUrl, pageMetadata, playStoreUrl, signupUrl } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata(
   "/pricing",
@@ -43,10 +43,13 @@ export default function PricingPage() {
             {betaStatus} Signup and login happen on app.teamshastra.com.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href={signupUrl}>
+            <a className="button primary" href={playStoreUrl}>
+              Get it on Google Play
+            </a>
+            <a className="button secondary" href={signupUrl}>
               Get started
             </a>
-            <a className="button secondary" href={loginUrl}>
+            <a className="button ghost" href={loginUrl}>
               Login
             </a>
           </div>

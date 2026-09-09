@@ -5,6 +5,7 @@ import {
   legalOperator,
   loginUrl,
   pageMetadata,
+  playStoreUrl,
   signupUrl,
   supportEmail
 } from "@/lib/site";
@@ -28,10 +29,13 @@ export default function ContactPage() {
             Use this page for product questions, privacy or deletion requests, and support.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href={signupUrl}>
+            <a className="button primary" href={playStoreUrl}>
+              Get it on Google Play
+            </a>
+            <a className="button secondary" href={signupUrl}>
               Get started
             </a>
-            <a className="button secondary" href={loginUrl}>
+            <a className="button ghost" href={loginUrl}>
               Login
             </a>
           </div>
@@ -74,6 +78,13 @@ export default function ContactPage() {
             </p>
           </div>
           <div className="contact-item">
+            <strong>Android app</strong>
+            <p className="section-copy">
+              Download TeamShastra on{" "}
+              <a href={playStoreUrl}>Google Play</a>.
+            </p>
+          </div>
+          <div className="contact-item">
             <strong>New workspaces</strong>
             <p className="section-copy">
               Create a company at <a href={signupUrl}>{signupUrl.replace("https://", "")}</a> or open{" "}
@@ -86,11 +97,16 @@ export default function ContactPage() {
         <div className="section-inner banner">
           <div>
             <h2>Create your company workspace.</h2>
-            <p>Sign up on the app and start with jobs, attendance, billing, and expenses.</p>
+            <p>Download on Google Play, or sign up on the web and start with jobs, attendance, billing, and expenses.</p>
           </div>
-          <a className="button primary" href={signupUrl}>
-            Get started
-          </a>
+          <div className="hero-actions">
+            <a className="button primary" href={playStoreUrl}>
+              Get it on Google Play
+            </a>
+            <a className="button secondary" href={signupUrl}>
+              Get started
+            </a>
+          </div>
         </div>
       </section>
     </main>

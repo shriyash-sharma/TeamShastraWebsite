@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { SeoPageContent } from "@/lib/seo/types";
 import { dedupeFeatureHighlights } from "@/lib/seo/feature-highlights";
-import { betaStatus, loginUrl, signupUrl } from "@/lib/site";
+import { betaStatus, loginUrl, playStoreUrl, signupUrl } from "@/lib/site";
 import { SeoBreadcrumbs } from "./SeoBreadcrumbs";
 import { SeoCaseStudy } from "./SeoCaseStudy";
 import { SeoCta } from "./SeoCta";
@@ -36,9 +36,9 @@ export function SeoLandingPage({ content }: Props) {
           <h1>{content.h1}</h1>
           <p className="page-lead">{content.heroLead}</p>
           <div className="hero-actions">
-            <a className="button primary" href={signupUrl}>Start Free Trial</a>
-            <a className="button secondary" href={loginUrl}>Book Demo</a>
-            <a className="button ghost" href="/contact">Request Pricing</a>
+            <a className="button primary" href={playStoreUrl}>Get it on Google Play</a>
+            <a className="button secondary" href={signupUrl}>Start Free Trial</a>
+            <a className="button ghost" href={loginUrl}>Login</a>
           </div>
           <p className="beta-note">{betaStatus}</p>
         </div>

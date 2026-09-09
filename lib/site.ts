@@ -4,6 +4,8 @@ export const marketingUrl = "https://teamshastra.com";
 export const appUrl = "https://app.teamshastra.com";
 export const loginUrl = `${appUrl}/login`;
 export const signupUrl = `${appUrl}/signup`;
+export const androidPackage = "com.teamshastra.mobile";
+export const playStoreUrl = `https://play.google.com/store/apps/details?id=${androidPackage}`;
 export const betaStatus =
   "TeamShastra is field service management software for owners, managers, and technicians.";
 export const legalUpdatedAt = "September 9, 2026";
@@ -51,6 +53,7 @@ export const footerItems = [
   { label: "Cookies", href: "/cookies" },
   { label: "Account Deletion", href: "/account-deletion" },
   { label: "Open App", href: appUrl },
+  { label: "Get it on Google Play", href: playStoreUrl },
   { label: "Login", href: loginUrl },
   { label: "Get started", href: signupUrl }
 ];

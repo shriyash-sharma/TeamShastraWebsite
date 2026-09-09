@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AppScreenshotGallery, HeroAppPreview } from "@/components/AppScreenshots";
-import { appUrl, betaStatus, loginUrl, pageMetadata, signupUrl } from "@/lib/site";
+import { appUrl, betaStatus, loginUrl, pageMetadata, playStoreUrl, signupUrl } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata(
   "/",
@@ -16,6 +16,7 @@ const structuredData = {
       "@id": "https://teamshastra.com/#organization",
       name: "TeamShastra",
       url: "https://teamshastra.com/",
+      sameAs: [playStoreUrl, appUrl],
       subjectOf: [
         { "@id": "https://teamshastra.com/#website" },
         { "@id": "https://app.teamshastra.com/#application" }
@@ -33,9 +34,22 @@ const structuredData = {
       "@id": "https://app.teamshastra.com/#application",
       name: "TeamShastra",
       url: "https://app.teamshastra.com/",
-      applicationCategory: "Field Service Management Software",
-      operatingSystem: "Web",
-      offers: { "@type": "Offer", url: signupUrl }
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Android, Web",
+      downloadUrl: playStoreUrl,
+      installUrl: playStoreUrl,
+      sameAs: [playStoreUrl, appUrl],
+      offers: { "@type": "Offer", url: playStoreUrl, price: "0", priceCurrency: "INR" }
+    },
+    {
+      "@type": "MobileApplication",
+      name: "TeamShastra",
+      url: playStoreUrl,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "ANDROID",
+      downloadUrl: playStoreUrl,
+      installUrl: playStoreUrl,
+      offers: { "@type": "Offer", url: playStoreUrl, price: "0", priceCurrency: "INR" }
     }
   ]
 };
@@ -59,15 +73,15 @@ export default function Home() {
               ))}
             </ul>
             <div className="hero-actions" aria-label="Primary calls to action">
-              <a className="button primary" href={signupUrl}>Get started</a>
-              <a className="button secondary" href={loginUrl}>Login</a>
-              <a className="button ghost" href={appUrl}>Open App</a>
+              <a className="button primary" href={playStoreUrl}>Get it on Google Play</a>
+              <a className="button secondary" href={signupUrl}>Get started</a>
+              <a className="button ghost" href={loginUrl}>Login</a>
             </div>
             <p className="beta-note">{betaStatus}</p>
             <div className="trust-row" aria-label="TeamShastra domain strategy">
-              <span>Marketing site indexed</span>
-              <span>Application separated</span>
-              <span>Signup routes to app.teamshastra.com</span>
+              <span>Android app on Google Play</span>
+              <span>Web app at app.teamshastra.com</span>
+              <span>Field service software for India</span>
             </div>
           </div>
           <HeroAppPreview />
@@ -91,9 +105,12 @@ export default function Home() {
         <div className="section-inner banner">
           <div>
             <h2>Get started with TeamShastra.</h2>
-            <p>Create a company workspace on the app at app.teamshastra.com.</p>
+            <p>Download the Android app on Google Play, or create a workspace on the web at app.teamshastra.com.</p>
           </div>
-          <a className="button primary" href={signupUrl}>Get started</a>
+          <div className="hero-actions">
+            <a className="button primary" href={playStoreUrl}>Get it on Google Play</a>
+            <a className="button secondary" href={signupUrl}>Get started</a>
+          </div>
         </div>
       </section>
     </main>
