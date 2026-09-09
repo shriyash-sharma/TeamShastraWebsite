@@ -1,0 +1,36 @@
+# TeamShastra
+
+> TeamShastra is field service management software for owners, managers, and technicians in India.
+
+TeamShastra helps field service teams run jobs, attendance, customers, quotations, GST invoices, expenses, and reports from one company workspace.
+
+## Download
+
+- Android app (Google Play): https://play.google.com/store/apps/details?id=com.teamshastra.mobile
+- Android package: com.teamshastra.mobile
+- Web app: https://app.teamshastra.com
+- Signup: https://app.teamshastra.com/signup
+- Login: https://app.teamshastra.com/login
+
+## Website
+
+- Marketing site: https://teamshastra.com
+- Features: https://teamshastra.com/features
+- Solutions: https://teamshastra.com/solutions
+- Locations: https://teamshastra.com/locations
+- Industries: https://teamshastra.com/industries
+- Pricing: https://teamshastra.com/pricing
+- About: https://teamshastra.com/about
+- Contact: https://teamshastra.com/contact
+
+## Legal and support
+
+- Privacy: https://teamshastra.com/privacy
+- Terms: https://teamshastra.com/terms
+- Cookies: https://teamshastra.com/cookies
+- Account deletion: https://teamshastra.com/account-deletion
+- Support email: care@teamshastra.com
+
+## Operator
+
+Shri CCTV And Home Automation Services, operating under the brand TeamShastra. Jurisdiction: India.

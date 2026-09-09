@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { betaStatus, loginUrl, signupUrl, type MarketingPage as MarketingPageContent } from "@/lib/site";
+import { betaStatus, loginUrl, playStoreUrl, signupUrl, type MarketingPage as MarketingPageContent } from "@/lib/site";
 
 type Props = {
   content: MarketingPageContent;
@@ -15,8 +15,9 @@ export function MarketingPage({ content, children }: Props) {
           <h1>{content.title}</h1>
           <p className="page-lead">{content.description}</p>
           <div className="hero-actions">
-            <a className="button primary" href={signupUrl}>{content.cta}</a>
-            <a className="button secondary" href={loginUrl}>Login</a>
+            <a className="button primary" href={playStoreUrl}>Get it on Google Play</a>
+            <a className="button secondary" href={signupUrl}>{content.cta}</a>
+            <a className="button ghost" href={loginUrl}>Login</a>
           </div>
           <p className="beta-note">{betaStatus}</p>
         </div>
@@ -39,7 +40,10 @@ export function MarketingPage({ content, children }: Props) {
             <h2>{content.bannerTitle}</h2>
             <p>{content.bannerText}</p>
           </div>
-          <a className="button primary" href={signupUrl}>{content.bannerCta}</a>
+          <div className="hero-actions">
+            <a className="button primary" href={playStoreUrl}>Get it on Google Play</a>
+            <a className="button secondary" href={signupUrl}>{content.bannerCta}</a>
+          </div>
         </div>
       </section>
     </main>

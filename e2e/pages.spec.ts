@@ -17,6 +17,10 @@ test("home shows chat launcher and core CTAs", async ({ page }) => {
   );
   expect(noHorizontalScroll).toBe(true);
   await expect(page.getByRole("link", { name: "Get started" }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "Get it on Google Play" }).first()).toHaveAttribute(
+    "href",
+    "https://play.google.com/store/apps/details?id=com.teamshastra.mobile"
+  );
   await expect(page.getByRole("link", { name: "Login" }).first()).toBeVisible();
 });
 
@@ -39,4 +43,5 @@ test("contact page points people to chat", async ({ page }) => {
   await expect(page.getByRole("heading", { name: /Talk to TeamShastra/i })).toBeVisible();
   await expect(page.getByText(/Chat with us/i).first()).toBeVisible();
   await expect(page.getByText(/email and mobile number/i)).toBeVisible();
+  await expect(page.getByRole("link", { name: "Get it on Google Play" }).first()).toBeVisible();
 });

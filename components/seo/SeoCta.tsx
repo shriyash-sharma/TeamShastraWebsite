@@ -1,4 +1,4 @@
-import { betaStatus, loginUrl, signupUrl } from "@/lib/site";
+import { betaStatus, loginUrl, playStoreUrl, signupUrl } from "@/lib/site";
 
 type Props = {
   title?: string;
@@ -21,9 +21,9 @@ export function SeoCta({
             <p className="seo-cta-note">{betaStatus}</p>
           </div>
           <div className="seo-cta-actions">
-            <a className="button primary" href={signupUrl}>Start Free Trial</a>
-            <a className="button secondary" href={loginUrl}>Book Demo</a>
-            <a className="button ghost seo-cta-ghost" href="/contact">Talk to Expert</a>
+            <a className="button primary" href={playStoreUrl}>Get it on Google Play</a>
+            <a className="button secondary" href={signupUrl}>Start Free Trial</a>
+            <a className="button ghost seo-cta-ghost" href={loginUrl}>Login</a>
           </div>
         </div>
       </section>
@@ -35,8 +35,8 @@ export function SeoCta({
       <h3>{title}</h3>
       <p>{text}</p>
       <div className="hero-actions">
-        <a className="button primary" href={signupUrl}>Start Free Trial</a>
-        <a className="button secondary" href="/contact">Request Pricing</a>
+        <a className="button primary" href={playStoreUrl}>Get it on Google Play</a>
+        <a className="button secondary" href={signupUrl}>Start Free Trial</a>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { loginUrl, navItems, signupUrl } from "@/lib/site";
+import { loginUrl, navItems, playStoreUrl, signupUrl } from "@/lib/site";
 
 export function Header() {
   return (
@@ -16,7 +16,10 @@ export function Header() {
         </div>
         <div className="nav-actions">
           <a className="button secondary" href={loginUrl}>Login</a>
-          <a className="button primary" href={signupUrl}>Get started</a>
+          <a className="button ghost" href={signupUrl}>Get started</a>
+          <a className="button primary" href={playStoreUrl}>
+            Get it on Google Play
+          </a>
         </div>
       </nav>
     </header>
