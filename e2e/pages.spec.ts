@@ -16,7 +16,7 @@ test("home shows chat launcher and core CTAs", async ({ page }) => {
     () => document.documentElement.scrollWidth <= window.innerWidth + 4
   );
   expect(noHorizontalScroll).toBe(true);
-  await expect(page.getByRole("link", { name: "Join Beta" }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "Get started" }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: "Login" }).first()).toBeVisible();
 });
 

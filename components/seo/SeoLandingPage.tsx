@@ -135,7 +135,7 @@ export function SeoLandingPage({ content }: Props) {
 
       <SeoCta
         title={content.cityName ? `Get started with TeamShastra in ${content.cityName}` : "Get started with TeamShastra across India"}
-        text={`Create a beta workspace and evaluate ${content.eyebrow.toLowerCase()} workflows for your team. No production commitment required during public beta.`}
+        text={`Create a workspace and evaluate ${content.eyebrow.toLowerCase()} workflows for your team.`}
       />
     </main>
   );
