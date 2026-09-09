@@ -3,7 +3,6 @@ import Link from "next/link";
 import { LegalPage } from "@/components/LegalPage";
 import {
   appUrl,
-  betaStatus,
   legalJurisdiction,
   legalAdmin,
   legalOperator,
@@ -25,7 +24,7 @@ export default function TermsPage() {
     <LegalPage
       title="TeamShastra Terms of Service"
       updatedAt={legalUpdatedAt}
-      intro={`${betaStatus} These Terms govern access to ${marketingUrl}, ${appUrl}, and the TeamShastra mobile applications. By creating an account, joining a company workspace, or using the service, you agree to these Terms.`}
+      intro={`These Terms govern access to ${marketingUrl}, ${appUrl}, and the TeamShastra mobile applications. By creating an account, joining a company workspace, or using the service, you agree to these Terms.`}
       sections={[
         {
           title: "Operator",
@@ -33,7 +32,7 @@ export default function TermsPage() {
         },
         {
           title: "The Service",
-          body: "TeamShastra provides field service management tools including company workspaces, team roles, customers, work orders, attendance, media, notifications, reports, and related features. Features may change during public beta. We may add, modify, or discontinue functionality with reasonable notice when practical."
+          body: "TeamShastra provides field service management tools including company workspaces, team roles, customers, work orders, attendance, media, notifications, reports, billing, expenses, and related features. We may add, modify, or discontinue functionality with reasonable notice when practical."
         },
         {
           title: "Eligibility and Accounts",
@@ -64,7 +63,7 @@ export default function TermsPage() {
             "We host your workspace on our servers. Signing in on a new device downloads the live company. That is not the same as a restorable backup file.",
             "When enabled, owners may download a ZIP of CSV records. That download is a copy for your records only. It cannot be restored into the app.",
             "You are solely responsible for keeping independent copies of business records you need. We are not responsible for data loss, data discrepancy, or loss caused by software issues.",
-            "Do not rely on public beta as your only system of record for regulated or mission-critical operations."
+            "Keep independent copies of records you need. Do not rely on TeamShastra as your only system of record for regulated or mission-critical operations."
           ]
         },
         {
@@ -72,12 +71,12 @@ export default function TermsPage() {
           body: "Attendance location is captured only at check-in/check-out. Owners may optionally require GPS or enable punch-time office geofencing. The service does not provide background or continuous GPS tracking. Employers remain responsible for workplace notices and consent required under applicable law."
         },
         {
-          title: "Beta Software",
-          body: "During public beta the service is provided for evaluation. It may contain defects, incomplete features, or changing data behavior. Do not rely on beta alone as your sole system of record for regulated or mission-critical operations without independent backups."
+          title: "Service Availability",
+          body: "We work to keep TeamShastra available and reliable. The service may still contain defects or changing behavior. Keep independent backups of business records you need. Do not rely on TeamShastra as your only system of record for regulated or mission-critical operations."
         },
         {
           title: "Fees and Refunds",
-          body: "Current public beta access is offered without charge unless we expressly agree otherwise in writing. Paid plans, invoices, and refund rules will be published before paid production billing begins. If you purchase a paid plan later, those then-current commercial terms will apply."
+          body: "Current access is offered without charge unless we expressly agree otherwise in writing. Paid plans, invoices, and refund rules will be published before paid billing begins. If you purchase a paid plan later, those then-current commercial terms will apply."
         },
         {
           title: "Intellectual Property",
@@ -93,7 +92,7 @@ export default function TermsPage() {
         },
         {
           title: "Disclaimers",
-          body: 'THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" DURING BETA. TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE DISCLAIM WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. We do not warrant uninterrupted or error-free operation.'
+          body: 'THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE". TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE DISCLAIM WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. We do not warrant uninterrupted or error-free operation.'
         },
         {
           title: "Limitation of Liability",

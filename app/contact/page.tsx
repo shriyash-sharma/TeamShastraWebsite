@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import {
   appUrl,
-  betaStatus,
   legalAdmin,
   legalOperator,
   loginUrl,
@@ -13,7 +12,7 @@ import {
 export const metadata: Metadata = pageMetadata(
   "/contact",
   "Contact | TeamShastra",
-  "Contact TeamShastra support, privacy, or beta questions for field service management software."
+  "Contact TeamShastra support for product questions, privacy requests, or account deletion."
 );
 
 export default function ContactPage() {
@@ -24,13 +23,13 @@ export default function ContactPage() {
       <section className="page-hero">
         <div className="section-inner">
           <span className="eyebrow">Contact</span>
-          <h1>Talk to TeamShastra or join the public beta.</h1>
+          <h1>Talk to TeamShastra.</h1>
           <p className="page-lead">
-            {betaStatus} Use this page for beta questions, privacy or deletion requests, and support.
+            Use this page for product questions, privacy or deletion requests, and support.
           </p>
           <div className="hero-actions">
             <a className="button primary" href={signupUrl}>
-              Join Beta
+              Get started
             </a>
             <a className="button secondary" href={loginUrl}>
               Login
@@ -53,10 +52,10 @@ export default function ContactPage() {
             </p>
           </div>
           <div className="contact-item">
-            <strong>Support &amp; beta</strong>
+            <strong>Support</strong>
             <p className="section-copy">
               Email{" "}
-              <a href={mailto}>{supportEmail}</a> for beta access, testing feedback, product questions, or account help.
+              <a href={mailto}>{supportEmail}</a> for product questions or account help.
             </p>
           </div>
           <div className="contact-item">
@@ -77,7 +76,7 @@ export default function ContactPage() {
           <div className="contact-item">
             <strong>New workspaces</strong>
             <p className="section-copy">
-              Create a test company at <a href={signupUrl}>{signupUrl.replace("https://", "")}</a> or open{" "}
+              Create a company at <a href={signupUrl}>{signupUrl.replace("https://", "")}</a> or open{" "}
               <a href={appUrl}>{appUrl.replace("https://", "")}</a>.
             </p>
           </div>
@@ -86,11 +85,11 @@ export default function ContactPage() {
       <section className="section alt">
         <div className="section-inner banner">
           <div>
-            <h2>Join the public beta.</h2>
-            <p>Test TeamShastra in public beta and share feedback as the platform evolves.</p>
+            <h2>Create your company workspace.</h2>
+            <p>Sign up on the app and start with jobs, attendance, billing, and expenses.</p>
           </div>
           <a className="button primary" href={signupUrl}>
-            Join Beta
+            Get started
           </a>
         </div>
       </section>

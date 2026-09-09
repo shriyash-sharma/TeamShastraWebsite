@@ -4,8 +4,9 @@ export const marketingUrl = "https://teamshastra.com";
 export const appUrl = "https://app.teamshastra.com";
 export const loginUrl = `${appUrl}/login`;
 export const signupUrl = `${appUrl}/signup`;
-export const betaStatus = "TeamShastra is in public beta and not yet recommended for production use.";
-export const legalUpdatedAt = "August 26, 2026";
+export const betaStatus =
+  "TeamShastra is field service management software for owners, managers, and technicians.";
+export const legalUpdatedAt = "September 9, 2026";
 
 /** Legal operator of the TeamShastra brand. */
 export const legalOperator =
@@ -51,7 +52,7 @@ export const footerItems = [
   { label: "Account Deletion", href: "/account-deletion" },
   { label: "Open App", href: appUrl },
   { label: "Login", href: loginUrl },
-  { label: "Join Beta", href: signupUrl }
+  { label: "Get started", href: signupUrl }
 ];
 
 export const pages = [
@@ -114,7 +115,7 @@ export const marketingPages: Record<string, MarketingPage> = {
     eyebrow: "Features",
     title: "What TeamShastra does, in plain language.",
     description: "A short, honest list of what field teams can do in the app today. Company setup, jobs, attendance, customers, quotes, and support — not a catalogue of future ideas.",
-    cta: "Join Beta",
+    cta: "Get started",
     cards: [
       { marker: "1", title: "Work orders", text: "Create a job, assign a technician, track status, add comments and photos, and share a completion report." },
       { marker: "2", title: "Team & attendance", text: "Invite technicians and managers. Check in and out (works offline). Managers can review and correct attendance." },
@@ -123,15 +124,15 @@ export const marketingPages: Record<string, MarketingPage> = {
       { marker: "5", title: "Expenses & reports", text: "Log field expenses and cash given to staff. Owners and managers can view reports and revenue." },
       { marker: "6", title: "Alerts & support", text: "Push notifications for jobs and comments. Chat with TeamShastra from the app, or start a visitor chat on this site with your email and mobile number." }
     ],
-    bannerTitle: "Test TeamShastra in public beta.",
-    bannerText: "Beta signup routes to the application domain. Production use is not recommended during public beta.",
-    bannerCta: "Join Beta"
+    bannerTitle: "Create your company workspace.",
+    bannerText: "Sign up on the app at app.teamshastra.com. Use this site for product information, privacy, and support.",
+    bannerCta: "Get started"
   },
   industries: {
     eyebrow: "Industries",
     title: "For service businesses that coordinate people, places, and commitments.",
-    description: "TeamShastra is available for public beta testing while protected app workflows remain on app.teamshastra.com.",
-    cta: "Join Beta",
+    description: "TeamShastra is for field service businesses. Sign up and log in on app.teamshastra.com; this site is for product information and policies.",
+    cta: "Get started",
     cards: [
       { title: "Facilities maintenance", text: "Plan recurring work, emergency visits, and team assignments." },
       { title: "Equipment service", text: "Track inspections, repairs, parts, and field updates." },
@@ -140,22 +141,22 @@ export const marketingPages: Record<string, MarketingPage> = {
       { title: "Home services", text: "Manage visits, technician capacity, and service follow-through." },
       { title: "Inspection operations", text: "Standardize checklists, evidence, and status tracking." }
     ],
-    bannerTitle: "Public beta testing is open.",
-    bannerText: "Create a beta workspace on the app domain and help validate the product during public beta.",
-    bannerCta: "Join Beta"
+    bannerTitle: "Ready for your field team.",
+    bannerText: "Create a company workspace on the app and start with jobs, attendance, and billing.",
+    bannerCta: "Get started"
   },
   blog: {
     eyebrow: "Blog",
     title: "Rank-ready resources for field service operators.",
-    description: "This page is included in sitemap coverage so TeamShastra can publish updates during public beta.",
-    cta: "Join Beta",
+    description: "Notes and guides for field service operators using TeamShastra.",
+    cta: "Get started",
     cards: [
       { title: "How to reduce dispatch delays", text: "Practical ways to keep technicians, jobs, and customer expectations aligned." },
       { title: "What to track in field service software", text: "Metrics that help managers understand throughput, utilization, and service quality." },
       { title: "Why marketing and app domains should stay separate", text: "Use public pages for discovery and protected app routes for authenticated workflows." }
     ],
-    bannerTitle: "Follow the beta as it evolves.",
-    bannerText: "CTA links from articles route to beta signup on the application domain.",
-    bannerCta: "Join Beta"
+    bannerTitle: "Start using TeamShastra.",
+    bannerText: "Article CTAs open signup on the application domain.",
+    bannerCta: "Get started"
   }
 };
