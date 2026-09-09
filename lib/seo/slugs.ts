@@ -10,7 +10,7 @@ export type ParsedSlug =
   | { type: "unknown"; slug: string };
 
 const citySlugs = new Set(cities.map((c) => c.slug));
-const featureSlugs = new Set(features.map((f) => f.slug));
+const featureSlugs = [...features.map((f) => f.slug)].sort((a, b) => b.length - a.length);
 const solutionSlugs = new Set(solutions.map((s) => s.slug));
 
 export function buildCityFeatureSlug(featureSlug: string, citySlug: string): string {

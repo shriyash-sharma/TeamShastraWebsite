@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/site";
 export const metadata: Metadata = pageMetadata(
   "/solutions",
   "Workforce & Field Service Solutions India | TeamShastra",
-  "Field service management, attendance tracking, technician management, work orders, and industry solutions for Indian businesses. Links to city pages nationwide."
+  "Field service management, GST invoicing, attendance, technician dispatch, work orders, expenses, and industry solutions for Indian businesses."
 );
 
 export default function SolutionsPage() {
@@ -20,7 +20,7 @@ export default function SolutionsPage() {
           <span className="eyebrow">Solutions</span>
           <h1>Workforce and field service solutions for India</h1>
           <p className="page-lead">
-            Industry-specific and feature-focused solutions for field service, attendance, technician management, work orders, and more — with links to city pages across India.
+            Industry-specific and feature-focused solutions for field service, GST invoicing, attendance, technician management, work orders, and expenses — with links to city pages across India.
           </p>
         </div>
       </section>

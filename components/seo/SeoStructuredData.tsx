@@ -1,5 +1,5 @@
 import type { SeoPageContent } from "@/lib/seo/types";
-import { marketingUrl, playStoreUrl } from "@/lib/site";
+import { marketingUrl, playStoreUrl, productFeatureList } from "@/lib/site";
 
 type Props = {
   content: SeoPageContent;
@@ -30,6 +30,9 @@ export function SeoStructuredData({ content }: Props) {
       name: "TeamShastra",
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web, Android",
+      description:
+        "Field service management software for Indian companies: jobs, attendance, GST invoices, purchases, expenses, and reports.",
+      featureList: productFeatureList,
       downloadUrl: playStoreUrl,
       installUrl: playStoreUrl,
       sameAs: [playStoreUrl],

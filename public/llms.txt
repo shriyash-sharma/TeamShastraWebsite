@@ -2,7 +2,20 @@
 
 > TeamShastra is field service management software for owners, managers, and technicians in India.
 
-TeamShastra helps field service teams run jobs, attendance, customers, quotations, GST invoices, expenses, and reports from one company workspace.
+TeamShastra helps field service teams run jobs, attendance, customers, quotations, GST invoices, purchases, expenses, cash float, bank balances, and reports from one company workspace. Android app on Google Play; web app at app.teamshastra.com.
+
+## Product features
+
+- Jobs and work orders: assign technicians, today's board, comments, before/after photos, completion report PDFs
+- Attendance and leave: check-in/out with optional punch-time location; works offline; no all-day GPS tracking
+- GST invoices and quotations: catalog, tax invoices, payments, pending collections, WhatsApp PDFs
+- CA-ready GST exports (not GST portal filing)
+- Purchase bills and supplier balances
+- Field expenses, cash float given to staff, and bank balances
+- Customers, AMC contracts, due visits, optional customer portal
+- Reports: job summary, technician performance, revenue
+- Languages: English, Hindi, Gujarati, Marathi, Bengali
+- Built for CCTV installers, electricians, maintenance teams, and similar B2B field businesses
 
 ## Download
 
@@ -16,6 +29,9 @@ TeamShastra helps field service teams run jobs, attendance, customers, quotation
 
 - Marketing site: https://teamshastra.com
 - Features: https://teamshastra.com/features
+- GST invoicing (India): https://teamshastra.com/gst-invoicing-software-india
+- Field expenses (India): https://teamshastra.com/field-expense-software-india
+- Field service (India): https://teamshastra.com/field-service-management-software-india
 - Solutions: https://teamshastra.com/solutions
 - Locations: https://teamshastra.com/locations
 - Industries: https://teamshastra.com/industries

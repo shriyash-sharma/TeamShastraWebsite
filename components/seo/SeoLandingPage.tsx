@@ -89,7 +89,7 @@ export function SeoLandingPage({ content }: Props) {
         <div className="section-inner">
           <div className="section-head">
             <h2>Feature highlights</h2>
-            <p className="section-copy">How TeamShastra helps businesses manage attendance, field teams, work orders, and service operations.</p>
+            <p className="section-copy">How TeamShastra helps businesses manage jobs, attendance, GST invoices, expenses, and field operations.</p>
           </div>
           <div className="card-grid seo-feature-grid">
             {featureHighlights.map((feature, index) => (

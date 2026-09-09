@@ -48,11 +48,13 @@ function buildInternalLinks(
     links.push({ label: `Employee tracking in ${city.name}`, href: `/${buildCityFeatureSlug("employee-tracking", city.slug)}` });
     links.push({ label: `Service management in ${city.name}`, href: `/${buildCityFeatureSlug("service-management", city.slug)}` });
 
-    if (feature.slug !== "workforce-management") {
-      links.push({ label: `Workforce management in ${city.name}`, href: `/${buildCityFeatureSlug("workforce-management", city.slug)}` });
-    }
+    links.push({ label: `GST invoicing in ${city.name}`, href: `/${buildCityFeatureSlug("gst-invoicing", city.slug)}` });
+    links.push({ label: `Expense management in ${city.name}`, href: `/${buildCityFeatureSlug("expense-management", city.slug)}` });
+    links.push({ label: `Workforce management in ${city.name}`, href: `/${buildCityFeatureSlug("workforce-management", city.slug)}` });
 
     links.push({ label: "Field service management software India", href: "/field-service-management-software-india" });
+    links.push({ label: "GST invoicing software India", href: "/gst-invoicing-software-india" });
+    links.push({ label: "Field expense software India", href: "/field-expense-software-india" });
     links.push({ label: "Attendance management software India", href: "/attendance-management-software-india" });
     links.push({ label: "Technician management software", href: "/technician-management-software" });
     links.push({ label: "Digital work orders", href: "/digital-work-orders" });
@@ -75,6 +77,7 @@ function buildInternalLinks(
       if (c) {
         links.push({ label: `Workforce management in ${c.name}`, href: `/${buildCityFeatureSlug("workforce-management", citySlug)}` });
         links.push({ label: `Field service in ${c.name}`, href: `/${buildCityFeatureSlug("field-service-management", citySlug)}` });
+        links.push({ label: `GST invoicing in ${c.name}`, href: `/${buildCityFeatureSlug("gst-invoicing", citySlug)}` });
       }
     }
     for (const solSlug of solution.relatedSolutionSlugs) {
@@ -178,7 +181,7 @@ export function buildSolutionContent(solutionSlug: string): SeoPageContent | nul
     whyParagraphs: [
       solution.lead,
       `Indian businesses across metros and tier-2 cities face common operational challenges that paper-based and phone-driven coordination cannot solve at scale. ${solution.challenges.slice(0, 2).join(" ")}`,
-      `${solution.challenges.slice(2).join(" ")} TeamShastra addresses these challenges with GPS attendance, digital work orders, mobile service reports, and real-time visibility — built for Indian field operations from day one.`,
+      `${solution.challenges.slice(2).join(" ")} TeamShastra addresses these challenges with jobs, punch-time attendance, GST invoices, field expenses, digital work orders, and mobile reports — built for Indian field operations from day one.`,
       "Whether you operate in Mumbai, Delhi, Bengaluru, Pune, or emerging industrial cities like Indore, Coimbatore, and Surat, TeamShastra provides a consistent platform that scales from a single branch to multi-city operations."
     ],
     challenges: solution.challenges,
@@ -200,7 +203,8 @@ export function buildSolutionContent(solutionSlug: string): SeoPageContent | nul
 
 export function getContentForSlug(slug: string): SeoPageContent | null {
   if (slug.includes("-") && !slug.endsWith("-india")) {
-    for (const featureSlug of Object.keys(featureMap)) {
+    const featureSlugs = Object.keys(featureMap).sort((a, b) => b.length - a.length);
+    for (const featureSlug of featureSlugs) {
       const prefix = `${featureSlug}-`;
       if (slug.startsWith(prefix)) {
         const citySlug = slug.slice(prefix.length);
@@ -219,7 +223,7 @@ export function industryParagraphs(content: SeoPageContent): string[] {
   const cityName = content.cityName ?? "India";
   const featureName = content.featureSlug ? featureMap[content.featureSlug]?.shortName ?? "workforce" : "workforce";
   return content.industries.map((ind) =>
-    `**${ind.name}** — ${ind.description} TeamShastra helps ${cityName} ${ind.name.toLowerCase()} operations with ${featureName.toLowerCase()} tools for attendance, dispatch, and documented service delivery.`
+    `**${ind.name}** — ${ind.description} TeamShastra helps ${cityName} ${ind.name.toLowerCase()} operations with ${featureName.toLowerCase()} tools for jobs, attendance, GST invoices, and documented service delivery.`
   );
 }
 
