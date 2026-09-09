@@ -10,6 +10,51 @@ export const betaStatus =
   "TeamShastra is field service management software for owners, managers, and technicians.";
 export const legalUpdatedAt = "September 9, 2026";
 
+/** Product capabilities used in listing copy, schema, and AI crawlers. */
+export const productFeatureList = [
+  "Jobs and work orders with photos and completion reports",
+  "Team attendance, leave, and today's board",
+  "GST invoices, quotations, and payments",
+  "Purchase bills and supplier balances",
+  "Field expenses, cash float, and bank balances",
+  "Job, performance, and revenue reports",
+  "Customers, AMC due visits, and optional customer portal",
+  "English, Hindi, Gujarati, Marathi, and Bengali"
+];
+
+export const homeFaqs = [
+  {
+    question: "What is TeamShastra?",
+    answer:
+      "TeamShastra is field service management software for Indian companies. Owners, managers, and technicians run jobs, attendance, GST invoices, purchases, expenses, and reports from one Android and web workspace."
+  },
+  {
+    question: "Does TeamShastra support GST invoices?",
+    answer:
+      "Yes. Create quotations and GST tax invoices, record payments and pending collections, share PDFs on WhatsApp, and export CA-ready GST workbooks. TeamShastra does not file returns on the GST portal."
+  },
+  {
+    question: "Can field teams log expenses and cash?",
+    answer:
+      "Yes. Log field expenses by person and category, track cash given to staff (float), and see bank balances next to sales and purchases."
+  },
+  {
+    question: "Is TeamShastra available in Hindi and other Indian languages?",
+    answer:
+      "Yes. The app supports English, Hindi, Gujarati, Marathi, and Bengali."
+  },
+  {
+    question: "Does TeamShastra track GPS all day?",
+    answer:
+      "No. Location is optional at check-in and check-out only. There is no all-day background GPS tracking."
+  },
+  {
+    question: "Who is TeamShastra for?",
+    answer:
+      "B2B field service companies such as CCTV installers, electricians, maintenance teams, and similar businesses. A company admin creates the workspace or invites staff. It is not a consumer or children's app."
+  }
+];
+
 /** Legal operator of the TeamShastra brand. */
 export const legalOperator =
   "Shri CCTV And Home Automation Services, operating under the brand TeamShastra";
@@ -82,6 +127,15 @@ export function pageMetadata(path: string, title: string, description: string): 
     title,
     description,
     metadataBase: new URL(marketingUrl),
+    keywords: [
+      "field service management software",
+      "GST invoicing software India",
+      "field service attendance app",
+      "job management software India",
+      "technician dispatch software",
+      "field expense tracking",
+      "CCTV installer software"
+    ],
     alternates: { canonical: url },
     robots: { index: true, follow: true },
     verification: { google: googleSiteVerification },
@@ -117,35 +171,38 @@ export const marketingPages: Record<string, MarketingPage> = {
   features: {
     eyebrow: "Features",
     title: "What TeamShastra does, in plain language.",
-    description: "A short, honest list of what field teams can do in the app today. Company setup, jobs, attendance, customers, quotes, and support — not a catalogue of future ideas.",
+    description: "Jobs, attendance, GST invoices, purchases, expenses, reports, and a customer portal — what field teams can do in the app today.",
     cta: "Get started",
     cards: [
-      { marker: "1", title: "Work orders", text: "Create a job, assign a technician, track status, add comments and photos, and share a completion report." },
-      { marker: "2", title: "Team & attendance", text: "Invite technicians and managers. Check in and out (works offline). Managers can review and correct attendance." },
-      { marker: "3", title: "Customers", text: "Keep a customer directory, link jobs, see due visits, and optionally share selected jobs in a customer portal." },
-      { marker: "4", title: "Quotes & invoices", text: "Maintain an item list, send quotations, create invoices, and record payments." },
-      { marker: "5", title: "Expenses & reports", text: "Log field expenses and cash given to staff. Owners and managers can view reports and revenue." },
-      { marker: "6", title: "Alerts & support", text: "Push notifications for jobs and comments. Chat with TeamShastra from the app, or start a visitor chat on this site with your email and mobile number." }
+      { marker: "1", title: "Work orders", text: "Create a job, assign a technician, move status, add comments and before/after photos, see today's board, and share a completion report PDF." },
+      { marker: "2", title: "Team & attendance", text: "Invite technicians and managers. Check in and out with optional location (works offline). Managers review duty, mark leave, and correct records. No all-day GPS tracking." },
+      { marker: "3", title: "Customers & AMC", text: "Customer directory with job history, AMC contracts, customers due for a visit, and an optional customer portal for jobs you share." },
+      { marker: "4", title: "GST invoices & quotations", text: "Catalog, quotations, GST tax invoices, payments, and pending collections. Share PDFs on WhatsApp. Export CA-ready GST workbooks (not GST portal filing)." },
+      { marker: "5", title: "Purchases & suppliers", text: "Record purchase bills, track what you still owe suppliers, and keep sales and purchases in the same workspace." },
+      { marker: "6", title: "Expenses, float & bank", text: "Log field expenses by person and category. Track cash given to staff (float) and bank balances next to collections." },
+      { marker: "7", title: "Reports", text: "Job summary, technician performance, and revenue views for owners and managers." },
+      { marker: "8", title: "Languages", text: "English, Hindi, Gujarati, Marathi, and Bengali — built for Indian field teams." },
+      { marker: "9", title: "Alerts & support", text: "Push notifications for jobs and comments. Chat with TeamShastra from the app, or start a visitor chat on this site with your email and mobile number." }
     ],
     bannerTitle: "Create your company workspace.",
-    bannerText: "Sign up on the app at app.teamshastra.com. Use this site for product information, privacy, and support.",
+    bannerText: "Download on Google Play or sign up on the web at app.teamshastra.com. Use this site for product information, privacy, and support.",
     bannerCta: "Get started"
   },
   industries: {
     eyebrow: "Industries",
-    title: "For service businesses that coordinate people, places, and commitments.",
-    description: "TeamShastra is for field service businesses. Sign up and log in on app.teamshastra.com; this site is for product information and policies.",
+    title: "For service businesses that coordinate people, places, and payments.",
+    description: "TeamShastra is for Indian field service companies — CCTV installers, electricians, maintenance crews, and similar teams. Sign up on app.teamshastra.com or download on Google Play.",
     cta: "Get started",
     cards: [
-      { title: "Facilities maintenance", text: "Plan recurring work, emergency visits, and team assignments." },
-      { title: "Equipment service", text: "Track inspections, repairs, parts, and field updates." },
-      { title: "Installation teams", text: "Coordinate site readiness, crews, schedules, and customer communication." },
-      { title: "Utilities and infrastructure", text: "Keep work orders moving across distributed teams." },
-      { title: "Home services", text: "Manage visits, technician capacity, and service follow-through." },
-      { title: "Inspection operations", text: "Standardize checklists, evidence, and status tracking." }
+      { title: "CCTV & security installers", text: "Assign installation and AMC jobs, capture site photos, and invoice with GST." },
+      { title: "Electricians & electrical contractors", text: "Dispatch licensed electricians, track visits, and collect payment against invoices." },
+      { title: "Facilities maintenance", text: "Plan recurring work, emergency visits, attendance, and team assignments." },
+      { title: "Equipment service", text: "Track inspections, repairs, parts, purchase bills, and field updates." },
+      { title: "Home services", text: "Manage visits, technician capacity, expenses, and customer follow-through." },
+      { title: "Installation teams", text: "Coordinate site readiness, crews, photos, quotations, and completion reports." }
     ],
     bannerTitle: "Ready for your field team.",
-    bannerText: "Create a company workspace on the app and start with jobs, attendance, and billing.",
+    bannerText: "Create a company workspace and start with jobs, attendance, GST invoices, and expenses.",
     bannerCta: "Get started"
   },
   blog: {

@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/site";
 export const metadata: Metadata = pageMetadata(
   "/locations",
   "Workforce Management by City | TeamShastra India",
-  "TeamShastra workforce management, field service, and attendance software for businesses in Mumbai, Delhi, Bengaluru, Pune, and 40+ Indian cities."
+  "TeamShastra field service, GST invoicing, attendance, and work-order software for businesses in Mumbai, Delhi, Bengaluru, Pune, and 40+ Indian cities."
 );
 
 function CityGroup({ title, slugs }: { title: string; slugs: string[] }) {
@@ -45,7 +45,7 @@ export default function LocationsPage() {
           <span className="eyebrow">Locations</span>
           <h1>TeamShastra for businesses across India</h1>
           <p className="page-lead">
-            Workforce management, field service, attendance tracking, and work order software for companies in every major Indian city — with city-specific use cases, industries, and local business context.
+            Workforce management, field service, GST invoicing, attendance, and work order software for companies in every major Indian city — with city-specific use cases, industries, and local business context.
           </p>
         </div>
       </section>

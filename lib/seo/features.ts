@@ -9,7 +9,7 @@ export const features: FeatureProfile[] = [
     description: "Coordinate attendance, shifts, field teams, and daily operations from one platform.",
     metaTitleSuffix: "Workforce Management Software",
     metaDescriptionTemplate:
-      "TeamShastra workforce management software helps {city} businesses track attendance, manage field teams, assign work orders, and improve service operations.",
+      "TeamShastra workforce management software helps {city} businesses track attendance, assign jobs, issue GST invoices, and manage field expenses.",
     heroLead:
       "Modern workforce management platform trusted by growing businesses coordinating distributed teams, site visits, and daily operations.",
     focusAreas: ["Attendance & shifts", "Field team visibility", "Work order dispatch", "Operational reporting"],
@@ -27,20 +27,20 @@ export const features: FeatureProfile[] = [
     name: "Field Service Management",
     shortName: "Field Service",
     headline: "Field Service Management Software",
-    description: "Dispatch technicians, manage service visits, and deliver faster customer resolutions.",
+    description: "Dispatch technicians, manage service visits, GST invoices, and field expenses from one workspace.",
     metaTitleSuffix: "Field Service Management Software",
     metaDescriptionTemplate:
-      "Field service management software for {city} service companies. Dispatch technicians, track visits, capture signatures, and improve SLA performance.",
+      "Field service management software for {city} service companies. Dispatch technicians, track jobs, issue GST invoices, and log field expenses.",
     heroLead:
       "End-to-end field service platform for businesses that send technicians, engineers, and service staff to customer locations every day.",
-    focusAreas: ["Technician dispatch", "SLA tracking", "Digital service reports", "Customer communication"],
+    focusAreas: ["Technician dispatch", "GST invoicing", "Digital service reports", "Field expenses"],
     featureHighlights: [
       { title: "Technician tracking", description: "See where field staff are, what jobs are in progress, and which visits need reassignment." },
       { title: "Smart dispatch", description: "Balance workloads and route the right technician based on skills, proximity, and availability." },
       { title: "Digital service reports", description: "Replace paper job sheets with structured reports, photos, and customer sign-off." },
       { title: "Preventive maintenance", description: "Schedule recurring service visits for AMC contracts, utilities, and facility clients." },
-      { title: "Customer management", description: "Keep site history, contact details, and open issues accessible before every visit." },
-      { title: "Notifications", description: "Alert technicians and supervisors when jobs are assigned, delayed, or completed." }
+      { title: "GST invoices", description: "Create quotations and GST tax invoices, record payments, and share PDFs on WhatsApp." },
+      { title: "Field expenses", description: "Log technician spend, cash float, and purchase bills next to the job." },
     ]
   },
   {
@@ -125,6 +125,48 @@ export const features: FeatureProfile[] = [
       { title: "Technician management", description: "Assign the right engineer based on product type, skills, and territory." },
       { title: "Customer communication", description: "Keep customers informed about visit windows, delays, and completion status." },
       { title: "Analytics", description: "Measure first-time fix rate, repeat complaints, and technician productivity." }
+    ]
+  },
+  {
+    slug: "gst-invoicing",
+    name: "GST Invoicing",
+    shortName: "GST Invoices",
+    headline: "GST Invoicing Software",
+    description: "Create GST tax invoices, quotations, and payments for Indian field service companies.",
+    metaTitleSuffix: "GST Invoicing Software",
+    metaDescriptionTemplate:
+      "GST invoicing software for {city} field service teams. Quotations, tax invoices, WhatsApp PDFs, payments, purchase bills, and CA-ready GST exports.",
+    heroLead:
+      "Billing built for Indian field service companies that need GST invoices, collections, and purchase bills in the same app as jobs and attendance.",
+    focusAreas: ["GST tax invoices", "Quotations", "Payments & collections", "CA-ready GST exports"],
+    featureHighlights: [
+      { title: "GST tax invoices", description: "Issue GST invoices from your catalog with CGST/SGST or IGST as applicable." },
+      { title: "Quotations", description: "Send quotes, then convert them into invoices when the customer confirms." },
+      { title: "Payments & pending collections", description: "Record payments and see what customers still owe." },
+      { title: "WhatsApp PDFs", description: "Share invoice and quotation PDFs on WhatsApp instead of printing." },
+      { title: "CA-ready GST exports", description: "Export GST workbooks for your accountant. Not GST portal filing." },
+      { title: "Purchases", description: "Record supplier bills and pending payables next to sales." }
+    ]
+  },
+  {
+    slug: "expense-management",
+    name: "Expense Management",
+    shortName: "Expenses",
+    headline: "Field Expense Management Software",
+    description: "Track field expenses, staff cash float, and bank balances alongside jobs.",
+    metaTitleSuffix: "Field Expense Management Software",
+    metaDescriptionTemplate:
+      "Field expense software for {city} service teams. Log expenses by person, track cash float given to technicians, and see bank balances with sales and purchases.",
+    heroLead:
+      "Money tracking for field businesses that give cash to technicians, pay suppliers, and need expense records next to job history.",
+    focusAreas: ["Field expenses", "Cash float", "Bank balances", "Purchase payables"],
+    featureHighlights: [
+      { title: "Field expenses", description: "Log spend by person and category instead of WhatsApp photo dumps." },
+      { title: "Cash float", description: "Track cash given to staff and what remains after field expenses." },
+      { title: "Bank balances", description: "See collections and payments against company bank accounts." },
+      { title: "Purchase bills", description: "Record supplier purchases and what is still payable." },
+      { title: "Job-linked operations", description: "Keep expenses in the same workspace as jobs, attendance, and invoices." },
+      { title: "Owner reports", description: "Review spend and revenue without a separate spreadsheet." }
     ]
   }
 ];

@@ -9,6 +9,8 @@ test("home shows chat launcher and core CTAs", async ({ page }) => {
   await page.goto("/");
   await expect(page).toHaveTitle(/TeamShastra/);
   await expect(page.getByRole("heading", { name: "TeamShastra", level: 1 })).toBeVisible();
+  await expect(page.getByText("GST invoices").first()).toBeVisible();
+  await expect(page.getByRole("heading", { name: "GST invoices" })).toBeVisible();
   await expect(page.getByTestId("hero-app-preview").getByRole("img").first()).toBeVisible();
   await expect(page.getByTestId("app-screenshot-gallery")).toBeVisible();
   await expect(page.getByTestId("visitor-chat-launch")).toBeVisible();
@@ -30,6 +32,7 @@ test("features page describes visitor chat", async ({ page }) => {
   await expect(page.getByTestId("app-screenshot-gallery")).toBeVisible();
   await expect(page.getByText(/visitor chat on this site/i)).toBeVisible();
   await expect(page.getByText(/Work orders/i).first()).toBeVisible();
+  await expect(page.getByRole("heading", { name: "GST invoices & quotations" })).toBeVisible();
 });
 
 test("login path sends people to the app", async ({ page }) => {

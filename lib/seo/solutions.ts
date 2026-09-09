@@ -42,7 +42,86 @@ export const solutions: SolutionPage[] = [
       { question: "How long does implementation take?", answer: "Most businesses pilot in one city within 1–2 weeks and expand to additional branches over 4–8 weeks." }
     ],
     relatedCitySlugs: ["mumbai", "delhi", "bengaluru", "pune", "hyderabad", "chennai"],
-    relatedSolutionSlugs: ["technician-management-software", "digital-work-orders", "service-report-software", "hvac-service-management"]
+    relatedSolutionSlugs: ["gst-invoicing-software-india", "field-expense-software-india", "technician-management-software", "digital-work-orders", "service-report-software", "hvac-service-management"]
+  },
+  {
+    slug: "gst-invoicing-software-india",
+    title: "GST Invoicing Software India",
+    metaDescription: "GST invoicing software for Indian field service companies. Create tax invoices and quotations, record payments, share PDFs on WhatsApp, and export CA-ready GST workbooks.",
+    eyebrow: "GST Invoicing",
+    headline: "GST Invoicing Software for Indian Field Service Companies",
+    lead: "Issue GST tax invoices, send quotations, collect payments, and keep purchase bills in the same app as jobs and attendance — built for CCTV installers, electricians, and maintenance teams across India.",
+    challenges: [
+      "Quotations live in WhatsApp while invoices live in another billing app",
+      "GST invoices do not match the job and photos the technician just finished",
+      "Pending collections are tracked in notebooks, not against invoices",
+      "Purchase bills and supplier payables are separate from sales",
+      "CAs wait for spreadsheets that do not match GST invoices",
+      "Field owners need Hindi (and other Indian languages) on the same billing screens"
+    ],
+    industries: [
+      { name: "CCTV & security installers", description: "Installation and AMC companies that quote on site and invoice after commissioning." },
+      { name: "Electrical contractors", description: "Licensed electricians who need GST invoices against job completion." },
+      { name: "Maintenance & AMC providers", description: "Recurring service businesses that invoice visits and contracts." },
+      { name: "Home service companies", description: "Multi-technician teams that collect part payment in the field." },
+      { name: "Equipment service", description: "Repair networks that bill parts and labour with GST." }
+    ],
+    useCases: [
+      { title: "CCTV installer quoting on site", industry: "CCTV", problem: "Quotes sent as WhatsApp photos; invoices typed later in a separate tool.", solution: "Create a quotation from the catalog, share the PDF, then convert to a GST invoice when the job is done.", benefits: ["One catalog", "WhatsApp PDFs", "GST invoices tied to the job"] },
+      { title: "Electrical contractor collections", industry: "Electrical", problem: "No view of pending collections by customer.", solution: "Record payments against invoices and see what is still due.", benefits: ["Pending collections", "Payment history", "Customer-wise dues"] }
+    ],
+    caseStudy: {
+      companyName: "Shastra Field Billing (illustrative example)",
+      location: "India",
+      problem: ["Separate job app and billing app", "Late GST invoices", "Unclear pending dues"],
+      results: ["Invoices issued from the same workspace as jobs", "Faster collections", "CA-ready GST exports"]
+    },
+    faqs: [
+      { question: "Does TeamShastra file GST returns on the government portal?", answer: "No. It creates GST invoices and CA-ready export workbooks. Your CA files returns on the GST portal." },
+      { question: "Can I share invoices on WhatsApp?", answer: "Yes. Share quotation and invoice PDFs on WhatsApp." },
+      { question: "Are purchases included?", answer: "Yes. Record purchase bills and supplier balances next to sales." },
+      { question: "Does billing work in Hindi?", answer: "Yes. English, Hindi, Gujarati, Marathi, and Bengali are supported." }
+    ],
+    relatedCitySlugs: ["mumbai", "delhi", "bengaluru", "pune", "ahmedabad", "hyderabad"],
+    relatedSolutionSlugs: ["field-service-management-software-india", "field-expense-software-india", "technician-management-software"]
+  },
+  {
+    slug: "field-expense-software-india",
+    title: "Field Expense Software India",
+    metaDescription: "Field expense software for Indian service teams. Log technician expenses, track cash float, bank balances, and purchase bills next to jobs and GST invoices.",
+    eyebrow: "Field Expenses",
+    headline: "Field Expense, Float, and Bank Software for Indian Teams",
+    lead: "Stop tracking technician cash and site spend in chat threads. Log expenses by person, track float given to staff, and see bank balances alongside GST invoices and purchase bills.",
+    challenges: [
+      "Technicians send expense photos on WhatsApp with no category or owner",
+      "Cash given to staff (float) is not reconciled against spend",
+      "Bank balances do not match collections and supplier payments",
+      "Purchase bills are missing when the CA asks for books",
+      "Owners cannot see spend next to job and invoice reports",
+      "Multi-city teams have no shared expense record"
+    ],
+    industries: [
+      { name: "Field installation", description: "Teams that buy parts on site and need expense proof." },
+      { name: "AMC maintenance", description: "Technicians who spend travel and consumables against jobs." },
+      { name: "Multi-branch service", description: "Owners who issue cash float to managers in more than one city." }
+    ],
+    useCases: [
+      { title: "Technician cash float", industry: "Installation", problem: "Owner gives cash every Monday; leftovers and receipts are unclear.", solution: "Record float given, log expenses by person, and see remaining balance.", benefits: ["Float tracking", "Category spend", "Less leakage"] },
+      { title: "Purchase bills with sales", industry: "Electrical", problem: "Supplier bills sit in a folder while invoices are digital.", solution: "Enter purchase bills and payables in the same workspace as GST sales.", benefits: ["Supplier dues", "Matched books", "CA-ready records"] }
+    ],
+    caseStudy: {
+      companyName: "FieldCash Ops (illustrative example)",
+      location: "India",
+      problem: ["WhatsApp expense photos", "Untracked float"],
+      results: ["Expense log by technician", "Clearer cash and bank view"]
+    },
+    faqs: [
+      { question: "Can I track cash given to technicians?", answer: "Yes. Record cash float by person and see it reduce as expenses are logged." },
+      { question: "Are bank balances included?", answer: "Yes. Collections and payments can be reflected against bank accounts." },
+      { question: "Do expenses sit next to GST invoices?", answer: "Yes. Jobs, invoices, purchases, and expenses share one company workspace." }
+    ],
+    relatedCitySlugs: ["delhi", "mumbai", "bengaluru", "pune", "jaipur", "lucknow"],
+    relatedSolutionSlugs: ["gst-invoicing-software-india", "field-service-management-software-india", "attendance-management-software-india"]
   },
   {
     slug: "attendance-management-software-india",

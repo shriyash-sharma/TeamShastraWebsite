@@ -4,21 +4,22 @@ export type FeatureHighlight = {
 };
 
 export const platformFeatures: FeatureHighlight[] = [
-  { title: "Attendance & GPS", description: "Location-verified check-in and punch-out for field staff, guards, and site workers. Optional punch-time office radius checks — no continuous background tracking." },
-  { title: "Office geofencing (punch-time)", description: "Owners can optionally require that check-in/out happens within a radius of the office pin. This is a single check at punch time, not live tracking." },
-  { title: "Leave & shift management", description: "Plan rosters, manage leave approvals, and ensure dispatchers know who is available." },
-  { title: "Field technician visibility", description: "Job status, assignments, and punch-time GPS check-ins for supervisors — not always-on GPS tracking." },
-  { title: "Customer management", description: "Maintain customer site history, contacts, open issues, and AMC contract details." },
-  { title: "Work orders", description: "Create, assign, track, and close digital work orders with status updates for managers and customers." },
-  { title: "Preventive maintenance", description: "Schedule recurring PM visits for AMC contracts, equipment, and facility maintenance." },
-  { title: "Digital service reports", description: "Structured checklists, photo evidence, parts usage, and notes replace paper job sheets." },
-  { title: "Customer signatures", description: "Capture digital sign-off at site for installation, repair, and maintenance jobs." },
-  { title: "Photos & offline sync", description: "Attach before/after photos; field teams work offline and sync when connectivity returns." },
-  { title: "Notifications", description: "Alert technicians and supervisors when jobs are assigned, delayed, or completed." },
-  { title: "Reports & analytics", description: "Measure completion rates, utilization, SLA performance, and operational throughput." },
-  { title: "Role-based permissions", description: "Control access by team, branch, or business unit for supervisors and managers." },
-  { title: "Multi-company support", description: "Manage multiple branches, clients, or business units from one account." },
-  { title: "PWA, Android & web", description: "Mobile-first workflows for field staff on Android and web, with PWA support." }
+  { title: "Work orders", description: "Create, assign, track, and close digital jobs with status, comments, today's board, and completion report PDFs." },
+  { title: "Attendance & punch-time GPS", description: "Optional location at check-in and check-out for field staff. Offline punches sync later. No continuous background tracking." },
+  { title: "Leave management", description: "Managers mark leave and see who is on duty so dispatch is based on real availability." },
+  { title: "GST invoices & quotations", description: "Item catalog, quotations, GST tax invoices, payments, and pending collections for Indian field businesses." },
+  { title: "WhatsApp PDF sharing", description: "Share quotation, invoice, and job completion PDFs on WhatsApp." },
+  { title: "CA-ready GST exports", description: "Export GST workbooks for your CA. TeamShastra does not file returns on the GST portal." },
+  { title: "Purchases & suppliers", description: "Record purchase bills and track what you still owe, next to sales." },
+  { title: "Field expenses, float & bank", description: "Log expenses by person and category, track cash given to staff, and see bank balances." },
+  { title: "Customers, AMC & due visits", description: "Customer directory with job history, AMC contracts, and customers due for a visit." },
+  { title: "Customer portal", description: "Optionally share selected jobs so clients see only the work you choose." },
+  { title: "Reports", description: "Job summary, technician performance, and revenue views for owners and managers." },
+  { title: "Indian languages", description: "English, Hindi, Gujarati, Marathi, and Bengali." },
+  { title: "Notifications", description: "Alerts when jobs are assigned, updated, or commented — tap to open the relevant screen." },
+  { title: "Role-based access", description: "Owners, managers, and technicians see the modules that match their role." },
+  { title: "Multi-company workspaces", description: "Switch workspace if you belong to more than one company." },
+  { title: "Android & web", description: "Same company workspace on Android (Google Play) and web at app.teamshastra.com." }
 ];
 
 export function dedupeFeatureHighlights(

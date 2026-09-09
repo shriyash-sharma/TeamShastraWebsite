@@ -2,6 +2,8 @@ import type { CityProfile } from "../types";
 
 /** Shared benefits copy used across city pages — localized in content builder. */
 export const standardBenefits = [
+  "Issue GST invoices, quotations, and WhatsApp PDFs from the same workspace as jobs",
+  "Track field expenses, cash float, bank balances, and purchase bills without a second app",
   "Reduce paperwork and manual coordination across field teams",
   "Increase technician and field staff productivity with clearer daily schedules",
   "Improve SLA performance with real-time job status and dispatch visibility",
@@ -9,7 +11,7 @@ export const standardBenefits = [
   "Reduce operational costs by eliminating duplicate data entry and missed visits",
   "Gain better workforce visibility across branches, sites, and territories",
   "Improve compliance with attendance records, service reports, and audit trails",
-  "Monitor operations in real time from web dashboard and mobile apps"
+  "Monitor operations from the web dashboard and Android app"
 ];
 
 export const tier1Cities: CityProfile[] = [

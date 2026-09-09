@@ -3,7 +3,11 @@ import { AppScreenshotGallery } from "@/components/AppScreenshots";
 import { MarketingPage } from "@/components/MarketingPage";
 import { marketingPages, pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = pageMetadata("/features", "Features | TeamShastra", "TeamShastra features: work orders, attendance, customers, quotations, invoices, expenses, reports, and support chat for field service teams.");
+export const metadata: Metadata = pageMetadata(
+  "/features",
+  "Features | Jobs, GST Invoices, Attendance & Expenses | TeamShastra",
+  "TeamShastra features for field service teams: work orders, attendance, GST invoices, purchases, expenses, cash float, reports, customer portal, and Hindi support."
+);
 
 export default function FeaturesPage() {
   return (
