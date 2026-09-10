@@ -11,7 +11,7 @@ test("visitor can open chat, start a thread, and send a message", async ({ page 
 
   await page.getByTestId("visitor-chat-name").fill("Website E2E");
   await page.getByTestId("visitor-chat-email").fill("e2e.website.chat@teamshastra.com");
-  await page.getByTestId("visitor-chat-phone").fill("9876543210");
+  await page.getByTestId("visitor-chat-phone").fill("7697012040");
   await page.getByTestId("visitor-chat-start").click();
 
   await expect(page.getByTestId("visitor-chat-thread")).toBeVisible({ timeout: 20_000 });
@@ -28,7 +28,7 @@ test("visitor can open chat, start a thread, and send a message", async ({ page 
 test("chat start validates email", async ({ page }) => {
   await openVisitorChat(page);
   await page.getByTestId("visitor-chat-email").fill("not-an-email");
-  await page.getByTestId("visitor-chat-phone").fill("9876543210");
+  await page.getByTestId("visitor-chat-phone").fill("7697012040");
   await page.getByTestId("visitor-chat-start").click();
   await expect(page.getByTestId("visitor-chat-thread")).toHaveCount(0);
 });
