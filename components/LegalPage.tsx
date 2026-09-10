@@ -1,4 +1,10 @@
-import { legalOperator, supportEmail } from "@/lib/site";
+import {
+  legalOperator,
+  supportEmail,
+  supportPhoneDisplay,
+  supportPhoneTel,
+  supportPhoneWhatsApp
+} from "@/lib/site";
 
 type LegalSection = {
   title: string;
@@ -35,7 +41,13 @@ export function LegalPage({ title, updatedAt, intro, sections, children }: Legal
         ))}
         <footer className="legal-footer">
           <p>© 2026 TeamShastra · Operated by {legalOperator} · <a href="https://teamshastra.com">teamshastra.com</a></p>
-          <p>Support: <a href={`mailto:${supportEmail}`}>{supportEmail}</a></p>
+          <p>
+            Support: <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
+            {" · "}
+            <a href={supportPhoneTel}>{supportPhoneDisplay}</a>
+            {" · "}
+            <a href={supportPhoneWhatsApp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </p>
         </footer>
       </section>
     </main>

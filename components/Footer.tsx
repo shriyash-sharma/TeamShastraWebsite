@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CookieSettingsButton } from "@/components/CookieConsent";
-import { betaStatus, footerItems, legalOperator, supportEmail } from "@/lib/site";
+import { SupportChannels } from "@/components/ContactChannelIcons";
+import { betaStatus, footerItems, legalOperator } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -13,9 +14,8 @@ export function Footer() {
           </Link>
           <p className="footer-note">{betaStatus}</p>
           <p className="footer-credit">Operated by {legalOperator}</p>
+          <SupportChannels compact />
           <p className="footer-credit">
-            Support: <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
-            {" · "}
             <CookieSettingsButton />
           </p>
         </div>
