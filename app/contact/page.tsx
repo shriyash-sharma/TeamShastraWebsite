@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SupportChannels } from "@/components/ContactChannelIcons";
 import {
   appUrl,
   legalAdmin,
@@ -7,7 +8,9 @@ import {
   pageMetadata,
   playStoreUrl,
   signupUrl,
-  supportEmail
+  supportPhoneDisplay,
+  supportPhoneTel,
+  supportPhoneWhatsApp
 } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata(
@@ -17,8 +20,6 @@ export const metadata: Metadata = pageMetadata(
 );
 
 export default function ContactPage() {
-  const mailto = `mailto:${supportEmail}`;
-
   return (
     <main>
       <section className="page-hero">
@@ -43,10 +44,47 @@ export default function ContactPage() {
       </section>
       <section className="section">
         <div className="section-inner contact-panel">
-          <div className="contact-item">
-            <strong>Operator</strong>
-            <p className="section-copy">
-              TeamShastra is operated by {legalOperator}. Named administrator: {legalAdmin}.
+          <div className="contact-item contact-operator">
+            <div className="contact-operator-head">
+              <span className="contact-operator-badge">Operator</span>
+              <h2 className="contact-operator-title">Who runs TeamShastra</h2>
+            </div>
+            <dl className="operator-meta">
+              <div>
+                <dt>Business</dt>
+                <dd>Shri CCTV And Home Automation Services</dd>
+              </div>
+              <div>
+                <dt>Brand</dt>
+                <dd>TeamShastra</dd>
+              </div>
+              <div>
+                <dt>Named administrator</dt>
+                <dd>{legalAdmin}</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd>
+                  <a href={supportPhoneTel}>{supportPhoneDisplay}</a>
+                  <span className="operator-phone-actions">
+                    <a className="operator-phone-action" href={supportPhoneTel} aria-label={`Call ${supportPhoneDisplay}`}>
+                      Call
+                    </a>
+                    <a
+                      className="operator-phone-action is-whatsapp"
+                      href={supportPhoneWhatsApp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`WhatsApp ${supportPhoneDisplay}`}
+                    >
+                      WhatsApp
+                    </a>
+                  </span>
+                </dd>
+              </div>
+            </dl>
+            <p className="operator-footnote">
+              {legalOperator}.
             </p>
           </div>
           <div className="contact-item">
@@ -58,9 +96,9 @@ export default function ContactPage() {
           <div className="contact-item">
             <strong>Support</strong>
             <p className="section-copy">
-              Email{" "}
-              <a href={mailto}>{supportEmail}</a> for product questions or account help.
+              Reach the TeamShastra team by email, phone, or WhatsApp for product questions or account help.
             </p>
+            <SupportChannels />
           </div>
           <div className="contact-item">
             <strong>Privacy &amp; account deletion</strong>

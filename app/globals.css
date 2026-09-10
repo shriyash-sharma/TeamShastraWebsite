@@ -128,6 +128,130 @@ h3 { font-size: 1.18rem; }
 .price { font-size: 2.2rem; line-height: 1; margin: 16px 0; font-weight: 850; }
 .contact-panel { display: grid; gap: 16px; max-width: 760px; }
 .contact-item { padding: 18px; border: 1px solid var(--line); border-radius: 8px; background: #ffffff; }
+.contact-operator {
+  padding: 22px;
+  background:
+    radial-gradient(520px 180px at 100% 0%, rgba(23, 111, 88, 0.1), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f7fbf9 100%);
+}
+.contact-operator-head { display: grid; gap: 10px; margin-bottom: 18px; }
+.contact-operator-badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(23, 111, 88, 0.18);
+  background: rgba(232, 246, 239, 0.9);
+  color: var(--brand-dark);
+  font-size: 0.78rem;
+  font-weight: 760;
+  letter-spacing: 0.02em;
+}
+.contact-operator-title { font-size: 1.35rem; letter-spacing: -0.02em; }
+.operator-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+}
+.operator-meta > div {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.88);
+}
+.operator-meta dt {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 760;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.operator-meta dd { margin: 0; font-weight: 700; color: var(--ink); }
+.operator-meta dd a { color: var(--brand-dark); font-weight: 760; }
+.operator-phone-actions { display: inline-flex; gap: 8px; margin-left: 10px; vertical-align: middle; }
+.operator-phone-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--brand-dark);
+  font-size: 0.78rem;
+  font-weight: 760;
+}
+.operator-phone-action.is-whatsapp {
+  border-color: rgba(37, 211, 102, 0.35);
+  background: #edfbf2;
+  color: #128c7e;
+}
+.operator-footnote { margin: 14px 0 0; color: var(--muted); font-size: 0.92rem; }
+.support-channels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.support-channels.is-compact {
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 12px;
+  max-width: 360px;
+}
+.support-channel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.support-channel:hover {
+  border-color: rgba(23, 111, 88, 0.45);
+  transform: translateY(-1px);
+}
+.support-channel-whatsapp:hover { border-color: rgba(37, 211, 102, 0.55); }
+.support-channel-glyph {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #e8f6ef;
+  color: var(--brand-dark);
+}
+.support-channel-whatsapp .support-channel-glyph {
+  background: #edfbf2;
+  color: #128c7e;
+}
+.contact-channel-icon { width: 18px; height: 18px; display: block; }
+.support-channel > span:last-child {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.support-channel-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.support-channel-value {
+  color: var(--brand-dark);
+  font-size: 0.92rem;
+  font-weight: 760;
+  overflow-wrap: anywhere;
+}
+.support-channels.is-compact .support-channel { padding: 10px 12px; }
+.support-channels.is-compact .support-channel-value { font-size: 0.88rem; }
 .site-footer { border-top: 1px solid var(--line); padding: 36px 0; background: #ffffff; }
 .footer-inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 24px; align-items: start; }
 .footer-inner > * { min-width: 0; }
@@ -262,6 +386,7 @@ h3 { font-size: 1.18rem; }
   .phone-frame-left, .phone-frame-right { transform: none; opacity: 1; }
   .shot-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .support-channels { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -281,4 +406,6 @@ h3 { font-size: 1.18rem; }
   .hero-tagline span { white-space: normal; }
   .banner { padding: 26px; }
   .legal-card { padding: 24px; }
+  .operator-meta { grid-template-columns: 1fr; }
+  .operator-phone-actions { display: flex; margin: 8px 0 0; margin-left: 0; }
 }

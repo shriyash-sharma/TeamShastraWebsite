@@ -65,6 +65,11 @@ export const qeCredit = "Jagrati Mukati";
 export const legalJurisdiction = "India";
 export const supportEmail = "care@teamshastra.com";
 export const privacyEmail = "care@teamshastra.com";
+/** Public support / operator phone (India). */
+export const supportPhoneDisplay = "+91 76970 12040";
+export const supportPhoneE164 = "+917697012040";
+export const supportPhoneTel = `tel:${supportPhoneE164}`;
+export const supportPhoneWhatsApp = `https://wa.me/${supportPhoneE164.replace("+", "")}`;
 export const transactionalFromEmail = "noreply@mail.teamshastra.com";
 export const googleAnalyticsId = "G-QJ5430L068";
 /** Matches the live DNS TXT google-site-verification record. */
