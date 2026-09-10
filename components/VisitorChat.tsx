@@ -458,7 +458,7 @@ export function VisitorChat() {
                   required
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="98765 43210"
+                  placeholder="76970 12040"
                   autoComplete="tel"
                   inputMode="tel"
                 />
