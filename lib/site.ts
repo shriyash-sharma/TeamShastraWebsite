@@ -8,7 +8,7 @@ export const androidPackage = "com.teamshastra.mobile";
 export const playStoreUrl = `https://play.google.com/store/apps/details?id=${androidPackage}`;
 export const betaStatus =
   "TeamShastra is field service management software for owners, managers, and technicians.";
-export const legalUpdatedAt = "September 9, 2026";
+export const legalUpdatedAt = "September 24, 2026";
 
 /** Product capabilities used in listing copy, schema, and AI crawlers. */
 export const productFeatureList = [
@@ -17,10 +17,23 @@ export const productFeatureList = [
   "GST invoices, quotations, and payments",
   "Purchase bills and supplier balances",
   "Field expenses, cash float, and bank balances",
+  "Payroll: pay profiles, salary advances, monthly payroll runs",
   "Job, performance, and revenue reports",
   "Customers, AMC due visits, and optional customer portal",
+  "In-app and website customer support chat",
   "English, Hindi, Gujarati, Marathi, and Bengali"
 ];
+
+/** Plain-language pricing summary reused on the pricing page, Terms, and llms.txt. */
+export const pricingSummary = {
+  starterPrice: "Free",
+  paidPrice: "₹99 per user, per month, plus applicable GST",
+  trial: "1-month free trial on the Growth plan, no charge until the trial ends",
+  refundPolicy:
+    "Payments are non-refundable once a billing period starts, but you can cancel anytime to stop future billing",
+  cancellationPolicy:
+    "Paid access continues until the end of the current billing period, after which the workspace continues on the free Starter plan"
+};
 
 export const homeFaqs = [
   {
@@ -42,6 +55,16 @@ export const homeFaqs = [
     question: "Is TeamShastra available in Hindi and other Indian languages?",
     answer:
       "Yes. The app supports English, Hindi, Gujarati, Marathi, and Bengali."
+  },
+  {
+    question: "How much does TeamShastra cost?",
+    answer:
+      "The Starter plan is free. The Growth plan starts at ₹99 per user, per month (plus applicable GST), with a 1-month free trial before billing begins. Enterprise pricing is available on request. See teamshastra.com/pricing for details."
+  },
+  {
+    question: "Does TeamShastra offer payroll?",
+    answer:
+      "Yes. Owners can set per-employee pay profiles (monthly, daily, or hourly), record paid holidays and salary advances, and run monthly payroll from draft to locked to paid."
   },
   {
     question: "Does TeamShastra track GPS all day?",
@@ -185,9 +208,11 @@ export const marketingPages: Record<string, MarketingPage> = {
       { marker: "4", title: "GST invoices & quotations", text: "Catalog, quotations, GST tax invoices, payments, and pending collections. Share PDFs on WhatsApp. Export CA-ready GST workbooks (not GST portal filing)." },
       { marker: "5", title: "Purchases & suppliers", text: "Record purchase bills, track what you still owe suppliers, and keep sales and purchases in the same workspace." },
       { marker: "6", title: "Expenses, float & bank", text: "Log field expenses by person and category. Track cash given to staff (float) and bank balances next to collections." },
-      { marker: "7", title: "Reports", text: "Job summary, technician performance, and revenue views for owners and managers." },
-      { marker: "8", title: "Languages", text: "English, Hindi, Gujarati, Marathi, and Bengali — built for Indian field teams." },
-      { marker: "9", title: "Alerts & support", text: "Push notifications for jobs and comments. Chat with TeamShastra from the app, or start a visitor chat on this site with your email and mobile number." }
+      { marker: "7", title: "Payroll", text: "Owner-only payroll: per-employee pay profiles (monthly, daily, or hourly), paid holidays, salary advances, and one-off adjustments. Run monthly payroll from draft to locked to paid." },
+      { marker: "8", title: "Reports", text: "Job summary, technician performance, and revenue views for owners and managers." },
+      { marker: "9", title: "Languages", text: "English, Hindi, Gujarati, Marathi, and Bengali — built for Indian field teams." },
+      { marker: "10", title: "Alerts", text: "Push notifications for jobs and comments, tapping straight through to the relevant screen." },
+      { marker: "11", title: "Customer support", text: "Chat with TeamShastra from inside the app, or start a visitor chat on this site with your email and mobile number — a real person (or our support assistant) replies in the thread." }
     ],
     bannerTitle: "Create your company workspace.",
     bannerText: "Download on Google Play or sign up on the web at app.teamshastra.com. Use this site for product information, privacy, and support.",

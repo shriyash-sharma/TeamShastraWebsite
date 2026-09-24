@@ -12,10 +12,21 @@ TeamShastra helps field service teams run jobs, attendance, customers, quotation
 - CA-ready GST exports (not GST portal filing)
 - Purchase bills and supplier balances
 - Field expenses, cash float given to staff, and bank balances
+- Payroll: per-employee pay profiles (monthly/daily/hourly), paid holidays, salary advances, monthly payroll runs (draft to locked to paid), owner-only
 - Customers, AMC contracts, due visits, optional customer portal
+- Customer support: in-app chat for company staff, website visitor chat, staff callback notifications
 - Reports: job summary, technician performance, revenue
 - Languages: English, Hindi, Gujarati, Marathi, Bengali
 - Built for CCTV installers, electricians, maintenance teams, and similar B2B field businesses
+
+## Pricing
+
+- Starter plan: free
+- Growth plan: ₹99 per user per month, plus applicable GST, after a 1-month free trial
+- Refunds: payments are non-refundable once a billing period starts; cancel anytime to stop future billing
+- Cancellation: paid access continues until the end of the current billing period, then the workspace continues on the free Starter plan
+- Enterprise plan: contact us for custom pricing
+- Full details: https://teamshastra.com/pricing
 
 ## Download
 

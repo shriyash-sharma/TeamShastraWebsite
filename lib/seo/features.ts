@@ -168,6 +168,132 @@ export const features: FeatureProfile[] = [
       { title: "Job-linked operations", description: "Keep expenses in the same workspace as jobs, attendance, and invoices." },
       { title: "Owner reports", description: "Review spend and revenue without a separate spreadsheet." }
     ]
+  },
+  {
+    slug: "payroll-management",
+    name: "Payroll Management",
+    shortName: "Payroll",
+    headline: "Payroll Management Software",
+    description: "Run monthly payroll with per-employee pay profiles, salary advances, and locked pay runs.",
+    metaTitleSuffix: "Payroll Management Software",
+    metaDescriptionTemplate:
+      "Payroll management software for {city} field service teams. Per-employee pay profiles, paid holidays, salary advances, and monthly payroll runs from draft to paid.",
+    heroLead:
+      "Payroll built into the same workspace as attendance and jobs, so pay reflects the days your field team actually worked.",
+    focusAreas: ["Per-employee pay profiles", "Salary advances", "Paid holidays", "Draft-to-paid payroll runs"],
+    featureHighlights: [
+      { title: "Pay profiles", description: "Set monthly, daily, or hourly pay per employee, and change it over time as roles evolve." },
+      { title: "Salary advances", description: "Record advances paid by cash, UPI, or bank, and deduct them automatically from the next payout." },
+      { title: "Paid holidays", description: "Configure paid holidays so payroll reflects real working days, not just a flat monthly rate." },
+      { title: "Monthly payroll runs", description: "Generate payroll from attendance data, review as a draft, then lock and mark it paid." },
+      { title: "Owner-only visibility", description: "Payroll stays restricted to owners; managers and technicians never see pay data." },
+      { title: "Linked to attendance", description: "Payroll pulls from the same attendance and leave records already tracked for the team." }
+    ]
+  },
+  {
+    slug: "customer-portal",
+    name: "Customer Portal",
+    shortName: "Customer Portal",
+    headline: "Customer Portal Software",
+    description: "Give customers a self-serve view of the jobs, invoices, and visits you choose to share.",
+    metaTitleSuffix: "Customer Portal Software",
+    metaDescriptionTemplate:
+      "Customer portal software for {city} field service companies. Share selected job status, invoices, and visit history with customers without giving them full account access.",
+    heroLead:
+      "An optional customer-facing view so clients can check job status and history without a phone call to your office.",
+    focusAreas: ["Shared job visibility", "Invoice access", "Visit history", "Controlled access"],
+    featureHighlights: [
+      { title: "Selective sharing", description: "Choose which jobs and updates a customer can see — nothing is shared by default." },
+      { title: "Job status", description: "Customers see where their job stands without calling or messaging your team." },
+      { title: "Invoice visibility", description: "Share GST invoices and payment status directly with the customer." },
+      { title: "Visit history", description: "Customers can review past visits and completion reports for their own records." },
+      { title: "No extra app", description: "Customers access their portal view without installing a separate app." },
+      { title: "Reduced call volume", description: "Fewer status-check calls to your office and technicians." }
+    ]
+  },
+  {
+    slug: "amc-service-contracts",
+    name: "AMC & Service Contracts",
+    shortName: "AMC & Contracts",
+    headline: "AMC & Service Contract Management Software",
+    description: "Track annual maintenance contracts, renewal dates, and customers due for a visit.",
+    metaTitleSuffix: "AMC & Service Contract Management Software",
+    metaDescriptionTemplate:
+      "AMC and service contract software for {city} maintenance and installation businesses. Track contract renewals, due visits, and recurring service obligations in one place.",
+    heroLead:
+      "Stop tracking AMC renewals in a spreadsheet — see exactly which customers are due for a visit before they call to ask.",
+    focusAreas: ["Contract tracking", "Due-visit alerts", "Renewal visibility", "Service history"],
+    featureHighlights: [
+      { title: "AMC records", description: "Keep annual maintenance contract details against each customer, not in a separate file." },
+      { title: "Due-visit lists", description: "See which customers are due or overdue for a scheduled visit." },
+      { title: "Renewal visibility", description: "Track contract end dates so renewals don't get missed." },
+      { title: "Visit-linked history", description: "Every AMC visit connects back to the job history for that customer." },
+      { title: "Technician assignment", description: "Assign AMC visits to technicians the same way as any other job." },
+      { title: "Customer portal option", description: "Optionally let customers see their own contract and visit status." }
+    ]
+  },
+  {
+    slug: "purchase-supplier-management",
+    name: "Purchase & Supplier Management",
+    shortName: "Purchases",
+    headline: "Purchase & Supplier Management Software",
+    description: "Record purchase bills, track supplier balances, and see cash flow next to sales.",
+    metaTitleSuffix: "Purchase & Supplier Management Software",
+    metaDescriptionTemplate:
+      "Purchase and supplier management software for {city} field service businesses. Record purchase bills, track what you owe suppliers, and manage cash float and bank balances.",
+    heroLead:
+      "Keep purchases, supplier balances, and cash on hand in the same workspace as sales — not a separate ledger.",
+    focusAreas: ["Purchase bills", "Supplier balances", "Cash float", "Bank balances"],
+    featureHighlights: [
+      { title: "Purchase bills", description: "Record supplier bills as they come in, item by item." },
+      { title: "Supplier balances", description: "See what you still owe each supplier at a glance." },
+      { title: "Cash float", description: "Track cash handed to staff for field purchases and expenses." },
+      { title: "Bank balances", description: "View bank balances next to collections and payments, not in a separate app." },
+      { title: "Sales-linked view", description: "Compare what's coming in from sales against what's going out to suppliers." },
+      { title: "Owner reports", description: "Payables and cash position without exporting to a spreadsheet." }
+    ]
+  },
+  {
+    slug: "multi-language-support",
+    name: "Multi-language Support",
+    shortName: "Multi-language",
+    headline: "Multi-language Field Service Software",
+    description: "Run field operations in English, Hindi, Gujarati, Marathi, or Bengali.",
+    metaTitleSuffix: "Multi-language Field Service Software",
+    metaDescriptionTemplate:
+      "Field service software for {city} teams in their own language — English, Hindi, Gujarati, Marathi, or Bengali — so technicians work faster with less training.",
+    heroLead:
+      "Technicians work faster in the language they're comfortable in — TeamShastra supports five Indian languages out of the box.",
+    focusAreas: ["Regional-language app", "Technician onboarding", "Reduced training time", "Wider hiring pool"],
+    featureHighlights: [
+      { title: "Five languages", description: "English, Hindi, Gujarati, Marathi, and Bengali, switchable per user." },
+      { title: "Per-user setting", description: "Each team member picks their own language; it doesn't change what managers see." },
+      { title: "Faster onboarding", description: "New technicians start using the app without an English-fluency requirement." },
+      { title: "Same feature set", description: "Every language covers the same jobs, attendance, invoicing, and expense features." },
+      { title: "Wider hiring pool", description: "Hire and retain field staff who are more comfortable in a regional language." },
+      { title: "Consistent data", description: "Language is a display setting only — records stay consistent across the team." }
+    ]
+  },
+  {
+    slug: "customer-support-helpdesk",
+    name: "Customer Support & Help Desk",
+    shortName: "Customer Support",
+    headline: "Customer Support & Help Desk Software",
+    description: "In-app support chat for your team, plus a website chat for visitors and prospects.",
+    metaTitleSuffix: "Customer Support & Help Desk Software",
+    metaDescriptionTemplate:
+      "Customer support software for {city} field service businesses. In-app chat for your team and a website visitor chat, with staff notifications and callback requests.",
+    heroLead:
+      "A support thread inside the app your team already uses, plus a visitor chat on your own website for prospects.",
+    focusAreas: ["In-app support chat", "Website visitor chat", "Staff notifications", "Callback requests"],
+    featureHighlights: [
+      { title: "In-app chat", description: "Company staff message TeamShastra support directly from the app, no separate ticketing tool." },
+      { title: "Website visitor chat", description: "Prospects start a chat on this site with just an email and mobile number." },
+      { title: "Staff notifications", description: "Support replies and callback requests notify platform staff in-app and by push." },
+      { title: "Callback requests", description: "A customer can ask for a callback, which is tracked until a staff member marks it handled." },
+      { title: "Grounded auto-replies", description: "Common questions can get an instant answer sourced only from TeamShastra's own documentation." },
+      { title: "No lost threads", description: "Every conversation stays in one thread per company or visitor, not scattered across channels." }
+    ]
   }
 ];
 
