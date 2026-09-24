@@ -9,6 +9,7 @@ import {
   legalUpdatedAt,
   marketingUrl,
   pageMetadata,
+  pricingSummary,
   privacyUrl,
   supportEmail
 } from "@/lib/site";
@@ -76,7 +77,14 @@ export default function TermsPage() {
         },
         {
           title: "Fees and Refunds",
-          body: "Current access is offered without charge unless we expressly agree otherwise in writing. Paid plans, invoices, and refund rules will be published before paid billing begins. If you purchase a paid plan later, those then-current commercial terms will apply."
+          items: [
+            "The Starter plan is free.",
+            `The Growth plan includes ${pricingSummary.trial}. After the trial, the Growth plan is ${pricingSummary.paidPrice}, billed monthly in advance.`,
+            `Refunds: ${pricingSummary.refundPolicy}.`,
+            `Cancellation: ${pricingSummary.cancellationPolicy}.`,
+            "Enterprise plans are billed on separately agreed, written commercial terms.",
+            "We may change these fees for future billing periods with reasonable advance notice; continued use after a price change takes effect means you accept the new price for renewals from that point on."
+          ]
         },
         {
           title: "Intellectual Property",

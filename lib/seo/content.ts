@@ -4,6 +4,7 @@ import { getSolution } from "./solutions";
 import { buildCityFeatureSlug } from "./slugs";
 import { standardBenefits } from "./cities/tier1-part1";
 import { dedupeFeatureHighlights, mergeFeatureHighlights, platformFeatures } from "./feature-highlights";
+import { pricingSummary } from "@/lib/site";
 import type { FeatureProfile, SeoPageContent, SolutionPage, CityProfile } from "./types";
 
 function expandWhyParagraphs(city: CityProfile, feature: FeatureProfile): string[] {
@@ -51,6 +52,12 @@ function buildInternalLinks(
     links.push({ label: `GST invoicing in ${city.name}`, href: `/${buildCityFeatureSlug("gst-invoicing", city.slug)}` });
     links.push({ label: `Expense management in ${city.name}`, href: `/${buildCityFeatureSlug("expense-management", city.slug)}` });
     links.push({ label: `Workforce management in ${city.name}`, href: `/${buildCityFeatureSlug("workforce-management", city.slug)}` });
+    links.push({ label: `Payroll management in ${city.name}`, href: `/${buildCityFeatureSlug("payroll-management", city.slug)}` });
+    links.push({ label: `Customer portal in ${city.name}`, href: `/${buildCityFeatureSlug("customer-portal", city.slug)}` });
+    links.push({ label: `AMC & service contracts in ${city.name}`, href: `/${buildCityFeatureSlug("amc-service-contracts", city.slug)}` });
+    links.push({ label: `Purchase & supplier management in ${city.name}`, href: `/${buildCityFeatureSlug("purchase-supplier-management", city.slug)}` });
+    links.push({ label: `Multi-language support in ${city.name}`, href: `/${buildCityFeatureSlug("multi-language-support", city.slug)}` });
+    links.push({ label: `Customer support & help desk in ${city.name}`, href: `/${buildCityFeatureSlug("customer-support-helpdesk", city.slug)}` });
 
     links.push({ label: "Field service management software India", href: "/field-service-management-software-india" });
     links.push({ label: "GST invoicing software India", href: "/gst-invoicing-software-india" });
@@ -160,7 +167,7 @@ export function buildSolutionContent(solutionSlug: string): SeoPageContent | nul
     { question: "Is TeamShastra available across India?", answer: "Yes. TeamShastra supports businesses in metro cities, tier-2 industrial towns, and regional hubs with multi-branch management and offline-capable mobile apps." },
     { question: "How long does implementation take?", answer: "Most businesses begin with a pilot team in 1–2 weeks and expand to additional branches or cities over 4–8 weeks depending on team size." },
     { question: "Does TeamShastra work on Android?", answer: "Yes. TeamShastra offers Android and web access with PWA support for field staff." },
-    { question: "Can I start with a free trial?", answer: "Yes. Sign up at app.teamshastra.com to create a company workspace and start using TeamShastra. Paid plans will be published before billed access begins." }
+    { question: "Can I start with a free trial?", answer: `Yes. The Starter plan is free, and the Growth plan includes ${pricingSummary.trial}. Sign up at app.teamshastra.com to create a company workspace.` }
   ];
 
   return {
