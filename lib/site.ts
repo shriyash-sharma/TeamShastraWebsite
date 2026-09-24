@@ -114,23 +114,6 @@ export const navItems = [
   { label: "Contact", href: "/contact" }
 ];
 
-export const footerItems = [
-  { label: "Features", href: "/features" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Locations", href: "/locations" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms", href: "/terms" },
-  { label: "Cookies", href: "/cookies" },
-  { label: "Account Deletion", href: "/account-deletion" },
-  { label: "Open App", href: appUrl },
-  { label: "Get it on Google Play", href: playStoreUrl },
-  { label: "Login", href: loginUrl },
-  { label: "Get started", href: signupUrl }
-];
-
 export const pages = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },
   { path: "/features", priority: 0.9, changeFrequency: "monthly" as const },

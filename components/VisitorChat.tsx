@@ -3,6 +3,9 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent, type PointerEvent } from "react";
 import Link from "next/link";
 import { supportApiBase } from "@/lib/api";
+import { homeFaqs } from "@/lib/site";
+
+const QUICK_FAQS = homeFaqs.slice(0, 5);
 
 const STORAGE_KEY = "ts_visitor_support_v1";
 const POSITION_KEY = "ts_visitor_chat_pos_v1";
@@ -378,6 +381,16 @@ export function VisitorChat() {
   }
 
   const moved = Boolean(open && position);
+  const [nudge, setNudge] = useState(false);
+
+  useEffect(() => {
+    if (open || session) {
+      setNudge(false);
+      return;
+    }
+    const timer = window.setTimeout(() => setNudge(true), 4000);
+    return () => window.clearTimeout(timer);
+  }, [open, session]);
 
   return (
     <div
@@ -423,9 +436,18 @@ export function VisitorChat() {
           </header>
           {!session ? (
             <form className="visitor-chat-form" onSubmit={(e) => void startChat(e)}>
+              <div className="visitor-chat-quick-faq">
+                <p className="visitor-chat-quick-faq-title">⚡ Instant answers — tap a question</p>
+                {QUICK_FAQS.map((faq) => (
+                  <details key={faq.question} className="visitor-chat-faq-item">
+                    <summary>{faq.question}</summary>
+                    <p>{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
               <p>
-                Tell us how to reach you, then start chatting. A TeamShastra admin will see this as a
-                visitor conversation.
+                Need more help? Tell us how to reach you, then start chatting. A TeamShastra admin will
+                see this as a visitor conversation.
               </p>
               <label>
                 Name <span>(optional)</span>
@@ -570,24 +592,38 @@ export function VisitorChat() {
       ) : null}
       <button
         type="button"
-        className="visitor-chat-launch"
+        className={`visitor-chat-launch${!open && nudge ? " is-nudging" : ""}`}
         onClick={() => setOpen((value) => !value)}
         data-testid="visitor-chat-launch"
         aria-expanded={open}
       >
+        {!open ? <span className="visitor-chat-launch-ring" aria-hidden="true" /> : null}
         <span className="visitor-chat-launch-icon" aria-hidden="true">
           {open ? (
             "×"
           ) : (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path
                 d="M5 6.8A2.8 2.8 0 0 1 7.8 4h8.4A2.8 2.8 0 0 1 19 6.8v6.4A2.8 2.8 0 0 1 16.2 16H10l-4.2 3.2A.8.8 0 0 1 4.5 18.6V6.8Z"
                 fill="currentColor"
               />
+              <circle cx="8.6" cy="9.8" r="1" fill="var(--brand)" />
+              <circle cx="12" cy="9.8" r="1" fill="var(--brand)" />
+              <circle cx="15.4" cy="9.8" r="1" fill="var(--brand)" />
             </svg>
           )}
         </span>
-        <span>{open ? "Close" : "Chat with us"}</span>
+        {open ? (
+          <span>Close</span>
+        ) : (
+          <span className="visitor-chat-launch-text">
+            <strong>Chat with us</strong>
+            <em>
+              <span className="visitor-chat-launch-live" aria-hidden="true" />
+              Online now
+            </em>
+          </span>
+        )}
       </button>
     </div>
   );
