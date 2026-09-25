@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type FormEvent, type PointerEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type PointerEvent } from "react";
 import Link from "next/link";
 import { supportApiBase } from "@/lib/api";
 import { homeFaqs } from "@/lib/site";
@@ -20,8 +20,8 @@ type Session = {
   conversation_id: string;
   session_token: string;
   visitor_name?: string | null;
-  visitor_email: string;
-  visitor_phone: string;
+  visitor_email?: string | null;
+  visitor_phone?: string | null;
 };
 
 type ChatMessage = {
@@ -101,11 +101,7 @@ export function VisitorChat() {
   const [open, setOpen] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
   const [draft, setDraft] = useState("");
-  const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [showCallback, setShowCallback] = useState(false);
   const [callbackSent, setCallbackSent] = useState(false);
@@ -314,39 +310,58 @@ export function VisitorChat() {
     return () => window.clearTimeout(timer);
   }, [messages, session, callbackSent]);
 
-  async function startChat(event: FormEvent) {
-    event.preventDefault();
-    setBusy(true);
-    setError("");
-    try {
+  // Chat used to be gated behind a name/email/phone form before the first
+  // message could be sent. It now starts anonymously the moment the panel
+  // opens — the bot asks for name/number conversationally instead (see
+  // backend/app/services/support_rag). ensureSession lazily creates (or
+  // reuses, via sessionPromiseRef, if a start call is already in flight)
+  // the visitor session with no identity info required.
+  const sessionPromiseRef = useRef<Promise<Session> | null>(null);
+
+  const ensureSession = useCallback(async (): Promise<Session> => {
+    if (session) return session;
+    if (sessionPromiseRef.current) return sessionPromiseRef.current;
+    const promise = (async () => {
       const resp = await fetch(`${supportApiBase}/visitor/start`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: name.trim() || undefined,
-          email: email.trim(),
-          phone: phone.trim()
-        })
+        body: JSON.stringify({})
       });
       const data = await resp.json();
       if (!resp.ok) {
-        setError(errorMessage(data, "Could not start chat. Try again."));
-        return;
+        throw new Error(errorMessage(data, "Could not start chat. Try again."));
       }
       const next = data as Session;
       saveSession(next);
       setSession(next);
-    } catch {
-      setError("Could not reach TeamShastra. Try again in a moment.");
+      return next;
+    })();
+    sessionPromiseRef.current = promise;
+    try {
+      return await promise;
     } finally {
-      setBusy(false);
+      sessionPromiseRef.current = null;
     }
-  }
+  }, [session]);
+
+  useEffect(() => {
+    if (!open || session) return;
+    setError("");
+    ensureSession().catch(() => {
+      setError("Could not reach TeamShastra. Try again in a moment.");
+    });
+  }, [open, session, ensureSession]);
 
   async function send(body: string) {
-    if (!session) return;
     const text = body.trim();
     if (!text) return;
+    let activeSession: Session;
+    try {
+      activeSession = await ensureSession();
+    } catch {
+      setError("Could not reach TeamShastra. Try again in a moment.");
+      return;
+    }
     stickToBottomRef.current = true;
     const localId = `local-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     const optimistic: ChatMessage = {
@@ -365,7 +380,7 @@ export function VisitorChat() {
     try {
       const resp = await fetch(`${supportApiBase}/visitor/messages`, {
         method: "POST",
-        headers: headers(session.session_token),
+        headers: headers(activeSession.session_token),
         body: JSON.stringify({ body: text })
       });
       const data = await resp.json();
@@ -449,81 +464,15 @@ export function VisitorChat() {
               ×
             </button>
           </header>
-          {!session ? (
-            <form className="visitor-chat-form" onSubmit={(e) => void startChat(e)}>
-              <div className="visitor-chat-quick-faq">
-                <p className="visitor-chat-quick-faq-title">⚡ Instant answers — tap a question</p>
-                {QUICK_FAQS.map((faq) => (
-                  <details key={faq.question} className="visitor-chat-faq-item">
-                    <summary>{faq.question}</summary>
-                    <p>{faq.answer}</p>
-                  </details>
-                ))}
-              </div>
-              <p>
-                Need more help? Tell us how to reach you, then start chatting. A TeamShastra admin will
-                see this as a visitor conversation.
-              </p>
-              <label>
-                Name <span>(optional)</span>
-                <input
-                  data-testid="visitor-chat-name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  maxLength={80}
-                  placeholder="Your name"
-                  autoComplete="name"
-                />
-              </label>
-              <label>
-                Email
-                <input
-                  data-testid="visitor-chat-email"
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@company.com"
-                  autoComplete="email"
-                />
-              </label>
-              <label>
-                Mobile number
-                <input
-                  data-testid="visitor-chat-phone"
-                  type="tel"
-                  required
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="76970 12040"
-                  autoComplete="tel"
-                  inputMode="tel"
-                />
-                <em className="visitor-chat-hint">10-digit Indian mobile, or include country code</em>
-              </label>
-              {error ? (
-                <p className="visitor-chat-error" data-testid="visitor-chat-error">
-                  {error}
-                </p>
-              ) : null}
-              <button
-                className="button primary visitor-chat-cta"
-                type="submit"
-                disabled={busy}
-                data-testid="visitor-chat-start"
-              >
-                {busy ? "Connecting…" : "Start chat"}
-              </button>
-              <p className="visitor-chat-legal">
-                By starting, you agree we may use this email and number to reply.{" "}
-                <Link href="/privacy">Privacy</Link>
-              </p>
-            </form>
-          ) : (
-            <>
+          {/* Chat opens straight into the thread — no name/email/phone form.
+              ensureSession creates the (anonymous) session in the background
+              the moment the panel opens; the bot asks for a name/number
+              itself once the visitor's engaged (see backend bot_reply.py). */}
+          <>
               <div className="visitor-chat-meta">
                 <span>
-                  Chatting as <strong>{session.visitor_email}</strong>
+                  Chatting with{" "}
+                  <strong>{session?.visitor_email || session?.visitor_phone || "TeamShastra"}</strong>
                 </span>
                 <button type="button" className="visitor-chat-reset" onClick={resetSession}>
                   New chat
@@ -536,11 +485,25 @@ export function VisitorChat() {
                 onScroll={handleMessagesScroll}
               >
                 {messages.length === 0 ? (
-                  <div className="visitor-bubble theirs">
-                    Hi{session.visitor_name ? ` ${session.visitor_name}` : ""} — how can we help
-                    your field team today?
-                    <span className="visitor-bubble-time">Now</span>
-                  </div>
+                  <>
+                    <div className="visitor-bubble theirs">
+                      Hey! 👋 Thanks for stopping by TeamShastra. I can walk you through what the
+                      app does, pricing, or anything else — what's your name, and what kind of work
+                      does your team do?
+                      <span className="visitor-bubble-time">Now</span>
+                    </div>
+                    <div className="visitor-chat-quick-faq">
+                      <p className="visitor-chat-quick-faq-title">
+                        ⚡ Instant answers — tap a question
+                      </p>
+                      {QUICK_FAQS.map((faq) => (
+                        <details key={faq.question} className="visitor-chat-faq-item">
+                          <summary>{faq.question}</summary>
+                          <p>{faq.answer}</p>
+                        </details>
+                      ))}
+                    </div>
+                  </>
                 ) : null}
                 {messages.map((msg) => {
                   const mine = !msg.sender_is_staff && msg.sender_kind !== "staff";
@@ -559,7 +522,7 @@ export function VisitorChat() {
                 })}
                 <div ref={bottomRef} />
               </div>
-              {showCallback && !callbackSent ? (
+              {session && showCallback && !callbackSent && session.visitor_phone ? (
                 <button
                   type="button"
                   className="visitor-chat-callback"
@@ -573,13 +536,17 @@ export function VisitorChat() {
                 </button>
               ) : null}
               {callbackSent ? (
-                <p className="visitor-chat-note">We will call you back on {session.visitor_phone}.</p>
+                <p className="visitor-chat-note">We will call you back on {session?.visitor_phone}.</p>
               ) : null}
               {error ? (
                 <p className="visitor-chat-error" data-testid="visitor-chat-error">
                   {error}
                 </p>
               ) : null}
+              <p className="visitor-chat-legal">
+                By chatting, you agree we may use details you share to reply.{" "}
+                <Link href="/privacy">Privacy</Link>
+              </p>
               <form
                 className="visitor-chat-composer"
                 onSubmit={(e) => {
@@ -607,7 +574,6 @@ export function VisitorChat() {
                 </button>
               </form>
             </>
-          )}
         </section>
       ) : null}
       <button
