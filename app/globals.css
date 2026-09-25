@@ -439,7 +439,21 @@ h3 { font-size: 1.18rem; }
 @media (max-width: 720px) {
   .cookie-banner-inner { grid-template-columns: 1fr; }
   .visitor-chat { right: 12px; bottom: 12px; }
-  .visitor-chat-panel { width: min(340px, calc(100vw - 24px)); max-height: min(480px, calc(100vh - 120px)); max-height: min(480px, calc(100dvh - 120px)); }
+  .visitor-chat.is-open .visitor-chat-launch { display: none; }
+  .visitor-chat-panel {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 60;
+  }
+  .visitor-chat-composer { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+  .visitor-chat-close { width: 40px; height: 40px; font-size: 1.5rem; }
   .site-footer { padding-bottom: 88px; }
 }
 
