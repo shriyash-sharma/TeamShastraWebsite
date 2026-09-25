@@ -5,17 +5,15 @@ test.beforeEach(async ({ page }) => {
   await dismissCookies(page);
 });
 
-test("visitor can open chat, start a thread, and send a message", async ({ page }) => {
+test("visitor can open chat and send a message immediately, no form", async ({ page }) => {
   await openVisitorChat(page);
   await expect(page.getByText(/Usually replies in a few minutes/i)).toBeVisible();
 
-  await page.getByTestId("visitor-chat-name").fill("Website E2E");
-  await page.getByTestId("visitor-chat-email").fill("e2e.website.chat@teamshastra.com");
-  await page.getByTestId("visitor-chat-phone").fill("7697012040");
-  await page.getByTestId("visitor-chat-start").click();
-
+  // No name/email/phone form — the thread + composer are there right away.
   await expect(page.getByTestId("visitor-chat-thread")).toBeVisible({ timeout: 20_000 });
-  await expect(page.getByText(/e2e.website.chat@teamshastra.com/i)).toBeVisible();
+  await expect(page.getByTestId("visitor-chat-name")).toHaveCount(0);
+  await expect(page.getByTestId("visitor-chat-email")).toHaveCount(0);
+  await expect(page.getByTestId("visitor-chat-start")).toHaveCount(0);
 
   const body = `E2E ping ${new Date().toISOString()}`;
   await page.getByTestId("visitor-chat-input").fill(body);
@@ -25,10 +23,13 @@ test("visitor can open chat, start a thread, and send a message", async ({ page 
   });
 });
 
-test("chat start validates email", async ({ page }) => {
+test("visitor can volunteer a mobile number as a normal chat message", async ({ page }) => {
   await openVisitorChat(page);
-  await page.getByTestId("visitor-chat-email").fill("not-an-email");
-  await page.getByTestId("visitor-chat-phone").fill("7697012040");
-  await page.getByTestId("visitor-chat-start").click();
-  await expect(page.getByTestId("visitor-chat-thread")).toHaveCount(0);
+  await expect(page.getByTestId("visitor-chat-thread")).toBeVisible({ timeout: 20_000 });
+
+  await page.getByTestId("visitor-chat-input").fill("call me on 9876543210");
+  await page.getByTestId("visitor-chat-send").click();
+  await expect(
+    page.getByTestId("visitor-chat-mine").filter({ hasText: "9876543210" })
+  ).toBeVisible({ timeout: 20_000 });
 });
