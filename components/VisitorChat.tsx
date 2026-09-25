@@ -110,6 +110,8 @@ export function VisitorChat() {
   const [showCallback, setShowCallback] = useState(false);
   const [callbackSent, setCallbackSent] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const messagesRef = useRef<HTMLDivElement>(null);
+  const stickToBottomRef = useRef(true);
   const inputRef = useRef<HTMLInputElement>(null);
   const rootRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef<ChatPosition | null>(null);
@@ -262,7 +264,19 @@ export function VisitorChat() {
   }, [open, session, refreshMessages]);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (open) stickToBottomRef.current = true;
+  }, [open]);
+
+  function handleMessagesScroll() {
+    const el = messagesRef.current;
+    if (!el) return;
+    const distanceFromBottom = el.scrollHeight - el.scrollTop - el.clientHeight;
+    stickToBottomRef.current = distanceFromBottom < 48;
+  }
+
+  useEffect(() => {
+    if (!stickToBottomRef.current) return;
+    bottomRef.current?.scrollIntoView({ block: "end" });
   }, [messages, open]);
 
   useEffect(() => {
@@ -333,6 +347,7 @@ export function VisitorChat() {
     if (!session) return;
     const text = body.trim();
     if (!text) return;
+    stickToBottomRef.current = true;
     const localId = `local-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     const optimistic: ChatMessage = {
       id: localId,
@@ -395,7 +410,7 @@ export function VisitorChat() {
   return (
     <div
       ref={rootRef}
-      className={`visitor-chat${moved ? " is-moved" : ""}${dragging ? " is-dragging" : ""}`}
+      className={`visitor-chat${moved ? " is-moved" : ""}${dragging ? " is-dragging" : ""}${open ? " is-open" : ""}`}
       style={open && position ? { left: position.left, top: position.top } : undefined}
     >
       {open ? (
@@ -514,7 +529,12 @@ export function VisitorChat() {
                   New chat
                 </button>
               </div>
-              <div className="visitor-chat-messages" data-testid="visitor-chat-thread">
+              <div
+                className="visitor-chat-messages"
+                data-testid="visitor-chat-thread"
+                ref={messagesRef}
+                onScroll={handleMessagesScroll}
+              >
                 {messages.length === 0 ? (
                   <div className="visitor-bubble theirs">
                     Hi{session.visitor_name ? ` ${session.visitor_name}` : ""} — how can we help
