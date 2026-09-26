@@ -1,11 +1,27 @@
 import type { Metadata } from "next";
-import { betaStatus, loginUrl, pageMetadata, playStoreUrl, pricingSummary, signupUrl } from "@/lib/site";
+import Link from "next/link";
+import { SeoFaq } from "@/components/seo/SeoFaq";
+import { betaStatus, loginUrl, pageMetadata, playStoreUrl, pricingFaqs, pricingSummary, signupUrl } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata(
   "/pricing",
   "Pricing | TeamShastra",
   "TeamShastra pricing: Starter is free. Growth starts at ₹99 per user per month (plus GST) after a 1-month free trial. Enterprise pricing on request."
 );
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      mainEntity: pricingFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer }
+      }))
+    }
+  ]
+};
 
 const plans = [
   {
@@ -36,6 +52,7 @@ const plans = [
 export default function PricingPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <section className="page-hero">
         <div className="section-inner">
           <span className="eyebrow">Pricing</span>
@@ -86,8 +103,13 @@ export default function PricingPage() {
             <li>Cancellation: {pricingSummary.cancellationPolicy}.</li>
             <li>Enterprise plans are billed on separately agreed, written commercial terms.</li>
           </ul>
+          <p>
+            Already using a shop billing app? See <Link href="/vyapar-alternative">how TeamShastra compares to Vyapar</Link>{" "}
+            and import your data.
+          </p>
         </div>
       </section>
+      <SeoFaq items={pricingFaqs} title="Pricing FAQs" />
     </main>
   );
 }

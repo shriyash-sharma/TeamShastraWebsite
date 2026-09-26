@@ -3,11 +3,12 @@ import type { FaqItem } from "@/lib/seo/types";
 type Props = {
   items: FaqItem[];
   title?: string;
+  id?: string;
 };
 
-export function SeoFaq({ items, title = "Frequently asked questions" }: Props) {
+export function SeoFaq({ items, title = "Frequently asked questions", id = "faq" }: Props) {
   return (
-    <section className="section" id="faq">
+    <section className="section" id={id}>
       <div className="section-inner">
         <div className="section-head">
           <h2>{title}</h2>

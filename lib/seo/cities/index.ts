@@ -1,17 +1,10 @@
-import { tier1Cities } from "./tier1-part1";
-import { tier1CitiesPart2 } from "./tier1-part2";
-import { tier2Cities } from "./tier2-part1";
-import { tier2CitiesPart2 } from "./tier2-part2";
-import { tier2CitiesPart3 } from "./tier2-part3";
+import { tier1Cities, standardBenefits } from "./tier1";
+import { tier2Cities } from "./tier2";
 import type { CityProfile } from "../types";
 
-export const cities: CityProfile[] = [
-  ...tier1Cities,
-  ...tier1CitiesPart2,
-  ...tier2Cities,
-  ...tier2CitiesPart2,
-  ...tier2CitiesPart3
-];
+export { standardBenefits };
+
+export const cities: CityProfile[] = [...tier1Cities, ...tier2Cities];
 
 export const cityMap = Object.fromEntries(cities.map((c) => [c.slug, c])) as Record<string, CityProfile>;
 

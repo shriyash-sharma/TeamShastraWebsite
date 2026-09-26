@@ -1,8 +1,7 @@
-import { getCity } from "./cities";
-import { featureMap } from "./features";
+import { getCity, standardBenefits } from "./cities";
+import { featureMap, localSeoFeatureSlugs } from "./features";
 import { getSolution } from "./solutions";
 import { buildCityFeatureSlug } from "./slugs";
-import { standardBenefits } from "./cities/tier1-part1";
 import { dedupeFeatureHighlights, mergeFeatureHighlights, platformFeatures } from "./feature-highlights";
 import { pricingSummary } from "@/lib/site";
 import type { FeatureProfile, SeoPageContent, SolutionPage, CityProfile } from "./types";
@@ -43,21 +42,12 @@ function buildInternalLinks(
   ];
 
   if (type === "city-feature") {
-    links.push({ label: `Field service management in ${city.name}`, href: `/${buildCityFeatureSlug("field-service-management", city.slug)}` });
-    links.push({ label: `Attendance management in ${city.name}`, href: `/${buildCityFeatureSlug("attendance-management", city.slug)}` });
-    links.push({ label: `Work order management in ${city.name}`, href: `/${buildCityFeatureSlug("work-order-management", city.slug)}` });
-    links.push({ label: `Employee tracking in ${city.name}`, href: `/${buildCityFeatureSlug("employee-tracking", city.slug)}` });
-    links.push({ label: `Service management in ${city.name}`, href: `/${buildCityFeatureSlug("service-management", city.slug)}` });
-
-    links.push({ label: `GST invoicing in ${city.name}`, href: `/${buildCityFeatureSlug("gst-invoicing", city.slug)}` });
-    links.push({ label: `Expense management in ${city.name}`, href: `/${buildCityFeatureSlug("expense-management", city.slug)}` });
-    links.push({ label: `Workforce management in ${city.name}`, href: `/${buildCityFeatureSlug("workforce-management", city.slug)}` });
-    links.push({ label: `Payroll management in ${city.name}`, href: `/${buildCityFeatureSlug("payroll-management", city.slug)}` });
-    links.push({ label: `Customer portal in ${city.name}`, href: `/${buildCityFeatureSlug("customer-portal", city.slug)}` });
-    links.push({ label: `AMC & service contracts in ${city.name}`, href: `/${buildCityFeatureSlug("amc-service-contracts", city.slug)}` });
-    links.push({ label: `Purchase & supplier management in ${city.name}`, href: `/${buildCityFeatureSlug("purchase-supplier-management", city.slug)}` });
-    links.push({ label: `Multi-language support in ${city.name}`, href: `/${buildCityFeatureSlug("multi-language-support", city.slug)}` });
-    links.push({ label: `Customer support & help desk in ${city.name}`, href: `/${buildCityFeatureSlug("customer-support-helpdesk", city.slug)}` });
+    for (const localFeatureSlug of localSeoFeatureSlugs) {
+      const localFeature = featureMap[localFeatureSlug];
+      if (localFeature && localFeatureSlug !== feature.slug) {
+        links.push({ label: `${localFeature.name} in ${city.name}`, href: `/${buildCityFeatureSlug(localFeatureSlug, city.slug)}` });
+      }
+    }
 
     links.push({ label: "Field service management software India", href: "/field-service-management-software-india" });
     links.push({ label: "GST invoicing software India", href: "/gst-invoicing-software-india" });
@@ -82,7 +72,6 @@ function buildInternalLinks(
     for (const citySlug of solution.relatedCitySlugs) {
       const c = getCity(citySlug);
       if (c) {
-        links.push({ label: `Workforce management in ${c.name}`, href: `/${buildCityFeatureSlug("workforce-management", citySlug)}` });
         links.push({ label: `Field service in ${c.name}`, href: `/${buildCityFeatureSlug("field-service-management", citySlug)}` });
         links.push({ label: `GST invoicing in ${c.name}`, href: `/${buildCityFeatureSlug("gst-invoicing", citySlug)}` });
       }
@@ -136,7 +125,7 @@ export function buildCityFeatureContent(featureSlug: string, citySlug: string): 
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Locations", href: "/locations" },
-      { label: city.name, href: `/${buildCityFeatureSlug("workforce-management", citySlug)}` },
+      { label: city.name, href: `/${buildCityFeatureSlug("field-service-management", citySlug)}` },
       { label: feature.shortName }
     ],
     whyTitle: `Why businesses in ${city.name} need TeamShastra`,

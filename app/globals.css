@@ -488,6 +488,13 @@ h3 { font-size: 1.18rem; }
 .seo-faq-item summary { cursor: pointer; font-weight: 760; color: var(--ink); list-style: none; }
 .seo-faq-item summary::-webkit-details-marker { display: none; }
 .seo-faq-item p { margin: 12px 0 0; color: var(--muted); }
+
+.comparison-table { width: 100%; border-collapse: collapse; min-width: 640px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.comparison-table th, .comparison-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+.comparison-table thead th { background: var(--soft); font-weight: 760; color: var(--ink); }
+.comparison-table tbody th { font-weight: 600; color: var(--ink); white-space: nowrap; }
+.comparison-table tbody td { color: var(--muted); }
+.comparison-table tbody tr:last-child th, .comparison-table tbody tr:last-child td { border-bottom: none; }
 .seo-internal-links { display: flex; flex-wrap: wrap; gap: 10px 16px; }
 .seo-internal-links a { color: var(--brand-dark); font-weight: 650; font-size: 0.92rem; text-decoration: underline; text-underline-offset: 3px; }
 .seo-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }

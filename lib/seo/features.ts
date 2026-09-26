@@ -6,18 +6,17 @@ export const features: FeatureProfile[] = [
     name: "Workforce Management",
     shortName: "Workforce",
     headline: "Workforce Management Software",
-    description: "Coordinate attendance, shifts, field teams, and daily operations from one platform.",
+    description: "Coordinate attendance, jobs, field teams, and daily operations from one platform.",
     metaTitleSuffix: "Workforce Management Software",
     metaDescriptionTemplate:
       "TeamShastra workforce management software helps {city} businesses track attendance, assign jobs, issue GST invoices, and manage field expenses.",
     heroLead:
       "Modern workforce management platform trusted by growing businesses coordinating distributed teams, site visits, and daily operations.",
-    focusAreas: ["Attendance & shifts", "Field team visibility", "Work order dispatch", "Operational reporting"],
+    focusAreas: ["Attendance & leave", "Field team visibility", "Work order assignment", "Operational reporting"],
     featureHighlights: [
-      { title: "GPS attendance", description: "Verify check-ins at customer sites, branches, and project locations across the city." },
-      { title: "Geofencing", description: "Define site boundaries so attendance and job start events are captured automatically." },
-      { title: "Shift management", description: "Plan rosters for security, maintenance, delivery, and multi-shift manufacturing teams." },
-      { title: "Leave management", description: "Track approvals and availability so dispatchers always know who is on duty." },
+      { title: "GPS attendance", description: "Verify check-in and check-out at punch time — no continuous background tracking." },
+      { title: "Office geofencing", description: "Optionally validate attendance within an approved office radius." },
+      { title: "Leave management", description: "Track approvals and availability so managers always know who is on duty." },
       { title: "Work orders", description: "Assign, track, and close jobs with status updates visible to managers and customers." },
       { title: "Offline sync", description: "Field teams in low-connectivity areas can continue working and sync when back online." }
     ]
@@ -35,10 +34,10 @@ export const features: FeatureProfile[] = [
       "End-to-end field service platform for businesses that send technicians, engineers, and service staff to customer locations every day.",
     focusAreas: ["Technician dispatch", "GST invoicing", "Digital service reports", "Field expenses"],
     featureHighlights: [
-      { title: "Technician tracking", description: "See where field staff are, what jobs are in progress, and which visits need reassignment." },
-      { title: "Smart dispatch", description: "Balance workloads and route the right technician based on skills, proximity, and availability." },
-      { title: "Digital service reports", description: "Replace paper job sheets with structured reports, photos, and customer sign-off." },
-      { title: "Preventive maintenance", description: "Schedule recurring service visits for AMC contracts, utilities, and facility clients." },
+      { title: "Job status visibility", description: "See what jobs are in progress, completed, or need reassignment on today's board." },
+      { title: "Manual dispatch", description: "Assign jobs to technicians based on availability and workload." },
+      { title: "Digital service reports", description: "Replace paper job sheets with structured reports and before/after photos." },
+      { title: "AMC due visits", description: "Schedule recurring service visits and convert due AMC visits into jobs with one tap." },
       { title: "GST invoices", description: "Create quotations and GST tax invoices, record payments, and share PDFs on WhatsApp." },
       { title: "Field expenses", description: "Log technician spend, cash float, and purchase bills next to the job." },
     ]
@@ -48,19 +47,19 @@ export const features: FeatureProfile[] = [
     name: "Attendance Management",
     shortName: "Attendance",
     headline: "Attendance Management Software",
-    description: "Track employee attendance with GPS, geofencing, shifts, and leave workflows.",
+    description: "Track employee attendance with GPS punch-in/out, optional office geofencing, and leave workflows.",
     metaTitleSuffix: "Attendance Management Software",
     metaDescriptionTemplate:
-      "Attendance management software for {city} businesses. GPS check-in, geofencing, shift planning, and leave tracking for field and site teams.",
+      "Attendance management software for {city} businesses. GPS check-in, optional office geofencing, and leave tracking for field teams.",
     heroLead:
-      "Accurate attendance tracking for distributed teams that work across offices, warehouses, customer sites, and remote locations.",
-    focusAreas: ["GPS check-in", "Geofencing", "Shift rosters", "Leave workflows"],
+      "Accurate attendance tracking for distributed teams that work across offices, customer sites, and job locations.",
+    focusAreas: ["GPS check-in", "Office geofencing", "Leave workflows", "Attendance reports"],
     featureHighlights: [
-      { title: "GPS attendance", description: "Capture location-verified punch-in and punch-out for field and site-based staff." },
-      { title: "Geofencing", description: "Restrict or validate attendance within approved work zones and client premises." },
-      { title: "Shift management", description: "Create rotating shifts for security, housekeeping, manufacturing, and 24/7 operations." },
+      { title: "GPS attendance", description: "Capture location-verified punch-in and punch-out at check-in and check-out — not continuous background tracking." },
+      { title: "Office geofencing", description: "Optionally validate attendance within an approved office radius." },
+      { title: "Offline check-in", description: "Attendance keeps working without signal and syncs when connectivity returns." },
       { title: "Leave management", description: "Manage leave requests, balances, and approvals without spreadsheet chaos." },
-      { title: "Role-based permissions", description: "Give supervisors visibility by team, branch, or business unit." },
+      { title: "Role-based permissions", description: "Give managers visibility by team without exposing payroll data." },
       { title: "Attendance reports", description: "Export daily, weekly, and monthly attendance for payroll and compliance review." }
     ]
   },
@@ -75,13 +74,13 @@ export const features: FeatureProfile[] = [
       "Work order management software for {city} operations teams. Assign jobs, track progress, capture proof of work, and improve completion rates.",
     heroLead:
       "Digital work order system for maintenance, installation, and service teams that need clear accountability from assignment to closure.",
-    focusAreas: ["Job assignment", "Status tracking", "Photo evidence", "Customer sign-off"],
+    focusAreas: ["Job assignment", "Status tracking", "Photo evidence", "Completion reports"],
     featureHighlights: [
       { title: "Digital work orders", description: "Replace WhatsApp messages and paper chits with structured, trackable job tickets." },
-      { title: "Assignment rules", description: "Route jobs to the right technician based on territory, skill, or priority." },
+      { title: "Manager assignment", description: "Managers assign jobs to technicians and reassign as priorities change." },
       { title: "Photo reports", description: "Attach before/after photos and notes so managers can verify work quality remotely." },
-      { title: "Customer signatures", description: "Capture digital acceptance at site for AMC, installation, and repair jobs." },
-      { title: "SLA tracking", description: "Monitor response and resolution times for enterprise and facility clients." },
+      { title: "Completion report PDFs", description: "Share a completion report PDF after a job closes." },
+      { title: "Status lifecycle", description: "Track jobs from assigned to in progress to completed, with reopen and cancel paths." },
       { title: "Work order history", description: "Maintain a searchable record of past jobs, parts used, and technician notes." }
     ]
   },
@@ -90,20 +89,20 @@ export const features: FeatureProfile[] = [
     name: "Employee Tracking",
     shortName: "Employee Tracking",
     headline: "Employee Tracking Software",
-    description: "Visibility into field job status and visit check-ins, job progress, and daily activity.",
+    description: "Visibility into field job status, attendance check-ins, and daily activity — without all-day GPS tracking.",
     metaTitleSuffix: "Employee Tracking Software",
     metaDescriptionTemplate:
-      "Employee tracking software for {city} field teams. Monitor site visits, job progress, attendance, and daily activity in real time.",
+      "Employee tracking software for {city} field teams. See job status, punch-time attendance check-ins, and daily activity — no continuous background tracking.",
     heroLead:
-      "Field visit verification for sales, service, delivery, and inspection teams that spend most of the day away from the office.",
-    focusAreas: ["Live location", "Visit verification", "Route history", "Activity logs"],
+      "Job and attendance visibility for field service teams that spend most of the day away from the office, without continuous background GPS tracking.",
+    focusAreas: ["Job status", "Punch-time check-ins", "Activity logs", "Privacy-aware design"],
     featureHighlights: [
-      { title: "Field employee tracking", description: "See which team members are on site, in transit, or available for the next assignment." },
-      { title: "Visit verification", description: "Confirm customer visits with timestamps, GPS coordinates, and job-linked check-ins." },
-      { title: "Route visibility", description: "Review daily movement patterns to optimize territories and reduce unnecessary travel." },
-      { title: "Activity logs", description: "Track job starts, breaks, and completions for operational accountability." },
-      { title: "Multi-branch support", description: "Manage tracking across branches, warehouses, and regional hubs from one dashboard." },
-      { title: "Privacy-aware controls", description: "Configure tracking during work hours with role-based access for supervisors." }
+      { title: "Job status board", description: "See which jobs are assigned, in progress, or completed today." },
+      { title: "Punch-time attendance", description: "Confirm check-in and check-out with optional location, not continuous tracking." },
+      { title: "No all-day GPS", description: "There is no background location tracking outside of attendance punch times." },
+      { title: "Activity logs", description: "Track job starts and completions for operational accountability." },
+      { title: "Multi-branch support", description: "Manage teams across branches from one dashboard." },
+      { title: "Role-based access", description: "Managers see their team's activity; technicians see their own." }
     ]
   },
   {
@@ -119,12 +118,12 @@ export const features: FeatureProfile[] = [
       "Service operations platform for businesses that manage recurring maintenance, on-demand repairs, and customer-facing field work.",
     focusAreas: ["AMC management", "Service scheduling", "Customer satisfaction", "Recurring visits"],
     featureHighlights: [
-      { title: "Service scheduling", description: "Plan preventive and breakdown visits across large customer portfolios." },
-      { title: "AMC tracking", description: "Track contract renewals, visit frequency, and pending service obligations." },
-      { title: "Service reports", description: "Standardize reports with checklists, photos, parts used, and customer feedback." },
-      { title: "Technician management", description: "Assign the right engineer based on product type, skills, and territory." },
-      { title: "Customer communication", description: "Keep customers informed about visit windows, delays, and completion status." },
-      { title: "Analytics", description: "Measure first-time fix rate, repeat complaints, and technician productivity." }
+      { title: "Service scheduling", description: "Plan preventive visits and breakdown jobs across your customer base." },
+      { title: "AMC tracking", description: "Track contract renewals, due visits, and pending service obligations." },
+      { title: "Service reports", description: "Standardize completion reports with photos and technician notes." },
+      { title: "Technician assignment", description: "Assign jobs to technicians and reassign as priorities change." },
+      { title: "Customer portal option", description: "Optionally let customers see the status of jobs you choose to share." },
+      { title: "Reports", description: "Job summary, technician performance, and revenue reports for owners and managers." }
     ]
   },
   {
@@ -300,3 +299,18 @@ export const features: FeatureProfile[] = [
 export const featureMap = Object.fromEntries(features.map((f) => [f.slug, f])) as Record<string, FeatureProfile>;
 
 export const cityFeatureSlugs = features.map((f) => f.slug);
+
+/**
+ * Features with genuine city-level search intent ("gst invoicing software mumbai").
+ * Only these are combined with cities to generate /[feature]-[city] pages — the
+ * remaining features (payroll, customer portal, multi-language, etc.) are real but
+ * people don't search for them by city, so they stay on /features instead.
+ */
+export const localSeoFeatureSlugs = [
+  "field-service-management",
+  "gst-invoicing",
+  "attendance-management",
+  "work-order-management",
+  "expense-management",
+  "amc-service-contracts"
+];
