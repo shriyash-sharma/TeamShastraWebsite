@@ -322,11 +322,24 @@ export function VisitorChat() {
     if (session) return session;
     if (sessionPromiseRef.current) return sessionPromiseRef.current;
     const promise = (async () => {
-      const resp = await fetch(`${supportApiBase}/visitor/start`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({})
-      });
+      let resp: Response;
+      try {
+        resp = await fetch(`${supportApiBase}/visitor/start`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({})
+        });
+      } catch {
+        // One quick retry — a single dropped request on a flaky mobile
+        // connection shouldn't surface an error before the visitor's even
+        // sent a message.
+        await new Promise((resolve) => window.setTimeout(resolve, 800));
+        resp = await fetch(`${supportApiBase}/visitor/start`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({})
+        });
+      }
       const data = await resp.json();
       if (!resp.ok) {
         throw new Error(errorMessage(data, "Could not start chat. Try again."));
@@ -347,8 +360,15 @@ export function VisitorChat() {
   useEffect(() => {
     if (!open || session) return;
     setError("");
-    ensureSession().catch(() => {
-      setError("Could not reach TeamShastra. Try again in a moment.");
+    ensureSession().catch((err: unknown) => {
+      // Surface the backend's actual reason when we have one (helps catch a
+      // real API contract mismatch fast) — fall back to a generic message
+      // only for an outright network failure (no response at all).
+      setError(
+        err instanceof Error && err.message
+          ? err.message
+          : "Could not reach TeamShastra. Try again in a moment."
+      );
     });
   }, [open, session, ensureSession]);
 
@@ -358,8 +378,12 @@ export function VisitorChat() {
     let activeSession: Session;
     try {
       activeSession = await ensureSession();
-    } catch {
-      setError("Could not reach TeamShastra. Try again in a moment.");
+    } catch (err: unknown) {
+      setError(
+        err instanceof Error && err.message
+          ? err.message
+          : "Could not reach TeamShastra. Try again in a moment."
+      );
       return;
     }
     stickToBottomRef.current = true;
