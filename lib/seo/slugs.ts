@@ -1,5 +1,5 @@
 import { cities } from "./cities";
-import { features } from "./features";
+import { localSeoFeatureSlugs } from "./features";
 import { solutions } from "./solutions";
 
 export type SlugType = "city-feature" | "solution" | "unknown";
@@ -10,7 +10,8 @@ export type ParsedSlug =
   | { type: "unknown"; slug: string };
 
 const citySlugs = new Set(cities.map((c) => c.slug));
-const featureSlugs = [...features.map((f) => f.slug)].sort((a, b) => b.length - a.length);
+// Only features with genuine city-level search intent get /[feature]-[city] pages.
+const featureSlugs = [...localSeoFeatureSlugs].sort((a, b) => b.length - a.length);
 const solutionSlugs = new Set(solutions.map((s) => s.slug));
 
 export function buildCityFeatureSlug(featureSlug: string, citySlug: string): string {
@@ -36,14 +37,14 @@ export function parseSlug(slug: string): ParsedSlug {
 }
 
 export function getAllSeoSlugs(): string[] {
-  const cityFeatureSlugs = features.flatMap((f) =>
-    cities.map((c) => buildCityFeatureSlug(f.slug, c.slug))
+  const cityFeatureSlugs = localSeoFeatureSlugs.flatMap((featureSlug) =>
+    cities.map((c) => buildCityFeatureSlug(featureSlug, c.slug))
   );
   return [...cityFeatureSlugs, ...solutions.map((s) => s.slug)];
 }
 
 export function getCityFeatureSlugsForCity(citySlug: string): string[] {
-  return features.map((f) => buildCityFeatureSlug(f.slug, citySlug));
+  return localSeoFeatureSlugs.map((featureSlug) => buildCityFeatureSlug(featureSlug, citySlug));
 }
 
 export function getCityFeatureSlugsForFeature(featureSlug: string): string[] {
@@ -64,7 +65,9 @@ export const reservedSlugs = new Set([
   "terms",
   "cookies",
   "locations",
-  "solutions"
+  "solutions",
+  "faq",
+  "vyapar-alternative"
 ]);
 
 export function isSeoSlug(slug: string): boolean {

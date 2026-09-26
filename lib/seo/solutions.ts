@@ -4,42 +4,42 @@ export const solutions: SolutionPage[] = [
   {
     slug: "field-service-management-software-india",
     title: "Field Service Management Software India",
-    metaDescription: "TeamShastra field service management software for Indian businesses. Dispatch technicians, track visits, capture digital reports, and improve SLA performance nationwide.",
+    metaDescription: "TeamShastra field service management software for Indian businesses. Dispatch technicians, track visits, capture digital reports, and manage jobs nationwide.",
     eyebrow: "Field Service Management",
     headline: "Field Service Management Software for Businesses Across India",
-    lead: "End-to-end field service platform for Indian companies that dispatch technicians, engineers, and service staff to customer locations every day — from metro cities to tier-2 industrial towns.",
+    lead: "End-to-end field service platform for Indian companies that dispatch technicians, electricians, and installation staff to customer locations every day — from metro cities to tier-2 industrial towns.",
     challenges: [
-      "Technicians spread across cities with no real-time visibility for dispatchers",
-      "Paper job sheets and WhatsApp coordination create lost work orders",
-      "SLA penalties from enterprise clients due to poor response tracking",
-      "AMC and preventive maintenance schedules tracked in spreadsheets",
-      "Customer disputes without photo evidence or digital sign-off",
-      "Multi-branch operations across states with fragmented processes"
+      "Technicians spread across a city with no shared view for the person assigning jobs",
+      "Paper job sheets and WhatsApp coordination create lost or duplicated work orders",
+      "AMC and preventive maintenance visits tracked in spreadsheets get missed",
+      "Customer disputes without before/after photo evidence of completed work",
+      "Multi-branch operations across cities running on fragmented, disconnected processes",
+      "GST invoices created separately from the job, so billing lags behind completed work"
     ],
     industries: [
-      { name: "HVAC & MEP services", description: "Commercial and residential HVAC companies managing AMC contracts across Indian cities." },
-      { name: "Electrical contractors", description: "Licensed electrical contractors dispatching teams for installation, repair, and maintenance." },
-      { name: "Facility management", description: "FM companies managing technicians across multiple commercial buildings and campuses." },
-      { name: "Equipment service", description: "OEM and third-party service providers for industrial and commercial equipment." },
-      { name: "Telecom & utilities", description: "Network maintenance and utility service teams across urban and semi-urban India." }
+      { name: "CCTV & security installers", description: "Installation and AMC companies dispatching technicians for camera and security system jobs." },
+      { name: "Electrical contractors", description: "Licensed electricians coordinating installation, repair, and maintenance visits." },
+      { name: "Facilities maintenance", description: "Maintenance crews serving multiple commercial or residential client sites." },
+      { name: "Equipment service", description: "Service providers handling repair and AMC visits for installed equipment." },
+      { name: "Home services & installation teams", description: "Multi-technician teams coordinating site visits, quotations, and completion reports." }
     ],
     useCases: [
-      { title: "Pan-India HVAC AMC provider", industry: "HVAC", problem: "200+ AMC clients across 8 cities with missed PM visits.", solution: "Centralized AMC scheduling with city-wise technician dispatch.", benefits: ["AMC compliance", "City-wise dispatch", "Client equipment history"] },
-      { title: "Multi-city electrical contractor", industry: "Electrical", problem: "Technicians across Delhi, Mumbai, and Bengaluru with no unified system.", solution: "Branch-wise work orders with cross-city reporting.", benefits: ["Multi-branch visibility", "Digital work orders", "Customer signatures"] },
-      { title: "OEM equipment service network", industry: "Equipment service", problem: "Authorized service centers with inconsistent reporting.", solution: "Standardized service checklists and photo reports.", benefits: ["Standardized reports", "Warranty tracking", "Center performance"] }
+      { title: "Multi-branch electrical contractor", industry: "Electrical", problem: "Technicians across two or three branches with no unified system for job status.", solution: "Branch-wise work orders with shared visibility for managers across every location.", benefits: ["Multi-branch visibility", "Digital work orders", "Before/after photo proof"] },
+      { title: "CCTV installer with growing team", industry: "CCTV", problem: "Jobs assigned by phone call; installation and AMC visits without a shared record.", solution: "Assign work orders to technicians, track status to completion, and attach photos and GST invoices to the same job.", benefits: ["Job-linked photos", "Status tracking", "GST invoices tied to the job"] },
+      { title: "Equipment service network", industry: "Equipment service", problem: "Service centers with inconsistent reporting back to the office.", solution: "Standardized digital service reports with checklists and photos per visit.", benefits: ["Standardized reports", "Service history per customer", "Technician-wise job load"] }
     ],
     caseStudy: {
       companyName: "AllIndia Service Networks (illustrative example)",
-      location: "India — Multi-city operations",
-      problem: ["Fragmented dispatch across branches", "Lost paper job sheets", "SLA penalties on enterprise contracts"],
-      results: ["40% faster job closure", "85% reduction in paperwork", "Improved SLA compliance across branches"]
+      location: "India — Multi-branch operations",
+      problem: ["Job assignment by phone call across branches", "Lost paper job sheets", "No shared record of completed work"],
+      results: ["Job assignment and status now visible to all managers", "Job sheets replaced with digital work orders and photos", "GST invoices created from the same workspace as the job"]
     },
     faqs: [
-      { question: "Is TeamShastra suitable for multi-city field service operations in India?", answer: "Yes. Multi-branch support lets businesses manage technicians across cities from one platform." },
-      { question: "Can HVAC companies manage AMC contracts nationwide?", answer: "Yes. Recurring PM scheduling and city-wise dispatch support pan-India AMC operations." },
-      { question: "Does TeamShastra support digital service reports?", answer: "Yes. Structured reports with photos, checklists, and customer signatures replace paper job sheets." },
-      { question: "Can field technicians work offline?", answer: "Yes. Offline mode supports low-connectivity areas with sync when network returns." },
-      { question: "How long does implementation take?", answer: "Most businesses pilot in one city within 1–2 weeks and expand to additional branches over 4–8 weeks." }
+      { question: "Is TeamShastra suitable for multi-branch field service operations in India?", answer: "Yes. Multi-company workspace support lets businesses manage technicians across branches from one account." },
+      { question: "Can service businesses manage AMC contracts?", answer: "Yes. AMC contracts and customers due for a visit are tracked against each customer." },
+      { question: "Does TeamShastra support digital service reports?", answer: "Yes. Work orders support checklists, before/after photos, and completion report PDFs in place of paper job sheets." },
+      { question: "Can field technicians work offline?", answer: "Yes. Attendance check-in and work order updates work offline and sync when the connection returns." },
+      { question: "How long does implementation take?", answer: "Most businesses start with one team or branch and expand from there; there is no fixed rollout timeline." }
     ],
     relatedCitySlugs: ["mumbai", "delhi", "bengaluru", "pune", "hyderabad", "chennai"],
     relatedSolutionSlugs: ["gst-invoicing-software-india", "field-expense-software-india", "technician-management-software", "digital-work-orders", "service-report-software", "hvac-service-management"]
@@ -77,7 +77,7 @@ export const solutions: SolutionPage[] = [
       results: ["Invoices issued from the same workspace as jobs", "Faster collections", "CA-ready GST exports"]
     },
     faqs: [
-      { question: "Does TeamShastra file GST returns on the government portal?", answer: "No. It creates GST invoices and CA-ready export workbooks. Your CA files returns on the GST portal." },
+      { question: "Does TeamShastra file GST returns on the government portal?", answer: "No. It creates GST invoices and CA-ready export workbooks (GSTR-1, GSTR-3B, GSTR-9, and HSN summary). Your CA files returns on the GST portal." },
       { question: "Can I share invoices on WhatsApp?", answer: "Yes. Share quotation and invoice PDFs on WhatsApp." },
       { question: "Are purchases included?", answer: "Yes. Record purchase bills and supplier balances next to sales." },
       { question: "Does billing work in Hindi?", answer: "Yes. English, Hindi, Gujarati, Marathi, and Bengali are supported." }
@@ -98,12 +98,12 @@ export const solutions: SolutionPage[] = [
       "Bank balances do not match collections and supplier payments",
       "Purchase bills are missing when the CA asks for books",
       "Owners cannot see spend next to job and invoice reports",
-      "Multi-city teams have no shared expense record"
+      "Multi-branch teams have no shared expense record"
     ],
     industries: [
       { name: "Field installation", description: "Teams that buy parts on site and need expense proof." },
       { name: "AMC maintenance", description: "Technicians who spend travel and consumables against jobs." },
-      { name: "Multi-branch service", description: "Owners who issue cash float to managers in more than one city." }
+      { name: "Multi-branch service", description: "Owners who issue cash float to managers in more than one location." }
     ],
     useCases: [
       { title: "Technician cash float", industry: "Installation", problem: "Owner gives cash every Monday; leftovers and receipts are unclear.", solution: "Record float given, log expenses by person, and see remaining balance.", benefits: ["Float tracking", "Category spend", "Less leakage"] },
@@ -120,73 +120,69 @@ export const solutions: SolutionPage[] = [
       { question: "Are bank balances included?", answer: "Yes. Collections and payments can be reflected against bank accounts." },
       { question: "Do expenses sit next to GST invoices?", answer: "Yes. Jobs, invoices, purchases, and expenses share one company workspace." }
     ],
-    relatedCitySlugs: ["delhi", "mumbai", "bengaluru", "pune", "jaipur", "lucknow"],
+    relatedCitySlugs: ["delhi", "mumbai", "bengaluru", "pune", "jaipur", "surat"],
     relatedSolutionSlugs: ["gst-invoicing-software-india", "field-service-management-software-india", "attendance-management-software-india"]
   },
   {
     slug: "attendance-management-software-india",
     title: "Attendance Management Software India",
-    metaDescription: "Attendance management software for Indian businesses. GPS check-in, geofencing, shift management, and leave tracking for field and site teams.",
+    metaDescription: "Attendance management software for Indian field service businesses. GPS check-in, leave tracking, and shift visibility for technicians and site teams.",
     eyebrow: "Attendance Management",
-    headline: "Attendance Management Software for Indian Workforces",
-    lead: "Accurate attendance tracking for Indian businesses with distributed teams — field staff, site workers, security guards, factory shifts, and multi-location operations.",
+    headline: "Attendance Management Software for Indian Field Teams",
+    lead: "Accurate attendance tracking for Indian field service businesses — technicians, installers, and maintenance staff working from customer sites rather than one office.",
     challenges: [
       "Field employees check in from customer sites with no verification",
-      "Manual muster rolls and biometric gaps at remote locations",
-      "Multi-shift factories with complex roster management",
-      "Security guard attendance disputes with clients",
-      "Leave and availability not visible to dispatchers",
-      "Payroll disputes due to inaccurate attendance records"
+      "Manual muster rolls at branches and job sites",
+      "Leave and availability not visible to the person assigning jobs",
+      "Payroll disputes due to inaccurate attendance records",
+      "No shared attendance record across more than one branch",
+      "Owners want location-verified check-in without all-day background tracking"
     ],
     industries: [
-      { name: "Security services", description: "Guard agencies managing shift attendance across hundreds of client sites." },
-      { name: "Manufacturing", description: "Factory shift workers across industrial estates." },
-      { name: "Facility management", description: "Housekeeping and maintenance staff across multiple buildings." },
-      { name: "Sales & distribution", description: "Field sales teams visiting retailers and distributors." },
-      { name: "Construction", description: "Site workers across project locations." }
+      { name: "CCTV & security installers", description: "Technician teams checking in at installation and AMC sites." },
+      { name: "Electrical contractors", description: "Field electricians working across multiple job sites in a day." },
+      { name: "Facilities maintenance", description: "Maintenance crews rotating across client sites." },
+      { name: "Equipment service & home services", description: "Field staff whose workday happens away from a fixed office." }
     ],
     useCases: [
-      { title: "Security agency with 1000+ guards", industry: "Security", problem: "Paper muster rolls across 150 client sites.", solution: "Site geofence check-in with shift roster management.", benefits: ["Verified attendance", "Shift compliance", "Client billing accuracy"] },
-      { title: "Factory multi-shift attendance", industry: "Manufacturing", problem: "3-shift operations with manual registers.", solution: "Shift rosters with gate geofencing.", benefits: ["Shift accuracy", "Payroll exports", "Reduced disputes"] }
+      { title: "Multi-branch technician attendance", industry: "Field service", problem: "Two branches, no shared attendance record for payroll.", solution: "GPS check-in per technician, visible to managers across every branch.", benefits: ["Shared attendance record", "Payroll-ready exports", "Fewer manual corrections"] },
+      { title: "AMC team daily check-in", industry: "Maintenance", problem: "Technicians visiting several customer sites a day with no attendance trail.", solution: "Check-in and check-out at each site, with leave requests handled in the same app.", benefits: ["Site-linked attendance", "Leave visibility", "Owner-only payroll access"] }
     ],
     caseStudy: {
-      companyName: "Bharat Guard Services (illustrative example)",
-      location: "India — Multi-state security operations",
-      problem: ["Paper muster rolls", "Client billing disputes", "Shift coverage gaps"],
-      results: ["95% attendance accuracy", "40% fewer billing disputes", "Real-time coverage visibility"]
+      companyName: "Field Team Records (illustrative example)",
+      location: "India",
+      problem: ["Manual muster rolls across branches", "Leave requests handled by phone call", "Payroll built from memory, not records"],
+      results: ["GPS-verified attendance replacing paper registers", "Leave requests tracked in one place", "Payroll runs built from real attendance data"]
     },
     faqs: [
-      { question: "Can attendance be tracked using GPS?", answer: "Yes. GPS check-in and geofencing verify attendance at customer sites, factories, and project locations." },
-      { question: "Does TeamShastra support shift management?", answer: "Yes. Rotating shifts, roster planning, and shift-wise attendance are supported." },
-      { question: "Can security agencies manage guard attendance?", answer: "Yes. Site geofencing and shift management support large guard workforces." },
-      { question: "Is leave management included?", answer: "Yes. Leave requests, approvals, and availability tracking help dispatchers plan assignments." }
+      { question: "Can attendance be tracked using GPS?", answer: "Yes. Optional location is captured at check-in and check-out. There is no continuous background GPS tracking." },
+      { question: "Does TeamShastra support leave management?", answer: "Yes. Leave requests, approvals, and availability help managers plan who is on duty." },
+      { question: "Can attendance work offline?", answer: "Yes. Check-in and check-out work offline and sync once the connection returns." },
+      { question: "Does attendance feed into payroll?", answer: "Yes. Monthly payroll runs use the same attendance and leave records already tracked for the team." }
     ],
     relatedCitySlugs: ["delhi", "mumbai", "bengaluru", "pune", "chennai", "hyderabad"],
-    relatedSolutionSlugs: ["field-employee-tracking", "security-guard-management-software", "construction-workforce-software"]
+    relatedSolutionSlugs: ["field-employee-tracking", "technician-management-software", "field-service-management-software-india"]
   },
   {
     slug: "technician-management-software",
     title: "Technician Management Software",
-    metaDescription: "Technician management software for Indian service companies. Dispatch, track, and manage field technicians with GPS, work orders, and digital service reports.",
+    metaDescription: "Technician management software for Indian service companies. Assign, track, and manage field technicians with GPS attendance, work orders, and digital service reports.",
     eyebrow: "Technician Management",
     headline: "Technician Management Software for Service Companies",
-    lead: "Manage field technicians from assignment to completion — dispatch, work orders, GPS check-in, photo reports, and customer sign-off in one platform.",
-    challenges: ["No visibility into technician location and job status", "Skill mismatch — wrong technician sent to jobs", "Paperwork and photo evidence lost after visits", "Customer complaints about delayed or missed visits", "Technician utilization not measured", "Training and certification not linked to job assignment"],
+    lead: "Manage field technicians from assignment to completion — job assignment, work orders, GPS attendance, and photo-based proof of work in one platform.",
+    challenges: ["No shared view of technician job status for the person assigning work", "Paperwork and photo evidence lost after visits", "Customer complaints about delayed or missed visits", "Technician workload not visible across a growing team", "Training and certification not linked to who gets assigned a job"],
     industries: [
-      { name: "HVAC & electrical", description: "Licensed technicians for installation and repair." },
+      { name: "Electrical & CCTV installation", description: "Licensed technicians for installation and repair." },
       { name: "Appliance service", description: "Authorized and third-party appliance repair networks." },
-      { name: "Telecom", description: "Network installation and maintenance technicians." },
-      { name: "Solar & renewable", description: "Installation and O&M technician teams." },
-      { name: "Industrial maintenance", description: "Factory and plant maintenance technicians." }
+      { name: "HVAC & plumbing", description: "Technician teams for installation and repair visits." },
+      { name: "Solar installation & O&M", description: "Installation and operations-and-maintenance technician teams." }
     ],
-    useCases: [
-      { title: "Appliance service network", industry: "Appliance service", problem: "100+ daily calls with phone dispatch.", solution: "Nearest-skilled technician auto-assignment.", benefits: ["Faster dispatch", "Skill matching", "First-visit resolution"] }
-    ],
-    caseStudy: { companyName: "TechServe India (illustrative example)", location: "India", problem: ["Phone-based dispatch", "No technician tracking", "Lost service records"], results: ["45% faster dispatch", "30% better utilization", "Digital service history per customer"] },
+    useCases: [{ title: "Appliance service network", industry: "Appliance service", problem: "100+ daily calls coordinated by phone.", solution: "Convert each call into a work order and assign it to an available technician, with skill and territory visible to the dispatcher.", benefits: ["Faster assignment", "Technician workload visibility", "First-visit resolution tracking"] }],
+    caseStudy: { companyName: "TechServe India (illustrative example)", location: "India", problem: ["Phone-based dispatch", "No shared technician workload view", "Lost service records"], results: ["Assignment moved from phone calls to shared work orders", "Better visibility into technician workload", "Digital service history per customer"] },
     faqs: [
-      { question: "Can technicians be assigned based on skills?", answer: "Yes. Skill tags help dispatchers route jobs to qualified technicians." },
+      { question: "Can I see which technicians have skills for a job before assigning it?", answer: "Yes. Skill tags help the person assigning jobs pick a suitable technician; assignment itself is a manual decision, not an automated dispatch." },
       { question: "Does TeamShastra show technician job status?", answer: "Yes. Job status visibility and punch-time GPS check-ins for supervisors — not continuous background tracking." },
-      { question: "Can customers sign off on completed work?", answer: "Yes. Digital signatures capture customer acceptance at site." }
+      { question: "Can customers confirm completed work?", answer: "Yes. Technicians capture before/after photos as proof of completed work." }
     ],
     relatedCitySlugs: ["mumbai", "delhi", "pune", "bengaluru"],
     relatedSolutionSlugs: ["field-service-management-software-india", "digital-work-orders", "electrician-workforce-management"]
@@ -194,281 +190,119 @@ export const solutions: SolutionPage[] = [
   {
     slug: "field-employee-tracking",
     title: "Field Employee Tracking Software",
-    metaDescription: "Field employee tracking software for Indian businesses. Monitor site visits, job progress, attendance, and daily activity for sales and service teams.",
+    metaDescription: "Field employee tracking software for Indian field service teams. Monitor site visits, job progress, attendance, and daily activity for technicians and installers.",
     eyebrow: "Field Employee Tracking",
-    headline: "Field Employee Tracking for Sales and Service Teams",
-    lead: "Visibility into field job status and visit check-ins, visit verification, and daily activity for businesses that manage teams outside the office.",
-    challenges: ["No proof that field staff visited assigned locations", "Sales reps' territory coverage unknown", "Service teams' daily routes not optimized", "Privacy concerns with continuous background tracking", "Multi-city field teams with no central dashboard"],
+    headline: "Field Employee Tracking for Service Teams",
+    lead: "Visibility into field job status and visit check-ins, job progress, and daily activity for businesses whose technicians work away from the office.",
+    challenges: ["No shared record that field staff visited an assigned site", "Job progress not visible until the technician calls in", "Privacy concerns with continuous background tracking", "Multi-branch field teams with no central view"],
     industries: [
-      { name: "Sales & distribution", description: "FMCG, pharma, and retail sales teams." },
-      { name: "Service operations", description: "Field service and repair teams." },
-      { name: "Inspection & audit", description: "Quality and compliance inspection teams." },
-      { name: "Delivery & logistics", description: "Last-mile delivery and courier teams." }
+      { name: "Field service & repair", description: "Technicians and installers visiting customer sites." },
+      { name: "Maintenance & AMC", description: "Recurring visit teams tracking site-by-site progress." },
+      { name: "Installation teams", description: "Crews completing multi-day or multi-site installation jobs." }
     ],
-    useCases: [{ title: "FMCG sales territory tracking", industry: "FMCG", problem: "30 reps, 500 retailers, no visit proof.", solution: "Retailer geofence check-in with visit notes.", benefits: ["Visit verification", "Territory coverage", "Order linkage"] }],
-    caseStudy: { companyName: "RouteWise India (illustrative example)", location: "India", problem: ["No visit verification", "Unknown territory gaps"], results: ["28% more verified visits", "Better territory planning"] },
+    useCases: [{ title: "Multi-site installation tracking", industry: "Installation", problem: "Several sites in progress with no shared status view.", solution: "Job-linked check-in at each site with status updates visible to the office.", benefits: ["Site-linked visit records", "Job progress visibility", "Fewer status-check calls"] }],
+    caseStudy: { companyName: "RouteWise India (illustrative example)", location: "India", problem: ["No shared visit record", "Job progress only known by phone call"], results: ["Site check-ins replacing phone updates", "Clearer view of which jobs are in progress"] },
     faqs: [{ question: "Is field tracking privacy-compliant?", answer: "Yes. Location is captured only at attendance check-in/out (and optional office-radius checks). There is no continuous background GPS tracking; access is role-based within your company." }],
     relatedCitySlugs: ["delhi", "mumbai", "bengaluru", "pune"],
-    relatedSolutionSlugs: ["attendance-management-software-india", "sales-team-management-software", "employee-tracking-bengaluru"]
+    relatedSolutionSlugs: ["attendance-management-software-india", "technician-management-software", "digital-work-orders"]
   },
   {
     slug: "digital-work-orders",
     title: "Digital Work Orders Software",
-    metaDescription: "Digital work order software for Indian businesses. Create, assign, track, and close work orders with photos, signatures, and real-time status updates.",
+    metaDescription: "Digital work order software for Indian field service businesses. Create, assign, track, and close work orders with photos and real-time status updates.",
     eyebrow: "Work Order Management",
     headline: "Digital Work Orders for Field and Maintenance Teams",
-    lead: "Replace paper chits and WhatsApp messages with structured digital work orders — from creation and assignment to photo evidence and customer sign-off.",
-    challenges: ["Work orders lost in phone messages and paper", "No status visibility for managers and customers", "Photo evidence and signatures not captured", "SLA tracking impossible with manual processes", "Work order history not searchable"],
+    lead: "Replace paper chits and WhatsApp messages with structured digital work orders — from creation and assignment to before/after photo evidence and closure.",
+    challenges: ["Work orders lost in phone messages and paper", "No status visibility for managers and customers", "Photo evidence not captured or attached to the job", "Work order history not searchable"],
     industries: [
-      { name: "Maintenance & FM", description: "Building and facility maintenance work orders." },
+      { name: "Maintenance & facilities", description: "Recurring maintenance work orders across client sites." },
       { name: "Installation", description: "Equipment and system installation jobs." },
       { name: "Repair & breakdown", description: "On-demand repair and emergency service." },
-      { name: "Preventive maintenance", description: "Scheduled PM and AMC visit work orders." }
+      { name: "AMC & preventive maintenance", description: "Scheduled visit work orders tied to a contract." }
     ],
-    useCases: [{ title: "FM daily task work orders", industry: "Facility management", problem: "Daily cleaning tasks untracked.", solution: "Building-wise task work orders with photo proof.", benefits: ["Task accountability", "Photo reports", "Client billing"] }],
-    caseStudy: { companyName: "WorkFlow Digital (illustrative example)", location: "India", problem: ["Lost paper work orders", "No status tracking"], results: ["90% digital work orders", "Faster closure rates"] },
-    faqs: [{ question: "Can work orders include photos and signatures?", answer: "Yes. Photo attachments and digital customer signatures are supported." }],
+    useCases: [{ title: "Maintenance crew daily tasks", industry: "Facilities maintenance", problem: "Daily site tasks untracked and unverifiable.", solution: "Site-wise task work orders with photo proof of completion.", benefits: ["Task accountability", "Photo reports", "Client-ready records"] }],
+    caseStudy: { companyName: "WorkFlow Digital (illustrative example)", location: "India", problem: ["Lost paper work orders", "No status tracking"], results: ["Work orders replaced with a searchable digital record", "Faster visibility into which jobs are still open"] },
+    faqs: [{ question: "Can work orders include photos?", answer: "Yes. Technicians attach before/after photos as proof of completed work." }],
     relatedCitySlugs: ["mumbai", "delhi", "pune", "chennai"],
-    relatedSolutionSlugs: ["work-order-management-mumbai", "field-service-management-software-india", "maintenance-management-software"]
+    relatedSolutionSlugs: ["field-service-management-software-india", "maintenance-management-software", "technician-management-software"]
   },
   {
     slug: "service-report-software",
     title: "Service Report Software",
-    metaDescription: "Digital service report software for Indian field teams. Standardized checklists, photos, customer signatures, and automated report generation.",
+    metaDescription: "Digital service report software for Indian field teams. Standardized checklists and photo evidence, replacing paper job sheets.",
     eyebrow: "Service Reports",
     headline: "Digital Service Report Software for Field Teams",
-    lead: "Standardize field service documentation with digital checklists, photo evidence, parts usage logs, and customer sign-off — replacing paper job sheets across India.",
-    challenges: ["Inconsistent paper reports across technicians", "Photos and evidence not attached to job records", "Customer sign-off missing on completed work", "Reports not accessible for billing and audits", "Checklist compliance not enforced"],
+    lead: "Standardize field service documentation with digital checklists and photo evidence — replacing paper job sheets across India.",
+    challenges: ["Inconsistent paper reports across technicians", "Photos and evidence not attached to job records", "Reports not accessible for billing", "Checklist compliance not enforced"],
     industries: [
-      { name: "HVAC & MEP", description: "Service reports for cooling and building systems." },
-      { name: "Equipment service", description: "OEM and third-party equipment maintenance reports." },
-      { name: "Facility management", description: "Daily and periodic facility service reports." },
-      { name: "Healthcare equipment", description: "Biomedical and diagnostic equipment service reports." }
+      { name: "HVAC & plumbing", description: "Service reports for installation and repair visits." },
+      { name: "Equipment service", description: "Repair and AMC visit reports." },
+      { name: "Facilities maintenance", description: "Daily and periodic facility service reports." },
+      { name: "CCTV & security installers", description: "Installation and commissioning reports." }
     ],
-    useCases: [{ title: "HVAC service report standardization", industry: "HVAC", problem: "Inconsistent technician reports.", solution: "Mandatory checklist templates per equipment type.", benefits: ["Consistent reports", "Equipment history", "AMC billing support"] }],
-    caseStudy: { companyName: "ReportPro Services (illustrative example)", location: "India", problem: ["Inconsistent paper reports"], results: ["100% standardized digital reports", "Faster billing cycles"] },
-    faqs: [{ question: "Can service reports include mandatory checklists?", answer: "Yes. Customizable checklists ensure consistent documentation per job type." }],
+    useCases: [{ title: "HVAC service report standardization", industry: "HVAC", problem: "Inconsistent technician reports.", solution: "A shared checklist template used for every visit.", benefits: ["Consistent reports", "Equipment history", "AMC billing support"] }],
+    caseStudy: { companyName: "ReportPro Services (illustrative example)", location: "India", problem: ["Inconsistent paper reports"], results: ["Reports standardized across every technician", "Faster billing cycles"] },
+    faqs: [{ question: "Can service reports include checklists?", answer: "Yes. Checklists help standardize documentation per job type." }],
     relatedCitySlugs: ["bengaluru", "hyderabad", "mumbai", "delhi"],
     relatedSolutionSlugs: ["field-service-management-software-india", "digital-work-orders", "hvac-service-management"]
   },
   {
     slug: "facility-management-software",
     title: "Facility Management Software",
-    metaDescription: "Facility management software for Indian FM companies. Manage attendance, work orders, and service reports across multiple buildings and client sites.",
+    metaDescription: "Facility management software for Indian maintenance crews. Manage attendance, work orders, and service reports across client sites.",
     eyebrow: "Facility Management",
-    headline: "Facility Management Software for Multi-Site Operations",
-    lead: "Coordinate housekeeping, maintenance, security, and MEP teams across multiple buildings with geofenced attendance, task work orders, and client-ready reports.",
-    challenges: ["Staff across 20–300+ sites with no central visibility", "Client disputes over billed man-hours", "Daily tasks not verified with proof", "Multiple vendors and team types to coordinate", "SLA tracking across diverse client contracts"],
+    headline: "Facility Management Software for Maintenance Crews",
+    lead: "Coordinate maintenance technicians across several client buildings or sites with attendance, task work orders, and client-ready reports.",
+    challenges: ["Staff across several client sites with no central visibility", "Client questions about which tasks were completed and when", "Daily tasks not verified with photo proof", "Coordinating more than one client contract at once"],
     industries: [
-      { name: "Commercial FM", description: "Office towers, tech parks, and corporate campuses." },
-      { name: "Residential FM", description: "Apartment complexes and township management." },
-      { name: "Retail FM", description: "Mall and retail chain facility services." },
-      { name: "Industrial FM", description: "Factory and warehouse facility management." }
+      { name: "Commercial facility maintenance", description: "Office and retail site maintenance crews." },
+      { name: "Residential maintenance", description: "Apartment and society maintenance vendors." },
+      { name: "Equipment & building systems", description: "Vendors maintaining installed equipment across sites." }
     ],
-    useCases: [{ title: "Multi-tower commercial FM", industry: "Commercial FM", problem: "25 buildings, 300 staff.", solution: "Building geofencing and daily task work orders.", benefits: ["Multi-building dashboard", "Photo task proof", "Client SLA reports"] }],
-    caseStudy: { companyName: "MetroFM Solutions (illustrative example)", location: "India", problem: ["Fragmented multi-site ops", "Client billing disputes"], results: ["38% faster task completion", "25% fewer billing disputes"] },
-    faqs: [{ question: "Can FM companies manage 50+ buildings?", answer: "Yes. Multi-site dashboards with building-wise geofencing and reporting." }],
+    useCases: [{ title: "Multi-site maintenance vendor", industry: "Facility maintenance", problem: "Several client buildings, no shared task record.", solution: "Site-wise attendance and daily task work orders with photo proof.", benefits: ["Multi-site visibility", "Photo task proof", "Client-ready reports"] }],
+    caseStudy: { companyName: "MetroFM Solutions (illustrative example)", location: "India", problem: ["Fragmented multi-site coordination", "Client questions about task completion"], results: ["One dashboard for every client site", "Photo-backed task records for client reviews"] },
+    faqs: [{ question: "Can a maintenance crew manage several client sites?", answer: "Yes. Site-wise work orders and attendance help crews serving more than one client location." }],
     relatedCitySlugs: ["mumbai", "bengaluru", "delhi", "pune"],
-    relatedSolutionSlugs: ["attendance-management-software-india", "digital-work-orders", "cleaning-staff-management"]
+    relatedSolutionSlugs: ["attendance-management-software-india", "digital-work-orders", "maintenance-management-software"]
   },
   {
     slug: "maintenance-management-software",
     title: "Maintenance Management Software",
-    metaDescription: "Maintenance management software for Indian businesses. Schedule preventive maintenance, track breakdowns, and maintain equipment service history.",
+    metaDescription: "Maintenance management software for Indian service businesses. Schedule AMC visits, track breakdown jobs, and maintain equipment service history.",
     eyebrow: "Maintenance Management",
-    headline: "Maintenance Management Software for Industrial and Commercial Teams",
-    lead: "Move from reactive breakdown repairs to planned preventive maintenance with equipment registries, automated PM schedules, and complete service history.",
-    challenges: ["Reactive maintenance culture with unplanned downtime", "PM schedules in Excel with missed visits", "No equipment service history for decision-making", "Breakdown priority not managed systematically", "Parts usage not tracked per job"],
+    headline: "Maintenance Management Software for Service Teams",
+    lead: "Move from reactive breakdown calls to planned AMC visits, with customer-linked service history and due-visit tracking.",
+    challenges: ["Reactive maintenance culture with no visit schedule", "AMC due dates tracked in a spreadsheet and missed", "No equipment or customer service history to refer back to", "Breakdown and scheduled visits competing for the same technicians"],
     industries: [
-      { name: "Manufacturing", description: "Factory equipment and production line maintenance." },
-      { name: "HVAC & MEP", description: "Building systems preventive maintenance." },
-      { name: "Healthcare equipment", description: "Biomedical equipment calibration and maintenance." },
-      { name: "Utilities", description: "Infrastructure and utility system maintenance." }
+      { name: "HVAC & MEP", description: "Building systems maintenance and AMC providers." },
+      { name: "Equipment service", description: "Repair and preventive maintenance for installed equipment." },
+      { name: "CCTV & security installers", description: "AMC contracts for installed security systems." },
+      { name: "Facilities maintenance", description: "Recurring visit contracts across client sites." }
     ],
-    useCases: [{ title: "Factory PM automation", industry: "Manufacturing", problem: "Notebook-based PM tracking.", solution: "Machine-linked recurring work orders.", benefits: ["PM automation", "Equipment history", "Reduced downtime"] }],
-    caseStudy: { companyName: "MaintPro Industrial (illustrative example)", location: "India", problem: ["Reactive maintenance only"], results: ["40% more PM visits on schedule", "20% less unplanned downtime"] },
-    faqs: [{ question: "Can PM schedules be automated?", answer: "Yes. Recurring work orders trigger based on equipment schedules and AMC contracts." }],
-    relatedCitySlugs: ["pune", "chennai", "ahmedabad", "coimbatore"],
-    relatedSolutionSlugs: ["digital-work-orders", "facility-management-software", "utility-workforce-management"]
-  },
-  {
-    slug: "construction-workforce-software",
-    title: "Construction Workforce Software",
-    metaDescription: "Construction workforce management software for Indian contractors. Track site attendance, manage subcontractors, and coordinate MEP crews across projects.",
-    eyebrow: "Construction",
-    headline: "Construction Workforce Software for Indian Contractors",
-    lead: "Manage construction site attendance, subcontractor crews, MEP coordination, and defect tracking across residential and commercial projects.",
-    challenges: ["Site worker attendance across multiple projects", "Subcontractor crew coordination and accountability", "MEP defect tracking during warranty period", "Safety documentation for site visits", "Project-wise labor reporting for billing"],
-    industries: [
-      { name: "Residential construction", description: "Builder and contractor site operations." },
-      { name: "Commercial construction", description: "Office and mall project management." },
-      { name: "MEP contracting", description: "Electrical, plumbing, and fire-fighting crews." },
-      { name: "Infrastructure", description: "Road, metro, and civil project crews." }
-    ],
-    useCases: [{ title: "Multi-site contractor attendance", industry: "Construction", problem: "Workers across 8 active sites.", solution: "Project geofence check-in.", benefits: ["Site attendance", "Labor reports", "Billing accuracy"] }],
-    caseStudy: { companyName: "BuildTrack Contractors (illustrative example)", location: "India", problem: ["Manual site attendance"], results: ["90% attendance accuracy", "Project-wise labor visibility"] },
-    faqs: [{ question: "Can construction site attendance be geofenced?", answer: "Yes. Project site geofencing verifies worker check-in." }],
-    relatedCitySlugs: ["mumbai", "pune", "bengaluru", "hyderabad"],
-    relatedSolutionSlugs: ["attendance-management-software-india", "electrician-workforce-management", "plumbing-service-software"]
-  },
-  {
-    slug: "security-guard-management-software",
-    title: "Security Guard Management Software",
-    metaDescription: "Security guard management software for Indian agencies. Manage guard shifts, site check-ins, relief deployment, and client billing across hundreds of sites.",
-    eyebrow: "Security Services",
-    headline: "Security Guard Management Software for Indian Agencies",
-    lead: "Manage guard shifts, site coverage, relief deployment, and attendance verification for security agencies operating across residential, commercial, and industrial sites.",
-    challenges: ["Guard attendance disputes with clients", "Shift coverage gaps during relief deployment", "Manual muster rolls across hundreds of sites", "Billing based on unverified man-hours", "No real-time view of site coverage"],
-    industries: [
-      { name: "Commercial security", description: "Office towers, malls, and banks." },
-      { name: "Residential security", description: "Societies and township guard services." },
-      { name: "Industrial security", description: "Factory and warehouse guard deployment." },
-      { name: "Government security", description: "Government building and institution security." }
-    ],
-    useCases: [{ title: "500-guard agency operations", industry: "Security", problem: "80 sites, paper muster rolls.", solution: "Site geofence check-in with shift roster.", benefits: ["Verified attendance", "Coverage dashboard", "Client reports"] }],
-    caseStudy: { companyName: "Sentinel Guard Services (illustrative example)", location: "India", problem: ["Billing disputes", "Coverage gaps"], results: ["42% fewer disputes", "30% faster relief deployment"] },
-    faqs: [{ question: "Can security agencies manage 24/7 shifts?", answer: "Yes. Shift rosters, relief pools, and site check-ins support round-the-clock operations." }],
-    relatedCitySlugs: ["delhi", "mumbai", "bengaluru", "chennai"],
-    relatedSolutionSlugs: ["attendance-management-software-india", "facility-management-software"]
-  },
-  {
-    slug: "sales-team-management-software",
-    title: "Sales Team Management Software",
-    metaDescription: "Sales team management software for Indian field sales teams. Track retailer visits, territory coverage, and meeting outcomes with GPS check-in.",
-    eyebrow: "Sales Teams",
-    headline: "Sales Team Management Software for Field Sales",
-    lead: "Verify field sales visits, measure territory coverage, and log meeting outcomes for FMCG, pharma, and distribution sales teams across India.",
-    challenges: ["No proof of retailer and distributor visits", "Territory gaps unknown to managers", "Meeting outcomes not logged systematically", "New rep onboarding without route guidance", "Incentive calculation based on unverified activity"],
-    industries: [
-      { name: "FMCG distribution", description: "Sales reps visiting retail outlets." },
-      { name: "Pharma sales", description: "Medical representative visit tracking." },
-      { name: "Industrial sales", description: "B2B field sales teams." },
-      { name: "Equipment & machinery", description: "Dealer and customer visit management." }
-    ],
-    useCases: [{ title: "FMCG retail coverage", industry: "FMCG", problem: "25 reps, 400 retailers.", solution: "Retailer check-in with order notes.", benefits: ["Visit proof", "Coverage reports", "Pipeline visibility"] }],
-    caseStudy: { companyName: "SalesRoute India (illustrative example)", location: "India", problem: ["Unverified visits"], results: ["28% more verified visits", "Better territory planning"] },
-    faqs: [{ question: "Can retailer visits be verified with GPS?", answer: "Yes. Geofence check-in at retailer locations verifies visit completion." }],
-    relatedCitySlugs: ["mumbai", "delhi", "ahmedabad", "indore"],
-    relatedSolutionSlugs: ["field-employee-tracking", "attendance-management-software-india"]
-  },
-  {
-    slug: "healthcare-field-workforce-software",
-    title: "Healthcare Field Workforce Software",
-    metaDescription: "Healthcare field workforce software for Indian providers. Manage home nursing, sample collection, and equipment service teams with visit verification.",
-    eyebrow: "Healthcare",
-    headline: "Healthcare Field Workforce Software for Indian Providers",
-    lead: "Coordinate home nursing, diagnostic sample collection, biomedical equipment service, and home-care visits with scheduling, check-in, and care documentation.",
-    challenges: ["Home visit completion not verified", "Sample collection routes inefficient", "Equipment calibration visits missed", "Care documentation not standardized", "Nurse and phlebotomist utilization unknown"],
-    industries: [
-      { name: "Diagnostics", description: "Home sample collection and lab logistics." },
-      { name: "Home healthcare", description: "Nursing and elder care visits." },
-      { name: "Biomedical engineering", description: "Hospital equipment service and calibration." },
-      { name: "Pharma field", description: "Medical representative and patient support visits." }
-    ],
-    useCases: [{ title: "Home sample collection network", industry: "Diagnostics", problem: "40 phlebotomists, missed appointments.", solution: "Route work orders with patient check-in.", benefits: ["Route efficiency", "Collection proof", "Utilization reports"] }],
-    caseStudy: { companyName: "CarePath Health (illustrative example)", location: "India", problem: ["Missed collections", "Undocumented nursing visits"], results: ["33% more first-visit collections", "Standardized care documentation"] },
-    faqs: [{ question: "Can home nursing visits be documented?", answer: "Yes. Care checklists and family sign-off capture visit documentation." }],
-    relatedCitySlugs: ["delhi", "mumbai", "bengaluru", "hyderabad"],
-    relatedSolutionSlugs: ["field-employee-tracking", "attendance-management-software-india"]
-  },
-  {
-    slug: "utility-workforce-management",
-    title: "Utility Workforce Management Software",
-    metaDescription: "Utility workforce management software for Indian utilities. Manage field crews for power, water, gas, and infrastructure maintenance operations.",
-    eyebrow: "Utilities",
-    headline: "Utility Workforce Management for Infrastructure Teams",
-    lead: "Coordinate utility field crews for power distribution, water supply, pipeline maintenance, and infrastructure inspections with work orders and safety checklists.",
-    challenges: ["Emergency breakdown response coordination", "Safety-critical maintenance documentation", "Crew dispatch across large geographic areas", "Regulatory inspection compliance", "Asset maintenance history not centralized"],
-    industries: [
-      { name: "Power distribution", description: "Line maintenance and fault repair crews." },
-      { name: "Water & sanitation", description: "Pipeline and treatment plant maintenance." },
-      { name: "Gas distribution", description: "Pipeline inspection and maintenance teams." },
-      { name: "Municipal services", description: "Street lighting and urban infrastructure crews." }
-    ],
-    useCases: [{ title: "Power line fault response", industry: "Power", problem: "Emergency crew dispatch delays.", solution: "Priority work orders with nearest crew assignment.", benefits: ["Faster response", "Crew tracking", "Fault resolution logs"] }],
-    caseStudy: { companyName: "InfraServe Utilities (illustrative example)", location: "India", problem: ["Slow emergency dispatch"], results: ["35% faster fault response", "Complete asset maintenance history"] },
-    faqs: [{ question: "Can emergency breakdown crews be prioritized?", answer: "Yes. Priority work order queues route nearest available crews to emergencies." }],
-    relatedCitySlugs: ["delhi", "mumbai", "hyderabad", "chennai"],
-    relatedSolutionSlugs: ["maintenance-management-software", "telecom-field-operations-software"]
-  },
-  {
-    slug: "telecom-field-operations-software",
-    title: "Telecom Field Operations Software",
-    metaDescription: "Telecom field operations software for Indian network teams. Manage tower maintenance, fiber rollout, and equipment service with work orders and checklists.",
-    eyebrow: "Telecom",
-    headline: "Telecom Field Operations Software for Network Teams",
-    lead: "Manage tower maintenance, fiber rollout, network equipment service, and site inspections with structured work orders, offline checklists, and photo documentation.",
-    challenges: ["Tower maintenance across remote locations", "Fiber rollout progress tracking", "Offline connectivity at tower sites", "Regulatory inspection documentation", "Subcontractor crew coordination"],
-    industries: [
-      { name: "Tower maintenance", description: "Telecom tower inspection and maintenance." },
-      { name: "Fiber rollout", description: "FTTH and backbone fiber deployment." },
-      { name: "Network equipment", description: "BTS and switching equipment service." },
-      { name: "ISP operations", description: "Last-mile connectivity installation teams." }
-    ],
-    useCases: [{ title: "Tower maintenance across states", industry: "Tower maintenance", problem: "500 towers, paper checklists.", solution: "Tower-linked work orders with offline checklists.", benefits: ["Tower history", "Offline support", "Inspection compliance"] }],
-    caseStudy: { companyName: "NetField Operations (illustrative example)", location: "India", problem: ["Paper tower records"], results: ["100% digital tower maintenance logs", "Faster fault resolution"] },
-    faqs: [{ question: "Does TeamShastra work offline at tower sites?", answer: "Yes. Offline checklists and photo capture sync when connectivity returns." }],
-    relatedCitySlugs: ["delhi", "mumbai", "bengaluru", "hyderabad"],
-    relatedSolutionSlugs: ["utility-workforce-management", "field-service-management-software-india"]
+    useCases: [{ title: "AMC due-visit tracking", industry: "Maintenance", problem: "Renewal and visit dates tracked in a notebook.", solution: "AMC contracts with due-visit lists so nothing is missed.", benefits: ["Due-visit visibility", "Customer-linked history", "Fewer missed renewals"] }],
+    caseStudy: { companyName: "MaintPro Services (illustrative example)", location: "India", problem: ["Reactive maintenance only", "AMC renewals tracked by memory"], results: ["Due-visit list replacing the spreadsheet", "Renewal conversations backed by real visit history"] },
+    faqs: [{ question: "Can AMC due visits be tracked automatically?", answer: "Yes. AMC contracts show which customers are due or overdue for a visit." }],
+    relatedCitySlugs: ["pune", "chennai", "ahmedabad", "surat"],
+    relatedSolutionSlugs: ["digital-work-orders", "facility-management-software", "hvac-service-management"]
   },
   {
     slug: "hvac-service-management",
     title: "HVAC Service Management Software",
-    metaDescription: "HVAC service management software for Indian companies. Manage AMC contracts, chiller maintenance, breakdown dispatch, and service reports.",
+    metaDescription: "HVAC service management software for Indian companies. Manage AMC contracts, breakdown dispatch, and service reports.",
     eyebrow: "HVAC Services",
     headline: "HVAC Service Management Software for Indian Companies",
-    lead: "Manage HVAC AMC contracts, chiller and VRF maintenance, summer breakdown surges, and commercial cooling service across Indian cities.",
-    challenges: ["Summer breakdown volume overwhelms dispatch", "AMC preventive visits frequently delayed", "Chiller maintenance requires specialized checklists", "Client equipment history not maintained", "Multi-city HVAC operations with no unified system"],
+    lead: "Manage HVAC AMC contracts, breakdown visits, and service reports for commercial and residential cooling across Indian cities.",
+    challenges: ["Summer breakdown volume is hard to coordinate by phone", "AMC preventive visits get delayed", "Client equipment history is not kept in one place", "Multi-branch HVAC operations with no shared system"],
     industries: [
-      { name: "Commercial HVAC", description: "Office towers, malls, and hotels." },
-      { name: "Industrial cooling", description: "Factory and plant HVAC systems." },
+      { name: "Commercial HVAC", description: "Office and retail cooling system service." },
       { name: "Residential AMC", description: "Split AC and VRF home service." },
-      { name: "Data center cooling", description: "Precision cooling system maintenance." }
+      { name: "Industrial cooling", description: "Factory and plant HVAC maintenance." }
     ],
-    useCases: [{ title: "200-client AMC provider", industry: "Commercial HVAC", problem: "Missed PM visits across cities.", solution: "Automated AMC scheduling with seasonal priority.", benefits: ["AMC compliance", "Summer priority", "Equipment history"] }],
-    caseStudy: { companyName: "CoolServe India (illustrative example)", location: "India", problem: ["Summer dispatch chaos"], results: ["45% faster summer response", "32% more AMC visits on schedule"] },
-    faqs: [{ question: "Can HVAC AMC contracts be managed?", answer: "Yes. Recurring PM work orders automate AMC visit scheduling." }],
+    useCases: [{ title: "AMC provider with a growing client base", industry: "Commercial HVAC", problem: "Preventive visits missed across a growing customer list.", solution: "AMC contracts with due-visit tracking and job-linked service history.", benefits: ["AMC due-visit tracking", "Equipment history", "Shared job records"] }],
+    caseStudy: { companyName: "CoolServe India (illustrative example)", location: "India", problem: ["Summer dispatch coordinated by phone", "AMC visits tracked in a spreadsheet"], results: ["Breakdown jobs assigned and tracked as work orders", "AMC due visits tracked against each customer"] },
+    faqs: [{ question: "Can HVAC AMC contracts be tracked?", answer: "Yes. AMC contracts and due-visit lists help schedule recurring service." }],
     relatedCitySlugs: ["hyderabad", "mumbai", "delhi", "chennai"],
     relatedSolutionSlugs: ["field-service-management-software-india", "maintenance-management-software", "service-report-software"]
-  },
-  {
-    slug: "cleaning-staff-management",
-    title: "Cleaning Staff Management Software",
-    metaDescription: "Cleaning staff management software for Indian FM and housekeeping companies. Track shift attendance, daily tasks, and photo-verified completion.",
-    eyebrow: "Cleaning Services",
-    headline: "Cleaning Staff Management Software for Housekeeping Teams",
-    lead: "Manage housekeeping and cleaning staff across offices, malls, hospitals, and residential buildings with shift attendance, task work orders, and photo proof.",
-    challenges: ["Cleaning task completion not verified", "Night shift attendance difficult to monitor", "Client disputes over service quality", "Multiple buildings with different cleaning schedules", "Staff turnover requires rapid onboarding"],
-    industries: [
-      { name: "Commercial cleaning", description: "Office and mall housekeeping." },
-      { name: "Hospital housekeeping", description: "Healthcare facility cleaning with compliance needs." },
-      { name: "Residential cleaning", description: "Society and apartment housekeeping." },
-      { name: "Industrial cleaning", description: "Factory and warehouse cleaning crews." }
-    ],
-    useCases: [{ title: "Office tower daily cleaning", industry: "Commercial cleaning", problem: "Floor-wise tasks unverified.", solution: "Floor task work orders with photo proof.", benefits: ["Task accountability", "Photo verification", "Client reports"] }],
-    caseStudy: { companyName: "CleanPro Facilities (illustrative example)", location: "India", problem: ["Unverified cleaning tasks"], results: ["Photo-verified daily tasks", "Improved client satisfaction"] },
-    faqs: [{ question: "Can cleaning tasks be verified with photos?", answer: "Yes. Task work orders require photo proof of completed areas." }],
-    relatedCitySlugs: ["mumbai", "delhi", "bengaluru", "pune"],
-    relatedSolutionSlugs: ["facility-management-software", "attendance-management-software-india"]
-  },
-  {
-    slug: "pest-control-management",
-    title: "Pest Control Management Software",
-    metaDescription: "Pest control management software for Indian service companies. Schedule recurring treatments, track technician routes, and maintain compliance records.",
-    eyebrow: "Pest Control",
-    headline: "Pest Control Management Software for Service Companies",
-    lead: "Schedule recurring pest control treatments, track technician routes, capture treatment documentation, and maintain regulatory compliance records.",
-    challenges: ["Recurring treatment schedules missed", "Chemical usage not logged per visit", "Restaurant and food facility compliance documentation", "Technician routes not optimized", "Contract renewal conversations lack service history"],
-    industries: [
-      { name: "Commercial pest control", description: "Restaurants, hotels, and offices." },
-      { name: "Industrial pest control", description: "Food processing and warehouse facilities." },
-      { name: "Residential pest control", description: "Society and home treatments." }
-    ],
-    useCases: [{ title: "Restaurant chain treatments", industry: "Commercial pest control", problem: "400 restaurants, missed monthly treatments.", solution: "Contract-linked recurring work orders.", benefits: ["Treatment scheduling", "Chemical logs", "FSSAI compliance"] }],
-    caseStudy: { companyName: "PestGuard Services (illustrative example)", location: "India", problem: ["Missed treatments"], results: ["95% treatment schedule adherence", "Regulatory compliance documentation"] },
-    faqs: [{ question: "Can recurring treatments be automated?", answer: "Yes. Contract-linked work orders schedule monthly and quarterly treatments." }],
-    relatedCitySlugs: ["bengaluru", "mumbai", "hyderabad", "pune"],
-    relatedSolutionSlugs: ["field-service-management-software-india", "service-report-software"]
   },
   {
     slug: "solar-installation-workforce-software",
@@ -476,76 +310,55 @@ export const solutions: SolutionPage[] = [
     metaDescription: "Solar installation workforce software for Indian EPC companies. Track installation crews, project progress, and O&M visits with photo documentation.",
     eyebrow: "Solar & Renewable",
     headline: "Solar Installation Workforce Software for EPC Companies",
-    lead: "Coordinate solar installation crews, track project milestones, document handover, and manage O&M visits across rooftop and utility-scale projects.",
-    challenges: ["Installation progress not visible to project managers", "Handover documentation incomplete", "O&M visits across remote solar sites", "Crew utilization across multiple projects", "Offline connectivity at rural installation sites"],
+    lead: "Coordinate solar installation crews, track project progress, document handover, and manage O&M visits across rooftop installation projects.",
+    challenges: ["Installation progress not visible to the office", "Handover documentation incomplete or scattered", "O&M visits across sites with no shared record", "Crew workload spread across multiple concurrent projects"],
     industries: [
-      { name: "Rooftop solar EPC", description: "Residential and commercial rooftop installations." },
-      { name: "Utility-scale solar", description: "Ground-mounted solar park installations." },
-      { name: "Solar O&M", description: "Operations and maintenance for installed capacity." }
+      { name: "Rooftop solar EPC", description: "Residential and commercial rooftop installation crews." },
+      { name: "Solar O&M", description: "Operations and maintenance for installed systems." }
     ],
-    useCases: [{ title: "Rooftop installation tracking", industry: "Rooftop solar", problem: "20 concurrent installations.", solution: "Project work orders with installation checklists.", benefits: ["Progress tracking", "Handover sign-off", "Installation photos"] }],
-    caseStudy: { companyName: "SunTrack EPC (illustrative example)", location: "India", problem: ["No install progress visibility"], results: ["Standardized installation reports", "Faster project handover"] },
-    faqs: [{ question: "Can solar O&M work offline at remote sites?", answer: "Yes. Offline inspection checklists sync when connectivity returns." }],
+    useCases: [{ title: "Rooftop installation tracking", industry: "Rooftop solar", problem: "Several concurrent installations with no shared progress view.", solution: "Project work orders with installation checklists and photo evidence.", benefits: ["Progress tracking", "Photo-backed handover", "Installation history per site"] }],
+    caseStudy: { companyName: "SunTrack EPC (illustrative example)", location: "India", problem: ["No shared install progress view"], results: ["Installation checklists standardized across crews", "Handover documentation kept with the job record"] },
+    faqs: [{ question: "Can solar O&M work offline at remote sites?", answer: "Yes. Offline work order updates sync when connectivity returns." }],
     relatedCitySlugs: ["jaipur", "ahmedabad", "pune", "bengaluru"],
-    relatedSolutionSlugs: ["field-service-management-software-india", "construction-workforce-software"]
-  },
-  {
-    slug: "water-purifier-service-management",
-    title: "Water Purifier Service Management Software",
-    metaDescription: "Water purifier service management software for Indian companies. Dispatch technicians, track AMC visits, and manage high-volume daily service calls.",
-    eyebrow: "Water Purifier Service",
-    headline: "Water Purifier Service Management for Indian Networks",
-    lead: "Handle high-volume daily service calls, AMC visit scheduling, filter replacement tracking, and technician dispatch for water purifier brands and franchises.",
-    challenges: ["100+ daily service calls with phone dispatch", "AMC renewal visits missed", "Parts usage not tracked per device", "Customer complaints about delayed service", "Franchise operations with inconsistent processes"],
-    industries: [
-      { name: "OEM service networks", description: "Brand-authorized service franchises." },
-      { name: "Multi-brand service", description: "Third-party purifier repair companies." },
-      { name: "AMC providers", description: "Annual maintenance contract management." }
-    ],
-    useCases: [{ title: "City-wide service franchise", industry: "OEM service", problem: "150 daily calls, phone dispatch.", solution: "Complaint-to-work-order with nearest-tech dispatch.", benefits: ["Faster dispatch", "Device service history", "AMC tracking"] }],
-    caseStudy: { companyName: "PureFlow Service Network (illustrative example)", location: "India", problem: ["Phone dispatch chaos"], results: ["50% faster response", "Device-wise service history"] },
-    faqs: [{ question: "Can AMC visits be scheduled automatically?", answer: "Yes. Device-linked AMC contracts trigger recurring service work orders." }],
-    relatedCitySlugs: ["chennai", "delhi", "mumbai", "bengaluru"],
     relatedSolutionSlugs: ["field-service-management-software-india", "technician-management-software"]
   },
   {
     slug: "electrician-workforce-management",
     title: "Electrician Workforce Management Software",
-    metaDescription: "Electrician workforce management software for Indian contractors. Dispatch electricians, track jobs, capture signatures, and manage AMC contracts.",
+    metaDescription: "Electrician workforce management software for Indian contractors. Dispatch electricians, track jobs, and manage AMC contracts.",
     eyebrow: "Electrical Services",
     headline: "Electrician Workforce Management for Indian Contractors",
-    lead: "Dispatch licensed electricians, track jobs across zones, capture customer signatures, and maintain wiring project documentation for contractors and AMC providers.",
-    challenges: ["Electricians dispatched via phone with no job tracking", "Customer signatures rarely collected", "Wiring project documentation for inspection authorities", "AMC visits for housing societies missed", "Multi-zone operations with no central dashboard"],
+    lead: "Assign jobs to licensed electricians, track visits, and maintain job documentation for contractors and AMC providers.",
+    challenges: ["Electricians assigned by phone with no shared job record", "Photo proof of completed work rarely collected", "AMC visits for housing societies or offices get missed", "Multi-branch operations with no central dashboard"],
     industries: [
       { name: "Electrical contracting", description: "Licensed contractors for commercial and residential work." },
       { name: "Industrial electrical", description: "Factory and plant electrical maintenance." },
-      { name: "Society AMC", description: "Housing society electrical AMC providers." }
+      { name: "Society & office AMC", description: "Recurring electrical AMC contracts." }
     ],
-    useCases: [{ title: "45-electrician contractor", industry: "Electrical contracting", problem: "Zone-based phone dispatch.", solution: "Zone work orders with photo and signature capture.", benefits: ["Zone dispatch", "Digital records", "Customer signatures"] }],
-    caseStudy: { companyName: "VoltServe Contractors (illustrative example)", location: "India", problem: ["Lost job records"], results: ["100% digital job records", "Improved AMC renewals"] },
-    faqs: [{ question: "Can electrician jobs include photo documentation?", answer: "Yes. Before/after photos and wiring documentation support inspection compliance." }],
+    useCases: [{ title: "Growing electrical contractor", industry: "Electrical contracting", problem: "Jobs assigned by phone with no shared record.", solution: "Work orders with before/after photo capture and job history per customer.", benefits: ["Shared job assignment", "Digital job records", "Photo-backed completion proof"] }],
+    caseStudy: { companyName: "VoltServe Contractors (illustrative example)", location: "India", problem: ["Job records kept by memory and phone calls"], results: ["Jobs and photos kept in one digital record", "AMC renewal conversations backed by real visit history"] },
+    faqs: [{ question: "Can electrician jobs include photo documentation?", answer: "Yes. Before/after photos support job records and customer conversations." }],
     relatedCitySlugs: ["pune", "mumbai", "delhi", "bengaluru"],
-    relatedSolutionSlugs: ["technician-management-software", "construction-workforce-software", "digital-work-orders"]
+    relatedSolutionSlugs: ["technician-management-software", "digital-work-orders", "maintenance-management-software"]
   },
   {
     slug: "plumbing-service-software",
     title: "Plumbing Service Software",
-    metaDescription: "Plumbing service software for Indian companies. Dispatch plumbers, track jobs, manage society contracts, and capture completion proof.",
+    metaDescription: "Plumbing service software for Indian companies. Dispatch plumbers, track jobs, manage society contracts, and capture completion photos.",
     eyebrow: "Plumbing Services",
     headline: "Plumbing Service Software for Indian Companies",
-    lead: "Dispatch plumbers for breakdown calls, society maintenance contracts, and construction projects with work orders, photo proof, and customer sign-off.",
-    challenges: ["Emergency plumbing calls need fastest dispatch", "Society contract visits not tracked", "Construction project plumbing phases undocumented", "Customer disputes without completion proof", "Plumber skill matching for specialized jobs"],
+    lead: "Assign plumbers to breakdown calls and society maintenance contracts, with work orders and photo proof of completed work.",
+    challenges: ["Emergency plumbing calls need fast assignment", "Society contract visits not tracked against a schedule", "Customer disputes without proof of completed work", "Matching the right plumber to a specialized job"],
     industries: [
       { name: "Residential plumbing", description: "Home breakdown and repair services." },
       { name: "Society maintenance", description: "Apartment complex plumbing AMC." },
-      { name: "Commercial plumbing", description: "Office and mall plumbing maintenance." },
-      { name: "Construction plumbing", description: "New project plumbing installation." }
+      { name: "Commercial plumbing", description: "Office and retail plumbing maintenance." }
     ],
-    useCases: [{ title: "Society plumbing AMC", industry: "Society maintenance", problem: "30 societies, missed quarterly visits.", solution: "Society-linked AMC work orders.", benefits: ["AMC compliance", "Society history", "Resident satisfaction"] }],
-    caseStudy: { companyName: "PipeLine Services (illustrative example)", location: "India", problem: ["Missed society AMC visits"], results: ["50% more AMC visits on schedule", "Society-wise service history"] },
-    faqs: [{ question: "Can emergency plumbing calls be prioritized?", answer: "Yes. Priority work order queues route nearest available plumbers." }],
+    useCases: [{ title: "Society plumbing AMC", industry: "Society maintenance", problem: "Several society contracts, no shared visit schedule.", solution: "AMC contracts with due-visit tracking per society.", benefits: ["AMC due-visit tracking", "Service history per society", "Photo-backed completion proof"] }],
+    caseStudy: { companyName: "PipeLine Services (illustrative example)", location: "India", problem: ["AMC visits tracked in a notebook"], results: ["Due-visit tracking replacing the notebook", "Service history kept per society"] },
+    faqs: [{ question: "Can society AMC visits be tracked?", answer: "Yes. AMC contracts show which societies are due for a visit." }],
     relatedCitySlugs: ["mumbai", "pune", "bengaluru", "chennai"],
-    relatedSolutionSlugs: ["field-service-management-software-india", "digital-work-orders", "construction-workforce-software"]
+    relatedSolutionSlugs: ["field-service-management-software-india", "digital-work-orders", "maintenance-management-software"]
   }
 ];
 

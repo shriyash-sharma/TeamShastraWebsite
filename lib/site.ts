@@ -14,12 +14,16 @@ export const legalUpdatedAt = "September 24, 2026";
 export const productFeatureList = [
   "Jobs and work orders with photos and completion reports",
   "Team attendance, leave, and today's board",
-  "GST invoices, quotations, and payments",
+  "GST invoices, quotations, credit/debit notes, and payments",
+  "GST exports for your CA: GSTR-1, GSTR-3B, GSTR-9, and HSN summary",
+  "TDS rates, reports, and Form 26Q certificates",
+  "Stock and inventory with a full movement ledger",
   "Purchase bills and supplier balances",
   "Field expenses, cash float, and bank balances",
   "Payroll: pay profiles, salary advances, monthly payroll runs",
   "Job, performance, and revenue reports",
   "Customers, AMC due visits, and optional customer portal",
+  "Multi-company workspaces from one login",
   "In-app and website customer support chat",
   "English, Hindi, Gujarati, Marathi, and Bengali"
 ];
@@ -67,6 +71,26 @@ export const homeFaqs = [
       "Yes. Owners can set per-employee pay profiles (monthly, daily, or hourly), record paid holidays and salary advances, and run monthly payroll from draft to locked to paid."
   },
   {
+    question: "Does TeamShastra support TDS?",
+    answer:
+      "Yes. TeamShastra supports TDS rate configuration, TDS reports, and Form 26Q certificates alongside GST invoicing."
+  },
+  {
+    question: "Does TeamShastra track stock and inventory?",
+    answer:
+      "Yes. A catalog with stock tracking and a movement ledger covers sales, purchases, returns, and adjustments."
+  },
+  {
+    question: "Can I manage more than one company in TeamShastra?",
+    answer:
+      "Yes. Multi-company workspaces let one login switch between more than one company."
+  },
+  {
+    question: "Can I import my data from Vyapar?",
+    answer:
+      "Yes. TeamShastra supports bulk import of catalog, parties, sales, purchases, and expenses from Vyapar, with a dry-run preview before anything is saved."
+  },
+  {
     question: "Does TeamShastra track GPS all day?",
     answer:
       "No. Location is optional at check-in and check-out only. There is no all-day background GPS tracking."
@@ -75,6 +99,34 @@ export const homeFaqs = [
     question: "Who is TeamShastra for?",
     answer:
       "B2B field service companies such as CCTV installers, electricians, maintenance teams, and similar businesses. A company admin creates the workspace or invites staff. It is not a consumer or children's app."
+  }
+];
+
+/** FAQs specific to billing and plans, shown on /pricing and aggregated on /faq. */
+export const pricingFaqs = [
+  {
+    question: "Is there a free plan?",
+    answer: `Yes. The Starter plan is ${pricingSummary.starterPrice.toLowerCase()}, with a company workspace, jobs, attendance, and team invites.`
+  },
+  {
+    question: "How much does the Growth plan cost?",
+    answer: `${pricingSummary.paidPrice}, billed monthly, after a ${pricingSummary.trial.toLowerCase()}.`
+  },
+  {
+    question: "Can I get a refund after I'm billed?",
+    answer: pricingSummary.refundPolicy + "."
+  },
+  {
+    question: "What happens if I cancel?",
+    answer: pricingSummary.cancellationPolicy + "."
+  },
+  {
+    question: "Is there a setup fee?",
+    answer: "No. There is no separate setup fee for the Starter or Growth plans."
+  },
+  {
+    question: "How is Enterprise pricing decided?",
+    answer: "Enterprise plans are billed on separately agreed, written commercial terms. Contact us to discuss your team size and requirements."
   }
 ];
 
@@ -121,6 +173,8 @@ export const pages = [
   { path: "/locations", priority: 0.88, changeFrequency: "weekly" as const },
   { path: "/industries", priority: 0.85, changeFrequency: "monthly" as const },
   { path: "/pricing", priority: 0.85, changeFrequency: "monthly" as const },
+  { path: "/faq", priority: 0.85, changeFrequency: "monthly" as const },
+  { path: "/vyapar-alternative", priority: 0.75, changeFrequency: "monthly" as const },
   { path: "/blog", priority: 0.8, changeFrequency: "weekly" as const },
   { path: "/about", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
@@ -145,7 +199,9 @@ export function pageMetadata(path: string, title: string, description: string): 
       "job management software India",
       "technician dispatch software",
       "field expense tracking",
-      "CCTV installer software"
+      "CCTV installer software",
+      "TDS software India",
+      "stock and inventory software for field service"
     ],
     alternates: { canonical: url },
     robots: { index: true, follow: true },
@@ -188,14 +244,18 @@ export const marketingPages: Record<string, MarketingPage> = {
       { marker: "1", title: "Work orders", text: "Create a job, assign a technician, move status, add comments and before/after photos, see today's board, and share a completion report PDF." },
       { marker: "2", title: "Team & attendance", text: "Invite technicians and managers. Check in and out with optional location (works offline). Managers review duty, mark leave, and correct records. No all-day GPS tracking." },
       { marker: "3", title: "Customers & AMC", text: "Customer directory with job history, AMC contracts, customers due for a visit, and an optional customer portal for jobs you share." },
-      { marker: "4", title: "GST invoices & quotations", text: "Catalog, quotations, GST tax invoices, payments, and pending collections. Share PDFs on WhatsApp. Export CA-ready GST workbooks (not GST portal filing)." },
-      { marker: "5", title: "Purchases & suppliers", text: "Record purchase bills, track what you still owe suppliers, and keep sales and purchases in the same workspace." },
-      { marker: "6", title: "Expenses, float & bank", text: "Log field expenses by person and category. Track cash given to staff (float) and bank balances next to collections." },
-      { marker: "7", title: "Payroll", text: "Owner-only payroll: per-employee pay profiles (monthly, daily, or hourly), paid holidays, salary advances, and one-off adjustments. Run monthly payroll from draft to locked to paid." },
-      { marker: "8", title: "Reports", text: "Job summary, technician performance, and revenue views for owners and managers." },
-      { marker: "9", title: "Languages", text: "English, Hindi, Gujarati, Marathi, and Bengali — built for Indian field teams." },
-      { marker: "10", title: "Alerts", text: "Push notifications for jobs and comments, tapping straight through to the relevant screen." },
-      { marker: "11", title: "Customer support", text: "Chat with TeamShastra from inside the app, or start a visitor chat on this site with your email and mobile number — a real person (or our support assistant) replies in the thread." }
+      { marker: "4", title: "GST invoices & quotations", text: "Catalog, quotations, GST tax invoices, credit notes, debit notes, delivery challans, payments, and pending collections. Share PDFs on WhatsApp." },
+      { marker: "5", title: "GST & TDS compliance", text: "Export CA-ready GSTR-1, GSTR-3B, GSTR-9, and HSN summary workbooks (not GST portal filing). TDS rate configuration, reports, and Form 26Q certificates." },
+      { marker: "6", title: "Stock & inventory", text: "A catalog with stock tracking and a movement ledger across sales, purchases, returns, and adjustments." },
+      { marker: "7", title: "Purchases & suppliers", text: "Record purchase bills, track what you still owe suppliers, and keep sales and purchases in the same workspace." },
+      { marker: "8", title: "Expenses, float & bank", text: "Log field expenses by person and category. Track cash given to staff (float) and bank balances next to collections." },
+      { marker: "9", title: "Payroll", text: "Owner-only payroll: per-employee pay profiles (monthly, daily, or hourly), paid holidays, salary advances, and one-off adjustments. Run monthly payroll from draft to locked to paid." },
+      { marker: "10", title: "Multi-company workspaces", text: "One login can switch between more than one company, each with its own jobs, customers, and books." },
+      { marker: "11", title: "Reports", text: "Job summary, technician performance, and revenue views for owners and managers." },
+      { marker: "12", title: "Languages", text: "English, Hindi, Gujarati, Marathi, and Bengali — built for Indian field teams." },
+      { marker: "13", title: "Alerts", text: "Push notifications for jobs and comments, tapping straight through to the relevant screen." },
+      { marker: "14", title: "Customer support", text: "Chat with TeamShastra from inside the app, or start a visitor chat on this site with your email and mobile number — a real person (or our support assistant) replies in the thread." },
+      { marker: "15", title: "Switching from Vyapar", text: "Bulk import your catalog, parties, sales, purchases, and expenses from Vyapar, with a dry-run preview before anything is saved." }
     ],
     bannerTitle: "Create your company workspace.",
     bannerText: "Download on Google Play or sign up on the web at app.teamshastra.com. Use this site for product information, privacy, and support.",

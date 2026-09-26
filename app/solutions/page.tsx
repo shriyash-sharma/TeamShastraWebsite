@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { cities } from "@/lib/seo/cities";
-import { features } from "@/lib/seo/features";
+import { features, localSeoFeatureSlugs } from "@/lib/seo/features";
 import { solutions } from "@/lib/seo/solutions";
 import { buildCityFeatureSlug } from "@/lib/seo/slugs";
 import { pageMetadata } from "@/lib/site";
@@ -33,13 +33,15 @@ export default function SolutionsPage() {
               <article className="card" key={feature.slug}>
                 <h3>{feature.headline}</h3>
                 <p>{feature.description}</p>
-                <nav className="seo-index-links" aria-label={`${feature.name} city links`}>
-                  <Link href={`/${buildCityFeatureSlug(feature.slug, "mumbai")}`}>Mumbai</Link>
-                  <Link href={`/${buildCityFeatureSlug(feature.slug, "delhi")}`}>Delhi</Link>
-                  <Link href={`/${buildCityFeatureSlug(feature.slug, "bengaluru")}`}>Bengaluru</Link>
-                  <Link href={`/${buildCityFeatureSlug(feature.slug, "pune")}`}>Pune</Link>
-                  <Link href="/locations">All cities</Link>
-                </nav>
+                {localSeoFeatureSlugs.includes(feature.slug) ? (
+                  <nav className="seo-index-links" aria-label={`${feature.name} city links`}>
+                    <Link href={`/${buildCityFeatureSlug(feature.slug, "mumbai")}`}>Mumbai</Link>
+                    <Link href={`/${buildCityFeatureSlug(feature.slug, "delhi")}`}>Delhi</Link>
+                    <Link href={`/${buildCityFeatureSlug(feature.slug, "bengaluru")}`}>Bengaluru</Link>
+                    <Link href={`/${buildCityFeatureSlug(feature.slug, "pune")}`}>Pune</Link>
+                    <Link href="/locations">All cities</Link>
+                  </nav>
+                ) : null}
               </article>
             ))}
           </div>
@@ -58,7 +60,7 @@ export default function SolutionsPage() {
                   {solution.relatedCitySlugs.slice(0, 4).map((citySlug) => {
                     const city = cities.find((c) => c.slug === citySlug);
                     return city ? (
-                      <Link key={citySlug} href={`/${buildCityFeatureSlug("workforce-management", citySlug)}`}>
+                      <Link key={citySlug} href={`/${buildCityFeatureSlug("field-service-management", citySlug)}`}>
                         {city.name}
                       </Link>
                     ) : null;

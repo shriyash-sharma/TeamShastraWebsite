@@ -12,7 +12,8 @@ const footerGroups = [
       { label: "Solutions", href: "/solutions" },
       { label: "Industries", href: "/industries" },
       { label: "Locations", href: "/locations" },
-      { label: "Pricing", href: "/pricing" }
+      { label: "Pricing", href: "/pricing" },
+      { label: "FAQ", href: "/faq" }
     ]
   },
   {
@@ -20,7 +21,8 @@ const footerGroups = [
     links: [
       { label: "About", href: "/about" },
       { label: "Blog", href: "/blog" },
-      { label: "Contact", href: "/contact" }
+      { label: "Contact", href: "/contact" },
+      { label: "TeamShastra vs Vyapar", href: "/vyapar-alternative" }
     ]
   },
   {

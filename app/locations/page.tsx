@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { cities, tier1CitySlugs, tier2CitySlugs, tier3CitySlugs } from "@/lib/seo/cities";
-import { features } from "@/lib/seo/features";
+import { featureMap, localSeoFeatureSlugs } from "@/lib/seo/features";
 import { buildCityFeatureSlug } from "@/lib/seo/slugs";
+
+const localFeatures = localSeoFeatureSlugs.map((slug) => featureMap[slug]);
 import { pageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata(
   "/locations",
   "Workforce Management by City | TeamShastra India",
-  "TeamShastra field service, GST invoicing, attendance, and work-order software for businesses in Mumbai, Delhi, Bengaluru, Pune, and 40+ Indian cities."
+  "TeamShastra field service, GST invoicing, attendance, and work-order software for businesses in Mumbai, Delhi, Bengaluru, Pune, and other major Indian cities."
 );
 
 function CityGroup({ title, slugs }: { title: string; slugs: string[] }) {
   const groupCities = cities.filter((c) => slugs.includes(c.slug));
+  if (groupCities.length === 0) return null;
   return (
     <section className="seo-index-group">
       <h2>{title}</h2>
@@ -20,11 +23,11 @@ function CityGroup({ title, slugs }: { title: string; slugs: string[] }) {
         {groupCities.map((city) => (
           <article className="seo-index-card" key={city.slug}>
             <h3>
-              <Link href={`/${buildCityFeatureSlug("workforce-management", city.slug)}`}>{city.name}</Link>
+              <Link href={`/${buildCityFeatureSlug("field-service-management", city.slug)}`}>{city.name}</Link>
             </h3>
             <p>{city.state}</p>
             <nav className="seo-index-links" aria-label={`${city.name} solution links`}>
-              {features.map((feature) => (
+              {localFeatures.map((feature) => (
                 <Link key={feature.slug} href={`/${buildCityFeatureSlug(feature.slug, city.slug)}`}>
                   {feature.shortName}
                 </Link>

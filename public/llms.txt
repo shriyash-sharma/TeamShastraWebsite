@@ -2,22 +2,28 @@
 
 > TeamShastra is field service management software for owners, managers, and technicians in India.
 
-TeamShastra helps field service teams run jobs, attendance, customers, quotations, GST invoices, purchases, expenses, cash float, bank balances, and reports from one company workspace. Android app on Google Play; web app at app.teamshastra.com.
+TeamShastra helps field service teams run jobs, attendance, customers, quotations, GST invoices, purchases, stock, expenses, cash float, bank balances, payroll, and reports from one company workspace. Android app on Google Play; web app at app.teamshastra.com.
 
 ## Product features
 
 - Jobs and work orders: assign technicians, today's board, comments, before/after photos, completion report PDFs
 - Attendance and leave: check-in/out with optional punch-time location; works offline; no all-day GPS tracking
-- GST invoices and quotations: catalog, tax invoices, payments, pending collections, WhatsApp PDFs
-- CA-ready GST exports (not GST portal filing)
+- GST invoices and quotations: catalog, tax invoices, credit notes, debit notes, delivery challans, purchase orders, payments, pending collections, WhatsApp PDFs
+- GST exports for your CA: GSTR-1, GSTR-3B, GSTR-9, and HSN summary workbooks (not GST portal filing)
+- TDS: rate configuration, TDS reports, and Form 26Q certificates
+- Stock and inventory: catalog with stock tracking and a movement ledger across sales, purchases, returns, and adjustments
 - Purchase bills and supplier balances
 - Field expenses, cash float given to staff, and bank balances
 - Payroll: per-employee pay profiles (monthly/daily/hourly), paid holidays, salary advances, monthly payroll runs (draft to locked to paid), owner-only
 - Customers, AMC contracts, due visits, optional customer portal
+- Multi-company workspaces: one login can switch between more than one company
+- Data import from Vyapar: bulk import of catalog, parties, sales, purchases, expenses, and stock with a dry-run preview
 - Customer support: in-app chat for company staff, website visitor chat, staff callback notifications
-- Reports: job summary, technician performance, revenue
-- Languages: English, Hindi, Gujarati, Marathi, Bengali
-- Built for CCTV installers, electricians, maintenance teams, and similar B2B field businesses
+- Reports: job summary, technician performance, and revenue
+- Languages: English, Hindi, Gujarati, Marathi, and Bengali
+- Built for CCTV installers, electricians, internet installers, maintenance and AMC providers, equipment service teams, and similar B2B field businesses
+
+Some capabilities (customer portal, bulk data export, data restore from a snapshot, and photo/voice attachments on job comments) are opt-in modules enabled per company, not on by default.
 
 ## Pricing
 
@@ -43,6 +49,7 @@ TeamShastra helps field service teams run jobs, attendance, customers, quotation
 - GST invoicing (India): https://teamshastra.com/gst-invoicing-software-india
 - Field expenses (India): https://teamshastra.com/field-expense-software-india
 - Field service (India): https://teamshastra.com/field-service-management-software-india
+- Attendance (India): https://teamshastra.com/attendance-management-software-india
 - Solutions: https://teamshastra.com/solutions
 - Locations: https://teamshastra.com/locations
 - Industries: https://teamshastra.com/industries

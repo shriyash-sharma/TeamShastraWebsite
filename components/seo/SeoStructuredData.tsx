@@ -48,13 +48,6 @@ export function SeoStructuredData({ content }: Props) {
         name: faq.question,
         acceptedAnswer: { "@type": "Answer", text: faq.answer }
       }))
-    },
-    {
-      "@type": "Product",
-      name: content.h1,
-      description: content.metaDescription,
-      brand: { "@type": "Brand", name: "TeamShastra" },
-      url: pageUrl
     }
   ];
 
