@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SeoFaq } from "@/components/seo/SeoFaq";
-import { betaStatus, loginUrl, pageMetadata, playStoreUrl, pricingFaqs, pricingSummary, signupUrl } from "@/lib/site";
+import {
+  betaStatus,
+  loginUrl,
+  pageMetadata,
+  playStoreUrl,
+  pricingFaqs,
+  pricingSummary,
+  signupUrl,
+  supportEmail,
+  supportPhoneDisplay
+} from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata(
   "/pricing",
   "Pricing | TeamShastra",
-  "TeamShastra pricing: Starter is free. Growth starts at ₹99 per user per month (plus GST) after a 1-month free trial. Enterprise pricing on request."
+  "TeamShastra pricing: Starter is free. Growth starts at ₹99 per user per month (plus GST). Every new company gets 30 days of Growth free. Enterprise pricing on request."
 );
 
 const structuredData = {
@@ -34,7 +44,7 @@ const plans = [
   {
     name: "Growth",
     price: "₹99 / user / month",
-    priceNote: "+ GST · 1-month free trial",
+    priceNote: "+ GST · 30 days free for new companies",
     text: "For growing field teams that need richer operational controls.",
     cta: "Get started",
     featured: true,
@@ -99,6 +109,9 @@ export default function PricingPage() {
           <ul className="list">
             <li>Growth plan: {pricingSummary.trial}.</li>
             <li>After the trial: {pricingSummary.paidPrice}, billed monthly.</li>
+            <li>
+              To upgrade to Growth, email {supportEmail} or call/WhatsApp {supportPhoneDisplay}. There is no in-app payment.
+            </li>
             <li>Refunds: {pricingSummary.refundPolicy}.</li>
             <li>Cancellation: {pricingSummary.cancellationPolicy}.</li>
             <li>Enterprise plans are billed on separately agreed, written commercial terms.</li>

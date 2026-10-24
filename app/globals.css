@@ -275,6 +275,12 @@ h3 { font-size: 1.18rem; }
 }
 .support-channels.is-compact .support-channel { padding: 10px 12px; }
 .support-channels.is-compact .support-channel-value { font-size: 0.88rem; }
+.support-hours {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
 .site-footer { border-top: 1px solid var(--line); padding: 56px 0 28px; background: var(--soft); }
 .footer-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 40px; align-items: start; }
 .footer-inner > * { min-width: 0; }

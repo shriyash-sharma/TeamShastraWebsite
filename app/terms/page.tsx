@@ -79,7 +79,7 @@ export default function TermsPage() {
           title: "Fees and Refunds",
           items: [
             "The Starter plan is free.",
-            `The Growth plan includes ${pricingSummary.trial}. After the trial, the Growth plan is ${pricingSummary.paidPrice}, billed monthly in advance.`,
+            `The Growth plan includes a ${pricingSummary.trial}. After the trial, the Growth plan is ${pricingSummary.paidPrice}, billed monthly in advance.`,
             `Refunds: ${pricingSummary.refundPolicy}.`,
             `Cancellation: ${pricingSummary.cancellationPolicy}.`,
             "Enterprise plans are billed on separately agreed, written commercial terms.",

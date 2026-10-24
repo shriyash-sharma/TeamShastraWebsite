@@ -8,6 +8,7 @@ import {
   pageMetadata,
   playStoreUrl,
   signupUrl,
+  supportHours,
   supportPhoneDisplay,
   supportPhoneTel,
   supportPhoneWhatsApp
@@ -66,6 +67,8 @@ export default function ContactPage() {
                 <dt>Phone</dt>
                 <dd>
                   <a href={supportPhoneTel}>{supportPhoneDisplay}</a>
+                  {" "}
+                  ({supportHours})
                   <span className="operator-phone-actions">
                     <a className="operator-phone-action" href={supportPhoneTel} aria-label={`Call ${supportPhoneDisplay}`}>
                       Call
@@ -120,6 +123,12 @@ export default function ContactPage() {
             <p className="section-copy">
               Download TeamShastra on{" "}
               <a href={playStoreUrl}>Google Play</a>.
+            </p>
+          </div>
+          <div className="contact-item">
+            <strong>iPhone</strong>
+            <p className="section-copy">
+              Open <a href={appUrl}>app.teamshastra.com</a> in Safari → Share → Add to Home Screen.
             </p>
           </div>
           <div className="contact-item">

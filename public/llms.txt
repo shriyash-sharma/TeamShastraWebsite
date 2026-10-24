@@ -28,7 +28,8 @@ Some capabilities (customer portal, bulk data export, data restore from a snapsh
 ## Pricing
 
 - Starter plan: free
-- Growth plan: ₹99 per user per month, plus applicable GST, after a 1-month free trial
+- Growth plan: ₹99 per user per month, plus applicable GST; every new company gets a 30-day free Growth trial (all features), then Starter
+- Billing: monthly only (no yearly plan currently)
 - Refunds: payments are non-refundable once a billing period starts; cancel anytime to stop future billing
 - Cancellation: paid access continues until the end of the current billing period, then the workspace continues on the free Starter plan
 - Enterprise plan: contact us for custom pricing
@@ -39,6 +40,7 @@ Some capabilities (customer portal, bulk data export, data restore from a snapsh
 - Android app (Google Play): https://play.google.com/store/apps/details?id=com.teamshastra.mobile
 - Android package: com.teamshastra.mobile
 - Web app: https://app.teamshastra.com
+- iPhone: no App Store app; use https://app.teamshastra.com in Safari → Share → Add to Home Screen
 - Signup: https://app.teamshastra.com/signup
 - Login: https://app.teamshastra.com/login
 
@@ -63,7 +65,10 @@ Some capabilities (customer portal, bulk data export, data restore from a snapsh
 - Terms: https://teamshastra.com/terms
 - Cookies: https://teamshastra.com/cookies
 - Account deletion: https://teamshastra.com/account-deletion
-- Support email: care@teamshastra.com
+
+## Support
+
+- Support: care@teamshastra.com, call/WhatsApp +91 76970 12040, Mon–Sat 10 AM–7 PM IST
 
 ## Operator
 

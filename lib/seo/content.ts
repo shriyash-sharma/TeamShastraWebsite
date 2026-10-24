@@ -156,7 +156,7 @@ export function buildSolutionContent(solutionSlug: string): SeoPageContent | nul
     { question: "Is TeamShastra available across India?", answer: "Yes. TeamShastra supports businesses in metro cities, tier-2 industrial towns, and regional hubs with multi-branch management and offline-capable mobile apps." },
     { question: "How long does implementation take?", answer: "Most businesses begin with a pilot team in 1–2 weeks and expand to additional branches or cities over 4–8 weeks depending on team size." },
     { question: "Does TeamShastra work on Android?", answer: "Yes. TeamShastra offers Android and web access with PWA support for field staff." },
-    { question: "Can I start with a free trial?", answer: `Yes. The Starter plan is free, and the Growth plan includes ${pricingSummary.trial}. Sign up at app.teamshastra.com to create a company workspace.` }
+    { question: "Can I start with a free trial?", answer: `Yes. The Starter plan is free, and the Growth plan includes a ${pricingSummary.trial}. Sign up at app.teamshastra.com to create a company workspace.` }
   ];
 
   return {

@@ -21,7 +21,7 @@ const rows: Array<{ capability: string; vyapar: string; teamshastra: string }> =
   { capability: "Optional customer portal", vyapar: "Not on Vyapar's public feature list", teamshastra: "Yes, opt-in" },
   { capability: "POS billing / online store", vyapar: "Yes", teamshastra: "Not offered" },
   { capability: "Regional Indian languages in-app", vyapar: "Not specified on Vyapar's site", teamshastra: "English, Hindi, Gujarati, Marathi, Bengali" },
-  { capability: "Platforms", vyapar: "Android, iOS, Windows, Mac", teamshastra: "Android and web (no iOS or desktop app)" },
+  { capability: "Platforms", vyapar: "Android, iOS, Windows, Mac", teamshastra: "Android and web (no App Store or desktop app; iPhone users can add the web app to the home screen)" },
   { capability: "Built for", vyapar: "Retail shops, kirana stores, pharmacies, restaurants, salons, manufacturers", teamshastra: "CCTV installers, electricians, maintenance & AMC providers, equipment service, home services" }
 ];
 
@@ -40,7 +40,8 @@ const faqs = [
   },
   {
     question: "Does TeamShastra have an iOS or desktop app like Vyapar?",
-    answer: "No. TeamShastra is available on Android (Google Play) and the web at app.teamshastra.com. Vyapar offers Android, iOS, Windows, and Mac apps."
+    answer:
+      "No. TeamShastra is available on Android (Google Play) and the web at app.teamshastra.com. On an iPhone, open app.teamshastra.com in Safari, tap Share → Add to Home Screen, and open TeamShastra from the home-screen icon. Vyapar offers Android, iOS, Windows, and Mac apps."
   },
   {
     question: "Where does this comparison come from?",

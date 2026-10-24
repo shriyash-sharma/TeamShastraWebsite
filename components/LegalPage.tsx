@@ -1,6 +1,7 @@
 import {
   legalOperator,
   supportEmail,
+  supportHours,
   supportPhoneDisplay,
   supportPhoneTel,
   supportPhoneWhatsApp
@@ -45,6 +46,8 @@ export function LegalPage({ title, updatedAt, intro, sections, children }: Legal
             Support: <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
             {" · "}
             <a href={supportPhoneTel}>{supportPhoneDisplay}</a>
+            {" "}
+            ({supportHours})
             {" · "}
             <a href={supportPhoneWhatsApp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </p>

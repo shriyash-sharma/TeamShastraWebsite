@@ -28,7 +28,8 @@ const productFaqs = [
   },
   {
     question: "Does TeamShastra have an iOS app?",
-    answer: "No. TeamShastra is available on Android (Google Play) and the web at app.teamshastra.com."
+    answer:
+      "There is no App Store app. On an iPhone, open app.teamshastra.com in Safari, tap Share → Add to Home Screen, and open TeamShastra from the home-screen icon. Android users can install the app from Google Play."
   }
 ];
 

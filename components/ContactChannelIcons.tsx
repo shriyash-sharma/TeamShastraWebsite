@@ -1,5 +1,6 @@
 import {
   supportEmail,
+  supportHours,
   supportPhoneDisplay,
   supportPhoneTel,
   supportPhoneWhatsApp
@@ -77,6 +78,7 @@ export function SupportChannels({ compact = false }: Props) {
           <span className="support-channel-value">{supportPhoneDisplay}</span>
         </span>
       </a>
+      <p className="support-hours">Support hours: {supportHours}</p>
     </div>
   );
 }
