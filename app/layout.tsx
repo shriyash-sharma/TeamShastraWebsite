@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(marketingUrl),
   applicationName: "TeamShastra",
   description:
-    "Field service software for Indian teams: jobs, attendance, GST invoices, purchases, expenses, and reports.",
+    "Field service software for Indian teams: jobs, attendance, GST invoices, purchases, expenses, staff salary, and reports.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },

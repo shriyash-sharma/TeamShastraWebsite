@@ -2,28 +2,29 @@
 
 > TeamShastra is field service management software for owners, managers, and technicians in India.
 
-TeamShastra helps field service teams run jobs, attendance, customers, quotations, GST invoices, purchases, stock, expenses, cash float, bank balances, payroll, and reports from one company workspace. Android app on Google Play; web app at app.teamshastra.com.
+TeamShastra helps field service teams run jobs, attendance, customers, quotations, GST invoices, purchases, stock, expenses, staff cash, bank balances, staff salary, and reports from one company workspace. Android app on Google Play; web app at app.teamshastra.com (also installable to the home screen; iPhone uses Safari → Add to Home Screen).
 
 ## Product features
 
-- Jobs and work orders: assign technicians, today's board, comments, before/after photos, completion report PDFs
-- Attendance and leave: check-in/out with optional punch-time location; works offline; no all-day GPS tracking
-- GST invoices and quotations: catalog, tax invoices, credit notes, debit notes, delivery challans, purchase orders, payments, pending collections, WhatsApp PDFs
-- GST exports for your CA: GSTR-1, GSTR-3B, GSTR-9, and HSN summary workbooks (not GST portal filing)
+- Jobs and work orders: assign a team, today's board (free, busy, not in, on leave), status including on hold, comments, before/after photos, service report PDFs, and progress report PDFs
+- Attendance and leave: check-in/out that works offline; location only at punch time (a company can require GPS); optional office-radius punches with more than one office pin; optional live check-in selfie; leave, half day, absent, and holiday. No background GPS
+- Team map: pins from check-in, starting a job, or a job photo, plus a request for work status. Not all-day tracking
+- GST invoices and quotations: catalog, proforma invoices (no stock or payment impact), tax invoices, credit notes, debit notes, delivery challans, purchase orders, payments (including part payments), pending collections, WhatsApp PDFs
+- GST exports for your CA: GSTR-1, GSTR-3B, GSTR-9, and a full GST workbook (not GST portal filing). Invoice lines can include HSN
 - TDS: rate configuration, TDS reports, and Form 26Q certificates
-- Stock and inventory: catalog with stock tracking and a movement ledger across sales, purchases, returns, and adjustments
-- Purchase bills and supplier balances
-- Field expenses, cash float given to staff, and bank balances
-- Payroll: per-employee pay profiles (monthly/daily/hourly), paid holidays, salary advances, monthly payroll runs (draft to locked to paid), owner-only
-- Customers, AMC contracts, due visits, optional customer portal
+- Stock and inventory: catalog with stock tracking, stock adjustments, and a movement history. Sales reduce stock; purchases increase it
+- Purchase bills, debit notes, and supplier balances
+- Field expenses, cash given to staff (staff cash), and bank balances
+- Staff salary (owners): open a calendar month, set Monthly, Per day, or Hourly wages, and see who is still to pay. Weekly off is unpaid on a per-day wage and already included in a monthly salary. Company holidays can be paid or unpaid (including a half holiday). Paid leave can be a yearly quota, with a different number for one person. A salary advance keeps the amount left (not cut yet, or partly cut) and is deducted when you pay. Freeze the month, then pay from bank or cash, and share a payslip PDF (Excel for your CA is also available). Each person can open their own paid payslips. Optional overtime, bonus, other deductions, and indicative PF, ESI, PT, or TDS — not a filing and not Form 16
+- Customers, AMC contracts, due visits, optional customer portal (invite a customer, then share or hide each job; they see photos and can message the team)
 - Multi-company workspaces: one login can switch between more than one company
-- Data import from Vyapar: bulk import of catalog, parties, sales, purchases, expenses, and stock with a dry-run preview
+- Data import from Vyapar or a spreadsheet: catalog, parties, sales, purchases, and expenses, with column matching and a review of valid rows and issues before save
 - Customer support: in-app chat for company staff, website visitor chat, staff callback notifications
-- Reports: job summary, technician performance, and revenue
+- Reports: job summary, technician performance, customers, revenue, money in/out, expenses, staff cash, and team attendance
 - Languages: English, Hindi, Gujarati, Marathi, and Bengali
 - Built for CCTV installers, electricians, internet installers, maintenance and AMC providers, equipment service teams, and similar B2B field businesses
 
-Some capabilities (customer portal, bulk data export, data restore from a snapshot, and photo/voice attachments on job comments) are opt-in modules enabled per company, not on by default.
+Some capabilities (customer portal, bulk data export, data restore from a snapshot, and photo/voice/file attachments on job comments) are opt-in modules enabled per company, not on by default. Other modules — including staff salary, team map, GST reports, purchases, data import, job photos, and check-in — can be turned off for a company.
 
 ## Pricing
 

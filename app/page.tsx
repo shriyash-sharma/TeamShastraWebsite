@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = pageMetadata(
   "/",
   "TeamShastra | Field Service Software for Jobs, GST Invoices & Attendance",
-  "Field service app for Indian teams: jobs, attendance, GST invoices, purchases, expenses, cash float, and reports. Android on Google Play and web."
+  "Field service app for Indian teams: jobs, attendance, GST invoices, staff salary, purchases, expenses, and reports. Android on Google Play and web."
 );
 
 const structuredData = {
@@ -45,7 +45,7 @@ const structuredData = {
       name: "TeamShastra",
       url: "https://app.teamshastra.com/",
       description:
-        "Field service management software for Indian companies: jobs, attendance, GST invoices, purchases, expenses, and reports.",
+        "Field service management software for Indian companies: jobs, attendance, GST invoices, staff salary, purchases, expenses, and reports.",
       applicationCategory: "BusinessApplication",
       applicationSubCategory: "Field Service Management",
       operatingSystem: "Android, Web",
@@ -60,7 +60,7 @@ const structuredData = {
       name: "TeamShastra",
       url: playStoreUrl,
       description:
-        "Android field service app for jobs, GST invoices, attendance, purchases, and expenses.",
+        "Android field service app for jobs, GST invoices, attendance, staff salary, purchases, and expenses.",
       applicationCategory: "BusinessApplication",
       operatingSystem: "ANDROID",
       featureList: productFeatureList,
@@ -93,7 +93,7 @@ export default function Home() {
               <span>All in One Place.</span>
             </p>
             <ul className="hero-flow" aria-label="What TeamShastra covers">
-              {["Jobs", "Attendance", "GST invoices", "Purchases", "Expenses", "Reports"].map((item) => (
+              {["Jobs", "Attendance", "GST invoices", "Salary", "Purchases", "Expenses", "Reports"].map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
@@ -115,18 +115,20 @@ export default function Home() {
       <section className="section" id="features">
         <div className="section-inner">
           <div className="section-head">
-            <h2>Jobs, attendance, GST billing, and field money in one workspace.</h2>
+            <h2>Jobs, attendance, GST billing, salary, and field money in one workspace.</h2>
             <p className="section-copy">
-              TeamShastra is built for Indian field service companies — CCTV installers, electricians, maintenance teams — so office and technicians share the same jobs, invoices, and expenses.
+              TeamShastra is built for Indian field service companies — CCTV installers, electricians, maintenance teams — so office and technicians share the same jobs, invoices, salary, and expenses.
             </p>
           </div>
           <div className="card-grid">
-            <article className="card"><div className="icon-box">01</div><h3>Work orders</h3><p>Assign jobs, track today&apos;s board, add before/after photos, and share completion report PDFs.</p></article>
-            <article className="card"><div className="icon-box">02</div><h3>Attendance &amp; leave</h3><p>Check in and out (offline-capable), see who is on duty, and mark leave. Location only at punch time — no all-day GPS.</p></article>
-            <article className="card"><div className="icon-box">03</div><h3>GST invoices</h3><p>Quotations, tax invoices, payments, WhatsApp PDFs, and CA-ready GST exports.</p></article>
-            <article className="card"><div className="icon-box">04</div><h3>Purchases &amp; expenses</h3><p>Purchase bills, supplier balances, field expenses, cash float, and bank.</p></article>
-            <article className="card"><div className="icon-box">05</div><h3>Customers &amp; AMC</h3><p>Directory, due visits, optional customer portal, and job history on every site.</p></article>
-            <article className="card"><div className="icon-box">06</div><h3>Reports</h3><p>Job summary, technician performance, and revenue for owners and managers.</p></article>
+            <article className="card"><div className="icon-box">01</div><h3>Work orders</h3><p>Assign jobs, track today&apos;s board, add before/after photos, and share a service report or progress report PDF.</p></article>
+            <article className="card"><div className="icon-box">02</div><h3>Attendance &amp; leave</h3><p>Check in and out offline, see who is on duty, and mark leave or a half day. Location only at punch time — GPS, an office radius, or a selfie if you require it. No background GPS.</p></article>
+            <article className="card"><div className="icon-box">03</div><h3>GST invoices</h3><p>Quotations, proforma invoices, tax invoices, payments, WhatsApp PDFs, and CA-ready GST exports.</p></article>
+            <article className="card"><div className="icon-box">04</div><h3>Staff salary</h3><p>Set Monthly, Per day, or Hourly wages for a calendar month and see who is still to pay. Weekly off, holidays, and advances with the amount left, then freeze and pay. Share a payslip.</p></article>
+            <article className="card"><div className="icon-box">05</div><h3>Purchases &amp; expenses</h3><p>Purchase bills, supplier balances, field expenses, staff cash, and bank.</p></article>
+            <article className="card"><div className="icon-box">06</div><h3>Customers &amp; AMC</h3><p>Directory, due visits, an optional portal for the jobs you share, and job history on every site.</p></article>
+            <article className="card"><div className="icon-box">07</div><h3>Team map</h3><p>See who is on duty from check-in, job-start, and job-photo pins. Ask for a work-status update. Not all-day tracking.</p></article>
+            <article className="card"><div className="icon-box">08</div><h3>Reports</h3><p>Jobs, technician performance, revenue, money in and out, expenses, and attendance.</p></article>
           </div>
         </div>
       </section>

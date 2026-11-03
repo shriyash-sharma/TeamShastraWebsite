@@ -12,20 +12,25 @@ export const legalUpdatedAt = "September 24, 2026";
 
 /** Product capabilities used in listing copy, schema, and AI crawlers. */
 export const productFeatureList = [
-  "Jobs and work orders with photos and completion reports",
-  "Team attendance, leave, and today's board",
-  "GST invoices, quotations, credit/debit notes, and payments",
-  "GST exports for your CA: GSTR-1, GSTR-3B, GSTR-9, and HSN summary",
+  "Jobs and work orders with photos, today's board, and service or progress report PDFs",
+  "Team attendance, leave, half day, and today's duty board",
+  "Punch-time location only — a company can require GPS, an office radius, or a check-in selfie; no background GPS",
+  "Team map pins from check-in, starting a job, or a job photo",
+  "GST invoices, quotations, proforma invoices, credit notes, debit notes, and payments",
+  "GST exports for your CA: GSTR-1, GSTR-3B, GSTR-9, and a full GST workbook (invoice lines can include HSN)",
   "TDS rates, reports, and Form 26Q certificates",
-  "Stock and inventory with a full movement ledger",
-  "Purchase bills and supplier balances",
-  "Field expenses, cash float, and bank balances",
-  "Payroll: pay profiles, salary advances, monthly payroll runs",
-  "Job, performance, and revenue reports",
+  "Stock and inventory with a movement history",
+  "Purchase bills, debit notes, and supplier balances",
+  "Field expenses, staff cash, and bank balances",
+  "Staff salary for a selected calendar month: Monthly, Per day, or Hourly wages, with a still-to-pay total",
+  "Weekly off (unpaid on a per-day wage, included in a monthly salary), paid or unpaid holidays, and salary advances with the amount left",
+  "Freeze a salary month, pay from bank or cash, and share a payslip; each person can open their own paid payslips",
+  "Job, performance, revenue, money in/out, expense, and attendance reports",
   "Customers, AMC due visits, and optional customer portal",
   "Multi-company workspaces from one login",
   "In-app and website customer support chat",
-  "English, Hindi, Gujarati, Marathi, and Bengali"
+  "English, Hindi, Gujarati, Marathi, and Bengali",
+  "Android app, web app, and an installable home-screen app"
 ];
 
 /** Plain-language pricing summary reused on the pricing page, Terms, and llms.txt. */
@@ -44,7 +49,7 @@ export const homeFaqs = [
   {
     question: "What is TeamShastra?",
     answer:
-      "TeamShastra is field service management software for Indian companies. Owners, managers, and technicians run jobs, attendance, GST invoices, purchases, expenses, and reports from one Android and web workspace."
+      "TeamShastra is field service management software for Indian companies. Owners, managers, and technicians run jobs, attendance, GST invoices, purchases, expenses, staff salary, and reports from one Android and web workspace."
   },
   {
     question: "Does TeamShastra support GST invoices?",
@@ -69,7 +74,7 @@ export const homeFaqs = [
   {
     question: "Does TeamShastra offer payroll?",
     answer:
-      "Yes. Owners can set per-employee pay profiles (monthly, daily, or hourly), record paid holidays and salary advances, and run monthly payroll from draft to locked to paid."
+      "Yes. Owners set Monthly, Per day, or Hourly wages and open staff salary for a chosen calendar month, including who is still to pay. Weekly off is unpaid on a per-day wage and already included in a monthly salary. Company holidays can be paid or unpaid. A salary advance keeps the amount left and is cut when you pay. Freeze the month, pay from bank or cash, and share a payslip. Each person can open their own paid payslips."
   },
   {
     question: "Does TeamShastra support TDS?",
@@ -89,12 +94,12 @@ export const homeFaqs = [
   {
     question: "Can I import my data from Vyapar?",
     answer:
-      "Yes. TeamShastra supports bulk import of catalog, parties, sales, purchases, and expenses from Vyapar, with a dry-run preview before anything is saved."
+      "Yes. TeamShastra can import catalog, parties, sales, purchases, and expenses from Vyapar or a spreadsheet. You match columns and review valid rows and issues before they are saved."
   },
   {
     question: "Does TeamShastra track GPS all day?",
     answer:
-      "No. Location is optional at check-in and check-out only. There is no all-day background GPS tracking."
+      "No. Location is captured only at check-in and check-out, never in the background. A company can require GPS, an office radius, or a check-in selfie. The team map shows pins from check-in, starting a job, or a job photo."
   },
   {
     question: "Who is TeamShastra for?",
@@ -206,6 +211,7 @@ export function pageMetadata(path: string, title: string, description: string): 
       "job management software India",
       "technician dispatch software",
       "field expense tracking",
+      "staff salary software for field teams",
       "CCTV installer software",
       "TDS software India",
       "stock and inventory software for field service"
@@ -245,24 +251,26 @@ export const marketingPages: Record<string, MarketingPage> = {
   features: {
     eyebrow: "Features",
     title: "What TeamShastra does, in plain language.",
-    description: "Jobs, attendance, GST invoices, purchases, expenses, reports, and a customer portal — what field teams can do in the app today.",
+    description: "Jobs, attendance, GST invoices, purchases, expenses, staff salary, reports, and a customer portal — what field teams can do in the app today.",
     cta: "Get started",
     cards: [
-      { marker: "1", title: "Work orders", text: "Create a job, assign a technician, move status, add comments and before/after photos, see today's board, and share a completion report PDF." },
-      { marker: "2", title: "Team & attendance", text: "Invite technicians and managers. Check in and out with optional location (works offline). Managers review duty, mark leave, and correct records. No all-day GPS tracking." },
-      { marker: "3", title: "Customers & AMC", text: "Customer directory with job history, AMC contracts, customers due for a visit, and an optional customer portal for jobs you share." },
-      { marker: "4", title: "GST invoices & quotations", text: "Catalog, quotations, GST tax invoices, credit notes, debit notes, delivery challans, payments, and pending collections. Share PDFs on WhatsApp." },
-      { marker: "5", title: "GST & TDS compliance", text: "Export CA-ready GSTR-1, GSTR-3B, GSTR-9, and HSN summary workbooks (not GST portal filing). TDS rate configuration, reports, and Form 26Q certificates." },
-      { marker: "6", title: "Stock & inventory", text: "A catalog with stock tracking and a movement ledger across sales, purchases, returns, and adjustments." },
-      { marker: "7", title: "Purchases & suppliers", text: "Record purchase bills, track what you still owe suppliers, and keep sales and purchases in the same workspace." },
-      { marker: "8", title: "Expenses, float & bank", text: "Log field expenses by person and category. Track cash given to staff (float) and bank balances next to collections." },
-      { marker: "9", title: "Payroll", text: "Owner-only payroll: per-employee pay profiles (monthly, daily, or hourly), paid holidays, salary advances, and one-off adjustments. Run monthly payroll from draft to locked to paid." },
-      { marker: "10", title: "Multi-company workspaces", text: "One login can switch between more than one company, each with its own jobs, customers, and books." },
-      { marker: "11", title: "Reports", text: "Job summary, technician performance, and revenue views for owners and managers." },
-      { marker: "12", title: "Languages", text: "English, Hindi, Gujarati, Marathi, and Bengali — built for Indian field teams." },
-      { marker: "13", title: "Alerts", text: "Push notifications for jobs and comments, tapping straight through to the relevant screen." },
-      { marker: "14", title: "Customer support", text: "Chat with TeamShastra from inside the app, or start a visitor chat on this site with your email and mobile number — a real person (or our support assistant) replies in the thread." },
-      { marker: "15", title: "Switching from Vyapar", text: "Bulk import your catalog, parties, sales, purchases, and expenses from Vyapar, with a dry-run preview before anything is saved." }
+      { marker: "1", title: "Work orders", text: "Create a job, assign a team, move status (including on hold), add comments and before/after photos, see today's board, and share a service report or progress report PDF." },
+      { marker: "2", title: "Team & attendance", text: "Invite technicians and managers. Check in and out offline. Location is only at punch time — a company can require GPS, an office radius, or a live check-in selfie. Managers mark leave, half day, absent, or holiday. No background GPS." },
+      { marker: "3", title: "Team map", text: "See who is on duty from check-in, job-start, and job-photo pins, and ask the team for a work-status update. This is not all-day tracking." },
+      { marker: "4", title: "Customers & AMC", text: "Customer directory with job history, AMC contracts, and customers due for a visit. An optional portal lets you share or hide each job; the customer can see photos and message your team." },
+      { marker: "5", title: "GST invoices & quotations", text: "Catalog, quotations, proforma invoices, GST tax invoices, credit notes, debit notes, delivery challans, payments, and pending collections. Share PDFs on WhatsApp." },
+      { marker: "6", title: "GST & TDS compliance", text: "Export CA-ready GSTR-1, GSTR-3B, GSTR-9, and a full GST workbook (not GST portal filing). Invoice lines can include HSN. TDS rates, reports, and Form 26Q certificates." },
+      { marker: "7", title: "Stock & inventory", text: "A catalog with stock tracking and a movement history across sales, purchases, and stock adjustments." },
+      { marker: "8", title: "Purchases & suppliers", text: "Record purchase bills and debit notes, track what you still owe suppliers, and keep sales and purchases in the same workspace." },
+      { marker: "9", title: "Expenses, float & bank", text: "Log field expenses by person and category. Track cash given to staff (staff cash) and bank balances next to collections." },
+      { marker: "10", title: "Staff salary", text: "Owners open a calendar month, set Monthly, Per day, or Hourly wages, and see who is still to pay. Each person shows present, half day, leave, holiday, weekly off, and missed punches. Freeze the month, then pay from bank or cash." },
+      { marker: "11", title: "Advances, off days & payslips", text: "A salary advance keeps the amount left (not cut yet, or partly cut) and is deducted when you pay. Weekly off is unpaid on a per-day wage and already included in a monthly salary. Holidays can be paid or unpaid, including a half holiday. Paid leave can be a yearly quota. Share a payslip PDF. Staff open their own paid payslips. Optional overtime, bonus, and indicative PF, ESI, PT, or TDS — not a tax filing and not Form 16." },
+      { marker: "12", title: "Multi-company workspaces", text: "One login can switch between more than one company, each with its own jobs, customers, and books." },
+      { marker: "13", title: "Reports", text: "Job summary, technician performance, revenue, money in and out, expenses, staff cash, and team attendance." },
+      { marker: "14", title: "Languages", text: "English, Hindi, Gujarati, Marathi, and Bengali — built for Indian field teams." },
+      { marker: "15", title: "Alerts", text: "Push notifications for jobs and comments, tapping straight through to the relevant screen." },
+      { marker: "16", title: "Customer support", text: "Chat with TeamShastra from inside the app, or start a visitor chat on this site with your email and mobile number — a real person (or our support assistant) replies in the thread." },
+      { marker: "17", title: "Switching from Vyapar", text: "Import your catalog, parties, sales, purchases, and expenses from Vyapar or a spreadsheet. Match the columns, then review valid rows and any issues before they are saved." }
     ],
     bannerTitle: "Create your company workspace.",
     bannerText: "Download on Google Play or sign up on the web at app.teamshastra.com. Use this site for product information, privacy, and support.",
