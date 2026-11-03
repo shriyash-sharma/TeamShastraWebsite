@@ -8,7 +8,7 @@ type Props = {
 
 export function SeoCta({
   title = "Ready to modernize your field operations?",
-  text = "Create a TeamShastra workspace and run jobs, attendance, billing, and expenses from one app.",
+  text = "Create a TeamShastra workspace and run jobs, attendance, billing, salary, and expenses from one app.",
   variant = "banner"
 }: Props) {
   if (variant === "banner") {

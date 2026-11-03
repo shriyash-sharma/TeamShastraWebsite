@@ -8,8 +8,8 @@ export const standardBenefits = [
   "Reduce paperwork and manual coordination across field teams",
   "Keep AMC contracts and due visits against each customer instead of a spreadsheet",
   "Capture before/after photos as proof of completed work",
-  "Track attendance with optional GPS check-in — no all-day background tracking",
-  "Run payroll from the same attendance data already tracked for the team",
+  "Track attendance at punch time only — GPS, an office radius, or a check-in selfie if the company requires it, with no background tracking",
+  "Pay staff salary for a calendar month from the same attendance, with Monthly, Per day, or Hourly wages and payslips",
   "Monitor operations from the web dashboard and Android app"
 ];
 

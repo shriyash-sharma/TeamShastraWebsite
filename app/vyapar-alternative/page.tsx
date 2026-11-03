@@ -11,13 +11,13 @@ export const metadata: Metadata = pageMetadata(
 
 const rows: Array<{ capability: string; vyapar: string; teamshastra: string }> = [
   { capability: "GST invoicing & quotations", vyapar: "Yes", teamshastra: "Yes" },
-  { capability: "Stock & inventory tracking", vyapar: "Yes, with barcode scanning", teamshastra: "Yes, with a stock movement ledger" },
+  { capability: "Stock & inventory tracking", vyapar: "Yes, with barcode scanning", teamshastra: "Yes, with stock adjustments and a movement history" },
   { capability: "GST return exports (GSTR-1/3B/9, HSN)", vyapar: "Yes", teamshastra: "Yes" },
   { capability: "TDS rates, reports & Form 26Q", vyapar: "Not on Vyapar's public feature list", teamshastra: "Yes" },
   { capability: "Job assignment & work orders for field technicians", vyapar: "Not on Vyapar's public feature list", teamshastra: "Yes — assign, track status, before/after photos" },
   { capability: "Technician attendance (GPS check-in/out)", vyapar: "Salesman GPS tracking for sales reps", teamshastra: "Yes — punch-time GPS for the whole field team, feeding payroll" },
   { capability: "AMC / recurring service contract due-visit tracking", vyapar: "Not on Vyapar's public feature list", teamshastra: "Yes" },
-  { capability: "Payroll", vyapar: "Not on Vyapar's public feature list", teamshastra: "Yes, owner-only, linked to attendance" },
+  { capability: "Payroll", vyapar: "Not on Vyapar's public feature list", teamshastra: "Yes — owners set Monthly, Per day, or Hourly wages, pay a calendar month from attendance, cut advances, and share payslips" },
   { capability: "Optional customer portal", vyapar: "Not on Vyapar's public feature list", teamshastra: "Yes, opt-in" },
   { capability: "POS billing / online store", vyapar: "Yes", teamshastra: "Not offered" },
   { capability: "Regional Indian languages in-app", vyapar: "Not specified on Vyapar's site", teamshastra: "English, Hindi, Gujarati, Marathi, Bengali" },
@@ -28,7 +28,7 @@ const rows: Array<{ capability: string; vyapar: string; teamshastra: string }> =
 const faqs = [
   {
     question: "Can I import my Vyapar data into TeamShastra?",
-    answer: "Yes. TeamShastra supports bulk import of your catalog, parties, sales, purchases, expenses, and stock from Vyapar, with a dry-run preview before anything is saved to your workspace."
+    answer: "Yes. TeamShastra can import catalog, parties, sales, purchases, and expenses from Vyapar or a spreadsheet. You match columns and review valid rows and issues before they are saved."
   },
   {
     question: "Is TeamShastra a direct replacement for Vyapar?",

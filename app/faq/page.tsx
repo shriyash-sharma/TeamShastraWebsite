@@ -12,7 +12,7 @@ export const metadata: Metadata = pageMetadata(
 const productFaqs = [
   {
     question: "Does TeamShastra support work orders and technician assignment?",
-    answer: "Yes. Create a job, assign a technician, track status on today's board, and add before/after photos and a completion report PDF."
+    answer: "Yes. Create a job, assign a team, track status on today's board, add before/after photos, and share a service report or progress report PDF."
   },
   {
     question: "Does TeamShastra support AMC and recurring service contracts?",
@@ -20,11 +20,11 @@ const productFaqs = [
   },
   {
     question: "Is there a customer portal?",
-    answer: "Yes, as an optional, opt-in feature. Customers can see only the jobs, invoices, and visit history you choose to share — nothing is shared by default."
+    answer: "Yes, as an optional module. Invite the customer, then share or hide each job. They can track shared jobs, view photos, and message your team. A job stays hidden until you share it."
   },
   {
     question: "Can I switch to TeamShastra from Vyapar?",
-    answer: "Yes. TeamShastra supports bulk import of your catalog, parties, sales, purchases, and expenses from Vyapar, with a dry-run preview before anything is saved. See the Vyapar comparison for details."
+    answer: "Yes. TeamShastra can import catalog, parties, sales, purchases, and expenses from Vyapar or a spreadsheet. You match columns and review valid rows and issues before they are saved. See the Vyapar comparison for details."
   },
   {
     question: "Does TeamShastra have an iOS app?",

@@ -26,7 +26,7 @@ export const solutions: SolutionPage[] = [
     useCases: [
       { title: "Multi-branch electrical contractor", industry: "Electrical", problem: "Technicians across two or three branches with no unified system for job status.", solution: "Branch-wise work orders with shared visibility for managers across every location.", benefits: ["Multi-branch visibility", "Digital work orders", "Before/after photo proof"] },
       { title: "CCTV installer with growing team", industry: "CCTV", problem: "Jobs assigned by phone call; installation and AMC visits without a shared record.", solution: "Assign work orders to technicians, track status to completion, and attach photos and GST invoices to the same job.", benefits: ["Job-linked photos", "Status tracking", "GST invoices tied to the job"] },
-      { title: "Equipment service network", industry: "Equipment service", problem: "Service centers with inconsistent reporting back to the office.", solution: "Standardized digital service reports with checklists and photos per visit.", benefits: ["Standardized reports", "Service history per customer", "Technician-wise job load"] }
+      { title: "Equipment service network", industry: "Equipment service", problem: "Service centers with inconsistent reporting back to the office.", solution: "A service report or progress report PDF, with photos from the job, for every visit.", benefits: ["Service report PDFs", "Service history per customer", "Technician-wise job load"] }
     ],
     caseStudy: {
       companyName: "AllIndia Service Networks (illustrative example)",
@@ -37,7 +37,7 @@ export const solutions: SolutionPage[] = [
     faqs: [
       { question: "Is TeamShastra suitable for multi-branch field service operations in India?", answer: "Yes. Multi-company workspace support lets businesses manage technicians across branches from one account." },
       { question: "Can service businesses manage AMC contracts?", answer: "Yes. AMC contracts and customers due for a visit are tracked against each customer." },
-      { question: "Does TeamShastra support digital service reports?", answer: "Yes. Work orders support checklists, before/after photos, and completion report PDFs in place of paper job sheets." },
+      { question: "Does TeamShastra support digital service reports?", answer: "Yes. Share a service report PDF when the job is done, or a progress report while it is open, with before/after photos from the job." },
       { question: "Can field technicians work offline?", answer: "Yes. Attendance check-in and work order updates work offline and sync when the connection returns." },
       { question: "How long does implementation take?", answer: "Most businesses start with one team or branch and expand from there; there is no fixed rollout timeline." }
     ],
@@ -77,7 +77,7 @@ export const solutions: SolutionPage[] = [
       results: ["Invoices issued from the same workspace as jobs", "Faster collections", "CA-ready GST exports"]
     },
     faqs: [
-      { question: "Does TeamShastra file GST returns on the government portal?", answer: "No. It creates GST invoices and CA-ready export workbooks (GSTR-1, GSTR-3B, GSTR-9, and HSN summary). Your CA files returns on the GST portal." },
+      { question: "Does TeamShastra file GST returns on the government portal?", answer: "No. It creates GST invoices and CA-ready exports (GSTR-1, GSTR-3B, GSTR-9, and a full GST workbook). Invoice lines can include HSN. Your CA files returns on the GST portal." },
       { question: "Can I share invoices on WhatsApp?", answer: "Yes. Share quotation and invoice PDFs on WhatsApp." },
       { question: "Are purchases included?", answer: "Yes. Record purchase bills and supplier balances next to sales." },
       { question: "Does billing work in Hindi?", answer: "Yes. English, Hindi, Gujarati, Marathi, and Bengali are supported." }
@@ -146,7 +146,7 @@ export const solutions: SolutionPage[] = [
     ],
     useCases: [
       { title: "Multi-branch technician attendance", industry: "Field service", problem: "Two branches, no shared attendance record for payroll.", solution: "GPS check-in per technician, visible to managers across every branch.", benefits: ["Shared attendance record", "Payroll-ready exports", "Fewer manual corrections"] },
-      { title: "AMC team daily check-in", industry: "Maintenance", problem: "Technicians visiting several customer sites a day with no attendance trail.", solution: "Check-in and check-out at each site, with leave requests handled in the same app.", benefits: ["Site-linked attendance", "Leave visibility", "Owner-only payroll access"] }
+      { title: "AMC team daily check-in", industry: "Maintenance", problem: "Technicians visiting several customer sites a day with no attendance trail.", solution: "Check-in and check-out, with leave handled in the same app and salary drawn from those days.", benefits: ["Punch-time attendance", "Leave visibility", "Salary from the same attendance"] }
     ],
     caseStudy: {
       companyName: "Field Team Records (illustrative example)",
@@ -155,10 +155,10 @@ export const solutions: SolutionPage[] = [
       results: ["GPS-verified attendance replacing paper registers", "Leave requests tracked in one place", "Payroll runs built from real attendance data"]
     },
     faqs: [
-      { question: "Can attendance be tracked using GPS?", answer: "Yes. Optional location is captured at check-in and check-out. There is no continuous background GPS tracking." },
-      { question: "Does TeamShastra support leave management?", answer: "Yes. Leave requests, approvals, and availability help managers plan who is on duty." },
+      { question: "Can attendance be tracked using GPS?", answer: "Yes. Location is captured at check-in and check-out only, never in the background. A company can require GPS, an office radius, or a check-in selfie." },
+      { question: "Does TeamShastra support leave management?", answer: "Yes. Owners or managers can mark leave, a half day, absent, or a holiday, and see who is on duty." },
       { question: "Can attendance work offline?", answer: "Yes. Check-in and check-out work offline and sync once the connection returns." },
-      { question: "Does attendance feed into payroll?", answer: "Yes. Monthly payroll runs use the same attendance and leave records already tracked for the team." }
+      { question: "Does attendance feed into payroll?", answer: "Yes. Staff salary for a calendar month uses the same days: present, half day, leave, holiday, weekly off, and missed punches. Freeze the month, then pay." }
     ],
     relatedCitySlugs: ["delhi", "mumbai", "bengaluru", "pune", "chennai", "hyderabad"],
     relatedSolutionSlugs: ["field-employee-tracking", "technician-management-software", "field-service-management-software-india"]
@@ -229,20 +229,20 @@ export const solutions: SolutionPage[] = [
   {
     slug: "service-report-software",
     title: "Service Report Software",
-    metaDescription: "Digital service report software for Indian field teams. Standardized checklists and photo evidence, replacing paper job sheets.",
+    metaDescription: "Digital service report software for Indian field teams. Share a service report or progress report PDF with job photos, replacing paper job sheets.",
     eyebrow: "Service Reports",
     headline: "Digital Service Report Software for Field Teams",
-    lead: "Standardize field service documentation with digital checklists and photo evidence — replacing paper job sheets across India.",
-    challenges: ["Inconsistent paper reports across technicians", "Photos and evidence not attached to job records", "Reports not accessible for billing", "Checklist compliance not enforced"],
+    lead: "Replace paper job sheets with a service report or progress report PDF, and keep the visit photos on the job.",
+    challenges: ["Inconsistent paper reports across technicians", "Photos and evidence not attached to job records", "No PDF to send the customer after a visit", "The office cannot see progress until someone calls"],
     industries: [
       { name: "HVAC & plumbing", description: "Service reports for installation and repair visits." },
       { name: "Equipment service", description: "Repair and AMC visit reports." },
       { name: "Facilities maintenance", description: "Daily and periodic facility service reports." },
       { name: "CCTV & security installers", description: "Installation and commissioning reports." }
     ],
-    useCases: [{ title: "HVAC service report standardization", industry: "HVAC", problem: "Inconsistent technician reports.", solution: "A shared checklist template used for every visit.", benefits: ["Consistent reports", "Equipment history", "AMC billing support"] }],
-    caseStudy: { companyName: "ReportPro Services (illustrative example)", location: "India", problem: ["Inconsistent paper reports"], results: ["Reports standardized across every technician", "Faster billing cycles"] },
-    faqs: [{ question: "Can service reports include checklists?", answer: "Yes. Checklists help standardize documentation per job type." }],
+    useCases: [{ title: "HVAC service report standardization", industry: "HVAC", problem: "Inconsistent technician reports.", solution: "Every visit can share a service report or progress report PDF, with photos from the job.", benefits: ["Service report PDFs", "Photos on the job", "A record the office can send"] }],
+    caseStudy: { companyName: "ReportPro Services (illustrative example)", location: "India", problem: ["Inconsistent paper reports"], results: ["Service report PDFs shared from the job", "Visit photos kept with the job record"] },
+    faqs: [{ question: "Can service reports include photos?", answer: "Yes. A service report or progress report PDF can include photos and PDFs already attached to the job." }],
     relatedCitySlugs: ["bengaluru", "hyderabad", "mumbai", "delhi"],
     relatedSolutionSlugs: ["field-service-management-software-india", "digital-work-orders", "hvac-service-management"]
   },
@@ -316,8 +316,8 @@ export const solutions: SolutionPage[] = [
       { name: "Rooftop solar EPC", description: "Residential and commercial rooftop installation crews." },
       { name: "Solar O&M", description: "Operations and maintenance for installed systems." }
     ],
-    useCases: [{ title: "Rooftop installation tracking", industry: "Rooftop solar", problem: "Several concurrent installations with no shared progress view.", solution: "Project work orders with installation checklists and photo evidence.", benefits: ["Progress tracking", "Photo-backed handover", "Installation history per site"] }],
-    caseStudy: { companyName: "SunTrack EPC (illustrative example)", location: "India", problem: ["No shared install progress view"], results: ["Installation checklists standardized across crews", "Handover documentation kept with the job record"] },
+    useCases: [{ title: "Rooftop installation tracking", industry: "Rooftop solar", problem: "Several concurrent installations with no shared progress view.", solution: "Work orders with a progress report PDF and photo evidence.", benefits: ["Progress report PDFs", "Photo-backed handover", "Installation history per site"] }],
+    caseStudy: { companyName: "SunTrack EPC (illustrative example)", location: "India", problem: ["No shared install progress view"], results: ["Progress report PDFs shared from the job", "Handover photos kept with the job record"] },
     faqs: [{ question: "Can solar O&M work offline at remote sites?", answer: "Yes. Offline work order updates sync when connectivity returns." }],
     relatedCitySlugs: ["jaipur", "ahmedabad", "pune", "bengaluru"],
     relatedSolutionSlugs: ["field-service-management-software-india", "technician-management-software"]

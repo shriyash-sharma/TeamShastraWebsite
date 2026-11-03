@@ -14,9 +14,10 @@ export const features: FeatureProfile[] = [
       "Modern workforce management platform trusted by growing businesses coordinating distributed teams, site visits, and daily operations.",
     focusAreas: ["Attendance & leave", "Field team visibility", "Work order assignment", "Operational reporting"],
     featureHighlights: [
-      { title: "GPS attendance", description: "Verify check-in and check-out at punch time — no continuous background tracking." },
-      { title: "Office geofencing", description: "Optionally validate attendance within an approved office radius." },
-      { title: "Leave management", description: "Track approvals and availability so managers always know who is on duty." },
+      { title: "GPS attendance", description: "Capture location at check-in and check-out only — never in the background. A company can require it." },
+      { title: "Office geofencing", description: "Optionally allow punches only inside a saved office radius. More than one office pin is supported." },
+      { title: "Check-in selfie", description: "Optionally require a live camera selfie at check-in. Gallery upload is not accepted when this is on." },
+      { title: "Leave management", description: "Mark leave, half day, absent, or holiday, and see who is on duty." },
       { title: "Work orders", description: "Assign, track, and close jobs with status updates visible to managers and customers." },
       { title: "Offline sync", description: "Field teams in low-connectivity areas can continue working and sync when back online." }
     ]
@@ -36,9 +37,9 @@ export const features: FeatureProfile[] = [
     featureHighlights: [
       { title: "Job status visibility", description: "See what jobs are in progress, completed, or need reassignment on today's board." },
       { title: "Manual dispatch", description: "Assign jobs to technicians based on availability and workload." },
-      { title: "Digital service reports", description: "Replace paper job sheets with structured reports and before/after photos." },
-      { title: "AMC due visits", description: "Schedule recurring service visits and convert due AMC visits into jobs with one tap." },
-      { title: "GST invoices", description: "Create quotations and GST tax invoices, record payments, and share PDFs on WhatsApp." },
+      { title: "Digital service reports", description: "Replace paper job sheets with a service report or progress report PDF and before/after photos." },
+      { title: "AMC due visits", description: "Schedule recurring service visits and create a job from a due AMC visit." },
+      { title: "GST invoices", description: "Create quotations, proforma invoices, and GST tax invoices, record payments, and share PDFs on WhatsApp." },
       { title: "Field expenses", description: "Log technician spend, cash float, and purchase bills next to the job." },
     ]
   },
@@ -55,12 +56,13 @@ export const features: FeatureProfile[] = [
       "Accurate attendance tracking for distributed teams that work across offices, customer sites, and job locations.",
     focusAreas: ["GPS check-in", "Office geofencing", "Leave workflows", "Attendance reports"],
     featureHighlights: [
-      { title: "GPS attendance", description: "Capture location-verified punch-in and punch-out at check-in and check-out — not continuous background tracking." },
-      { title: "Office geofencing", description: "Optionally validate attendance within an approved office radius." },
+      { title: "GPS attendance", description: "Capture location at check-in and check-out only — not continuous background tracking. A company can require GPS." },
+      { title: "Office geofencing", description: "Optionally allow punches only inside a saved office radius, including more than one office." },
+      { title: "Check-in selfie", description: "Optionally require a live camera selfie at check-in. A gallery photo is not accepted when this is on." },
       { title: "Offline check-in", description: "Attendance keeps working without signal and syncs when connectivity returns." },
-      { title: "Leave management", description: "Manage leave requests, balances, and approvals without spreadsheet chaos." },
-      { title: "Role-based permissions", description: "Give managers visibility by team without exposing payroll data." },
-      { title: "Attendance reports", description: "Export daily, weekly, and monthly attendance for payroll and compliance review." }
+      { title: "Leave management", description: "Mark leave, a half day, absent, or a holiday. Owners and managers approve leave requests." },
+      { title: "Role-based permissions", description: "Managers see team attendance. Owners run staff salary; each person can open their own paid payslips." },
+      { title: "Attendance reports", description: "Review who checked in, leave, and hours logged, and use the same days when you pay salary." }
     ]
   },
   {
@@ -79,7 +81,7 @@ export const features: FeatureProfile[] = [
       { title: "Digital work orders", description: "Replace WhatsApp messages and paper chits with structured, trackable job tickets." },
       { title: "Manager assignment", description: "Managers assign jobs to technicians and reassign as priorities change." },
       { title: "Photo reports", description: "Attach before/after photos and notes so managers can verify work quality remotely." },
-      { title: "Completion report PDFs", description: "Share a completion report PDF after a job closes." },
+      { title: "Service and progress PDFs", description: "Share a service report after the job, or a progress report while it is still open." },
       { title: "Status lifecycle", description: "Track jobs from assigned to in progress to completed, with reopen and cancel paths." },
       { title: "Work order history", description: "Maintain a searchable record of past jobs, parts used, and technician notes." }
     ]
@@ -99,7 +101,7 @@ export const features: FeatureProfile[] = [
     featureHighlights: [
       { title: "Job status board", description: "See which jobs are assigned, in progress, or completed today." },
       { title: "Punch-time attendance", description: "Confirm check-in and check-out with optional location, not continuous tracking." },
-      { title: "No all-day GPS", description: "There is no background location tracking outside of attendance punch times." },
+      { title: "No all-day GPS", description: "There is no background location tracking. The team map uses pins from check-in, starting a job, or a job photo." },
       { title: "Activity logs", description: "Track job starts and completions for operational accountability." },
       { title: "Multi-branch support", description: "Manage teams across branches from one dashboard." },
       { title: "Role-based access", description: "Managers see their team's activity; technicians see their own." }
@@ -143,7 +145,7 @@ export const features: FeatureProfile[] = [
       { title: "Quotations", description: "Send quotes, then convert them into invoices when the customer confirms." },
       { title: "Payments & pending collections", description: "Record payments and see what customers still owe." },
       { title: "WhatsApp PDFs", description: "Share invoice and quotation PDFs on WhatsApp instead of printing." },
-      { title: "CA-ready GST exports", description: "Export GST workbooks for your accountant. Not GST portal filing." },
+      { title: "CA-ready GST exports", description: "Download GSTR-1, GSTR-3B, GSTR-9, and a full GST workbook. Invoice lines can include HSN. Not GST portal filing." },
       { title: "Purchases", description: "Record supplier bills and pending payables next to sales." }
     ]
   },
@@ -173,20 +175,20 @@ export const features: FeatureProfile[] = [
     name: "Payroll Management",
     shortName: "Payroll",
     headline: "Payroll Management Software",
-    description: "Run monthly payroll with per-employee pay profiles, salary advances, and locked pay runs.",
+    description: "Pay staff salary for a calendar month from Monthly, Per day, or Hourly wages, with advances and payslips.",
     metaTitleSuffix: "Payroll Management Software",
     metaDescriptionTemplate:
-      "Payroll management software for {city} field service teams. Per-employee pay profiles, paid holidays, salary advances, and monthly payroll runs from draft to paid.",
+      "Payroll software for {city} field teams. Set Monthly, Per day, or Hourly wages, see who is still to pay in a calendar month, cut salary advances, and share payslips.",
     heroLead:
-      "Payroll built into the same workspace as attendance and jobs, so pay reflects the days your field team actually worked.",
-    focusAreas: ["Per-employee pay profiles", "Salary advances", "Paid holidays", "Draft-to-paid payroll runs"],
+      "Staff salary in the same workspace as attendance, so a calendar month's pay follows the days your field team actually worked.",
+    focusAreas: ["Monthly, Per day, or Hourly wages", "Calendar-month salary", "Advances with amount left", "Payslips"],
     featureHighlights: [
-      { title: "Pay profiles", description: "Set monthly, daily, or hourly pay per employee, and change it over time as roles evolve." },
-      { title: "Salary advances", description: "Record advances paid by cash, UPI, or bank, and deduct them automatically from the next payout." },
-      { title: "Paid holidays", description: "Configure paid holidays so payroll reflects real working days, not just a flat monthly rate." },
-      { title: "Monthly payroll runs", description: "Generate payroll from attendance data, review as a draft, then lock and mark it paid." },
-      { title: "Owner-only visibility", description: "Payroll stays restricted to owners; managers and technicians never see pay data." },
-      { title: "Linked to attendance", description: "Payroll pulls from the same attendance and leave records already tracked for the team." }
+      { title: "Salary list", description: "Open a calendar month, search the team, and filter who is paid or still to pay. The month shows a total and what is still to pay." },
+      { title: "Set wages", description: "Set Monthly, Per day, or Hourly pay for each person, with the date it starts. Monthly pay can be split by working days, calendar days, or a fixed 26 or 30." },
+      { title: "Weekly off and holidays", description: "Weekly off is unpaid on a per-day wage and already included in a monthly salary. Company holidays can be paid or unpaid, including a half holiday. Paid leave can be a yearly quota." },
+      { title: "Salary advances", description: "Record an advance and see the amount left — not cut yet, or partly cut. The cut happens when you pay, not when you record it." },
+      { title: "Freeze, then pay", description: "Check each person's days, freeze the month so later punches do not change it, then pay from bank or cash. Add a bonus or another deduction if you need to." },
+      { title: "Payslips", description: "Share a payslip PDF after pay, or an Excel file for your CA. Each person can open their own paid payslips. Optional overtime and indicative PF, ESI, PT, or TDS are display-only — not Form 16 and not a filing." }
     ]
   },
   {
@@ -194,20 +196,20 @@ export const features: FeatureProfile[] = [
     name: "Customer Portal",
     shortName: "Customer Portal",
     headline: "Customer Portal Software",
-    description: "Give customers a self-serve view of the jobs, invoices, and visits you choose to share.",
+    description: "Invite a customer to track the jobs you share, view photos, and message your team.",
     metaTitleSuffix: "Customer Portal Software",
     metaDescriptionTemplate:
-      "Customer portal software for {city} field service companies. Share selected job status, invoices, and visit history with customers without giving them full account access.",
+      "Customer portal software for {city} field service companies. Share or hide each job, and let customers view photos and message your team.",
     heroLead:
-      "An optional customer-facing view so clients can check job status and history without a phone call to your office.",
-    focusAreas: ["Shared job visibility", "Invoice access", "Visit history", "Controlled access"],
+      "An optional customer login so clients can follow the jobs you choose to share, without a call to the office.",
+    focusAreas: ["Share or hide each job", "Job photos", "Messages", "Optional module"],
     featureHighlights: [
-      { title: "Selective sharing", description: "Choose which jobs and updates a customer can see — nothing is shared by default." },
-      { title: "Job status", description: "Customers see where their job stands without calling or messaging your team." },
-      { title: "Invoice visibility", description: "Share GST invoices and payment status directly with the customer." },
-      { title: "Visit history", description: "Customers can review past visits and completion reports for their own records." },
-      { title: "No extra app", description: "Customers access their portal view without installing a separate app." },
-      { title: "Reduced call volume", description: "Fewer status-check calls to your office and technicians." }
+      { title: "Off until you turn it on", description: "Customer portal is an opt-in module. It is not enabled for a company until it is turned on." },
+      { title: "Share or hide a job", description: "A job stays hidden until you share it. You can hide it again later." },
+      { title: "Photos and messages", description: "Customers track shared jobs, view photos, and message your team." },
+      { title: "Their own login", description: "Invite a customer with an email and a temporary password. They set their own password next." },
+      { title: "No extra app", description: "Customers use the portal in the browser. They do not get the staff app." },
+      { title: "WhatsApp the link", description: "Send the portal login link on WhatsApp after the customer is invited." }
     ]
   },
   {
