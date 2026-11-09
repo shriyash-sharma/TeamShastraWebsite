@@ -105,6 +105,11 @@ export function VisitorChat() {
   const [error, setError] = useState("");
   const [showCallback, setShowCallback] = useState(false);
   const [callbackSent, setCallbackSent] = useState(false);
+  const [callbackFormOpen, setCallbackFormOpen] = useState(false);
+  const [callbackPhone, setCallbackPhone] = useState("");
+  const [callbackTime, setCallbackTime] = useState("");
+  const [callbackBusy, setCallbackBusy] = useState(false);
+  const [callbackNumber, setCallbackNumber] = useState("");
   const bottomRef = useRef<HTMLDivElement>(null);
   const messagesRef = useRef<HTMLDivElement>(null);
   const stickToBottomRef = useRef(true);
@@ -425,12 +430,62 @@ export function VisitorChat() {
     }
   }
 
+  // Server-side call request: flags the thread and alerts our team on their
+  // phones. A tel:/WhatsApp link alone never reaches us, so this is the path
+  // that guarantees someone is told to call back.
+  async function requestCall(phone: string, preferredTime?: string) {
+    const number = phone.trim();
+    if (number.replace(/\D/g, "").length < 10) {
+      setError("Enter a valid mobile number.");
+      return;
+    }
+    let activeSession: Session;
+    try {
+      activeSession = await ensureSession();
+    } catch (err: unknown) {
+      setError(
+        err instanceof Error && err.message
+          ? err.message
+          : "Could not reach TeamShastra. Try again in a moment."
+      );
+      return;
+    }
+    setCallbackBusy(true);
+    setError("");
+    try {
+      const resp = await fetch(`${supportApiBase}/visitor/callback`, {
+        method: "POST",
+        headers: headers(activeSession.session_token),
+        body: JSON.stringify({
+          phone: number,
+          ...(preferredTime?.trim() ? { preferred_time: preferredTime.trim() } : {})
+        })
+      });
+      const data = await resp.json().catch(() => null);
+      if (!resp.ok) {
+        setError(errorMessage(data, "Call request could not be sent."));
+        return;
+      }
+      setCallbackNumber(number);
+      setCallbackSent(true);
+      setCallbackFormOpen(false);
+      setShowCallback(false);
+      void refreshMessages(activeSession.session_token);
+    } catch {
+      setError("Call request could not be sent.");
+    } finally {
+      setCallbackBusy(false);
+    }
+  }
+
   function resetSession() {
     localStorage.removeItem(STORAGE_KEY);
     setSession(null);
     setMessages([]);
     setCallbackSent(false);
     setShowCallback(false);
+    setCallbackFormOpen(false);
+    setCallbackNumber("");
     setError("");
   }
 
@@ -498,10 +553,64 @@ export function VisitorChat() {
                   Chatting with{" "}
                   <strong>{session?.visitor_email || session?.visitor_phone || "TeamShastra"}</strong>
                 </span>
-                <button type="button" className="visitor-chat-reset" onClick={resetSession}>
-                  New chat
-                </button>
+                <span className="visitor-chat-meta-actions">
+                  {!callbackSent ? (
+                    <button
+                      type="button"
+                      className="visitor-chat-reset"
+                      data-testid="visitor-chat-request-call"
+                      aria-expanded={callbackFormOpen}
+                      onClick={() => {
+                        setCallbackPhone((prev) => prev || session?.visitor_phone || "");
+                        setCallbackFormOpen((value) => !value);
+                      }}
+                    >
+                      📞 Request a call
+                    </button>
+                  ) : null}
+                  <button type="button" className="visitor-chat-reset" onClick={resetSession}>
+                    New chat
+                  </button>
+                </span>
               </div>
+              {callbackFormOpen && !callbackSent ? (
+                <form
+                  className="visitor-chat-call-form"
+                  data-testid="visitor-chat-call-form"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    void requestCall(callbackPhone, callbackTime);
+                  }}
+                >
+                  <input
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    value={callbackPhone}
+                    onChange={(e) => setCallbackPhone(e.target.value)}
+                    placeholder="Mobile number"
+                    aria-label="Mobile number"
+                    maxLength={20}
+                    required
+                    data-testid="visitor-chat-call-phone"
+                  />
+                  <input
+                    value={callbackTime}
+                    onChange={(e) => setCallbackTime(e.target.value)}
+                    placeholder="Best time (optional)"
+                    aria-label="Best time to call"
+                    maxLength={80}
+                  />
+                  <button
+                    type="submit"
+                    className="visitor-chat-send"
+                    disabled={callbackBusy || !callbackPhone.trim()}
+                    data-testid="visitor-chat-call-submit"
+                  >
+                    {callbackBusy ? "Sending…" : "Call me"}
+                  </button>
+                </form>
+              ) : null}
               <div
                 className="visitor-chat-messages"
                 data-testid="visitor-chat-thread"
@@ -551,16 +660,19 @@ export function VisitorChat() {
                   type="button"
                   className="visitor-chat-callback"
                   data-testid="visitor-chat-callback"
+                  disabled={callbackBusy}
                   onClick={() => {
-                    setCallbackSent(true);
-                    void send(`Please call me on ${session.visitor_phone}.`);
+                    void requestCall(session.visitor_phone ?? "");
                   }}
                 >
                   No reply yet — ask us to call {session.visitor_phone}
                 </button>
               ) : null}
               {callbackSent ? (
-                <p className="visitor-chat-note">We will call you back on {session?.visitor_phone}.</p>
+                <p className="visitor-chat-note" data-testid="visitor-chat-call-done">
+                  Thanks — our team has been alerted and will call you on{" "}
+                  {callbackNumber || session?.visitor_phone}.
+                </p>
               ) : null}
               {error ? (
                 <p className="visitor-chat-error" data-testid="visitor-chat-error">
