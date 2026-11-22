@@ -38,6 +38,7 @@ export default function PrivacyPage() {
             "Field service records: customers, work orders, assignments, comments, status updates, activity logs, quotations, invoices, expenses, and service reports.",
             "Photos and media: job photos, company logos, voice notes, and files attached to work orders, chat, or service reports.",
             "Contacts (optional): only the contact you explicitly select when importing a customer or teammate. We do not upload your full address book.",
+            "Call logs (optional, Android): if your company enables Customer call sync and you turn it on, the app reads your phone’s call history to find calls with customers saved in your company’s TeamShastra account. Only those calls are sent to our servers (customer, date and time, duration, and whether the call was incoming, outgoing, or missed). Calls with other numbers stay on your device. We do not access call audio.",
             "Location data: coordinates captured only when a user performs attendance check-in or check-out. We do not use background location or continuous GPS tracking.",
             "Device and notifications: push notification tokens, device platform, and app version.",
             "Offline data: pending attendance actions, media uploads, and form drafts stored locally until sync.",
@@ -63,6 +64,10 @@ export default function PrivacyPage() {
         {
           title: "Photos, Voice Notes, and Files",
           body: "Camera, gallery, microphone, and selected contact details are used only for work documentation and collaboration. Content may be visible to authorized users in your company workspace and, where enabled, the customer portal."
+        },
+        {
+          title: "Call Logs (Optional)",
+          body: "If your company enables Customer call sync and you turn it on, the Android app reads your phone’s call history to find calls with customers saved in your company’s TeamShastra account. Only those calls are sent to our servers: the customer, date and time, duration, and whether the call was incoming, outgoing or missed. Calls with other numbers stay on your device. We do not access call audio. You can turn this off at any time in Settings; synced call records are deleted with the customer or the company account."
         },
         {
           title: "Service Providers (Processors)",
@@ -103,7 +108,7 @@ export default function PrivacyPage() {
             "Request access to personal data we hold about you",
             "Request correction of inaccurate account details",
             "Request deletion or deactivation of your account (see Account Deletion)",
-            "Withdraw optional permissions (location, camera, microphone, contacts, notifications) in device settings",
+            "Withdraw optional permissions (location, camera, microphone, contacts, call logs, notifications) in device settings or in-app Settings",
             "Withdraw marketing-site analytics consent via the cookie banner controls",
             "Raise concerns with us at the contact email below; you may also have rights under applicable Indian data-protection law"
           ]

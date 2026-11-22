@@ -8,7 +8,7 @@ export const androidPackage = "com.teamshastra.mobile";
 export const playStoreUrl = `https://play.google.com/store/apps/details?id=${androidPackage}`;
 export const betaStatus =
   "TeamShastra is field service management software for owners, managers, and technicians.";
-export const legalUpdatedAt = "September 24, 2026";
+export const legalUpdatedAt = "November 22, 2026";
 
 /** Product capabilities used in listing copy, schema, and AI crawlers. */
 export const productFeatureList = [
