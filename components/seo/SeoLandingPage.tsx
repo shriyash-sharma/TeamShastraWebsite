@@ -8,6 +8,7 @@ import { SeoCta } from "./SeoCta";
 import { SeoFaq } from "./SeoFaq";
 import { SeoIndustries } from "./SeoIndustries";
 import { SeoLocalAreas } from "./SeoLocalAreas";
+import { SeoLocalContext } from "./SeoLocalContext";
 import { SeoStructuredData } from "./SeoStructuredData";
 
 type Props = {
@@ -16,7 +17,7 @@ type Props = {
 
 export function SeoLandingPage({ content }: Props) {
   const faqTitle = content.cityName
-    ? `FAQs about ${content.eyebrow} in ${content.cityName}`
+    ? `Field service FAQs for ${content.cityName}`
     : `FAQs about ${content.eyebrow}`;
 
   const featureHighlights = dedupeFeatureHighlights(content.featureHighlights);
@@ -50,24 +51,34 @@ export function SeoLandingPage({ content }: Props) {
           {content.whyParagraphs.map((paragraph) => (
             <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
-          <h3>Local challenges {content.cityName ? `in ${content.cityName}` : "across India"}</h3>
+          <h3>{content.cityName ? `What slows ${content.cityName} field teams down` : "Common challenges across India"}</h3>
           <ul className="list">
             {content.challenges.map((challenge) => (
               <li key={challenge}>{challenge}</li>
             ))}
           </ul>
+          {content.cityName ? (
+            <p>
+              Jobs, attendance, GST invoices, staff salary, purchases, stock, and reports work the same in every city — see the{" "}
+              <Link href="/features">full feature list</Link> and <Link href="/pricing">pricing</Link>.
+            </p>
+          ) : null}
         </div>
       </section>
 
+      {content.localContext && content.cityName && content.stateName ? (
+        <SeoLocalContext context={content.localContext} cityName={content.cityName} stateName={content.stateName} />
+      ) : null}
+
       <SeoIndustries
         industries={content.industries}
-        title={content.cityName ? `Industries in ${content.cityName}` : "Industries we serve across India"}
+        title={content.cityName ? `Field work we see in ${content.cityName}` : "Industries we serve across India"}
         cityName={content.cityName}
       />
 
       <section className="section">
         <div className="section-inner seo-prose">
-          <h2>Local use cases{content.cityName ? ` in ${content.cityName}` : ""}</h2>
+          <h2>{content.cityName ? `Example scenarios in ${content.cityName}` : "Example scenarios"}</h2>
           <p className="section-copy">
             Realistic scenarios showing how businesses use TeamShastra to solve field workforce and service operations challenges.
           </p>
@@ -85,33 +96,41 @@ export function SeoLandingPage({ content }: Props) {
 
       <SeoCaseStudy caseStudy={content.caseStudy} />
 
-      <section className="section alt">
-        <div className="section-inner">
-          <div className="section-head">
-            <h2>Feature highlights</h2>
-            <p className="section-copy">How TeamShastra helps businesses manage jobs, attendance, GST invoices, staff salary, expenses, and field operations.</p>
+      {featureHighlights.length > 0 ? (
+        <section className="section alt">
+          <div className="section-inner">
+            <div className="section-head">
+              <h2>{content.cityName ? `One app for ${content.cityName} field teams` : "Feature highlights"}</h2>
+              <p className="section-copy">
+                {content.cityName
+                  ? `GST invoicing, attendance, work orders, expenses, and AMC contracts for ${content.cityName} businesses — in the same workspace as your jobs.`
+                  : "How TeamShastra helps businesses manage jobs, attendance, GST invoices, staff salary, expenses, and field operations."}
+              </p>
+            </div>
+            <div className="card-grid seo-feature-grid">
+              {featureHighlights.map((feature, index) => (
+                <article className="card" key={`feature-highlight-${index}`}>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.description}</p>
+                </article>
+              ))}
+            </div>
           </div>
-          <div className="card-grid seo-feature-grid">
-            {featureHighlights.map((feature, index) => (
-              <article className="card" key={`feature-highlight-${index}`}>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
-      <section className="section">
-        <div className="section-inner seo-prose">
-          <h2>Benefits for your team</h2>
-          <ul className="list seo-benefits-list">
-            {content.benefits.map((benefit) => (
-              <li key={benefit}>{benefit}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      {content.benefits.length > 0 ? (
+        <section className="section">
+          <div className="section-inner seo-prose">
+            <h2>Benefits for your team</h2>
+            <ul className="list seo-benefits-list">
+              {content.benefits.map((benefit) => (
+                <li key={benefit}>{benefit}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       {content.localAreas.length > 0 && content.cityName ? (
         <SeoLocalAreas areas={content.localAreas} cityName={content.cityName} />

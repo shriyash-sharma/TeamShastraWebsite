@@ -1,147 +1,82 @@
 import { getCity, standardBenefits } from "./cities";
-import { featureMap, localSeoFeatureSlugs } from "./features";
+import { cityHubFeatureSlug, featureMap, localSeoFeatureSlugs, retiredCityFeatureSlugs } from "./features";
 import { getSolution } from "./solutions";
 import { buildCityFeatureSlug } from "./slugs";
-import { dedupeFeatureHighlights, mergeFeatureHighlights, platformFeatures } from "./feature-highlights";
+import { dedupeFeatureHighlights, platformFeatures } from "./feature-highlights";
 import { pricingSummary } from "@/lib/site";
-import type { FeatureProfile, SeoPageContent, SolutionPage, CityProfile } from "./types";
-
-function expandWhyParagraphs(city: CityProfile, feature: FeatureProfile): string[] {
-  const areas = city.localAreas.slice(0, 5).join(", ");
-  const industryNames = city.industries.slice(0, 4).map((i) => i.name.toLowerCase()).join(", ");
-
-  return [
-    city.whyIntro,
-    `${feature.name} is especially relevant for ${city.name} because local businesses face distinct operational pressures. ${city.challenges[0]} ${city.challenges[1]}`,
-    `Across ${areas}, and other business zones in ${city.state}, companies in ${industryNames} depend on reliable field coordination. TeamShastra replaces phone calls, WhatsApp threads, and paper registers with a single platform for ${feature.focusAreas.join(", ").toLowerCase()}.`,
-    `Whether you operate a small service company with 15 technicians or a multi-site facility management firm with hundreds of staff, TeamShastra scales from pilot deployment in one zone to full rollout across ${city.name} and nearby cities. Most ${city.name} businesses begin with a 1–2 week pilot and expand as teams see measurable improvements in attendance accuracy, job closure rates, and customer satisfaction.`
-  ];
-}
-
-function expandIndustryParagraph(industry: { name: string; description: string }, city: CityProfile, feature: FeatureProfile): string {
-  return `**${industry.name}** — ${industry.description} For these operations, TeamShastra's ${feature.shortName.toLowerCase()} capabilities help teams in ${city.name} manage attendance, assign work, and produce audit-ready service records without adding administrative overhead.`;
-}
+import type { SeoPageContent, CityProfile } from "./types";
 
 function expandUseCaseParagraph(useCase: CityProfile["useCases"][0], city: CityProfile): string {
   return `**${useCase.title}** (${useCase.industry}): ${useCase.problem} With TeamShastra: ${useCase.solution} Key benefits include ${useCase.benefits.join(", ").toLowerCase()}.`;
 }
 
-function buildInternalLinks(
-  city: CityProfile,
-  feature: FeatureProfile,
-  type: "city-feature" | "solution",
-  solution?: SolutionPage
-): Array<{ label: string; href: string }> {
-  const links: Array<{ label: string; href: string }> = [
-    { label: "All locations", href: "/locations" },
-    { label: "All solutions", href: "/solutions" },
-    { label: "Features", href: "/features" },
-    { label: "Industries", href: "/industries" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Contact", href: "/contact" }
-  ];
-
-  if (type === "city-feature") {
-    for (const localFeatureSlug of localSeoFeatureSlugs) {
-      const localFeature = featureMap[localFeatureSlug];
-      if (localFeature && localFeatureSlug !== feature.slug) {
-        links.push({ label: `${localFeature.name} in ${city.name}`, href: `/${buildCityFeatureSlug(localFeatureSlug, city.slug)}` });
-      }
-    }
-
-    links.push({ label: "Field service management software India", href: "/field-service-management-software-india" });
-    links.push({ label: "GST invoicing software India", href: "/gst-invoicing-software-india" });
-    links.push({ label: "Field expense software India", href: "/field-expense-software-india" });
-    links.push({ label: "Attendance management software India", href: "/attendance-management-software-india" });
-    links.push({ label: "Technician management software", href: "/technician-management-software" });
-    links.push({ label: "Digital work orders", href: "/digital-work-orders" });
-    links.push({ label: "Facility management software", href: "/facility-management-software" });
-
-    for (const nearbySlug of city.nearbyCitySlugs.slice(0, 4)) {
-      const nearby = getCity(nearbySlug);
-      if (nearby) {
-        links.push({
-          label: `${feature.name} in ${nearby.name}`,
-          href: `/${buildCityFeatureSlug(feature.slug, nearbySlug)}`
-        });
-      }
-    }
-  }
-
-  if (type === "solution" && solution) {
-    for (const citySlug of solution.relatedCitySlugs) {
-      const c = getCity(citySlug);
-      if (c) {
-        links.push({ label: `Field service in ${c.name}`, href: `/${buildCityFeatureSlug("field-service-management", citySlug)}` });
-        links.push({ label: `GST invoicing in ${c.name}`, href: `/${buildCityFeatureSlug("gst-invoicing", citySlug)}` });
-      }
-    }
-    for (const solSlug of solution.relatedSolutionSlugs) {
-      const sol = getSolution(solSlug);
-      if (sol) links.push({ label: sol.title, href: `/${sol.slug}` });
-    }
-  }
-
-  return links;
+/** The city hub page for a city — the only per-city page we publish. */
+export function cityHubPath(citySlug: string): string {
+  return `/${buildCityFeatureSlug(cityHubFeatureSlug, citySlug)}`;
 }
+
+const indiaSolutionLinks = [
+  { label: "Field service management software India", href: "/field-service-management-software-india" },
+  { label: "GST invoicing software India", href: "/gst-invoicing-software-india" },
+  { label: "Attendance management software India", href: "/attendance-management-software-india" },
+  { label: "Field expense software India", href: "/field-expense-software-india" }
+];
+
+const coreLinks = [
+  { label: "All locations", href: "/locations" },
+  { label: "All solutions", href: "/solutions" },
+  { label: "Features", href: "/features" },
+  { label: "Industries", href: "/industries" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Contact", href: "/contact" }
+];
 
 export function buildCityFeatureContent(featureSlug: string, citySlug: string): SeoPageContent | null {
   const city = getCity(citySlug);
   const feature = featureMap[featureSlug];
-  if (!city || !feature) return null;
+  if (!city || !feature || featureSlug !== cityHubFeatureSlug) return null;
 
   const slug = buildCityFeatureSlug(featureSlug, citySlug);
-  const path = `/${slug}`;
-  const title = `${feature.headline} in ${city.name} | TeamShastra`;
-  const metaDescription = feature.metaDescriptionTemplate.replace("{city}", city.name);
+  const [area1, area2, area3] = city.localAreas;
 
-  const featureHighlights = mergeFeatureHighlights(feature.featureHighlights, platformFeatures);
-
-  const expandedFaqs = [
-    ...city.faqs,
-    {
-      question: `How does TeamShastra help with ${feature.name.toLowerCase()} in ${city.name}?`,
-      answer: `TeamShastra provides ${feature.focusAreas.join(", ").toLowerCase()} specifically designed for ${city.name} businesses managing distributed teams across ${city.localAreas.slice(0, 3).join(", ")}, and surrounding areas.`
-    },
-    {
-      question: `What industries in ${city.name} use TeamShastra for ${feature.shortName.toLowerCase()}?`,
-      answer: `Businesses in ${city.industries.slice(0, 4).map((i) => i.name.toLowerCase()).join(", ")} across ${city.name} use TeamShastra for field workforce coordination.`
-    },
-    {
-      question: "Does TeamShastra support multiple branches?",
-      answer: `Yes. Businesses operating across multiple zones in ${city.name} and nearby cities can manage branches, teams, and territories from one account with role-based access.`
-    }
-  ];
+  const nearbyLinks = city.nearbyCitySlugs.flatMap((nearbySlug) => {
+    const nearby = getCity(nearbySlug);
+    return nearby ? [{ label: `Field service software in ${nearby.name}`, href: cityHubPath(nearbySlug) }] : [];
+  });
 
   return {
     slug,
-    path,
+    path: `/${slug}`,
     pageType: "city-feature",
-    title,
-    metaDescription,
+    title: `${feature.headline} in ${city.name} | TeamShastra`,
+    metaDescription: city.metaDescription,
     eyebrow: `${feature.shortName} · ${city.name}`,
-    h1: `${feature.headline} in ${city.name}`,
-    heroLead: `${feature.heroLead.replace("growing businesses", `growing businesses in ${city.name}`)}`,
+    h1: `Field Service Management Software in ${city.name}`,
+    heroLead: `For ${city.name} service teams working across ${area1}, ${area2}, and ${area3}: assign jobs, track attendance, raise ${city.state} GST invoices, and pay staff from one Android and web app.`,
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Locations", href: "/locations" },
-      { label: city.name, href: `/${buildCityFeatureSlug("field-service-management", citySlug)}` },
-      { label: feature.shortName }
+      { label: city.name }
     ],
-    whyTitle: `Why businesses in ${city.name} need TeamShastra`,
-    whyParagraphs: expandWhyParagraphs(city, feature),
+    whyTitle: `Field service in ${city.name}`,
+    whyParagraphs: [city.whyIntro, ...city.intro],
     challenges: city.challenges,
     industries: city.industries,
     useCases: city.useCases,
     caseStudy: city.caseStudy,
-    featureHighlights,
-    benefits: standardBenefits,
+    featureHighlights: retiredCityFeatureSlugs.map((slug) => ({
+      title: `${featureMap[slug].headline} in ${city.name}`,
+      description: featureMap[slug].description
+    })),
+    benefits: [],
     localAreas: city.localAreas,
     cityName: city.name,
     citySlug,
+    stateName: city.state,
+    localContext: city.localContext,
     featureSlug,
-    faqs: expandedFaqs,
-    internalLinks: buildInternalLinks(city, feature, "city-feature")
+    faqs: city.faqs,
+    internalLinks: [...nearbyLinks, ...coreLinks, ...indiaSolutionLinks]
   };
 }
 
@@ -188,19 +123,23 @@ export function buildSolutionContent(solutionSlug: string): SeoPageContent | nul
     benefits: standardBenefits,
     localAreas: [],
     faqs: expandedFaqs,
-    internalLinks: buildInternalLinks(
-      getCity("mumbai")!,
-      featureMap["workforce-management"],
-      "solution",
-      solution
-    )
+    internalLinks: [
+      ...solution.relatedCitySlugs.flatMap((citySlug) => {
+        const c = getCity(citySlug);
+        return c ? [{ label: `Field service software in ${c.name}`, href: cityHubPath(citySlug) }] : [];
+      }),
+      ...solution.relatedSolutionSlugs.flatMap((solSlug) => {
+        const sol = getSolution(solSlug);
+        return sol ? [{ label: sol.title, href: `/${sol.slug}` }] : [];
+      }),
+      ...coreLinks
+    ]
   };
 }
 
 export function getContentForSlug(slug: string): SeoPageContent | null {
   if (slug.includes("-") && !slug.endsWith("-india")) {
-    const featureSlugs = Object.keys(featureMap).sort((a, b) => b.length - a.length);
-    for (const featureSlug of featureSlugs) {
+    for (const featureSlug of localSeoFeatureSlugs) {
       const prefix = `${featureSlug}-`;
       if (slug.startsWith(prefix)) {
         const citySlug = slug.slice(prefix.length);

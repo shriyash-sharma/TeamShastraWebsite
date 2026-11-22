@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const content = getContentForSlug(slug);
   if (!content) return {};
-  return pageMetadata(content.path, content.title, content.metaDescription);
+  return pageMetadata(content.path, content.title, content.metaDescription, `${content.path}/opengraph-image`);
 }
 
 export default async function SeoDynamicPage({ params }: Props) {

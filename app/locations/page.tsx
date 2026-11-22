@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { cities, tier1CitySlugs, tier2CitySlugs, tier3CitySlugs } from "@/lib/seo/cities";
-import { featureMap, localSeoFeatureSlugs } from "@/lib/seo/features";
-import { buildCityFeatureSlug } from "@/lib/seo/slugs";
-
-const localFeatures = localSeoFeatureSlugs.map((slug) => featureMap[slug]);
+import { cityHubPath } from "@/lib/seo/content";
 import { pageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata(
   "/locations",
-  "Workforce Management by City | TeamShastra India",
-  "TeamShastra field service, GST invoicing, attendance, and work-order software for businesses in Mumbai, Delhi, Bengaluru, Pune, and other major Indian cities."
+  "Field Service Software by City in India | TeamShastra",
+  "Field service software for 14 Indian cities, each with local GST, Professional Tax, language, and season notes — Mumbai, Delhi, Bengaluru, Pune, Surat, and more."
 );
 
 function CityGroup({ title, slugs }: { title: string; slugs: string[] }) {
@@ -23,16 +20,9 @@ function CityGroup({ title, slugs }: { title: string; slugs: string[] }) {
         {groupCities.map((city) => (
           <article className="seo-index-card" key={city.slug}>
             <h3>
-              <Link href={`/${buildCityFeatureSlug("field-service-management", city.slug)}`}>{city.name}</Link>
+              <Link href={cityHubPath(city.slug)}>{city.name}</Link>
             </h3>
-            <p>{city.state}</p>
-            <nav className="seo-index-links" aria-label={`${city.name} solution links`}>
-              {localFeatures.map((feature) => (
-                <Link key={feature.slug} href={`/${buildCityFeatureSlug(feature.slug, city.slug)}`}>
-                  {feature.shortName}
-                </Link>
-              ))}
-            </nav>
+            <p>{city.state} · GST state code {city.localContext.gstStateCode.split(" ")[0]}</p>
           </article>
         ))}
       </div>
@@ -48,7 +38,7 @@ export default function LocationsPage() {
           <span className="eyebrow">Locations</span>
           <h1>TeamShastra for businesses across India</h1>
           <p className="page-lead">
-            Workforce management, field service, GST invoicing, attendance, and work order software for companies in every major Indian city — with city-specific use cases, industries, and local business context.
+            Each city page covers the work local service businesses actually do there, plus the GST place of supply, Professional Tax, app language, and seasonal patterns that matter for that city.
           </p>
         </div>
       </section>

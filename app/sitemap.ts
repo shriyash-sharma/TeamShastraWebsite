@@ -1,36 +1,23 @@
 import type { MetadataRoute } from "next";
-import { marketingUrl, pages } from "@/lib/site";
+import { marketingUrl, pages, siteContentUpdatedAt } from "@/lib/site";
 import { getAllSeoSlugs } from "@/lib/seo/slugs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages = pages.map((page) => ({
+  const lastModified = new Date(siteContentUpdatedAt);
+
+  const staticPages: MetadataRoute.Sitemap = pages.map((page) => ({
     url: `${marketingUrl}${page.path === "/" ? "" : page.path}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: page.changeFrequency,
     priority: page.priority
   }));
 
-  const indexPages: MetadataRoute.Sitemap = [
-    {
-      url: `${marketingUrl}/locations`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.85
-    },
-    {
-      url: `${marketingUrl}/solutions`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.85
-    }
-  ];
-
   const seoPages: MetadataRoute.Sitemap = getAllSeoSlugs().map((slug) => ({
     url: `${marketingUrl}/${slug}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: "monthly" as const,
-    priority: slug.includes("-india") || !slug.includes("-") ? 0.8 : 0.75
+    priority: slug.endsWith("-india") ? 0.8 : 0.75
   }));
 
-  return [...staticPages, ...indexPages, ...seoPages];
+  return [...staticPages, ...seoPages];
 }

@@ -9,6 +9,8 @@ export const playStoreUrl = `https://play.google.com/store/apps/details?id=${and
 export const betaStatus =
   "TeamShastra is field service management software for owners, managers, and technicians.";
 export const legalUpdatedAt = "November 22, 2026";
+/** Bump when marketing copy changes; used as the sitemap lastModified date. */
+export const siteContentUpdatedAt = "2026-11-22";
 
 /** Product capabilities used in listing copy, schema, and AI crawlers. */
 export const productFeatureList = [
@@ -199,44 +201,66 @@ export const pages = [
   { path: "/cookies", priority: 0.35, changeFrequency: "yearly" as const }
 ];
 
-export function pageMetadata(path: string, title: string, description: string): Metadata {
+/**
+ * `ogImage` is the 1200×630 share card: the generic one from app/opengraph-image.tsx
+ * unless a route has its own (e.g. /[slug]/opengraph-image).
+ */
+export function pageMetadata(path: string, title: string, description: string, ogImage = "/opengraph-image"): Metadata {
   const url = `${marketingUrl}${path === "/" ? "" : path}`;
+  const image = { url: ogImage, width: 1200, height: 630, alt: title };
 
   return {
     title,
     description,
     metadataBase: new URL(marketingUrl),
-    keywords: [
-      "field service management software",
-      "GST invoicing software India",
-      "field service attendance app",
-      "job management software India",
-      "technician dispatch software",
-      "field expense tracking",
-      "staff salary software for field teams",
-      "CCTV installer software",
-      "TDS software India",
-      "stock and inventory software for field service"
-    ],
     alternates: { canonical: url },
     robots: { index: true, follow: true },
     verification: { google: googleSiteVerification },
     openGraph: {
       type: "website",
       siteName: "TeamShastra",
+      locale: "en_IN",
       title,
       description,
       url,
-      images: [{ url: "/screenshots/01-home-dashboard.jpg", width: 714, height: 1599, alt: "TeamShastra home dashboard" }]
+      images: [image]
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/screenshots/01-home-dashboard.jpg"]
+      images: [image]
     }
   };
 }
+
+/** Organization node shared by every page's JSON-LD. */
+export const organizationSchema = {
+  "@type": "Organization",
+  "@id": `${marketingUrl}/#organization`,
+  name: "TeamShastra",
+  legalName: legalOperator.split(",")[0],
+  url: `${marketingUrl}/`,
+  logo: `${marketingUrl}/favicon-512x512.png`,
+  email: supportEmail,
+  telephone: supportPhoneE164,
+  areaServed: { "@type": "Country", name: "India" },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer support",
+    telephone: supportPhoneE164,
+    email: supportEmail,
+    areaServed: "IN",
+    availableLanguage: ["English", "Hindi", "Gujarati", "Marathi", "Bengali"],
+    hoursAvailable: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "10:00",
+      closes: "19:00"
+    }
+  },
+  sameAs: [playStoreUrl, youtubeUrl]
+};
 
 export type MarketingPage = {
   eyebrow: string;
@@ -252,7 +276,7 @@ export type MarketingPage = {
 export const marketingPages: Record<string, MarketingPage> = {
   features: {
     eyebrow: "Features",
-    title: "What TeamShastra does, in plain language.",
+    title: "Field service app features: jobs, attendance, GST invoices, and salary.",
     description: "Jobs, attendance, GST invoices, purchases, expenses, staff salary, reports, and a customer portal — what field teams can do in the app today.",
     cta: "Get started",
     cards: [
@@ -280,7 +304,7 @@ export const marketingPages: Record<string, MarketingPage> = {
   },
   industries: {
     eyebrow: "Industries",
-    title: "For service businesses that coordinate people, places, and payments.",
+    title: "Field service software for CCTV installers, electricians, and maintenance teams.",
     description: "TeamShastra is for Indian field service companies — CCTV installers, electricians, maintenance crews, and similar teams. Sign up on app.teamshastra.com or download on Google Play.",
     cta: "Get started",
     cards: [
@@ -297,7 +321,7 @@ export const marketingPages: Record<string, MarketingPage> = {
   },
   blog: {
     eyebrow: "Blog",
-    title: "Rank-ready resources for field service operators.",
+    title: "Field service guides for Indian service businesses.",
     description: "Notes and guides for field service operators using TeamShastra.",
     cta: "Get started",
     cards: [

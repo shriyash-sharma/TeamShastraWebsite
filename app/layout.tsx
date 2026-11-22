@@ -4,7 +4,7 @@ import { AppHashRedirect } from "@/components/AppHashRedirect";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { VisitorChat } from "@/components/VisitorChat";
+import { LazyVisitorChat } from "@/components/LazyVisitorChat";
 import { googleAnalyticsId, marketingUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -58,7 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <AppHashRedirect />
         {children}
         <Footer />
-        <VisitorChat />
+        <LazyVisitorChat />
         <CookieConsent />
       </body>
     </html>

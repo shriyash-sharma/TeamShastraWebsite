@@ -1,5 +1,5 @@
 import type { SeoPageContent } from "@/lib/seo/types";
-import { marketingUrl, playStoreUrl, productFeatureList, youtubeUrl } from "@/lib/site";
+import { marketingUrl, organizationSchema, playStoreUrl, productFeatureList, youtubeUrl } from "@/lib/site";
 
 type Props = {
   content: SeoPageContent;
@@ -9,13 +9,7 @@ export function SeoStructuredData({ content }: Props) {
   const pageUrl = `${marketingUrl}${content.path}`;
 
   const graph = [
-    {
-      "@type": "Organization",
-      "@id": `${marketingUrl}/#organization`,
-      name: "TeamShastra",
-      url: marketingUrl,
-      sameAs: [playStoreUrl, youtubeUrl]
-    },
+    organizationSchema,
     {
       "@type": "BreadcrumbList",
       itemListElement: content.breadcrumbs.map((crumb, index) => ({

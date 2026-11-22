@@ -6,6 +6,7 @@ import {
   betaStatus,
   homeFaqs,
   loginUrl,
+  organizationSchema,
   pageMetadata,
   playStoreUrl,
   productFeatureList,
@@ -22,22 +23,13 @@ export const metadata: Metadata = pageMetadata(
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://teamshastra.com/#organization",
-      name: "TeamShastra",
-      url: "https://teamshastra.com/",
-      sameAs: [playStoreUrl, appUrl, youtubeUrl],
-      subjectOf: [
-        { "@id": "https://teamshastra.com/#website" },
-        { "@id": "https://app.teamshastra.com/#application" }
-      ]
-    },
+    organizationSchema,
     {
       "@type": "WebSite",
       "@id": "https://teamshastra.com/#website",
       name: "TeamShastra",
       url: "https://teamshastra.com/",
+      inLanguage: "en-IN",
       publisher: { "@id": "https://teamshastra.com/#organization" }
     },
     {
@@ -87,8 +79,11 @@ export default function Home() {
       <section className="hero">
         <div className="section-inner hero-grid">
           <div>
-            <span className="eyebrow">Field service software for India</span>
-            <h1>TeamShastra</h1>
+            <span className="eyebrow">Made in India for field service teams</span>
+            <h1>
+              TeamShastra{" "}
+              <span className="hero-h1-sub">Field service software for jobs, GST invoices &amp; attendance</span>
+            </h1>
             <p className="hero-tagline">
               <span>From Job to Payment,</span>
               <span>All in One Place.</span>

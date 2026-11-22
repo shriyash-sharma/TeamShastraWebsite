@@ -16,8 +16,8 @@ import {
 
 export const metadata: Metadata = pageMetadata(
   "/contact",
-  "Contact | TeamShastra",
-  "Contact TeamShastra support for product questions, privacy requests, or account deletion."
+  "Contact TeamShastra — Call, WhatsApp or Chat Support",
+  "Call or WhatsApp +91 76970 12040, email care@teamshastra.com, or chat with TeamShastra support. Mon–Sat, 10 AM–7 PM IST."
 );
 
 export default function ContactPage() {
@@ -26,7 +26,7 @@ export default function ContactPage() {
       <section className="page-hero">
         <div className="section-inner">
           <span className="eyebrow">Contact</span>
-          <h1>Talk to TeamShastra.</h1>
+          <h1>Contact TeamShastra support</h1>
           <p className="page-lead">
             Use this page for product questions, privacy or deletion requests, and support.
           </p>

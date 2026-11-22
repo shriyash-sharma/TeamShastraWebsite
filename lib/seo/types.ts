@@ -25,6 +25,15 @@ export type FaqItem = {
   answer: string;
 };
 
+/** Facts that genuinely differ by city: state GST code, tax, language, and season. */
+export type CityLocalContext = {
+  gstStateCode: string;
+  placeOfSupply: string;
+  professionalTax: string;
+  language: string;
+  season: string;
+};
+
 export type CityProfile = {
   slug: string;
   name: string;
@@ -35,6 +44,9 @@ export type CityProfile = {
   metaDescription: string;
   challenges: string[];
   whyIntro: string;
+  /** City-specific paragraphs that follow whyIntro. */
+  intro: string[];
+  localContext: CityLocalContext;
   industries: IndustryFocus[];
   useCases: UseCase[];
   caseStudy: CaseStudy;
@@ -91,6 +103,8 @@ export type SeoPageContent = {
   localAreas: string[];
   cityName?: string;
   citySlug?: string;
+  stateName?: string;
+  localContext?: CityLocalContext;
   featureSlug?: string;
   faqs: FaqItem[];
   internalLinks: Array<{ label: string; href: string }>;

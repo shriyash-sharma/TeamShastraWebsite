@@ -11,8 +11,8 @@ import {
 
 export const metadata: Metadata = pageMetadata(
   "/about",
-  "About | TeamShastra",
-  "Learn about TeamShastra, a field service management platform for owners, managers, and technicians."
+  "About TeamShastra — Field Service Software Built in India",
+  "TeamShastra is field service software built in India for owners, managers, and technicians — jobs, attendance, GST invoices, salary, and expenses in one app."
 );
 
 export default function AboutPage() {

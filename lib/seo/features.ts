@@ -303,13 +303,14 @@ export const featureMap = Object.fromEntries(features.map((f) => [f.slug, f])) a
 export const cityFeatureSlugs = features.map((f) => f.slug);
 
 /**
- * Features with genuine city-level search intent ("gst invoicing software mumbai").
- * Only these are combined with cities to generate /[feature]-[city] pages — the
- * remaining features (payroll, customer portal, multi-language, etc.) are real but
- * people don't search for them by city, so they stay on /features instead.
+ * Each city gets one hand-written hub page, /field-service-management-[city].
+ * Feature × city combinations were near-duplicates of each other, so the retired
+ * ones now 301 to the city hub.
  */
-export const localSeoFeatureSlugs = [
-  "field-service-management",
+export const cityHubFeatureSlug = "field-service-management";
+export const localSeoFeatureSlugs = [cityHubFeatureSlug];
+/** Feature × city pages that now 301 to the hub (mirrored in next.config.mjs); the hub covers them. */
+export const retiredCityFeatureSlugs = [
   "gst-invoicing",
   "attendance-management",
   "work-order-management",

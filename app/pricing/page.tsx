@@ -15,7 +15,7 @@ import {
 
 export const metadata: Metadata = pageMetadata(
   "/pricing",
-  "Pricing | TeamShastra",
+  "Pricing — Free Plan, Growth at ₹99/User/Month | TeamShastra",
   "TeamShastra pricing: Starter is free. Growth starts at ₹99 per user per month (plus GST). Every new company gets 30 days of Growth free. Enterprise pricing on request."
 );
 
