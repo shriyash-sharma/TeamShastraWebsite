@@ -9,7 +9,8 @@ import {
   pageMetadata,
   playStoreUrl,
   productFeatureList,
-  signupUrl
+  signupUrl,
+  youtubeUrl
 } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata(
@@ -26,7 +27,7 @@ const structuredData = {
       "@id": "https://teamshastra.com/#organization",
       name: "TeamShastra",
       url: "https://teamshastra.com/",
-      sameAs: [playStoreUrl, appUrl],
+      sameAs: [playStoreUrl, appUrl, youtubeUrl],
       subjectOf: [
         { "@id": "https://teamshastra.com/#website" },
         { "@id": "https://app.teamshastra.com/#application" }
@@ -52,7 +53,7 @@ const structuredData = {
       featureList: productFeatureList,
       downloadUrl: playStoreUrl,
       installUrl: playStoreUrl,
-      sameAs: [playStoreUrl, appUrl],
+      sameAs: [playStoreUrl, appUrl, youtubeUrl],
       offers: { "@type": "Offer", url: playStoreUrl, price: "0", priceCurrency: "INR" }
     },
     {

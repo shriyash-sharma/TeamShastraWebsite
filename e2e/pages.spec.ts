@@ -24,6 +24,13 @@ test("home shows chat launcher and core CTAs", async ({ page }) => {
     "https://play.google.com/store/apps/details?id=com.teamshastra.mobile"
   );
   await expect(page.getByRole("link", { name: "Login" }).first()).toBeVisible();
+  const youtube = page.locator('footer a[href="https://www.youtube.com/@teamshastra"]').first();
+  await expect(youtube).toBeVisible();
+  await expect(youtube).toHaveAttribute("target", "_blank");
+  await expect(youtube).toHaveAttribute("rel", /noopener/);
+  await expect(page.locator('footer a[href^="mailto:care@teamshastra.com"]').first()).toBeVisible();
+  await expect(page.locator('footer a[href="tel:+917697012040"]').first()).toBeVisible();
+  await expect(page.locator('footer a[href="https://wa.me/917697012040"]').first()).toBeVisible();
 });
 
 test("features page describes visitor chat", async ({ page }) => {
@@ -47,4 +54,8 @@ test("contact page points people to chat", async ({ page }) => {
   await expect(page.getByText(/Chat with us/i).first()).toBeVisible();
   await expect(page.getByText(/email and mobile number/i)).toBeVisible();
   await expect(page.getByRole("link", { name: "Get it on Google Play" }).first()).toBeVisible();
+  const youtube = page.locator('a[href="https://www.youtube.com/@teamshastra"]').first();
+  await expect(youtube).toBeVisible();
+  await expect(youtube).toHaveAttribute("target", "_blank");
+  await expect(youtube).toHaveAttribute("rel", /noopener/);
 });

@@ -157,6 +157,8 @@ export const supportPhoneE164 = "+917697012040";
 export const supportHours = "Mon–Sat, 10 AM–7 PM IST";
 export const supportPhoneTel = `tel:${supportPhoneE164}`;
 export const supportPhoneWhatsApp = `https://wa.me/${supportPhoneE164.replace("+", "")}`;
+/** Official TeamShastra YouTube channel (tutorials / public videos). */
+export const youtubeUrl = "https://www.youtube.com/@teamshastra";
 export const transactionalFromEmail = "noreply@mail.teamshastra.com";
 export const googleAnalyticsId = "G-QJ5430L068";
 /** Matches the live DNS TXT google-site-verification record. */

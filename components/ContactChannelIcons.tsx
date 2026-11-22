@@ -3,7 +3,8 @@ import {
   supportHours,
   supportPhoneDisplay,
   supportPhoneTel,
-  supportPhoneWhatsApp
+  supportPhoneWhatsApp,
+  youtubeUrl
 } from "@/lib/site";
 
 function MailIcon() {
@@ -34,6 +35,17 @@ function WhatsAppIcon() {
       <path
         fill="currentColor"
         d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.89.49 3.72 1.43 5.34L2 22l4.89-1.52a9.86 9.86 0 0 0 5.15 1.42h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.77 14.11c-.24.68-1.4 1.25-1.94 1.33-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.18-4.93-4.37-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.35.26-.28.57-.35.76-.35h.55c.17 0 .41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.1.19-.14.31-.28.48-.14.17-.3.38-.42.51-.14.14-.29.29-.12.57.17.28.75 1.24 1.61 2.01 1.11.99 2.04 1.3 2.33 1.44.29.14.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.65-.14.26.1 1.66.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36Z"
+      />
+    </svg>
+  );
+}
+
+function YouTubeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="contact-channel-icon">
+      <path
+        fill="currentColor"
+        d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.8 15.5v-7l6.3 3.5-6.3 3.5Z"
       />
     </svg>
   );
@@ -76,6 +88,21 @@ export function SupportChannels({ compact = false }: Props) {
         <span>
           <span className="support-channel-label">WhatsApp</span>
           <span className="support-channel-value">{supportPhoneDisplay}</span>
+        </span>
+      </a>
+      <a
+        className="support-channel"
+        href={youtubeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="YouTube tutorials"
+      >
+        <span className="support-channel-glyph" aria-hidden="true">
+          <YouTubeIcon />
+        </span>
+        <span>
+          <span className="support-channel-label">YouTube</span>
+          <span className="support-channel-value">Tutorials</span>
         </span>
       </a>
       <p className="support-hours">Support hours: {supportHours}</p>
