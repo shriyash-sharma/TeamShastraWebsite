@@ -60,6 +60,54 @@ Some capabilities (customer portal, bulk data export, data restore from a snapsh
 - About: https://teamshastra.com/about
 - Contact: https://teamshastra.com/contact
 
+## Feature guides
+
+- Jobs & work orders: https://teamshastra.com/features/job-work-order-management
+- Technician dispatch & today board: https://teamshastra.com/features/technician-dispatch-today-board
+- Service report PDF: https://teamshastra.com/features/service-report-pdf
+- Job alerts & notifications: https://teamshastra.com/features/job-alerts-notifications
+- GPS attendance with selfie: https://teamshastra.com/features/gps-attendance-app
+- Leave management: https://teamshastra.com/features/leave-management
+- Team location map: https://teamshastra.com/features/team-location-map
+- Roles & permissions: https://teamshastra.com/features/roles-permissions
+- Staff salary & payroll: https://teamshastra.com/features/staff-salary-payroll
+- Salary advances & payslips: https://teamshastra.com/features/salary-advance-payslip
+- GST billing & invoices: https://teamshastra.com/features/gst-billing-invoice
+- Quotations & estimates: https://teamshastra.com/features/quotation-estimate-app
+- GST reports for your CA: https://teamshastra.com/features/gst-reports-ca-export
+- TDS & Form 26Q: https://teamshastra.com/features/tds-form-26q
+- Stock & inventory: https://teamshastra.com/features/inventory-stock-management
+- Purchases & suppliers: https://teamshastra.com/features/purchase-bills-supplier-management
+- Field expenses: https://teamshastra.com/features/field-expense-tracking
+- Staff cash & bank accounts: https://teamshastra.com/features/staff-cash-bank-accounts
+- AMC contracts: https://teamshastra.com/features/amc-contract-management
+- Customer management: https://teamshastra.com/features/customer-management
+- Customer portal: https://teamshastra.com/features/customer-portal
+- Business reports: https://teamshastra.com/features/business-reports-dashboard
+- Hindi & Indian languages: https://teamshastra.com/features/hindi-multi-language-app
+- Import from Vyapar & Excel: https://teamshastra.com/features/vyapar-data-import
+- Multi-company: https://teamshastra.com/features/multi-company-management
+- Works offline: https://teamshastra.com/features/offline-field-service-app
+
+## Industries
+
+- CCTV & security installers: https://teamshastra.com/industries/cctv-installer-software
+- RO & water purifier service: https://teamshastra.com/industries/ro-water-purifier-service-software
+- Pest control: https://teamshastra.com/industries/pest-control-service-software
+- Appliance repair: https://teamshastra.com/industries/appliance-repair-service-software
+- IT, computer & networking: https://teamshastra.com/industries/it-networking-amc-software
+- Fire safety equipment: https://teamshastra.com/industries/fire-safety-service-software
+- Lift & elevator maintenance: https://teamshastra.com/industries/lift-elevator-maintenance-software
+- Home automation & smart home: https://teamshastra.com/industries/home-automation-installer-software
+- Cleaning & housekeeping: https://teamshastra.com/industries/cleaning-housekeeping-service-software
+- Inverter, battery & UPS: https://teamshastra.com/industries/inverter-battery-ups-service-software
+- AC & HVAC service: https://teamshastra.com/hvac-service-management
+- Electricians & electrical contractors: https://teamshastra.com/electrician-workforce-management
+- Plumbers & plumbing contractors: https://teamshastra.com/plumbing-service-software
+- Solar installers: https://teamshastra.com/solar-installation-workforce-software
+- Facility management: https://teamshastra.com/facility-management-software
+- Equipment maintenance: https://teamshastra.com/maintenance-management-software
+
 ## Legal and support
 
 - Privacy: https://teamshastra.com/privacy

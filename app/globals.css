@@ -494,6 +494,7 @@ h3 { font-size: 1.18rem; }
 .seo-faq-item { border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; background: var(--panel); }
 .seo-faq-item summary { cursor: pointer; font-weight: 760; color: var(--ink); list-style: none; }
 .seo-faq-item summary::-webkit-details-marker { display: none; }
+.seo-faq-question { display: inline; margin: 0; font: inherit; color: inherit; }
 .seo-faq-item p { margin: 12px 0 0; color: var(--muted); }
 
 .comparison-table { width: 100%; border-collapse: collapse; min-width: 640px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
@@ -512,9 +513,13 @@ h3 { font-size: 1.18rem; }
 .seo-index-group h2 { margin-bottom: 20px; }
 .seo-index-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .seo-index-card { border: 1px solid var(--line); border-radius: 8px; padding: 18px; background: var(--panel); }
-.seo-index-card h3 { margin: 0 0 4px; font-size: 1.05rem; }
-.seo-index-card h3 a { color: var(--brand-dark); }
-.seo-index-card h3 a:hover { text-decoration: underline; }
+.seo-index-card h3, .seo-index-card h4 { margin: 0 0 4px; font-size: 1.05rem; }
+.seo-index-card h3 a, .seo-index-card h4 a { color: var(--brand-dark); }
+.seo-index-card h3 a:hover, .seo-index-card h4 a:hover { text-decoration: underline; }
+.landing-hero { grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.6fr); }
+.landing-hero > * { min-width: 0; }
+.landing-shot { width: min(240px, 62vw); margin: 0; justify-self: center; }
+.landing-linked-list li strong a { color: var(--brand-dark); }
 .seo-index-card > p { color: var(--muted); font-size: 0.88rem; margin: 0 0 12px; }
 .seo-index-links { display: flex; flex-wrap: wrap; gap: 8px 12px; }
 .seo-index-links a { font-size: 0.82rem; color: var(--brand); font-weight: 650; }

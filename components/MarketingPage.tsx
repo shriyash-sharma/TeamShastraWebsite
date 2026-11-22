@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { betaStatus, loginUrl, playStoreUrl, signupUrl, type MarketingPage as MarketingPageContent } from "@/lib/site";
 
@@ -27,7 +28,7 @@ export function MarketingPage({ content, children }: Props) {
           {content.cards.map((card) => (
             <article className="card" key={card.title}>
               {card.marker ? <div className="icon-box">{card.marker}</div> : null}
-              <h3>{card.title}</h3>
+              <h3>{card.href ? <Link href={card.href}>{card.title}</Link> : card.title}</h3>
               <p>{card.text}</p>
             </article>
           ))}

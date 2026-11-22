@@ -1,6 +1,7 @@
 export type FeatureHighlight = {
   title: string;
   description: string;
+  href?: string;
 };
 
 export const platformFeatures: FeatureHighlight[] = [

@@ -76,10 +76,17 @@ export type SolutionPage = {
   challenges: string[];
   industries: IndustryFocus[];
   useCases: UseCase[];
-  caseStudy: CaseStudy;
+  /** Only the older solution pages still carry one; rewritten industry pages omit it. */
+  caseStudy?: CaseStudy;
   faqs: FaqItem[];
   relatedCitySlugs: string[];
   relatedSolutionSlugs: string[];
+  /** Hand-written industry pages: replaces the shared "why" template and the shared FAQs. */
+  overviewTitle?: string;
+  overview?: string[];
+  /** Feature pages (/features/<slug>) this industry relies on, with an industry-specific line. */
+  helps?: Array<{ feature: string; text: string }>;
+  benefits?: string[];
 };
 
 export type SeoPageContent = {
@@ -97,8 +104,8 @@ export type SeoPageContent = {
   challenges: string[];
   industries: IndustryFocus[];
   useCases: UseCase[];
-  caseStudy: CaseStudy;
-  featureHighlights: Array<{ title: string; description: string }>;
+  caseStudy?: CaseStudy;
+  featureHighlights: Array<{ title: string; description: string; href?: string }>;
   benefits: string[];
   localAreas: string[];
   cityName?: string;

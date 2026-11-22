@@ -1,0 +1,282 @@
+[
+  {
+    "path": "/gst-invoicing-mumbai",
+    "hub": "/field-service-management-mumbai"
+  },
+  {
+    "path": "/gst-invoicing-delhi",
+    "hub": "/field-service-management-delhi"
+  },
+  {
+    "path": "/gst-invoicing-pune",
+    "hub": "/field-service-management-pune"
+  },
+  {
+    "path": "/gst-invoicing-bengaluru",
+    "hub": "/field-service-management-bengaluru"
+  },
+  {
+    "path": "/gst-invoicing-hyderabad",
+    "hub": "/field-service-management-hyderabad"
+  },
+  {
+    "path": "/gst-invoicing-chennai",
+    "hub": "/field-service-management-chennai"
+  },
+  {
+    "path": "/gst-invoicing-kolkata",
+    "hub": "/field-service-management-kolkata"
+  },
+  {
+    "path": "/gst-invoicing-ahmedabad",
+    "hub": "/field-service-management-ahmedabad"
+  },
+  {
+    "path": "/gst-invoicing-surat",
+    "hub": "/field-service-management-surat"
+  },
+  {
+    "path": "/gst-invoicing-jaipur",
+    "hub": "/field-service-management-jaipur"
+  },
+  {
+    "path": "/gst-invoicing-lucknow",
+    "hub": "/field-service-management-lucknow"
+  },
+  {
+    "path": "/gst-invoicing-coimbatore",
+    "hub": "/field-service-management-coimbatore"
+  },
+  {
+    "path": "/gst-invoicing-vadodara",
+    "hub": "/field-service-management-vadodara"
+  },
+  {
+    "path": "/gst-invoicing-indore",
+    "hub": "/field-service-management-indore"
+  },
+  {
+    "path": "/attendance-management-mumbai",
+    "hub": "/field-service-management-mumbai"
+  },
+  {
+    "path": "/attendance-management-delhi",
+    "hub": "/field-service-management-delhi"
+  },
+  {
+    "path": "/attendance-management-pune",
+    "hub": "/field-service-management-pune"
+  },
+  {
+    "path": "/attendance-management-bengaluru",
+    "hub": "/field-service-management-bengaluru"
+  },
+  {
+    "path": "/attendance-management-hyderabad",
+    "hub": "/field-service-management-hyderabad"
+  },
+  {
+    "path": "/attendance-management-chennai",
+    "hub": "/field-service-management-chennai"
+  },
+  {
+    "path": "/attendance-management-kolkata",
+    "hub": "/field-service-management-kolkata"
+  },
+  {
+    "path": "/attendance-management-ahmedabad",
+    "hub": "/field-service-management-ahmedabad"
+  },
+  {
+    "path": "/attendance-management-surat",
+    "hub": "/field-service-management-surat"
+  },
+  {
+    "path": "/attendance-management-jaipur",
+    "hub": "/field-service-management-jaipur"
+  },
+  {
+    "path": "/attendance-management-lucknow",
+    "hub": "/field-service-management-lucknow"
+  },
+  {
+    "path": "/attendance-management-coimbatore",
+    "hub": "/field-service-management-coimbatore"
+  },
+  {
+    "path": "/attendance-management-vadodara",
+    "hub": "/field-service-management-vadodara"
+  },
+  {
+    "path": "/attendance-management-indore",
+    "hub": "/field-service-management-indore"
+  },
+  {
+    "path": "/work-order-management-mumbai",
+    "hub": "/field-service-management-mumbai"
+  },
+  {
+    "path": "/work-order-management-delhi",
+    "hub": "/field-service-management-delhi"
+  },
+  {
+    "path": "/work-order-management-pune",
+    "hub": "/field-service-management-pune"
+  },
+  {
+    "path": "/work-order-management-bengaluru",
+    "hub": "/field-service-management-bengaluru"
+  },
+  {
+    "path": "/work-order-management-hyderabad",
+    "hub": "/field-service-management-hyderabad"
+  },
+  {
+    "path": "/work-order-management-chennai",
+    "hub": "/field-service-management-chennai"
+  },
+  {
+    "path": "/work-order-management-kolkata",
+    "hub": "/field-service-management-kolkata"
+  },
+  {
+    "path": "/work-order-management-ahmedabad",
+    "hub": "/field-service-management-ahmedabad"
+  },
+  {
+    "path": "/work-order-management-surat",
+    "hub": "/field-service-management-surat"
+  },
+  {
+    "path": "/work-order-management-jaipur",
+    "hub": "/field-service-management-jaipur"
+  },
+  {
+    "path": "/work-order-management-lucknow",
+    "hub": "/field-service-management-lucknow"
+  },
+  {
+    "path": "/work-order-management-coimbatore",
+    "hub": "/field-service-management-coimbatore"
+  },
+  {
+    "path": "/work-order-management-vadodara",
+    "hub": "/field-service-management-vadodara"
+  },
+  {
+    "path": "/work-order-management-indore",
+    "hub": "/field-service-management-indore"
+  },
+  {
+    "path": "/expense-management-mumbai",
+    "hub": "/field-service-management-mumbai"
+  },
+  {
+    "path": "/expense-management-delhi",
+    "hub": "/field-service-management-delhi"
+  },
+  {
+    "path": "/expense-management-pune",
+    "hub": "/field-service-management-pune"
+  },
+  {
+    "path": "/expense-management-bengaluru",
+    "hub": "/field-service-management-bengaluru"
+  },
+  {
+    "path": "/expense-management-hyderabad",
+    "hub": "/field-service-management-hyderabad"
+  },
+  {
+    "path": "/expense-management-chennai",
+    "hub": "/field-service-management-chennai"
+  },
+  {
+    "path": "/expense-management-kolkata",
+    "hub": "/field-service-management-kolkata"
+  },
+  {
+    "path": "/expense-management-ahmedabad",
+    "hub": "/field-service-management-ahmedabad"
+  },
+  {
+    "path": "/expense-management-surat",
+    "hub": "/field-service-management-surat"
+  },
+  {
+    "path": "/expense-management-jaipur",
+    "hub": "/field-service-management-jaipur"
+  },
+  {
+    "path": "/expense-management-lucknow",
+    "hub": "/field-service-management-lucknow"
+  },
+  {
+    "path": "/expense-management-coimbatore",
+    "hub": "/field-service-management-coimbatore"
+  },
+  {
+    "path": "/expense-management-vadodara",
+    "hub": "/field-service-management-vadodara"
+  },
+  {
+    "path": "/expense-management-indore",
+    "hub": "/field-service-management-indore"
+  },
+  {
+    "path": "/amc-service-contracts-mumbai",
+    "hub": "/field-service-management-mumbai"
+  },
+  {
+    "path": "/amc-service-contracts-delhi",
+    "hub": "/field-service-management-delhi"
+  },
+  {
+    "path": "/amc-service-contracts-pune",
+    "hub": "/field-service-management-pune"
+  },
+  {
+    "path": "/amc-service-contracts-bengaluru",
+    "hub": "/field-service-management-bengaluru"
+  },
+  {
+    "path": "/amc-service-contracts-hyderabad",
+    "hub": "/field-service-management-hyderabad"
+  },
+  {
+    "path": "/amc-service-contracts-chennai",
+    "hub": "/field-service-management-chennai"
+  },
+  {
+    "path": "/amc-service-contracts-kolkata",
+    "hub": "/field-service-management-kolkata"
+  },
+  {
+    "path": "/amc-service-contracts-ahmedabad",
+    "hub": "/field-service-management-ahmedabad"
+  },
+  {
+    "path": "/amc-service-contracts-surat",
+    "hub": "/field-service-management-surat"
+  },
+  {
+    "path": "/amc-service-contracts-jaipur",
+    "hub": "/field-service-management-jaipur"
+  },
+  {
+    "path": "/amc-service-contracts-lucknow",
+    "hub": "/field-service-management-lucknow"
+  },
+  {
+    "path": "/amc-service-contracts-coimbatore",
+    "hub": "/field-service-management-coimbatore"
+  },
+  {
+    "path": "/amc-service-contracts-vadodara",
+    "hub": "/field-service-management-vadodara"
+  },
+  {
+    "path": "/amc-service-contracts-indore",
+    "hub": "/field-service-management-indore"
+  }
+]

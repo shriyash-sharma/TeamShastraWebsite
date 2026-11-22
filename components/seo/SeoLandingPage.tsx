@@ -94,7 +94,7 @@ export function SeoLandingPage({ content }: Props) {
         </div>
       </section>
 
-      <SeoCaseStudy caseStudy={content.caseStudy} />
+      {content.caseStudy ? <SeoCaseStudy caseStudy={content.caseStudy} /> : null}
 
       {featureHighlights.length > 0 ? (
         <section className="section alt">
@@ -110,7 +110,7 @@ export function SeoLandingPage({ content }: Props) {
             <div className="card-grid seo-feature-grid">
               {featureHighlights.map((feature, index) => (
                 <article className="card" key={`feature-highlight-${index}`}>
-                  <h3>{feature.title}</h3>
+                  <h3>{feature.href ? <Link href={feature.href}>{feature.title}</Link> : feature.title}</h3>
                   <p>{feature.description}</p>
                 </article>
               ))}

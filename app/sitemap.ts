@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { marketingUrl, pages, siteContentUpdatedAt } from "@/lib/site";
+import { featureLandingPath, featureLandings } from "@/lib/seo/landing/features";
+import { industryLandingPath, industryLandings } from "@/lib/seo/landing/industries";
 import { getAllSeoSlugs } from "@/lib/seo/slugs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -19,5 +21,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: slug.endsWith("-india") ? 0.8 : 0.75
   }));
 
-  return [...staticPages, ...seoPages];
+  const landingPages: MetadataRoute.Sitemap = [
+    ...featureLandings.map((page) => ({ path: featureLandingPath(page.slug), lastUpdated: page.lastUpdated })),
+    ...industryLandings.map((page) => ({ path: industryLandingPath(page.slug), lastUpdated: page.lastUpdated }))
+  ].map((page) => ({
+    url: `${marketingUrl}${page.path}`,
+    lastModified: new Date(page.lastUpdated),
+    changeFrequency: "monthly" as const,
+    priority: 0.8
+  }));
+
+  return [...staticPages, ...seoPages, ...landingPages];
 }

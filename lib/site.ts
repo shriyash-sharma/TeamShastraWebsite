@@ -267,7 +267,7 @@ export type MarketingPage = {
   title: string;
   description: string;
   cta: string;
-  cards: Array<{ title: string; text: string; marker?: string }>;
+  cards: Array<{ title: string; text: string; marker?: string; href?: string }>;
   bannerTitle: string;
   bannerText: string;
   bannerCta: string;
@@ -280,23 +280,23 @@ export const marketingPages: Record<string, MarketingPage> = {
     description: "Jobs, attendance, GST invoices, purchases, expenses, staff salary, reports, and a customer portal — what field teams can do in the app today.",
     cta: "Get started",
     cards: [
-      { marker: "1", title: "Work orders", text: "Create a job, assign a team, move status (including on hold), add comments and before/after photos, see today's board, and share a service report or progress report PDF." },
-      { marker: "2", title: "Team & attendance", text: "Invite technicians and managers. Check in and out offline. Location is only at punch time — a company can require GPS, an office radius, or a live check-in selfie. Managers mark leave, half day, absent, or holiday. No background GPS." },
-      { marker: "3", title: "Team map", text: "See who is on duty from check-in, job-start, and job-photo pins, and ask the team for a work-status update. This is not all-day tracking." },
-      { marker: "4", title: "Customers & AMC", text: "Customer directory with job history, AMC contracts, and customers due for a visit. An optional portal lets you share or hide each job; the customer can see photos and message your team." },
-      { marker: "5", title: "GST invoices & quotations", text: "Catalog, quotations, proforma invoices, GST tax invoices, credit notes, debit notes, delivery challans, payments, and pending collections. Share PDFs on WhatsApp." },
-      { marker: "6", title: "GST & TDS compliance", text: "Export CA-ready GSTR-1, GSTR-3B, GSTR-9, and a full GST workbook (not GST portal filing). Invoice lines can include HSN. TDS rates, reports, and Form 26Q certificates." },
-      { marker: "7", title: "Stock & inventory", text: "A catalog with stock tracking and a movement history across sales, purchases, and stock adjustments." },
-      { marker: "8", title: "Purchases & suppliers", text: "Record purchase bills and debit notes, track what you still owe suppliers, and keep sales and purchases in the same workspace." },
-      { marker: "9", title: "Expenses, float & bank", text: "Log field expenses by person and category. Track cash given to staff (staff cash) and bank balances next to collections." },
-      { marker: "10", title: "Staff salary", text: "Owners open a calendar month, set Monthly, Per day, or Hourly wages, and see who is still to pay. Each person shows present, half day, leave, holiday, weekly off, and missed punches. Freeze the month, then pay from bank or cash." },
-      { marker: "11", title: "Advances, off days & payslips", text: "A salary advance keeps the amount left (not cut yet, or partly cut) and is deducted when you pay. Weekly off is unpaid on a per-day wage and already included in a monthly salary. Holidays can be paid or unpaid, including a half holiday. Paid leave can be a yearly quota. Share a payslip PDF. Staff open their own paid payslips. Optional overtime, bonus, and indicative PF, ESI, PT, or TDS — not a tax filing and not Form 16." },
-      { marker: "12", title: "Multi-company workspaces", text: "One login can switch between more than one company, each with its own jobs, customers, and books." },
-      { marker: "13", title: "Reports", text: "Job summary, technician performance, revenue, money in and out, expenses, staff cash, and team attendance." },
-      { marker: "14", title: "Languages", text: "English, Hindi, Gujarati, Marathi, and Bengali — built for Indian field teams." },
-      { marker: "15", title: "Alerts", text: "Push notifications for jobs and comments, tapping straight through to the relevant screen." },
+      { marker: "1", title: "Work orders", href: "/features/job-work-order-management", text: "Create a job, assign a team, move status (including on hold), add comments and before/after photos, see today's board, and share a service report or progress report PDF." },
+      { marker: "2", title: "Team & attendance", href: "/features/gps-attendance-app", text: "Invite technicians and managers. Check in and out offline. Location is only at punch time — a company can require GPS, an office radius, or a live check-in selfie. Managers mark leave, half day, absent, or holiday. No background GPS." },
+      { marker: "3", title: "Team map", href: "/features/team-location-map", text: "See who is on duty from check-in, job-start, and job-photo pins, and ask the team for a work-status update. This is not all-day tracking." },
+      { marker: "4", title: "Customers & AMC", href: "/features/customer-management", text: "Customer directory with job history, AMC contracts, and customers due for a visit. An optional portal lets you share or hide each job; the customer can see photos and message your team." },
+      { marker: "5", title: "GST invoices & quotations", href: "/features/gst-billing-invoice", text: "Catalog, quotations, proforma invoices, GST tax invoices, credit notes, debit notes, delivery challans, payments, and pending collections. Share PDFs on WhatsApp." },
+      { marker: "6", title: "GST & TDS compliance", href: "/features/gst-reports-ca-export", text: "Export CA-ready GSTR-1, GSTR-3B, GSTR-9, and a full GST workbook (not GST portal filing). Invoice lines can include HSN. TDS rates, reports, and Form 26Q certificates." },
+      { marker: "7", title: "Stock & inventory", href: "/features/inventory-stock-management", text: "A catalog with stock tracking and a movement history across sales, purchases, and stock adjustments." },
+      { marker: "8", title: "Purchases & suppliers", href: "/features/purchase-bills-supplier-management", text: "Record purchase bills and debit notes, track what you still owe suppliers, and keep sales and purchases in the same workspace." },
+      { marker: "9", title: "Expenses, float & bank", href: "/features/field-expense-tracking", text: "Log field expenses by person and category. Track cash given to staff (staff cash) and bank balances next to collections." },
+      { marker: "10", title: "Staff salary", href: "/features/staff-salary-payroll", text: "Owners open a calendar month, set Monthly, Per day, or Hourly wages, and see who is still to pay. Each person shows present, half day, leave, holiday, weekly off, and missed punches. Freeze the month, then pay from bank or cash." },
+      { marker: "11", title: "Advances, off days & payslips", href: "/features/salary-advance-payslip", text: "A salary advance keeps the amount left (not cut yet, or partly cut) and is deducted when you pay. Weekly off is unpaid on a per-day wage and already included in a monthly salary. Holidays can be paid or unpaid, including a half holiday. Paid leave can be a yearly quota. Share a payslip PDF. Staff open their own paid payslips. Optional overtime, bonus, and indicative PF, ESI, PT, or TDS — not a tax filing and not Form 16." },
+      { marker: "12", title: "Multi-company workspaces", href: "/features/multi-company-management", text: "One login can switch between more than one company, each with its own jobs, customers, and books." },
+      { marker: "13", title: "Reports", href: "/features/business-reports-dashboard", text: "Job summary, technician performance, revenue, money in and out, expenses, staff cash, and team attendance." },
+      { marker: "14", title: "Languages", href: "/features/hindi-multi-language-app", text: "English, Hindi, Gujarati, Marathi, and Bengali — built for Indian field teams." },
+      { marker: "15", title: "Alerts", href: "/features/job-alerts-notifications", text: "Push notifications for jobs and comments, tapping straight through to the relevant screen." },
       { marker: "16", title: "Customer support", text: "Chat with TeamShastra from inside the app, or start a visitor chat on this site with your email and mobile number — a real person (or our support assistant) replies in the thread." },
-      { marker: "17", title: "Switching from Vyapar", text: "Import your catalog, parties, sales, purchases, and expenses from Vyapar or a spreadsheet. Match the columns, then review valid rows and any issues before they are saved." }
+      { marker: "17", title: "Switching from Vyapar", href: "/features/vyapar-data-import", text: "Import your catalog, parties, sales, purchases, and expenses from Vyapar or a spreadsheet. Match the columns, then review valid rows and any issues before they are saved." }
     ],
     bannerTitle: "Create your company workspace.",
     bannerText: "Download on Google Play or sign up on the web at app.teamshastra.com. Use this site for product information, privacy, and support.",
@@ -308,12 +308,12 @@ export const marketingPages: Record<string, MarketingPage> = {
     description: "TeamShastra is for Indian field service companies — CCTV installers, electricians, maintenance crews, and similar teams. Sign up on app.teamshastra.com or download on Google Play.",
     cta: "Get started",
     cards: [
-      { title: "CCTV & security installers", text: "Assign installation and AMC jobs, capture site photos, and invoice with GST." },
-      { title: "Electricians & electrical contractors", text: "Dispatch licensed electricians, track visits, and collect payment against invoices." },
-      { title: "Facilities maintenance", text: "Plan recurring work, emergency visits, attendance, and team assignments." },
-      { title: "Equipment service", text: "Track inspections, repairs, parts, purchase bills, and field updates." },
-      { title: "Home services", text: "Manage visits, technician capacity, expenses, and customer follow-through." },
-      { title: "Installation teams", text: "Coordinate site readiness, crews, photos, quotations, and completion reports." }
+      { title: "CCTV & security installers", href: "/industries/cctv-installer-software", text: "Assign installation and AMC jobs, capture site photos, and invoice with GST." },
+      { title: "Electricians & electrical contractors", href: "/electrician-workforce-management", text: "Dispatch licensed electricians, track visits, and collect payment against invoices." },
+      { title: "Facilities maintenance", href: "/facility-management-software", text: "Plan recurring work, emergency visits, attendance, and team assignments." },
+      { title: "Equipment service", href: "/maintenance-management-software", text: "Track inspections, repairs, parts, purchase bills, and field updates." },
+      { title: "Home services", href: "/industries/appliance-repair-service-software", text: "Manage visits, technician capacity, expenses, and customer follow-through." },
+      { title: "Installation teams", href: "/industries/home-automation-installer-software", text: "Coordinate site readiness, crews, photos, quotations, and completion reports." }
     ],
     bannerTitle: "Ready for your field team.",
     bannerText: "Create a company workspace and start with jobs, attendance, GST invoices, and expenses.",

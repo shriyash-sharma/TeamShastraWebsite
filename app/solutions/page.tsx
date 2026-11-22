@@ -74,6 +74,16 @@ export default function SolutionsPage() {
 
       <section className="section">
         <div className="section-inner seo-prose">
+          <h2>Feature and industry guides</h2>
+          <p>
+            Read a detailed guide for <Link href="/features">every TeamShastra feature</Link>, or find the page for{" "}
+            <Link href="/industries">your type of field service business</Link>, from CCTV installers to lift maintenance.
+          </p>
+        </div>
+      </section>
+
+      <section className="section alt">
+        <div className="section-inner seo-prose">
           <h2>Browse by city</h2>
           <p>Find workforce management and field service pages for your city.</p>
           <p><Link href="/locations">View all {cities.length} cities →</Link></p>

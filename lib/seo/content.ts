@@ -3,8 +3,9 @@ import { cityHubFeatureSlug, featureMap, localSeoFeatureSlugs, retiredCityFeatur
 import { getSolution } from "./solutions";
 import { buildCityFeatureSlug } from "./slugs";
 import { dedupeFeatureHighlights, platformFeatures } from "./feature-highlights";
+import { featureLandingPath, getFeatureLanding } from "./landing/features";
 import { pricingSummary } from "@/lib/site";
-import type { SeoPageContent, CityProfile } from "./types";
+import type { SeoPageContent, CityProfile, SolutionPage } from "./types";
 
 function expandUseCaseParagraph(useCase: CityProfile["useCases"][0], city: CityProfile): string {
   return `**${useCase.title}** (${useCase.industry}): ${useCase.problem} With TeamShastra: ${useCase.solution} Key benefits include ${useCase.benefits.join(", ").toLowerCase()}.`;
@@ -86,6 +87,8 @@ export function buildSolutionContent(solutionSlug: string): SeoPageContent | nul
 
   const path = `/${solution.slug}`;
 
+  if (solution.overview) return buildIndustrySolutionContent(solution, path);
+
   const expandedFaqs = [
     ...solution.faqs,
     { question: "Is TeamShastra available across India?", answer: "Yes. TeamShastra supports businesses in metro cities, tier-2 industrial towns, and regional hubs with multi-branch management and offline-capable mobile apps." },
@@ -132,6 +135,48 @@ export function buildSolutionContent(solutionSlug: string): SeoPageContent | nul
         const sol = getSolution(solSlug);
         return sol ? [{ label: sol.title, href: `/${sol.slug}` }] : [];
       }),
+      ...coreLinks
+    ]
+  };
+}
+
+/** Hand-written industry pages: only their own copy, FAQs, and links to the matching feature pages. */
+function buildIndustrySolutionContent(solution: SolutionPage, path: string): SeoPageContent {
+  const helps = (solution.helps ?? []).flatMap((item) => {
+    const feature = getFeatureLanding(item.feature);
+    return feature ? [{ title: feature.name, description: item.text, href: featureLandingPath(feature.slug) }] : [];
+  });
+
+  return {
+    slug: solution.slug,
+    path,
+    pageType: "solution",
+    title: `${solution.title} | TeamShastra`,
+    metaDescription: solution.metaDescription,
+    eyebrow: solution.eyebrow,
+    h1: solution.headline,
+    heroLead: solution.lead,
+    breadcrumbs: [
+      { label: "Home", href: "/" },
+      { label: "Industries", href: "/industries" },
+      { label: solution.eyebrow }
+    ],
+    whyTitle: solution.overviewTitle ?? solution.title,
+    whyParagraphs: solution.overview ?? [],
+    challenges: solution.challenges,
+    industries: solution.industries,
+    useCases: solution.useCases,
+    featureHighlights: helps,
+    benefits: solution.benefits ?? [],
+    localAreas: [],
+    faqs: solution.faqs,
+    internalLinks: [
+      ...helps.map((item) => ({ label: item.title, href: item.href })),
+      ...solution.relatedSolutionSlugs.flatMap((solSlug) => {
+        const sol = getSolution(solSlug);
+        return sol ? [{ label: sol.title, href: `/${sol.slug}` }] : [];
+      }),
+      { label: "All industries", href: "/industries" },
       ...coreLinks
     ]
   };
