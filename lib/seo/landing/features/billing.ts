@@ -14,7 +14,7 @@ export const billingFeatures: FeatureLanding[] = [
       "TeamShastra is a GST billing app for service businesses. Make tax invoices with the right CGST, SGST or IGST, record payments and share PDFs. Start free.",
     h1: "A GST billing app built into your job workflow",
     intro:
-      "TeamShastra is a GST billing app that sits next to your jobs, customers and stock. You make a tax invoice in a few taps, the tax split is worked out for you, and the PDF goes out on WhatsApp. Payments are recorded against the same bill.",
+      "The customer won't release payment until the GST bill reaches them on WhatsApp. With a GST billing app sitting next to your jobs, customers and stock, that's a few taps. TeamShastra works out the tax split, makes the PDF and records the payment against the same bill.",
     keywordHeading: "Documents you can make in the GST billing app",
     problem: [
       "Many service owners make bills at night in Word or Excel. They copy the customer's GSTIN from an old message, type the HSN code from memory and work out tax with a calculator. One wrong state and the whole bill has the wrong tax type.",
@@ -23,7 +23,7 @@ export const billingFeatures: FeatureLanding[] = [
       "Customers notice the delay and the mistakes, and some start doubting your rates rather than paying on time."
     ],
     solution: [
-      "In TeamShastra you pick the customer, add items from your catalog, and the app fills HSN or SAC codes and rates you saved earlier. The tax is CGST plus SGST when the place of supply is in your state and IGST when it is outside. You do not choose it by hand each time, though an invoice can be overridden when a special case needs it.",
+      "Pick the customer, add items from your catalog, and the app fills HSN or SAC codes and rates you saved earlier. The tax is CGST plus SGST when the place of supply is in your state and IGST when it is outside. You do not choose it by hand each time, though an invoice can be overridden when a special case needs it.",
       "Besides tax invoices you can make a bill of supply, a proforma invoice, credit notes, debit notes, delivery challans and purchase orders. A proforma does not touch stock or payments, so it is safe to send as an advance estimate of the bill.",
       "Record a full or part payment against the bill into a bank account or cash. The pending amount stays visible until it is cleared. Save your bank details and UPI ID once and they print on the PDF; with a UPI ID saved, bills with an amount due also carry a scan-to-pay UPI QR. Share the PDF on WhatsApp straight from the invoice."
     ],
@@ -36,7 +36,7 @@ export const billingFeatures: FeatureLanding[] = [
       "Record a payment when the customer pays, in full or in parts."
     ],
     whoFor:
-      "Owners and managers make bills; technicians do not see the billing screens. It is made for service businesses that also sell material, such as CCTV installers, inverter and battery dealers, IT and networking firms, and home automation installers.",
+      "Billing screens stay with owners and managers. Technicians never see them. It is made for service businesses that also sell material, such as CCTV installers, inverter and battery dealers, IT and networking firms, and home automation installers.",
     benefits: [
       "The right tax type is set from the place of supply every time",
       "Bills can be made the same day the job is completed",
@@ -45,8 +45,8 @@ export const billingFeatures: FeatureLanding[] = [
       "Stock and customer balances update from the same document"
     ],
     limits: [
-      "It does not file GST returns on the government portal; use the GST reports for your CA.",
-      "It does not connect to the GST system to generate invoice reference numbers."
+      "Filing returns on the GST portal isn't done here. Hand the GST reports to your CA instead.",
+      "There's no link to the GST system for generating invoice reference numbers."
     ],
     faqs: [
       {
@@ -62,7 +62,7 @@ export const billingFeatures: FeatureLanding[] = [
       {
         question: "Is a proforma invoice counted as a sale?",
         answer:
-          "No. A proforma invoice is a preview of the bill. It does not reduce stock and does not create a payment due. When the customer confirms, make the real tax invoice. This keeps your GST reports clean. Proformas are also handy for advance requests."
+          "No. A proforma invoice is a preview of the bill. Stock stays as it is and no payment due is created. Once they confirm, make the real tax invoice. This keeps your GST reports clean. Proformas are also handy for advance requests."
       },
       {
         question: "Can customers pay by scanning a QR on the bill?",
@@ -101,7 +101,7 @@ export const billingFeatures: FeatureLanding[] = [
       "Use the TeamShastra quotation and estimate app to send neat PDF quotes on WhatsApp, then turn an approved quote into a job or invoice. Free to start.",
     h1: "From site visit to approved quote with a quotation and estimate app",
     intro:
-      "TeamShastra works as a quotation and estimate app for service work. You build a quote from your catalog, share it as a PDF, and convert it to a job or a GST invoice once the customer says yes.",
+      "Quote while you're still at the site, before the customer calls the next vendor. TeamShastra works as a quotation and estimate app for service work. Build the quote from your catalog, share it as a PDF, and turn it into a job or a GST invoice once they say yes.",
     keywordHeading: "Why a quotation and estimate app saves typing",
     problem: [
       "A site survey ends with the customer asking, \"Send me the rate.\" The technician tells the owner. The owner types a quotation in Word, saves it with a random name and sends it in the evening. If the customer says yes a week later, the owner has to search for that file.",
@@ -112,7 +112,7 @@ export const billingFeatures: FeatureLanding[] = [
     solution: [
       "In TeamShastra a quotation is a proper document in the Sales section. Pick the customer, add items from your catalog with prices and tax, and add terms. The PDF is ready to share on WhatsApp in a moment.",
       "Quotations stay in a list with their status, so you can see which ones are waiting. Call the customer from the quote screen to follow up.",
-      "When the customer agrees, convert the quotation. Make it a job, and the work order is created for the same customer with the quote attached. Or make it an invoice, and every line, price and tax moves across. The invoice stays editable if something changed on site. The original quote is locked, so you always know what was first promised. With a UPI ID saved, a quote can also carry a scan-to-pay QR for advance payments.",
+      "Got a yes? Convert the quotation. Make it a job, and the work order is created for the same customer with the quote attached. Or make it an invoice, and every line, price and tax moves across. The invoice stays editable if something changed on site. The original quote is locked, so you always know what was first promised. With a UPI ID saved, a quote can also carry a scan-to-pay QR for advance payments.",
       "Each quotation keeps its own number series, set in your GST settings, so references stay clean when customers quote them back to you."
     ],
     steps: [
@@ -123,7 +123,7 @@ export const billingFeatures: FeatureLanding[] = [
       "When approved, convert it to a job, to an invoice, or to both."
     ],
     whoFor:
-      "Owners and managers who price work use it most. It helps any trade where a site visit comes before the order: CCTV installers, home automation installers, fire safety suppliers, lift maintenance firms and solar installers.",
+      "Whoever prices the work in your company will use it most. It helps any trade where a site visit comes before the order: CCTV installers, home automation installers, fire safety suppliers, lift maintenance firms and solar installers.",
     benefits: [
       "Quotes look professional and carry your logo and terms",
       "Approved quotes become jobs or invoices without retyping",
@@ -132,7 +132,7 @@ export const billingFeatures: FeatureLanding[] = [
       "Advance payments can be collected through the UPI QR"
     ],
     limits: [
-      "It does not send automatic reminders to customers about pending quotes.",
+      "Follow-ups on pending quotes are yours to make; no automatic reminders go out.",
       "There is no online page where the customer clicks to accept; approval comes by phone or message."
     ],
     faqs: [
@@ -182,7 +182,7 @@ export const billingFeatures: FeatureLanding[] = [
       "Download GSTR-1 and GSTR-3B reports, GSTR-9 data and an HSN summary in Excel or PDF from your own bills. Send them to your CA in one go. Try it free.",
     h1: "Ready GSTR-1 and GSTR-3B reports for your CA every month",
     intro:
-      "TeamShastra builds GSTR-1 and GSTR-3B reports from the invoices, notes and purchase bills you already made in the app. Export them in Excel or PDF and send them to your CA. Month end becomes a five-minute job.",
+      "It's the 10th and your CA wants GSTR-1 by evening. TeamShastra builds GSTR-1 and GSTR-3B reports from the invoices, notes and purchase bills you've already made in the app. Export them to Excel or PDF, send them across, and month end stops eating your weekend.",
     keywordHeading: "What is inside the GSTR-1 and GSTR-3B reports",
     problem: [
       "Around the tenth of each month, the CA's office starts calling. \"Send all sales bills. Send purchase bills. Send credit notes.\" The owner digs through a drawer, a WhatsApp chat and an email inbox. Some bills are photos, some are PDFs, some are missing.",
@@ -204,16 +204,16 @@ export const billingFeatures: FeatureLanding[] = [
       "Export to Excel or PDF and send the file to your CA."
     ],
     whoFor:
-      "Owners and managers with billing access use these reports, and CAs receive them. They suit GST-registered service businesses that bill many small jobs each month, such as IT and networking firms, CCTV installers, appliance repair centres and inverter dealers.",
+      "Anyone with billing access can pull these reports, and your CA gets the files. They suit GST-registered service businesses that bill many small jobs each month, such as IT and networking firms, CCTV installers, appliance repair centres and inverter dealers.",
     benefits: [
       "Month-end GST data is ready without collecting paper bills",
       "Your CA gets clean Excel files, which saves their time and yours",
       "HSN-wise summaries are built automatically",
-      "You can see tax due before filing day",
+      "Tax due is visible before filing day",
       "Annual GSTR-9 data comes from the same records"
     ],
     limits: [
-      "It does not upload or file returns on the GST portal; your CA still files them.",
+      "Nothing is uploaded to the GST portal. Your CA still files the returns.",
       "Bills made outside TeamShastra will not appear unless you enter or import them."
     ],
     faqs: [
@@ -260,11 +260,11 @@ export const billingFeatures: FeatureLanding[] = [
       "Simple TDS management for small businesses: save rates, see TDS by party and quarter, log challans and export a Form 26Q summary for your CA. Start free.",
     h1: "TDS management without the spreadsheet",
     intro:
-      "TeamShastra handles TDS management for small businesses that deduct tax on payments. Save the sections and rates once, and the app keeps party-wise TDS totals, challans and a quarterly Form 26Q summary ready.",
+      "Deducting tax on a contractor or rent payment takes a minute; finding the totals at quarter end can take a weekend. For TDS management, save the sections and rates once in TeamShastra. Party-wise TDS totals, challans and a quarterly Form 26Q summary then stay ready for your CA.",
     keywordHeading: "What TDS management covers in the app",
     problem: [
       "Once your business crosses the turnover limit, TDS becomes part of life. You deduct it on certain payments, deposit it with a challan, and file a quarterly return. Each step has its own rate, date and form.",
-      "Small firms track this in a spreadsheet that one person understands. The rate for a section is typed wrongly. A challan's BSR code is lost. At the end of the quarter, the CA asks for party-wise totals and challan details, and the owner spends a weekend rebuilding them.",
+      "Small firms track this in a spreadsheet that one person understands. The rate for a section is typed wrongly. A challan's BSR code is lost. Quarter end comes, the CA asks for party-wise totals and challan details, and the owner spends a weekend rebuilding them.",
       "Mistakes lead to notices and late fees, which hurt more than the tax itself.",
       "Customers who deduct TDS from your bills add another layer. You must match what they cut against what they report, or you lose a credit you are owed."
     ],
@@ -291,8 +291,8 @@ export const billingFeatures: FeatureLanding[] = [
       "Exports cut down back-and-forth with your accountant"
     ],
     limits: [
-      "It does not file the quarterly TDS return or download official certificates from the tax department.",
-      "It does not pay TDS for you; challans are paid on the bank or tax portal and then recorded here."
+      "Filing the quarterly TDS return and downloading official certificates stay with your CA and the tax department's site.",
+      "Paying TDS happens through your bank or the tax portal; you record the challan here afterwards."
     ],
     faqs: [
       {

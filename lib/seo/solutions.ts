@@ -253,12 +253,12 @@ export const solutions: SolutionPage[] = [
       "Facility management software for vendors who maintain offices, malls and societies: site-wise staff check-in, daily task jobs, photo proof and AMC visits.",
     eyebrow: "Facility Management",
     headline: "Facility Management Software for Multi-Site Maintenance Vendors",
-    lead: "TeamShastra is facility management software for vendors who keep buildings running for their clients: offices, malls, hospitals and housing societies. It puts site staff, daily tasks, planned maintenance and client reports in one app.",
+    lead: "Your housekeeping staff are at a mall, your electrician is at a hospital, and a society wants its pump report. Facility management software should hold all of that in one app. TeamShastra brings site staff, daily tasks, planned maintenance and client reports together for vendors who keep offices, malls, hospitals and housing societies running.",
     overviewTitle: "What a facility vendor's week looks like",
     overview: [
       "A facility vendor looks after buildings that belong to someone else. One contract covers an office tower, another a hospital wing, a third a gated society. Each site has its own resident staff, such as an electrician, a plumber and a multi-skill technician, plus specialists who come in for pumps, DG sets or the STP.",
       "The client's facility manager wants three things: staff present every shift, small faults fixed the same day, and planned maintenance done on time. They ask for a monthly report and hold back payment when it is late or thin.",
-      "Vendors usually run this on site registers and WhatsApp groups per client. Registers are filled after the fact. Complaints raised in a group are lost under newer messages. At month end a supervisor spends two days building reports from photos on five different phones."
+      "Vendors usually run this on site registers and WhatsApp groups per client. Registers are filled after the fact. Complaints raised in a group are lost under newer messages. Then month end arrives and a supervisor spends two days building reports from photos on five different phones."
     ],
     challenges: [
       "Resident staff spread across many client buildings with paper registers",
@@ -320,12 +320,12 @@ export const solutions: SolutionPage[] = [
       {
         question: "Can one technician cover two client sites in a day?",
         answer:
-          "Yes. Assign jobs at both sites to the same person. Their check-in records the first site, and job-start pins show when they reached the second. The Today board shows whether they are free or busy, which helps when a third site calls."
+          "Yes. Assign jobs at both sites to the same person. Their check-in records the first site, and job-start pins show when they reached the second. Whether they're free or busy is right there on the Today board, which helps when a third site calls."
       },
       {
         question: "Does TeamShastra manage building assets like a CAFM system?",
         answer:
-          "No. It does not keep an asset register with every pump and panel as a record. Most small and mid-size vendors manage well with contracts per equipment group, jobs, photos and reports, which is what TeamShastra provides."
+          "No. Pumps and panels don't each get their own asset record. Most small and mid-size vendors manage well with contracts per equipment group, jobs, photos and reports, which is what TeamShastra provides."
       }
     ],
     relatedCitySlugs: ["mumbai", "bengaluru", "delhi", "pune"],
@@ -338,7 +338,7 @@ export const solutions: SolutionPage[] = [
       "Maintenance management software for service teams that look after machines and equipment: due visit lists, breakdown jobs, parts used and visit history.",
     eyebrow: "Maintenance Management",
     headline: "Maintenance Management Software for Equipment Service Teams",
-    lead: "TeamShastra is maintenance management software for teams that service machines and equipment for their customers. Gensets, pumps, compressors, kitchen equipment and water plants all need planned visits and quick breakdown repair. The app keeps both in one place.",
+    lead: "A genset that won't start, a pump due for service, a kitchen exhaust that needs cleaning. Maintenance management software has to juggle planned visits and sudden breakdowns. TeamShastra keeps both in one place for teams servicing gensets, pumps, compressors, kitchen equipment and water plants for their customers.",
     overviewTitle: "Planned visits versus breakdown calls",
     overview: [
       "Every maintenance business faces the same tug of war. Planned visits keep machines healthy and customers loyal. Breakdown calls pay well and cannot wait. When the phone rings about a stopped compressor, the planned visit for another customer slips to next week, then the week after.",
@@ -370,7 +370,7 @@ export const solutions: SolutionPage[] = [
       { feature: "amc-contract-management", text: "Each machine contract sets its visit gap, and overdue visits stand out in the due list during a busy month." },
       { feature: "job-work-order-management", text: "Breakdown calls get high priority, and parts changed are noted on the job with photos for the next visit." },
       { feature: "inventory-stock-management", text: "Belts, seals and filters used on site are billed from stock so counts stay true." },
-      { feature: "technician-dispatch-today-board", text: "The Today board shows who is free to take an urgent call without dropping a planned visit." },
+      { feature: "technician-dispatch-today-board", text: "Check the Today board to see who can take an urgent call without dropping a planned visit." },
       { feature: "business-reports-dashboard", text: "Jobs & AMC reports show how many planned visits were done against breakdowns in the period." }
     ],
     benefits: [
@@ -403,7 +403,7 @@ export const solutions: SolutionPage[] = [
       {
         question: "Is TeamShastra a CMMS?",
         answer:
-          "Not in the factory sense. It does not keep a plant-wide asset tree with meter readings. It is built for service businesses that maintain equipment for many customers and need contracts, jobs, parts, reports and billing together."
+          "Not in the factory sense. There's no plant-wide asset tree with meter readings. It is built for service businesses that maintain equipment for many customers and need contracts, jobs, parts, reports and billing together."
       }
     ],
     relatedCitySlugs: ["pune", "chennai", "ahmedabad", "surat"],
@@ -416,7 +416,7 @@ export const solutions: SolutionPage[] = [
       "HVAC service management software for AC companies: plan servicing before summer, send breakdown calls to free technicians, track gas and parts, bill with GST.",
     eyebrow: "HVAC Services",
     headline: "HVAC Service Management Software for AC Service Companies",
-    lead: "TeamShastra is HVAC service management software for companies that install and service split ACs, cassette units, VRF systems and chillers. It handles the summer rush, AMC servicing, gas and parts, and billing.",
+    lead: "When May arrives, every AC in the city seems to fail on the same afternoon. TeamShastra is HVAC service management software for companies that install and service split ACs, cassette units, VRF systems and chillers. It handles the summer rush, AMC servicing, gas and parts, and billing.",
     overviewTitle: "The AC service year, season by season",
     overview: [
       "AC service work follows the weather. In March and April, homes and offices want their units serviced before the heat. In May and June, breakdown calls explode: no cooling, water leaking, compressor tripping. In the monsoon, drain and smell complaints rise. Winter is quiet, which is when installations and AMC renewals are pushed.",
@@ -476,12 +476,12 @@ export const solutions: SolutionPage[] = [
       {
         question: "Can installation jobs have two technicians?",
         answer:
-          "Yes. Assign both people to the job. Each can add photos of the indoor unit, outdoor unit stand, piping and drain. The service report then shows the full installation, which helps if the customer complains about water leaks later."
+          "Yes. Assign both people to the job. Each can add photos of the indoor unit, outdoor unit stand, piping and drain. That gives a service report of the full installation, useful if the customer complains about water leaks later."
       },
       {
         question: "Does the app help with VRF and chiller contracts too?",
         answer:
-          "Yes. Larger systems usually have formal contracts with monthly or quarterly checks. Create an AMC for each site with its own visit gap and default technician, and share service reports with the client's facility team after every visit."
+          "Yes. Larger systems usually have formal contracts with monthly or quarterly checks. Give each site its own AMC with a visit gap and default technician, and share service reports with the client's facility team after every visit."
       }
     ],
     relatedCitySlugs: ["hyderabad", "mumbai", "delhi", "chennai"],
@@ -494,10 +494,10 @@ export const solutions: SolutionPage[] = [
       "Solar installation workforce software for rooftop installers: survey and quote, run multi-day installs with crew attendance, track panels and do O&M visits.",
     eyebrow: "Solar & Renewable",
     headline: "Solar Installation Workforce Software for Rooftop Installers",
-    lead: "TeamShastra is solar installation workforce software for rooftop solar companies. It covers survey and quote, multi-day installs with crew attendance, panel and inverter stock, and cleaning and O&M visits after commissioning.",
+    lead: "A rooftop solar job runs from survey to commissioning over several days, then needs panel cleaning for years. TeamShastra is solar installation workforce software for rooftop solar companies. It covers survey and quote, multi-day installs with crew attendance, panel and inverter stock, and O&M visits after commissioning.",
     overviewTitle: "From rooftop survey to O&M",
     overview: [
-      "A rooftop solar job starts with a roof survey: shading, direction, structure and the electricity bill. A quotation follows with panel capacity, inverter, mounting structure and wiring. Home customers compare two or three quotes, and approval can take weeks.",
+      "Before anything is quoted, someone climbs up to check shading, direction and the roof structure, and asks for the latest electricity bill. A quotation follows with panel capacity, inverter, mounting structure and wiring. Home customers compare two or three quotes, and approval can take weeks.",
       "Installation is crew work. A team of four or five spends two to five days on the roof fixing the structure, mounting panels, running DC cable and installing the inverter and earthing. Material arrives in lots. Helpers are often daily-wage workers, and the crew may move to another roof before this one is finished.",
       "After commissioning, customers expect panel cleaning and checks every few months. Generation drops if panels stay dusty. Many installers lose this repeat income because nobody tracks the visit dates, and the customer finds a cheaper cleaner."
     ],
@@ -540,7 +540,7 @@ export const solutions: SolutionPage[] = [
       {
         question: "How do I pay daily-wage helpers on solar installs fairly?",
         answer:
-          "Set each helper's wage as Per day and ask them to check in at the site each morning with a selfie. At month end, staff salary counts present days and half days from attendance. Record advances as they happen and cut them when you pay."
+          "Set each helper's wage as Per day and ask them to check in at the site each morning with a selfie. When the month closes, staff salary counts present days and half days from attendance. Record advances as they happen and cut them when you pay."
       },
       {
         question: "Can I send customers progress updates during a long install?",
@@ -550,12 +550,12 @@ export const solutions: SolutionPage[] = [
       {
         question: "Can I track panels and inverters for each project?",
         answer:
-          "Record supplier purchase bills so material enters stock, then bill it to the customer on the project invoice. The movement history shows when panels came in and on which invoice they went out, which helps when lots are split between roofs."
+          "Record supplier purchase bills so material enters stock, then bill it to the customer on the project invoice. Panels can be traced too: you see when they came in and which invoice they went out on, which helps when lots are split between roofs."
       },
       {
         question: "How do I keep up with panel cleaning visits after installation?",
         answer:
-          "Create an AMC for customers who pay for cleaning and checks, with a visit gap such as every three months. Due visits show in the list, and one tap creates the job. For others, a next-visit date on the customer works as a reminder."
+          "Customers who pay for cleaning and checks get an AMC with a visit gap, every three months for example. Due visits show in the list, and one tap creates the job. For others, a next-visit date on the customer works as a reminder."
       },
       {
         question: "Does TeamShastra help with subsidy or net-metering paperwork?",
@@ -573,12 +573,12 @@ export const solutions: SolutionPage[] = [
       "Electrician workforce management software for contractors: assign wiring and repair jobs, track attendance, bill material with GST and keep site photos.",
     eyebrow: "Electrical Services",
     headline: "Electrician Workforce Management Software for Electrical Contractors",
-    lead: "TeamShastra is electrician workforce management software for contractors who run wiring, repair and maintenance work with a team of electricians and helpers. It covers job assignment, attendance, material billing and site photos.",
+    lead: "Wiring a new flat, fixing a tripping MCB and a society's monthly check can all land on the same Tuesday. TeamShastra is electrician workforce management software for contractors with a team of electricians and helpers. It covers job assignment, attendance, material billing and site photos.",
     overviewTitle: "How an electrical contractor's team really works",
     overview: [
       "An electrical contractor runs several kinds of work at once. A new flat needs full wiring over a week or two. A shop wants new lights and a distribution board. A society calls about a tripping MCB in the pump room. An office wants a monthly check of its panel and earthing.",
       "The team is a mix of skilled electricians and helpers, many paid per day. Material moves constantly: wire coils, conduit, switches, MCBs and fittings. Some is bought by the contractor, some by the client, and confusion about who paid for what is common.",
-      "Small repair calls are easy to lose. A helper is sent without the owner knowing. A job is half done and nobody returns. At the end of a wiring project, the client disputes the material bill because there is no record of what was used."
+      "Small repair calls are easy to lose. A helper is sent without the owner knowing. A job is half done and nobody returns. Once a wiring project wraps up, the client disputes the material bill because there's no record of what was used."
     ],
     challenges: [
       "Wiring projects and small repair calls running side by side",
@@ -628,12 +628,12 @@ export const solutions: SolutionPage[] = [
       {
         question: "How do I manage helpers paid per day?",
         answer:
-          "Set their wage as Per day. They check in at the site each morning from their phone. At month end, staff salary counts the days and half days from attendance. Advances given during the month are cut when you pay."
+          "Set their wage as Per day. They check in at the site each morning from their phone. Salary then counts the days and half days straight from attendance. Advances given during the month are cut when you pay."
       },
       {
         question: "Can I handle a society's monthly electrical checks?",
         answer:
-          "Yes. Create an AMC contract for the society with a monthly visit gap. Each due visit becomes a job for your electrician, with photos of the panel and pump room. Share the report with the society office after the visit."
+          "Yes. Put the society on an AMC contract with a monthly visit gap. Each due visit becomes a job for your electrician, with photos of the panel and pump room. Share the report with the society office after the visit."
       },
       {
         question: "What if the client bought some of the material?",
@@ -651,7 +651,7 @@ export const solutions: SolutionPage[] = [
       "Plumbing service software for plumbers and contractors: log leak and blockage calls, send the nearest free plumber, bill fittings and keep society AMC visits.",
     eyebrow: "Plumbing Services",
     headline: "Plumbing Service Software for Plumbers and Plumbing Contractors",
-    lead: "TeamShastra is plumbing service software for plumbing contractors and teams who fix leaks, blockages and fittings in homes, shops and housing societies. It keeps emergency calls, society contracts, fittings and payments in order.",
+    lead: "Burst pipe at 7 AM, blocked drain at noon, a society tank to check by evening. This plumbing service software gives contractors one place for emergency calls, society contracts, fittings and payments. It's built for teams fixing leaks, blockages and fittings in homes, shops and housing societies.",
     overviewTitle: "Leaks, blockages and society contracts",
     overview: [
       "Plumbing calls are urgent and messy. A pipe bursts under a kitchen sink. A bathroom drain is blocked. A society's overhead tank overflows at night. Customers want someone within the hour and rarely describe the problem clearly on the phone.",

@@ -4,7 +4,7 @@ import { industryLandingPath, industryLandings, rewrittenIndustrySolutions } fro
 import legacyPaths from "./fixtures/legacy-urls.json";
 import retiredCityUrls from "./fixtures/retired-city-urls.json";
 
-// Sitemap, robots and routing. Legacy URLs come from the live sitemap of 23 Nov 2026 (44 URLs).
+// Sitemap, robots and routing. Legacy URLs are every URL in the live sitemap on 23 Nov 2026 after Prompt 08 (80 URLs).
 
 const origin = "https://teamshastra.com";
 const newPaths = [
@@ -25,8 +25,7 @@ test("sitemap lists every legacy and new URL once, and no retired city URL", asy
   for (const path of newPaths) expect(paths.has(path), `new ${path}`).toBe(true);
   for (const item of rewrittenIndustrySolutions) expect(paths.has(`/${item.slug}`)).toBe(true);
   for (const item of retiredCityUrls) expect(paths.has(item.path), `retired ${item.path}`).toBe(false);
-  expect(locs).toHaveLength(legacyPaths.length + newPaths.length);
-  expect(locs).toHaveLength(80);
+  expect(locs).toHaveLength(legacyPaths.length);
 });
 
 test("robots.txt allows crawling and points to the sitemap", async ({ request }) => {

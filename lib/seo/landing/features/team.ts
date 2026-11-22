@@ -14,11 +14,11 @@ export const teamFeatures: FeatureLanding[] = [
       "TeamShastra is a GPS attendance app with optional selfie and office radius. Location is saved only at check-in and check-out. Try it free for your staff.",
     h1: "GPS attendance app with selfie check-in for field staff",
     intro:
-      "TeamShastra works as a GPS attendance app for teams that do not sit in one office. Staff check in from their phone, and the app saves where they were at that moment. You can add a selfie rule or an office distance rule if you need more proof.",
+      "Your technician says they reached the society gate at 9:15. With a GPS attendance app you don't need to take their word for it. In TeamShastra staff check in from their phone, the location at that moment is saved, and you can add a selfie or office distance rule when you want more proof.",
     keywordHeading: "How the GPS attendance app checks each punch",
     problem: [
       "Your technician says he reached the site at 10. The customer says nobody came till 12. With a paper register or a \"reached\" message on WhatsApp, you cannot check who is right.",
-      "Some staff ask a friend to mark them present. Others punch in from home. At month end you argue about half days, and salary is paid on trust, not on proof.",
+      "Some staff ask a friend to mark them present. Others punch in from home. Come salary week you argue about half days, and pay goes out on trust, not proof.",
       "Biometric machines do not help a field team either. They only work if everyone comes to the office first, and most of your work starts at customer sites across the city.",
       "Asking every person to send a location pin on WhatsApp sounds simple, but nobody checks those pins later. They scroll away within a day, and the proof is gone just when the salary question comes up."
     ],
@@ -37,7 +37,7 @@ export const teamFeatures: FeatureLanding[] = [
       "Owners fix a wrong punch in the correction screen and type the reason."
     ],
     whoFor:
-      "Owners use it to pay salary on proof. Managers use it each morning to see who has started. Technicians use it to show they were on time, which protects them in a dispute too. It fits CCTV installers, cleaning and housekeeping companies, fire safety teams and electricians who start at different sites.",
+      "For owners, the payoff is paying salary on proof. Managers use it each morning to see who has started. Technicians use it to show they were on time, which protects them in a dispute too. It fits CCTV installers, cleaning and housekeeping companies, fire safety teams and electricians who start at different sites.",
     benefits: [
       "Proxy and home check-ins become easy to spot",
       "Selfie and office radius rules are optional, so you choose the level of control",
@@ -46,8 +46,8 @@ export const teamFeatures: FeatureLanding[] = [
       "Attendance feeds straight into staff salary for the month"
     ],
     limits: [
-      "It does not follow staff on a map through the day; location is saved only when they punch.",
-      "It does not connect to fingerprint or face-reading machines on the office wall."
+      "Nobody is followed on a map through the day. Location is saved only at the punch.",
+      "Fingerprint and face-reading machines on the office wall can't be connected."
     ],
     faqs: [
       {
@@ -102,7 +102,7 @@ export const teamFeatures: FeatureLanding[] = [
       "A simple leave management app for small teams. Staff ask for leave on the phone, managers approve it, and half days count correctly in salary. Start free.",
     h1: "Leave management app for staff, half days and holidays",
     intro:
-      "TeamShastra includes a leave management app inside the same tool your team uses for jobs and attendance. Staff request a day off on the phone. Managers approve it or mark leave themselves, and the record flows into salary.",
+      "Half the team wants the day before Diwali off, and you need to know who's actually coming. TeamShastra has a leave management app inside the same tool your team already uses for jobs and attendance. Staff ask for leave on the phone, you approve it or mark it yourself, and salary picks it up.",
     keywordHeading: "What the leave management app tracks",
     problem: [
       "In a small business, leave is usually a word in passing. \"Sir, I will not come tomorrow.\" The owner agrees, forgets, and at month end the staff member says it was paid leave while the owner remembers it as unpaid.",
@@ -112,7 +112,7 @@ export const teamFeatures: FeatureLanding[] = [
     ],
     solution: [
       "In TeamShastra a staff member opens Request leave, picks the date and type, and writes a reason. The owner or manager sees the request and approves or rejects it. Managers can also mark leave, half day, absent or holiday directly for anyone on the team.",
-      "Owners can set a yearly paid-leave quota for the company and give a different number to one person if needed. The app keeps count, so you can see how much paid leave someone has used.",
+      "Owners can set a yearly paid-leave quota for the company and give a different number to one person if needed. Paid leave used is counted for each person, so a quick look tells you how many days are left.",
       "Company holidays are added once and can be marked paid or unpaid, including a half holiday. All of this sits next to attendance. When you open staff salary for the month, the days of leave, half days, holidays and absences are already counted. Nobody needs to search a diary to work out pay.",
       "Managers also have a team attendance screen to mark everyone for a day at once. It skips people who already checked in or have leave, which saves time on busy mornings."
     ],
@@ -125,7 +125,7 @@ export const teamFeatures: FeatureLanding[] = [
       "Open staff salary at month end; leave and half days are already in the count."
     ],
     whoFor:
-      "Owners use it to stop salary disputes. Managers use it to plan the week knowing who will be away. Staff use it to ask for leave formally and keep their own record. It helps cleaning companies, RO service teams, inverter dealers and any business with ten or more people on the field.",
+      "Fewer salary disputes is the main reason owners switch it on. Managers use it to plan the week knowing who will be away. Staff use it to ask for leave formally and keep their own record. It helps cleaning companies, RO service teams, inverter dealers and any business with ten or more people on the field.",
     benefits: [
       "Every leave request has a date, a type and a reason",
       "Half days are recorded on the day, not argued about later",
@@ -134,8 +134,8 @@ export const teamFeatures: FeatureLanding[] = [
       "Salary for the month already reflects every leave entry"
     ],
     limits: [
-      "It does not apply state-wise holiday lists for you; owners add their own holidays.",
-      "It does not track leave encashment or gratuity."
+      "State-wise holiday lists aren't loaded for you, so you add your own holidays.",
+      "Leave encashment and gratuity are outside what it tracks."
     ],
     faqs: [
       {
@@ -161,7 +161,7 @@ export const teamFeatures: FeatureLanding[] = [
       {
         question: "Can I mark a holiday as unpaid?",
         answer:
-          "Yes. When you add a company holiday you choose whether it is paid or unpaid. You can also add a half holiday, for example on a festival evening. Staff salary uses these rules automatically when you open the month. Holiday rules apply to the whole team."
+          "Yes. When you add a company holiday you choose whether it is paid or unpaid. Half holidays work too, say the evening before Diwali. Staff salary uses these rules automatically when you open the month. Holiday rules apply to the whole team."
       }
     ],
     relatedFeatures: ["gps-attendance-app", "staff-salary-payroll", "technician-dispatch-today-board"],
@@ -184,7 +184,7 @@ export const teamFeatures: FeatureLanding[] = [
       "See a field staff location map built from check-ins, job starts and job photos. Know where work happened without following phones all day. Try it free.",
     h1: "A field staff location map that respects privacy",
     intro:
-      "The team map in TeamShastra is a field staff location map built from real work moments. It places a pin when someone checks in, starts a job or adds a job photo. You see where work happened without watching anyone all day.",
+      "A customer insists nobody came on Tuesday. Open the map and there's the pin where your technician started that job. TeamShastra's field staff location map only drops pins at real work moments: check-in, job start and job photos. You see where work happened without watching anyone all day.",
     keywordHeading: "Where the field staff location map gets its pins",
     problem: [
       "Owners want to know their team is where it should be. A customer in one corner of the city says the technician never came. Another technician claims he spent two hours in traffic. Without any location record, you cannot check either story.",
@@ -206,7 +206,7 @@ export const teamFeatures: FeatureLanding[] = [
       "Send a request for a work-status update if you need to hear from someone now."
     ],
     whoFor:
-      "Owners and managers use the map to review the day and answer customer complaints. Technicians benefit because their location is only used for work actions, never at lunch or at home. It is useful for CCTV installers, pest control teams, lift maintenance crews and appliance repair technicians who move between many sites.",
+      "Most owners open the map in the evening to review the day, or when a customer complains. Technicians benefit because their location is only used for work actions, never at lunch or at home. It is useful for CCTV installers, pest control teams, lift maintenance crews and appliance repair technicians who move between many sites.",
     benefits: [
       "Location proof for key work moments, not a minute-by-minute trail",
       "Staff are more willing to use it because it respects their privacy",
@@ -215,7 +215,7 @@ export const teamFeatures: FeatureLanding[] = [
       "No extra battery drain from constant location checks"
     ],
     limits: [
-      "It does not show a moving dot or the route a person drove.",
+      "You won't see a moving dot or the route someone drove.",
       "If a technician never checks in or starts the job, there will be no pin for that work."
     ],
     faqs: [
@@ -263,10 +263,10 @@ export const teamFeatures: FeatureLanding[] = [
       "Set staff roles and permissions for owners, managers and technicians in TeamShastra so each person sees only what they need. Invite your team free today.",
     h1: "Staff roles and permissions for owner, manager and technician",
     intro:
-      "TeamShastra gives each person a role, and staff roles and permissions decide what they can see and change. Owners see everything, including money and salary. Technicians see their own work. Managers sit in between.",
+      "Your new helper needs a customer's address, not your profit on every job. Staff roles and permissions in TeamShastra decide who sees and changes what. Owners see everything, including money and salary, technicians see their own work, and managers sit in between.",
     keywordHeading: "How staff roles and permissions are split",
     problem: [
-      "Shared logins are common in small firms. Everyone uses the owner's phone number to open the billing software. A technician who only needed an address can also see every customer's dues, every supplier rate and the profit on each job.",
+      "Shared logins are common in small firms. Everyone uses the owner's phone number to open the billing software. Your helper only needed an address, yet they can also see every customer's dues, every supplier rate and the profit on each job.",
       "When someone leaves, they still know the password. Data walks out with them. Salary figures, which should be private, become gossip in the team.",
       "On the other side, a manager who needs to assign jobs cannot do it without asking the owner, because the tool has only one level of access.",
       "Owners also end up doing everything themselves. Without separate logins, they cannot hand over job assignment or attendance to a trusted supervisor. Every small change still comes to their phone, even when they are travelling or with family."
@@ -316,7 +316,7 @@ export const teamFeatures: FeatureLanding[] = [
       {
         question: "What happens to a job when I deactivate a technician?",
         answer:
-          "Their past jobs, photos and comments stay in the company records with their name. They simply cannot log in anymore. Reassign any open jobs to another person so the work continues without a gap. You can also reactivate the person later if they rejoin, and their old records are still there."
+          "Their past jobs, photos and comments stay in the company records with their name. They simply cannot log in anymore. Reassign any open jobs to another person so the work continues without a gap. If they rejoin later, reactivate them and their old records are still there."
       },
       {
         question: "Can I keep ID proof of staff in the app?",

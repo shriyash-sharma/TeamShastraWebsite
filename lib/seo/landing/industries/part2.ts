@@ -12,7 +12,7 @@ export const industriesPart2: IndustryLanding[] = [
       "Fire safety service software for extinguisher refills, alarm and hydrant checks: plan due dates, share inspection reports and bill societies and plants.",
     h1: "Fire safety service software for refills and inspections",
     intro:
-      "TeamShastra is fire safety service software for firms that supply and maintain extinguishers, fire alarms, sprinklers and hydrant systems. It keeps refill and inspection dates on track and gives clients a clear report after every visit.",
+      "Refill dates for a hundred extinguishers won't stay in anyone's head. Fire safety service software keeps them on track. TeamShastra is built for firms that supply and maintain extinguishers, fire alarms, sprinklers and hydrant systems, and it gives clients a clear report after every visit.",
     keywordHeading: "How fire safety service software tracks due dates",
     dayInTheLife: [
       "A fire safety firm serves housing societies, schools, hospitals, shops and factories. Each site has many items: extinguishers on every floor, a fire alarm panel, smoke detectors, hose reels and sometimes a hydrant pump. Each item has its own refill or inspection date.",
@@ -45,14 +45,14 @@ export const industriesPart2: IndustryLanding[] = [
       "Share the inspection report and bill the client."
     ],
     limits: [
-      "TeamShastra does not issue official fire safety certificates or NOCs.",
-      "It does not keep a separate record and expiry date for each extinguisher."
+      "Official fire safety certificates and NOCs come from the authorities, not from this app.",
+      "Individual extinguishers don't get their own record and expiry date."
     ],
     faqs: [
       {
         question: "Can I give a society a report listing every extinguisher checked?",
         answer:
-          "Yes. The technician writes the items checked in the job comments and photographs tags and gauges. The service report PDF brings this together with your company details. Most societies are happy to file it with their own records. Share it the same day."
+          "Yes. The technician writes the items checked in the job comments and photographs tags and gauges. All of it goes into one service report PDF with your company details. Most societies are happy to file it with their own records. Share it the same day."
       },
       {
         question: "How do I track extinguishers taken back for refilling?",
@@ -89,14 +89,14 @@ export const industriesPart2: IndustryLanding[] = [
       "Lift maintenance software for elevator AMC firms: plan monthly preventive visits, send breakdown calls fast and give each building a visit report.",
     h1: "Lift maintenance software for preventive visits and breakdowns",
     intro:
-      "TeamShastra is lift maintenance software for companies that service elevators under yearly contracts. It schedules monthly preventive visits, handles urgent breakdown calls and records every visit for each building.",
+      "A lift stuck between floors on a Sunday can't wait for Monday's register. Lift maintenance software keeps the monthly checks and those urgent calls in one view. TeamShastra schedules preventive visits under yearly contracts, handles breakdowns and records every visit for each building.",
     keywordHeading: "How lift maintenance software balances PM and breakdowns",
     dayInTheLife: [
       "A lift company's week is split between planned and unplanned work. Every building under contract expects a preventive maintenance visit each month: checking brakes, doors, ropes, oil levels and the controller. Each visit takes an hour or two per lift.",
-      "Then the phone rings. A lift is stuck between floors with people inside, or the doors will not close. Breakdown calls jump the queue and pull a technician away from planned work. Safety makes speed critical.",
+      "Then the phone rings. A lift is stuck between floors with people inside, or the doors will not close. That call jumps the queue and pulls a technician off planned work, because nobody waits when people are trapped.",
       "Technicians work in machine rooms and lift pits, where mobile signal is weak or absent. They need the building's history: when the last visit was, which parts were replaced, any open complaints.",
       "Building secretaries want proof that monthly visits happened, especially when renewing the contract. When visits run late because of breakdowns, it is easy for some buildings to miss a month entirely without anyone noticing.",
-      "Every lift visit should leave a trace, but on paper most leave none at all."
+      "On paper, a monthly visit leaves a signature in a register at the security cabin at best, and those registers go missing."
     ],
     challenges: [
       "Monthly preventive visits skipped when breakdowns take priority",
@@ -122,14 +122,14 @@ export const industriesPart2: IndustryLanding[] = [
       "Use the contract's visit history at renewal."
     ],
     limits: [
-      "TeamShastra does not monitor lifts remotely or raise alarms from the lift controller.",
-      "It does not manage statutory lift licence renewals with government departments."
+      "Remote lift monitoring and controller alarms are outside its scope.",
+      "Statutory lift licence renewals with government departments stay with you."
     ],
     faqs: [
       {
         question: "How do I make sure no building misses its monthly visit?",
         answer:
-          "Create an AMC contract with a one-month gap for each building. The due visits list shows every building that still needs its visit this month. Check it every few days and create jobs for any that are pending, especially after a week of many breakdowns."
+          "Set up an AMC contract for each building with a one-month gap. The due visits list shows every building that still needs its visit this month. Check it every few days and create jobs for any that are pending, especially after a week of many breakdowns."
       },
       {
         question: "Can breakdown calls be marked as urgent?",
@@ -139,17 +139,17 @@ export const industriesPart2: IndustryLanding[] = [
       {
         question: "Can technicians use the app in a lift pit with no network?",
         answer:
-          "Yes. Job updates, comments and photos are saved on the phone and sent when signal returns. The original times are kept. This matters for lift work, where most of the job happens in machine rooms and pits. No extra step is needed."
+          "Yes. Job updates, comments and photos are saved on the phone and sent when signal returns. The original times are kept. This matters for lift work, where most of the job happens in machine rooms and pits. Your technician doesn't have to remember to press sync."
       },
       {
         question: "Can I keep a record of parts replaced in each lift?",
         answer:
-          "Yes. Bill the parts on the job or note them in comments with photos. When the same building calls again, open its past jobs to see what was replaced and when, which helps diagnose repeat faults. Photos of old parts help too."
+          "Yes. Bill the parts on the job or note them in comments with photos. When the same building calls again, open its past jobs to see what was replaced and when, which helps diagnose repeat faults. A photo of the burnt part next to the new one settles most arguments."
       },
       {
         question: "Can a building with several lifts have separate records?",
         answer:
-          "Yes. Name each lift clearly in the job title, such as Tower A lift 1, so reports and history stay clear. If lifts are under different contracts, create a separate AMC for each one. Reports then stay clear for each building committee."
+          "Yes. Name each lift clearly in the job title, such as Tower A lift 1, so reports and history stay clear. If lifts are under different contracts, create a separate AMC for each one. That way each building committee gets a report for the lifts it pays for."
       }
     ],
     relatedIndustries: ["fire-safety-service-software", "facility-management-software", "maintenance-management-software"],
@@ -166,13 +166,13 @@ export const industriesPart2: IndustryLanding[] = [
       "Home automation business software for smart home installers: quote projects, track device stock, record multi-day work with photos and hand over cleanly.",
     h1: "Home automation business software for smart home projects",
     intro:
-      "TeamShastra is home automation business software for installers of smart switches, lighting control, curtain motors, video door phones and smart locks. It covers the quote, the multi-day install, the device stock and the handover.",
+      "Smart switches, curtain motors, a video door phone and a smart lock: one villa can take a week. TeamShastra is home automation business software for the installers doing that work, lighting control included. It covers the quote, the multi-day install, device stock and the handover.",
     keywordHeading: "How home automation business software runs a project",
     dayInTheLife: [
       "Smart home projects are bigger than a single visit. A new flat may need smart switches in every room, motorised curtains, a video door phone, smart locks and a hub tying them together. The work often runs alongside the interior designer and the electrician.",
       "It starts with a walk-through and a detailed quotation, often revised two or three times as the client changes rooms or brands. Once approved, devices are ordered from distributors and held in stock until the site is ready.",
-      "Installation can stretch over several days or weeks, depending on when walls, wiring and furniture are done. Different team members visit on different days. At the end, every device is configured, the client's phone is set up, and the family is shown how to use it.",
-      "Without a system, revised quotes get confused, devices sit in the godown without a count, and progress is unclear to the client. Handover is a quick demo with no written record of what was installed."
+      "Installation can stretch over several days or weeks, depending on when walls, wiring and furniture are done. Different team members visit on different days. On the last day every device is configured, the client's phone is set up, and the family is shown how to use it.",
+      "Run it on WhatsApp and paper, and revised quotes get confused, devices sit in the godown without a count, and progress is unclear to the client. Handover is a quick demo with no written record of what was installed."
     ],
     challenges: [
       "Quotes revised many times as clients change their minds",
@@ -198,8 +198,8 @@ export const industriesPart2: IndustryLanding[] = [
       "Hand over with the final report and bill the balance amount."
     ],
     limits: [
-      "TeamShastra does not configure or control smart home devices.",
-      "It does not produce drawings or wiring diagrams."
+      "Smart home devices are configured in their own apps; TeamShastra doesn't control them.",
+      "Drawings and wiring diagrams aren't produced here."
     ],
     faqs: [
       {
@@ -215,7 +215,7 @@ export const industriesPart2: IndustryLanding[] = [
       {
         question: "Can I track devices bought for one project?",
         answer:
-          "Yes. Record the distributor's purchase bill so devices enter stock, then bill them to the client when installed. The movement history shows when each item came in and when it went out on the client's invoice. Stock left over stays counted."
+          "Yes. Record the distributor's purchase bill so devices enter stock, then bill them to the client when installed. Each item's movement history tells you when it came in and which client invoice it went out on. Stock left over stays counted."
       },
       {
         question: "What should go into the handover report?",
@@ -245,14 +245,14 @@ export const industriesPart2: IndustryLanding[] = [
       "Cleaning service software for deep-cleaning and housekeeping firms: crew check-in at client sites, per-day wages, consumable spend and proof photos. Free.",
     h1: "Cleaning service software for crews, wages and site proof",
     intro:
-      "TeamShastra is cleaning service software for deep-cleaning companies and housekeeping contractors. It tracks crew attendance at client sites, pays per-day staff correctly and records consumables and before-after photos.",
+      "Six cleaners at a client's office by 8 AM, two more on a deep clean across town. Cleaning service software has to know who reached which site. TeamShastra tracks crew attendance at client sites, pays per-day staff correctly and records consumables with before-after photos.",
     keywordHeading: "Why cleaning service software starts with attendance",
     dayInTheLife: [
       "Cleaning businesses come in two shapes. Deep-cleaning firms send a crew of three or four to a home or office for a day: kitchen degreasing, bathroom descaling, sofa shampooing, floor scrubbing. Housekeeping contractors place staff at offices, hospitals or societies every day on a monthly contract.",
       "Both depend on people being where they should be. Clients complain quickly if a housekeeper did not show up or a crew arrived late. Most staff are paid per day, so every present day, half day and absence affects salary.",
       "Consumables cost real money: chemicals, mops, scrub pads, garbage bags and machine spares. Supervisors buy them on the go and claim later.",
       "Paper registers at each site are easy to fake and hard to collect. Salary at month end is calculated from these registers, and disputes are common. Clients ask for proof of work, and before-after photos sit on a supervisor's phone.",
-      "Every one of these gaps costs money or a client."
+      "And when a client's admin manager calls to say the washroom wasn't cleaned on Monday, there's nothing to show them."
     ],
     challenges: [
       "Staff spread across many client sites with paper registers",
@@ -275,11 +275,11 @@ export const industriesPart2: IndustryLanding[] = [
       "Staff check in at the site with selfie and location.",
       "Crew adds before and after photos during the job.",
       "Share the report and bill the client.",
-      "At month end, open staff salary and pay from attendance."
+      "On salary day, open staff salary and pay straight from attendance."
     ],
     limits: [
-      "TeamShastra does not plan staff rosters across sites automatically.",
-      "It does not book appointments from a public website for you."
+      "Rosters across sites are planned by your supervisor; nothing is scheduled automatically.",
+      "Online bookings from a public website aren't handled."
     ],
     faqs: [
       {
@@ -295,7 +295,7 @@ export const industriesPart2: IndustryLanding[] = [
       {
         question: "Can I give deep-cleaning clients before and after photos?",
         answer:
-          "Yes. The crew takes photos at the start and end of each room or area and adds them to the job. The service report PDF puts them together, and you can share it on WhatsApp before leaving the site. It reassures clients who were not home."
+          "Yes. The crew takes photos at the start and end of each room or area and adds them to the job. Both sets go into the service report PDF, ready to share on WhatsApp before the crew leaves. Clients who were at work all day like seeing it."
       },
       {
         question: "How do I control spending on cleaning supplies?",
@@ -325,14 +325,14 @@ export const industriesPart2: IndustryLanding[] = [
       "Inverter and battery service software for dealers: track battery stock, install and service jobs, part payments and supplier dues in one simple app.",
     h1: "Inverter and battery service software for dealers and service teams",
     intro:
-      "TeamShastra is inverter and battery service software for dealers who sell and service inverters, batteries and UPS systems. It keeps heavy stock counted, runs install and service visits, and tracks part payments.",
+      "Batteries are heavy, customers pay in parts, and the old battery has to come back to the shop. Inverter and battery service software should handle all of it. TeamShastra keeps that stock counted, runs install and service visits, and tracks part payments for dealers of inverters, batteries and UPS systems.",
     keywordHeading: "How inverter and battery service software handles stock",
     dayInTheLife: [
       "A power backup dealer is part shop, part service team. Customers walk in to buy an inverter and battery, or call because backup time has dropped. Offices and shops buy UPS units for computers. Each sale needs a delivery and installation at the customer's place.",
       "Batteries are heavy and costly, and stock moves fast in summer and during power-cut seasons. Distributors give credit, so purchase bills and supplier dues pile up.",
       "After the sale come service visits: checking water levels in tubular batteries, cleaning terminals, testing backup, and handling warranty complaints. Some customers pay for a yearly service plan. Many pay in parts, especially for larger systems.",
       "On paper this gets messy. A battery delivered on credit is not billed for days. Old batteries taken back in exchange are not counted. Water-topping visits are forgotten. Customers who paid half are not followed up for the rest.",
-      "In peak season these small slips add up to real money every week."
+      "In peak summer, when inverters sell fastest, one missing battery or one forgotten part payment a week soon adds up."
     ],
     challenges: [
       "Heavy, costly battery stock moving quickly in peak season",
@@ -358,14 +358,14 @@ export const industriesPart2: IndustryLanding[] = [
       "Follow up the balance due and record the final payment."
     ],
     limits: [
-      "TeamShastra does not file warranty claims with battery or inverter brands.",
-      "It does not track individual battery serial numbers and their warranty dates."
+      "Warranty claims with battery or inverter brands are filed by you, outside the app.",
+      "Individual battery serial numbers and their warranty dates aren't tracked."
     ],
     faqs: [
       {
         question: "How do I track batteries taken back in exchange?",
         answer:
-          "Add an item for old batteries in your catalog. When you take one back, record it with a stock adjustment or on a purchase from the customer, depending on how your CA wants it shown. The movement history then shows how many old batteries you hold."
+          "Add an item for old batteries in your catalog. When you take one back, record it with a stock adjustment or on a purchase from the customer, depending on how your CA wants it shown. Check the movement history any time to see how many old batteries you hold."
       },
       {
         question: "Can customers pay for an inverter in parts?",
@@ -385,7 +385,7 @@ export const industriesPart2: IndustryLanding[] = [
       {
         question: "Does the app help in peak summer season?",
         answer:
-          "In busy months, more sales mean more installs and service calls. The Today board shows which fitter is free, jobs carry delivery addresses with map pins, and stock updates with each bill. Owners can see the day's work without calling everyone."
+          "In busy months, more sales mean more installs and service calls. You see which fitter is free on the Today board, jobs carry delivery addresses with map pins, and stock updates with each bill. Owners can see the day's work without calling everyone."
       }
     ],
     relatedIndustries: ["solar-installation-workforce-software", "appliance-repair-service-software", "electrician-workforce-management"],

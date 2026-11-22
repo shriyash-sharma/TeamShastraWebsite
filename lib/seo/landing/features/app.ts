@@ -14,7 +14,7 @@ export const appFeatures: FeatureLanding[] = [
       "A business reports app for service owners: revenue, collections, expenses, jobs and a technician scorecard, each with drill-down to the rows. Start free.",
     h1: "See your business clearly with a business reports app",
     intro:
-      "TeamShastra gives owners and managers a business reports app built from the work already done in it. Jobs, bills, payments, expenses and attendance all feed the reports. Tap any number to see the rows behind it.",
+      "Which customer owes the most, and which technician closed the most jobs this month? A business reports app should answer in seconds. TeamShastra's reports come from work already done in it: jobs, bills, payments, expenses and attendance. Tap any number to see the rows behind it.",
     keywordHeading: "Which reports the business reports app includes",
     problem: [
       "Ask a small service owner how the month went and you will hear, \"Busy, but money is tight.\" They know they worked hard. They do not know which jobs paid well, which customers still owe money, or which technician finished the most work.",
@@ -37,7 +37,7 @@ export const appFeatures: FeatureLanding[] = [
       "Open the team scorecard to compare check-ins and completed jobs."
     ],
     whoFor:
-      "Owners and managers use the reports; technicians see only My performance. They help growing firms make decisions on facts, such as IT AMC providers, fire safety contractors, lift maintenance companies and cleaning service firms.",
+      "Reports are for owners and managers; a technician only gets My performance. They help growing firms make decisions on facts, such as IT AMC providers, fire safety contractors, lift maintenance companies and cleaning service firms.",
     benefits: [
       "Money in, money out and dues are visible in one place",
       "Every number can be checked down to the record",
@@ -47,7 +47,7 @@ export const appFeatures: FeatureLanding[] = [
     ],
     limits: [
       "It is not a full accounting system with a balance sheet; your CA still prepares final accounts.",
-      "It does not predict future sales."
+      "No sales forecasts either."
     ],
     faqs: [
       {
@@ -96,11 +96,11 @@ export const appFeatures: FeatureLanding[] = [
       "TeamShastra is a business app in Hindi, Gujarati, Marathi, Bengali and English. Each technician picks a language they are comfortable with. Try it free.",
     h1: "A business app in Hindi and four more Indian languages",
     intro:
-      "TeamShastra is a business app in Hindi, Gujarati, Marathi, Bengali and English. Each person chooses their own language in settings. The owner can use English while a technician uses Hindi in the same company.",
+      "Plenty of good technicians would rather read Hindi than English on their phone. TeamShastra is a business app in Hindi, Gujarati, Marathi, Bengali and English, and each person picks their own language. You can work in English while your technician uses Hindi in the same company.",
     keywordHeading: "Why a business app in Hindi helps your team",
     problem: [
       "Most field technicians are skilled with tools, not with English menus. Give them an English-only app and they tap randomly, call the office for help, or simply stop using it. The owner then falls back to phone calls and paper.",
-      "This is not about education. A technician who reads Hindi or Marathi comfortably will happily update jobs, check in and log expenses, as long as the words make sense to them.",
+      "It's a language problem, not a skill problem. Give someone the app in the Hindi or Marathi they read every day, and they'll happily update jobs, check in and log expenses.",
       "Many business apps add a translated home screen but leave forms and messages in English, which confuses people more.",
       "Owners often end up filling the app for their staff in the evening, typing updates from voice notes. That doubles the work and defeats the purpose of having an app at all. It also means records are written hours later, when details have already been forgotten."
     ],
@@ -134,7 +134,7 @@ export const appFeatures: FeatureLanding[] = [
       {
         question: "Which languages does TeamShastra support?",
         answer:
-          "There are five: English, Hindi, Gujarati, Marathi and Bengali. The whole app, including forms and messages, is available in each. More Indian languages may come later, but these five are what the app supports today. Each one covers the full daily flow."
+          "There are five: English, Hindi, Gujarati, Marathi and Bengali. The whole app, including forms and messages, is available in each. More Indian languages may come later, but these five are what the app supports today. Pick one and a technician can finish a whole day's work without meeting an English screen."
       },
       {
         question: "Can the owner and staff use different languages?",
@@ -174,7 +174,7 @@ export const appFeatures: FeatureLanding[] = [
       "Import data from Vyapar or Excel into TeamShastra: items, parties, sales, purchases and expenses, with a preview before anything is saved. Start free.",
     h1: "Import data from Vyapar without starting from zero",
     intro:
-      "You can import data from Vyapar or from an Excel or CSV file into TeamShastra. Items, parties, sales, purchases, expenses and more come across. You see a preview with any problem rows before anything is saved.",
+      "Years of items, parties and bills shouldn't be typed in again by hand. Import data from Vyapar, or from an Excel or CSV file, straight into TeamShastra. Items, parties, sales, purchases, expenses and more come across, and you preview any problem rows before anything is saved.",
     keywordHeading: "What you can import data from Vyapar for",
     problem: [
       "The biggest fear when changing software is losing years of records. Your customer list, item rates, pending dues and old bills all live in the current tool. Typing them again would take weeks.",
@@ -254,7 +254,7 @@ export const appFeatures: FeatureLanding[] = [
       "Manage multiple companies from one TeamShastra login. Switch between firms in a tap, and each keeps its own staff, customers, GST and books. Try it free.",
     h1: "Manage multiple companies without juggling logins",
     intro:
-      "Many owners run more than one firm. TeamShastra lets you manage multiple companies from one login. You switch between them in a tap, and each company keeps its own data.",
+      "Lots of owners run two firms, say a service company and a trading company. In TeamShastra you can manage multiple companies from one login. Switching takes a tap, and each company keeps its own data.",
     keywordHeading: "How you manage multiple companies in the app",
     problem: [
       "It is common in India for one family to run two or three firms. A CCTV installation firm and a separate trading firm. A proprietorship and a newer private company. Each has its own GSTIN, staff and customers.",
@@ -265,7 +265,7 @@ export const appFeatures: FeatureLanding[] = [
     solution: [
       "In TeamShastra, a person's login can belong to more than one company. After login, pick the company to work in. A switch option takes you to another company at any time.",
       "Each company is a separate workspace with its own jobs, team, customers, catalog, bills, GST settings and reports. Nothing is shared between them unless you enter it in both. Your role can differ too: you can be owner in one company and manager in another.",
-      "Staff can also belong to more than one of your companies, with their own role in each. A technician who does installs for one firm and service for the other simply switches, and their attendance and jobs stay with the firm where the work was done.",
+      "Staff can also belong to more than one of your companies, with their own role in each. Say a technician does installs for one firm and service for the other. They simply switch, and attendance and jobs stay with the firm where the work was done.",
       "Each company also has its own modules, settings, plan and number series for invoices. When you switch, the menus, lists and reports change to that company, so you always work inside one set of books at a time."
     ],
     steps: [
@@ -285,7 +285,7 @@ export const appFeatures: FeatureLanding[] = [
       "Less risk of billing in the wrong company"
     ],
     limits: [
-      "It does not combine reports across companies into one total.",
+      "Reports stay per company; there's no combined total across firms.",
       "Data cannot be copied from one company to another in one step."
     ],
     faqs: [
@@ -307,7 +307,7 @@ export const appFeatures: FeatureLanding[] = [
       {
         question: "Can I be owner in one company and manager in another?",
         answer:
-          "Yes. Roles are set per company. You might own one firm and help a relative's firm as a manager. The app shows the screens that match your role in whichever company you are using at that moment. Switching is instant."
+          "Yes. Roles are set per company. You might own one firm and help a relative's firm as a manager. Screens follow your role in whichever company is open at that moment, so in your relative's firm you only see what a manager sees. Switching is instant."
       },
       {
         question: "Is there a risk of making a bill in the wrong company?",
@@ -332,7 +332,7 @@ export const appFeatures: FeatureLanding[] = [
       "TeamShastra is an offline field service app. Technicians check in, update jobs and add photos with no signal, and it syncs once network is back. Start free.",
     h1: "An offline field service app for basements, rooftops and villages",
     intro:
-      "TeamShastra is an offline field service app at heart. Most actions work with no internet: check-in, job updates, photos and expenses. Changes wait on the phone and sync once the signal returns.",
+      "Basements, lift shafts and village sites rarely have signal. TeamShastra is an offline field service app at heart, so check-in, job updates, photos and expenses work with no internet. Changes wait on the phone and sync once the signal returns.",
     keywordHeading: "What the offline field service app can do without signal",
     problem: [
       "Field work happens in the worst places for mobile signal. Basement parking where DVRs sit. Lift machine rooms. Rooftops with solar panels. Farmhouses outside town. Server rooms behind thick walls.",
@@ -342,9 +342,9 @@ export const appFeatures: FeatureLanding[] = [
     ],
     solution: [
       "TeamShastra is built offline-first. When there is no network, actions such as check-in, check-out, starting or completing a job, adding comments and photos, and logging expenses are saved on the phone in a queue.",
-      "The app keeps working normally, showing the change at once. When the phone finds network again, the queue syncs to your company in the background. The original time of each action is kept, so a check-in made at 9:05 in a basement is recorded as 9:05, not when it synced.",
+      "Everything keeps working, and the change shows at once. When the phone finds network again, the queue syncs to your company in the background. The original time of each action is kept, so a check-in made at 9:05 in a basement is recorded as 9:05, not when it synced.",
       "Jobs already on the phone stay readable without signal, so the technician still has the address, notes and customer phone. The office sees updates as soon as the phone reconnects.",
-      "A pending changes screen shows what is still waiting to sync. If something cannot sync, the app shows a message that explains the problem. Owners and managers can also create jobs, bills and payments offline, which helps during power or internet cuts at the office."
+      "A pending changes screen shows what is still waiting to sync. If something cannot sync, the app shows a message that explains the problem. Even at the office, jobs, bills and payments can be created offline, which helps during a power or internet cut."
     ],
     steps: [
       "Open the app once with network so today's jobs are on the phone.",
@@ -380,7 +380,7 @@ export const appFeatures: FeatureLanding[] = [
       {
         question: "How do I know if something has not synced yet?",
         answer:
-          "The app shows pending changes until they reach the server. If a technician is unsure, ask them to open the app in a place with network for a minute. Pending items sync on their own once a connection is available."
+          "Pending changes stay marked until they reach the server. If a technician is unsure, ask them to open the app in a place with network for a minute. Pending items sync on their own once a connection is available, and the mark disappears when they do."
       },
       {
         question: "Should technicians do anything to clear the offline queue?",
@@ -390,7 +390,7 @@ export const appFeatures: FeatureLanding[] = [
       {
         question: "Can the office also work offline?",
         answer:
-          "Yes. Owners and managers can create jobs, assign people, make quotations and invoices, and record payments while offline in the app. These are queued the same way as field updates and sent when the connection returns, so a power cut at the office does not stop billing."
+          "Yes. Creating jobs, assigning people, making quotations and invoices and recording payments all work offline for owners and managers. These are queued the same way as field updates and sent when the connection returns, so a power cut at the office does not stop billing."
       }
     ],
     relatedFeatures: ["gps-attendance-app", "job-work-order-management", "field-expense-tracking"],

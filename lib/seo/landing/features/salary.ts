@@ -14,7 +14,7 @@ export const salaryFeatures: FeatureLanding[] = [
       "A payroll app for small business owners. Salary comes from attendance, leave and holidays, then you pay by bank or cash and share payslips. Start free.",
     h1: "Staff salary made simple with a payroll app for small business",
     intro:
-      "TeamShastra includes a payroll app for small business owners who pay technicians, helpers and office staff every month. Pay is worked out from the attendance and leave already in the app. You check it, freeze the month and pay.",
+      "Salary day shouldn't need a calculator, a register and three arguments. This is a payroll app for small business owners who pay technicians, helpers and office staff each month. Pay is worked out from the attendance and leave already recorded in TeamShastra; you check it, freeze the month and pay.",
     keywordHeading: "What the payroll app for small business calculates",
     problem: [
       "On the first of every month the owner sits with the attendance register, a calculator and a notebook of advances. One person is on a monthly salary. Two helpers are paid per day. A part-time accountant is paid by the hour. Each needs a different sum.",
@@ -46,7 +46,7 @@ export const salaryFeatures: FeatureLanding[] = [
     ],
     limits: [
       "PF, ESI, PT and TDS amounts are shown as a guide only; the app does not file them with the government.",
-      "It does not prepare yearly income tax forms for employees."
+      "Yearly income tax forms for employees aren't prepared by the app."
     ],
     faqs: [
       {
@@ -97,7 +97,7 @@ export const salaryFeatures: FeatureLanding[] = [
       "Track every salary advance and payslip in one place. See the amount left, cut it when you pay, and share a payslip PDF with staff. Try TeamShastra free.",
     h1: "Keep each salary advance and payslip on record",
     intro:
-      "In TeamShastra every salary advance and payslip sits with the person it belongs to. You note an advance once. The app shows how much is still to be cut, and it is taken out when you pay salary.",
+      "Say a helper took a ₹2,000 advance on the 12th (just an example) and by salary day nobody remembers it. In TeamShastra each salary advance and payslip sits with the person it belongs to. Note the advance once, see what's still left to cut, and it comes off when you pay.",
     keywordHeading: "How salary advance and payslip records work together",
     problem: [
       "A helper asks for ₹2,000 for a family need. You hand it over from the cash drawer and say you will adjust it later. Two months pass. Did you cut it? Half of it? The helper says it was already adjusted. Your notebook says otherwise.",
@@ -106,7 +106,7 @@ export const salaryFeatures: FeatureLanding[] = [
       "Advances also hide the real cost of a person. If you do not know how much is still to be recovered, you cannot plan cash for the month or decide on the next request."
     ],
     solution: [
-      "Open a person's salary profile and add the advance with its date and amount. You can also add an opening advance when you first start using the app. The record shows the amount left: not cut yet, partly cut or fully cleared.",
+      "Open a person's salary profile and add the advance with its date and amount. Starting fresh? Add any advance already given as an opening balance. The record shows the amount left: not cut yet, partly cut or fully cleared.",
       "When you pay that person's salary, the app suggests the advance cut. You can take the full balance or only part of it, so a large advance can be spread over a few months. The amount left updates after each payment.",
       "After payment, a payslip PDF is ready. It lists earnings, deductions and the advance cut for that month. Share it on WhatsApp or keep it on file. Each staff member can also open My payslips in their own app to see their paid payslips at any time. Per-day staff can get a daily wage payment slip instead.",
       "Because advances live with salary, you always know your real monthly cost of each person."
@@ -120,7 +120,7 @@ export const salaryFeatures: FeatureLanding[] = [
       "Staff open My payslips in their app to view past paid months."
     ],
     whoFor:
-      "Owners use it to stop forgetting advances and to give proper pay proof. Staff use My payslips to check their own pay history without asking the office. It is most useful where advances are common, such as appliance repair shops, pest control teams, cleaning crews and RO service businesses.",
+      "No more forgotten advances, and every person gets proper proof of pay. Staff use My payslips to check their own pay history without asking the office. It is most useful where advances are common, such as appliance repair shops, pest control teams, cleaning crews and RO service businesses.",
     benefits: [
       "Every advance has a date, an amount and a running balance",
       "Large advances can be recovered over several months",

@@ -14,11 +14,11 @@ export const jobFeatures: FeatureLanding[] = [
       "A work order management app for Indian service teams. Create jobs, assign technicians, add photos and follow each status to closed. Try it free today.",
     h1: "Work order management app that keeps every job in one place",
     intro:
-      "TeamShastra is a work order management app for service businesses that send people to customer sites. Each job gets its own record with the customer, the people assigned, its status, photos and comments. You stop hunting through calls and chats to find what happened.",
+      "Your customer calls at 11 to ask if yesterday's job is finished, and nobody is sure. A work order management app fixes that. In TeamShastra every job has one record with the customer, the people assigned, its status, photos and comments, so you stop digging through calls and chats.",
     keywordHeading: "What the work order management app records for each job",
     problem: [
       "Most small service firms take jobs on the phone. A customer calls the owner, the owner forwards a voice note to a technician, and the job lives in that chat. Two days later nobody remembers the address, the complaint or the promised time.",
-      "When the customer calls back, the office asks the technician, the technician asks the helper, and the answer still comes back as \"I think it is done\". Jobs fall between people. Some are visited twice. Some are never visited at all. The owner only finds out when an angry customer posts a review or refuses to pay.",
+      "The customer calls back, the office asks the technician, the technician asks the helper, and the answer still comes back as \"I think it is done\". Jobs fall between people. Some are visited twice. Some are never visited at all. The owner only finds out when an angry customer posts a review or refuses to pay.",
       "A register book does not help much either. It stays in the office, it cannot hold photos, and it never shows who is working on what right now."
     ],
     solution: [
@@ -35,7 +35,7 @@ export const jobFeatures: FeatureLanding[] = [
       "Review the timeline and close the job, or reopen it later if the problem comes back."
     ],
     whoFor:
-      "Owners use it to see every open job without calling anyone. Managers use it to assign and reassign work through the day. Technicians use it as their daily job list with the address, notes and photos in one screen. It suits CCTV installers, AC service companies, appliance repair shops, pest control firms and lift maintenance teams.",
+      "Every open job is visible without calling anyone. Managers use it to assign and reassign work through the day. Technicians use it as their daily job list with the address, notes and photos in one screen. It suits CCTV installers, AC service companies, appliance repair shops, pest control firms and lift maintenance teams.",
     benefits: [
       "Every job has one record that everyone in the company reads from",
       "Before and after photos settle arguments about what was done",
@@ -44,8 +44,8 @@ export const jobFeatures: FeatureLanding[] = [
       "Categories and filters make old jobs easy to find months later"
     ],
     limits: [
-      "It does not pick the technician for you; a person still decides who goes where.",
-      "It does not plan the shortest driving route between sites."
+      "Choosing who goes where is still your call. The app won't pick the technician for you.",
+      "No route planning either: working out the shortest drive between sites stays with your team."
     ],
     faqs: [
       {
@@ -76,7 +76,7 @@ export const jobFeatures: FeatureLanding[] = [
       {
         question: "Can I make my own job categories?",
         answer:
-          "Yes. Owners and managers can set up work order categories that match the business, such as new installation, breakdown, shifting or annual service visit. Categories help with filters and with the category breakdown report, which shows where most of your work comes from."
+          "Yes. Owners and managers set up work order categories that match the business, such as new installation, breakdown, shifting or annual service visit. Categories help with filters and with the category breakdown report, which shows where most of your work comes from."
       }
     ],
     relatedFeatures: ["technician-dispatch-today-board", "service-report-pdf", "job-alerts-notifications", "customer-management"],
@@ -100,7 +100,7 @@ export const jobFeatures: FeatureLanding[] = [
       "Use the TeamShastra technician dispatch board to see who is free, busy or on leave today and hand out waiting jobs in minutes. Free to start on Android.",
     h1: "A technician dispatch board for planning today's work",
     intro:
-      "The Today board in TeamShastra is a technician dispatch board for the morning rush. It shows which people are free, busy, not in yet or on leave, and which jobs are still waiting. You assign work from what you see, not from guesses.",
+      "It's 9:40, three calls are waiting and you can't tell who has reached their first site. TeamShastra's Today board is a technician dispatch board for exactly that morning rush. It shows who's free, busy, not in yet or on leave, and which jobs are still waiting, so you assign from facts instead of guesses.",
     keywordHeading: "How the technician dispatch board shows your day",
     problem: [
       "At 9:30 every morning the owner starts dialling. Who has reached the office? Who is still at yesterday's site? Who said he would come late because of a family function? Each call takes two minutes, and with eight technicians the first hour is gone.",
@@ -131,19 +131,19 @@ export const jobFeatures: FeatureLanding[] = [
       "The same view helps plan the next morning"
     ],
     limits: [
-      "It does not assign jobs automatically; a manager makes the call.",
+      "Jobs aren't assigned automatically. A manager looks at the board and decides.",
       "Free and busy come from check-ins and job starts, not from following phones on a map."
     ],
     faqs: [
       {
         question: "How does the board know a technician is free?",
         answer:
-          "A technician who has checked in for the day and is not working on a started job is shown as free. When they tap Start on a job, they become busy. This depends on your team using check-in and job start honestly, which is why many owners make check-in part of the daily routine."
+          "Anyone who has checked in and isn't working on a started job shows as free. When they tap Start on a job, they become busy. This depends on your team using check-in and job start honestly, which is why many owners make check-in part of the daily routine."
       },
       {
         question: "Does the dispatch board show people on leave?",
         answer:
-          "Yes. If a leave, half day or holiday has been marked or approved for someone, the board shows them as on leave for that day. You can see it before you assign a job, so you do not send work to a person who is not coming."
+          "Yes. If a leave, half day or holiday has been marked or approved for someone, the board shows them as on leave for that day. That shows up before you assign, so you don't send work to someone who isn't coming."
       },
       {
         question: "Can managers assign jobs from the Today board?",
@@ -181,11 +181,11 @@ export const jobFeatures: FeatureLanding[] = [
       "Make a digital service report PDF from any job with photos, notes and timings. Share it with the customer on WhatsApp in seconds. Start free on Android.",
     h1: "Send a digital service report the moment a job is done",
     intro:
-      "A digital service report from TeamShastra is a PDF made from the job itself. It carries the customer details, what was done, comments and the photos your technician took. You can share it before the technician leaves the site.",
+      "Before your technician packs up the ladder, the customer can already have the report on WhatsApp. TeamShastra builds a digital service report as a PDF from the job itself: customer details, the work done, comments and the photos taken on site.",
     keywordHeading: "What goes into a digital service report",
     problem: [
       "Many service companies still use carbon-copy job sheets. The technician fills one at the site, the customer signs, and the paper goes into a bag. Half of these sheets reach the office crumpled or not at all.",
-      "When the customer later says the camera was never fixed or the filter was never changed, there is nothing to show. Society secretaries and office admins often ask for a report before they release payment. Writing one by hand at night, from memory, is slow and looks unprofessional.",
+      "Weeks later the customer says the camera was never fixed or the filter never changed, and there's nothing to show. Society secretaries and office admins often ask for a report before they release payment. Writing one by hand at night, from memory, is slow and looks unprofessional.",
       "Without proof, you either lose the argument or send a technician back for a free visit.",
       "Clients with offices or factories often need a report on file for their own audits. A handwritten note with a smudged signature rarely satisfies their accounts team, so your bill waits in their queue while you prepare something cleaner."
     ],
@@ -214,7 +214,7 @@ export const jobFeatures: FeatureLanding[] = [
     ],
     limits: [
       "The report is not a GST invoice; raise the bill separately from the billing section.",
-      "It does not collect a drawn signature from the customer on the phone."
+      "There's no box for the customer to sign with a finger on the technician's phone."
     ],
     faqs: [
       {
@@ -264,7 +264,7 @@ export const jobFeatures: FeatureLanding[] = [
       "TeamShastra sends job alert notifications to technicians when a job is assigned, updated or commented on. One tap opens the job. Try it free on Android.",
     h1: "Job alert notifications your field team will not miss",
     intro:
-      "TeamShastra sends job alert notifications to the phones of the people who need them. A new assignment, a status change or a fresh comment shows up as a push alert. Tapping it opens that exact job.",
+      "Nobody should have to phone a technician only to say a new job is waiting. TeamShastra sends job alert notifications to the people involved. A new assignment, a status change or a fresh comment arrives as a push alert, and one tap opens that exact job.",
     keywordHeading: "When job alert notifications are sent",
     problem: [
       "A job given on WhatsApp sits between family forwards, cricket scores and group photos. The technician sees it an hour later, or not at all. The owner thinks the work is moving. The customer is still waiting at home.",
@@ -307,7 +307,7 @@ export const jobFeatures: FeatureLanding[] = [
       {
         question: "Do customers get these alerts too?",
         answer:
-          "Customers who use the optional customer portal can see the jobs you share with them and reply there. The push alerts described on this page are for your own staff. TeamShastra does not send automatic SMS or WhatsApp messages to customers."
+          "Customers who use the optional customer portal can see the jobs you share with them and reply there. The push alerts described on this page are for your own staff. Customers don't get automatic SMS or WhatsApp messages from TeamShastra."
       },
       {
         question: "What should I do if a technician says they get no alerts?",
@@ -322,7 +322,7 @@ export const jobFeatures: FeatureLanding[] = [
       {
         question: "Does tapping an alert open the right page?",
         answer:
-          "Yes. Each notification carries a link to the job or screen it is about. A technician who taps a new assignment lands on that job. A manager who taps a reply lands in the comment thread. Nobody has to search the job list to find it."
+          "Yes. Each notification carries a link to the job or screen it is about. Tap a new assignment and you land on that job. A manager who taps a reply lands in the comment thread. Nobody has to search the job list to find it."
       }
     ],
     relatedFeatures: ["job-work-order-management", "technician-dispatch-today-board", "roles-permissions"],

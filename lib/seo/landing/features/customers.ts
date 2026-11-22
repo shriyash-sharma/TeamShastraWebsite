@@ -14,7 +14,7 @@ export const customerFeatures: FeatureLanding[] = [
       "AMC management software that lists due visits, creates the job in one tap and keeps every contract's dates and amount in view. Try TeamShastra free today.",
     h1: "AMC management software that never misses a due visit",
     intro:
-      "TeamShastra is AMC management software for businesses that sell yearly service contracts. Each contract stores its dates, amount and how often you visit. The app shows which visits are due, and one tap turns a visit into a job.",
+      "Miss one AMC visit and that customer may not renew next year. TeamShastra is AMC management software for businesses that sell yearly service contracts. Each contract stores its dates, amount and visit gap, due visits show up on their own, and one tap turns a visit into a job.",
     keywordHeading: "How the AMC management software plans visits",
     problem: [
       "Annual maintenance contracts are steady money, but only if you keep your promise. A customer pays for four visits a year. You manage two, because the dates were in a diary that nobody opened.",
@@ -23,7 +23,7 @@ export const customerFeatures: FeatureLanding[] = [
       "Technicians also turn up without knowing what the AMC covers. They do not know if a part is included, so they either charge the customer by mistake or give away paid work for free."
     ],
     solution: [
-      "In TeamShastra you add an AMC contract for a customer with a title, start date, end date, contract amount and visit frequency. You can set the gap between visits, for example every three months, and choose a default technician.",
+      "Every AMC contract lives on the customer's own record, with a title, start date, end date, contract amount and visit frequency. You can set the gap between visits, for example every three months, and choose a default technician.",
       "The app works out the visit dates and shows each one with its status. A list of due visits tells you what needs attention this week. Tap a due visit and a work order is created for that customer, already linked to the contract. The technician gets it like any other job, with photos, comments and a report at the end.",
       "Open any contract to see all its visits and the jobs behind them. That history is your best tool at renewal time. You can show the customer exactly when you came and what you did. Contracts can be cancelled if a customer stops, so you do not keep visiting by mistake."
     ],
@@ -36,7 +36,7 @@ export const customerFeatures: FeatureLanding[] = [
       "Before the end date, open the contract and use its visit history to discuss renewal."
     ],
     whoFor:
-      "Owners use it to protect AMC income and plan renewals. Managers use the due list to plan the week. Technicians simply receive the visit as a job. It is built for AMC-heavy trades: lift maintenance, fire safety, IT and networking, RO water purifier service and HVAC companies.",
+      "It protects AMC income and makes renewals easy to plan. Managers use the due list to plan the week. Technicians simply receive the visit as a job. It is built for AMC-heavy trades: lift maintenance, fire safety, IT and networking, RO water purifier service and HVAC companies.",
     benefits: [
       "Due visits appear in a list instead of hiding in a diary",
       "A due visit becomes a job in one tap",
@@ -45,8 +45,8 @@ export const customerFeatures: FeatureLanding[] = [
       "Cancelled contracts stop producing visits"
     ],
     limits: [
-      "It does not send renewal reminders to the customer automatically.",
-      "It does not bill the AMC amount on its own; raise the invoice from Sales."
+      "Customers aren't sent renewal reminders automatically; that call is yours.",
+      "The AMC amount isn't billed on its own. Raise that invoice from Sales."
     ],
     faqs: [
       {
@@ -97,7 +97,7 @@ export const customerFeatures: FeatureLanding[] = [
       "A customer management app that keeps contact details, GSTIN, address, jobs, bills and dues for each customer in one record. Start free with TeamShastra.",
     h1: "A customer management app with every job and bill in one record",
     intro:
-      "TeamShastra works as a customer management app for service businesses. Each customer has one record with phone, address, GSTIN, past jobs, bills and money due. Anyone with access can find it in seconds.",
+      "When a regular customer calls, you want their address, past jobs and dues on screen before you've said hello. That's the job of a customer management app. In TeamShastra each customer has one record with phone, address, GSTIN, jobs, bills and money due.",
     keywordHeading: "What the customer management app stores",
     problem: [
       "Customer details are scattered. The owner has some numbers saved in his phone. A technician has the address in his WhatsApp. The GSTIN is on an old bill in a file. When the owner is away, nobody can call the customer back.",
@@ -109,7 +109,7 @@ export const customerFeatures: FeatureLanding[] = [
       "In TeamShastra every customer and supplier is a party in one shared list, filtered by role. Save the name, phone, address and GSTIN. Address search fills the full address and map pin for you, so technicians can open directions to the site.",
       "Add an opening balance if the customer already owes you money from before. From then on, jobs, quotations, invoices and payments are linked to the customer. Open the record to see the full history.",
       "Mark when a customer is next due for a visit, and the app lists who is due soon. A new job for the customer picks up the saved address and pin, which you can edit for a different site. Call and WhatsApp buttons let anyone with access contact the customer from the record.",
-      "Each customer's dues are shown on the record, and a business snapshot on the Home screen splits customer and supplier dues by how old the bills are. You can see at once who to call first about payment."
+      "Each customer's dues are shown on the record, and a business snapshot on the Home screen splits customer and supplier dues by how old the bills are. One glance tells you who to call first about payment."
     ],
     steps: [
       "Open Customers and add a new customer.",
@@ -120,7 +120,7 @@ export const customerFeatures: FeatureLanding[] = [
       "Open the customer later to see jobs, bills and dues together."
     ],
     whoFor:
-      "Owners and managers manage the customer list; technicians see the customer details on jobs assigned to them. It suits any business with repeat customers: appliance repair, RO water purifier service, pest control and CCTV installers.",
+      "The full customer list is for owners and managers, while a technician sees customer details only on their assigned jobs. It suits any business with repeat customers: appliance repair, RO water purifier service, pest control and CCTV installers.",
     benefits: [
       "Customer details stay with the company, not on personal phones",
       "Past jobs and bills are one tap away",
@@ -130,7 +130,7 @@ export const customerFeatures: FeatureLanding[] = [
     ],
     limits: [
       "It is not a sales pipeline tool for tracking leads and deals.",
-      "It does not send bulk SMS or marketing messages."
+      "Bulk SMS and marketing blasts aren't part of it."
     ],
     faqs: [
       {
@@ -151,7 +151,7 @@ export const customerFeatures: FeatureLanding[] = [
       {
         question: "What is the next-visit due list?",
         answer:
-          "For customers who need regular service but do not have a formal AMC, you can set the date of their next visit. The app shows which customers are due, so you can call them before they call someone else. It works well for filter changes and pest treatments."
+          "For customers who need regular service but do not have a formal AMC, you can set the date of their next visit. Customers who are due show up in a list, so you ring them before they ring someone else. It works well for filter changes and pest treatments."
       },
       {
         question: "Can I bring my customer list from Excel?",
@@ -179,7 +179,7 @@ export const customerFeatures: FeatureLanding[] = [
       "Give customers a customer portal login to check job status, see the photos you share and message your team, so they stop calling for updates. Try it free.",
     h1: "A customer portal that answers \"what is the status?\" for you",
     intro:
-      "The TeamShastra customer portal lets a customer log in and see the jobs you choose to share with them. They see status, chosen photos and comments, and can reply. You decide what is visible on every job.",
+      "Ten calls a day asking for a status update? A customer portal answers most of them. With TeamShastra, customers log in and see the jobs you choose to share: status, selected photos and comments, with room to reply. You decide what's visible on every job.",
     keywordHeading: "What customers see in the customer portal",
     problem: [
       "Big customers call often. A facility manager wants to know if the fire alarm repair is done. An office admin asks for photos of the new network rack for their boss. A society secretary asks the same question three times in a week.",
@@ -201,7 +201,7 @@ export const customerFeatures: FeatureLanding[] = [
       "The customer checks status and replies; your team answers in the job."
     ],
     whoFor:
-      "Owners and managers decide what to share. It is most useful with business customers who expect regular updates: offices served by IT AMC firms, societies with lift or fire safety contracts, and factories with facility maintenance vendors.",
+      "What gets shared is decided by the owner or manager, job by job. It is most useful with business customers who expect regular updates: offices served by IT AMC firms, societies with lift or fire safety contracts, and factories with facility maintenance vendors.",
     benefits: [
       "Fewer status calls from customers",
       "Customers see proof photos without waiting for a WhatsApp",

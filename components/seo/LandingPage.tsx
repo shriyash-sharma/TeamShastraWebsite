@@ -29,7 +29,7 @@ function SectionBody({ section }: { section: LandingSection }) {
         <ul className="list landing-linked-list">
           {section.linkedItems.map((item) => (
             <li key={item.href}>
-              <strong><Link href={item.href}>{item.label}</Link></strong> — {item.text}
+              <strong><Link href={item.href}>{item.label}</Link></strong>: {item.text}
             </li>
           ))}
         </ul>

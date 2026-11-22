@@ -14,7 +14,7 @@ export const moneyFeatures: FeatureLanding[] = [
       "An inventory management app for service firms. Stock goes down with each sale, up with each purchase, and every move is logged. Try TeamShastra free.",
     h1: "Inventory management app for parts, cameras and spares",
     intro:
-      "TeamShastra includes an inventory management app tied to your bills. When you sell, stock goes down. When you buy, it goes up. Every change is written to a movement history you can check later.",
+      "Three DVRs on the shelf, or two? With an inventory management app tied to your bills, you don't have to walk to the godown to find out. Selling reduces stock, buying adds it back, and every change goes into a movement history you can check later.",
     keywordHeading: "How the inventory management app keeps count",
     problem: [
       "A service business carries more stock than people think: cameras, DVRs, cable rolls, filters, compressors, batteries, chemicals. It sits in the shop, in a godown and in the back of technicians' bikes.",
@@ -25,7 +25,7 @@ export const moneyFeatures: FeatureLanding[] = [
     solution: [
       "In TeamShastra each product or spare is a catalog item with its price, tax rate and HSN code. Turn on stock tracking for the items you want to count.",
       "From then on, stock moves on its own. A sale or delivery challan reduces it. A purchase bill adds to it. A return brings it back. If you count the shelf and find a difference, record a stock adjustment with a reason.",
-      "Every one of these changes is stored in the movement history. Open an item and you can see each in and out, with the date and the document that caused it. When a number looks wrong, you can trace it in a minute instead of guessing. Because the catalog is the same one used in quotations and invoices, prices and codes stay the same everywhere.",
+      "Each of these moves lands in the movement history. Open an item and you can see each in and out, with the date and the document that caused it. When a number looks wrong, you can trace it in a minute instead of guessing. Because the catalog is the same one used in quotations and invoices, prices and codes stay the same everywhere.",
       "Quotations and proforma invoices do not touch stock, so a quote that never turns into a sale will not distort your count."
     ],
     steps: [
@@ -37,7 +37,7 @@ export const moneyFeatures: FeatureLanding[] = [
       "Open an item's movement history to see every change."
     ],
     whoFor:
-      "Owners and managers who buy and sell material use it. It helps businesses with a lot of small parts, such as CCTV installers, RO water purifier service shops, inverter and battery dealers, IT hardware suppliers and pest control firms that track chemicals.",
+      "Whoever buys and sells material in your business will spend most time on this screen. It helps businesses with a lot of small parts, such as CCTV installers, RO water purifier service shops, inverter and battery dealers, IT hardware suppliers and pest control firms that track chemicals.",
     benefits: [
       "Stock changes with every sale and purchase without extra entries",
       "Every change can be traced to a bill or an adjustment",
@@ -46,8 +46,8 @@ export const moneyFeatures: FeatureLanding[] = [
       "You know what is in hand before promising a customer"
     ],
     limits: [
-      "It does not keep separate stock per technician or per godown.",
-      "It does not scan barcodes."
+      "Stock is one count for the business, not split by technician or godown.",
+      "Barcode scanning isn't available."
     ],
     faqs: [
       {
@@ -93,7 +93,7 @@ export const moneyFeatures: FeatureLanding[] = [
       "Simple purchase bill tracking for service businesses. Record supplier bills, pay in parts, return goods with debit notes and see what you owe. Start free.",
     h1: "Purchase bill tracking that shows what you owe each supplier",
     intro:
-      "TeamShastra gives you purchase bill tracking in the same place as your sales. Record each supplier's bill, pay it fully or in parts, and the supplier's balance updates. Stock and GST data update at the same time.",
+      "Your supplier says you still owe for last month's cable order, and you're sure you paid half. Purchase bill tracking in TeamShastra sits beside your sales: record each bill, pay it in full or in parts, and the supplier balance, stock and GST data update together.",
     keywordHeading: "What purchase bill tracking shows you",
     problem: [
       "Suppliers give credit, and that credit is easy to lose track of. A distributor sends material on Monday, another on Thursday, and a third bill arrives by courier. Payments go out by NEFT one week and cash the next.",
@@ -104,7 +104,7 @@ export const moneyFeatures: FeatureLanding[] = [
     solution: [
       "In TeamShastra suppliers live in the same party list as customers, filtered by role. Open Purchases and record a purchase bill with the supplier, the items, quantities, rates and tax. Stock goes up and the purchase shows in your GST reports.",
       "When you pay, record the payment against the bill from a bank account or cash. Part payments are fine; the balance stays open until it reaches zero.",
-      "If you return goods or get a rate correction, make a debit note against the supplier. Their balance comes down. You can also raise a purchase order before buying, so the supplier knows exactly what you asked for. The supplier list shows what you owe each one, and dues can be split by how old the bills are, so you know which payments are urgent.",
+      "If you return goods or get a rate correction, make a debit note against the supplier. Their balance comes down. Raise a purchase order before buying if you like, so the supplier knows exactly what you asked for. The supplier list shows what you owe each one, and dues can be split by how old the bills are, so you know which payments are urgent.",
       "Purchase bills can carry GST with the same place-of-supply rules as sales, so the input tax side of your returns is ready for the CA."
     ],
     steps: [
@@ -115,7 +115,7 @@ export const moneyFeatures: FeatureLanding[] = [
       "Open the supplier list to see what is still owed."
     ],
     whoFor:
-      "Owners and managers who buy material use this. It helps trades that buy a lot on credit from distributors, such as CCTV installers, inverter and battery dealers, home automation installers and IT and networking firms.",
+      "It's built for whoever buys material and pays suppliers. It helps trades that buy a lot on credit from distributors, such as CCTV installers, inverter and battery dealers, home automation installers and IT and networking firms.",
     benefits: [
       "Supplier dues are visible before the salesman calls",
       "Part payments and returns are recorded properly",
@@ -124,8 +124,8 @@ export const moneyFeatures: FeatureLanding[] = [
       "Customers and suppliers share one contact list"
     ],
     limits: [
-      "It does not pay suppliers from your bank account; you record payments made elsewhere.",
-      "It does not read supplier bills from photos automatically."
+      "Money to suppliers goes from your bank as usual; here you only record it.",
+      "Supplier bills aren't read from photos, so you type them in or import them."
     ],
     faqs: [
       {
@@ -171,18 +171,18 @@ export const moneyFeatures: FeatureLanding[] = [
       "Field expense tracking for technicians: log fuel, parts and travel with a receipt photo, and the owner approves or rejects each one. Try TeamShastra free.",
     h1: "Field expense tracking with receipts and owner approval",
     intro:
-      "TeamShastra handles field expense tracking for teams that spend money on the move. A technician logs the spend with a category and a photo of the bill. The owner approves it or rejects it, and the books update.",
+      "Petrol, a parking slip, a capacitor bought at the local shop: field money disappears in small amounts. TeamShastra handles field expense tracking for teams that spend on the move. A technician logs each spend with a category and a bill photo, you approve or reject it, and the books update.",
     keywordHeading: "How field expense tracking works day to day",
     problem: [
       "Technicians spend money every day. Petrol to reach a far site. A ₹150 connector from a local shop. Auto fare when the bike is in repair. They pay from their own pocket or from cash the owner gave them.",
-      "At the end of the week they hand over a crumpled list. Some bills are missing. Some amounts look high. The owner either pays without checking, which feels risky, or argues, which feels petty.",
+      "By Saturday they hand over a crumpled list. Some bills are missing. Some amounts look high. The owner either pays without checking, which feels risky, or argues, which feels petty.",
       "Over a year these small amounts add up to a large sum, and nobody can say which jobs or people used most of it.",
       "Some staff stop claiming small amounts because it feels like a fight. Others claim the same fuel bill twice. Both are bad for the business, and neither is visible without a record."
     ],
     solution: [
       "In TeamShastra staff open Expenses and add the amount, the date and a category: fuel, parts, travel, tools, office, miscellaneous or a custom category you create. They attach a photo or file of the receipt.",
       "Each expense says how it was paid: from the cash the person is holding for the company, or from a bank account. The owner sees pending expenses and approves or rejects them. A rejected expense is reversed, so the cash balance goes back to what it was.",
-      "Approved expenses show up in the expense report by person and category. You can see that one team spends more on fuel than another, or that parts bought locally are higher than expected, and act on it.",
+      "Approved expenses show up in the expense report by person and category. Maybe one team spends more on fuel than another, or parts bought locally cost more than expected. You'll spot it and act.",
       "Expenses can be logged even without network and synced later, so a technician on a rooftop or in a basement does not have to remember to do it in the evening. The receipt photo is attached at the time of spending, when the bill is still in hand."
     ],
     steps: [
@@ -203,8 +203,8 @@ export const moneyFeatures: FeatureLanding[] = [
       "Staff stop paying out of pocket and waiting for weeks"
     ],
     limits: [
-      "It does not reimburse staff automatically; payment is still made by you.",
-      "It does not read amounts from receipt photos."
+      "Reimbursement isn't automatic. You still pay the person.",
+      "Amounts aren't read from receipt photos; the technician types them."
     ],
     faqs: [
       {
@@ -254,7 +254,7 @@ export const moneyFeatures: FeatureLanding[] = [
       "Staff cash tracking for field teams: give cash to technicians, record what they spend or collect, settle it back and see every balance. Start free.",
     h1: "Staff cash tracking that settles every rupee",
     intro:
-      "TeamShastra brings staff cash tracking and bank balances into one view. You record the cash you hand to a technician, what they spend and what they return. Bank accounts and office cash sit next to it.",
+      "You gave a technician cash on Monday for parts and petrol. By Friday, how much should come back? Staff cash tracking in TeamShastra records what you hand over, what they spend and what they return, with your bank accounts and office cash on the same screen.",
     keywordHeading: "What staff cash tracking records",
     problem: [
       "Every morning a few hundred rupees leave the drawer with the technicians. Some is for petrol, some for small parts. In the evening they also bring back cash collected from customers. Nobody writes it all down.",
@@ -264,8 +264,8 @@ export const moneyFeatures: FeatureLanding[] = [
     ],
     solution: [
       "In TeamShastra, cash handed to a person is recorded as staff cash. Use Add amount to top it up, transfer cash from one person to another, or settle it when they hand money back to the office.",
-      "Expenses paid from staff cash lower that person's balance. Each person's cash screen shows money given, money spent and what they should still have. Owners and managers can see everyone's balance at once.",
-      "Bank accounts work the same way. Add each account, plus the built-in Cash account for money in the office. Payments on invoices and purchase bills go in and out of these accounts. The Bank & Cash view adds bank, office cash and staff-held cash together and shows money in and out by date. You can also show a UPI QR for a bank account when a customer wants to pay on the spot.",
+      "Expenses paid from staff cash lower that person's balance. Each person's cash screen shows money given, money spent and what they should still have. Everyone's balance is on one screen.",
+      "Bank accounts work the same way. Add each account, plus the built-in Cash account for money in the office. Payments on invoices and purchase bills go in and out of these accounts. The Bank & Cash view adds bank, office cash and staff-held cash together and shows money in and out by date. Customer wants to pay on the spot? Show the UPI QR for a bank account.",
       "Manual balance adjustments are possible for bank accounts when a figure needs correcting."
     ],
     steps: [
@@ -277,7 +277,7 @@ export const moneyFeatures: FeatureLanding[] = [
       "Open Bank & Cash to see total funds and money in and out."
     ],
     whoFor:
-      "Owners and managers handle cash; technicians see their own cash and expenses. It is especially useful where field staff handle money daily, such as appliance repair, RO service, pest control and cleaning businesses.",
+      "Handing out cash is an owner or manager job; technicians see only their own cash and expenses. It is especially useful where field staff handle money daily, such as appliance repair, RO service, pest control and cleaning businesses.",
     benefits: [
       "Every rupee given to staff has a record",
       "Balances can be settled without arguments",
@@ -286,14 +286,14 @@ export const moneyFeatures: FeatureLanding[] = [
       "Customers can pay on the spot by scanning a UPI QR"
     ],
     limits: [
-      "It does not connect to your bank to fetch transactions; entries are recorded in the app.",
+      "Your bank isn't connected, so transactions are entered in the app rather than fetched.",
       "It is not a wallet; money does not move through TeamShastra."
     ],
     faqs: [
       {
         question: "What is staff cash in TeamShastra?",
         answer:
-          "It is the money the company has handed to a staff member to use for work, sometimes called a cash float. The app keeps a balance for each person. Giving cash raises it, expenses paid from it lower it, and settling it back to the office brings it down."
+          "It is the money the company has handed to a staff member to use for work, sometimes called a cash float. Each person carries a running balance. Giving cash raises it, expenses paid from it lower it, and settling it back to the office brings it down."
       },
       {
         question: "Can a technician pass cash to another technician?",
@@ -313,7 +313,7 @@ export const moneyFeatures: FeatureLanding[] = [
       {
         question: "Who can give or settle staff cash?",
         answer:
-          "Owners and managers can give, transfer and settle staff cash. Technicians can see their own balance and add expenses against it. This keeps control with the people who manage money while giving staff a clear view of what they hold."
+          "Giving, transferring and settling staff cash all happen from the same screen. Technicians can see their own balance and add expenses against it. This keeps control with the people who manage money while giving staff a clear view of what they hold."
       }
     ],
     relatedFeatures: ["field-expense-tracking", "salary-advance-payslip", "gst-billing-invoice", "business-reports-dashboard"],
