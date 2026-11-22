@@ -38,7 +38,7 @@ export const productFeatureList = [
 /** Plain-language pricing summary reused on the pricing page, Terms, and llms.txt. */
 export const pricingSummary = {
   starterPrice: "Free",
-  paidPrice: "₹99 per user, per month, plus applicable GST",
+  paidPrice: "₹200 per user, per month, plus applicable GST",
   trial:
     "30-day free Growth trial (all features) for every new company, no charge until the trial ends; after 30 days the workspace moves to the free Starter plan unless you upgrade",
   refundPolicy:
@@ -71,7 +71,7 @@ export const homeFaqs = [
   {
     question: "How much does TeamShastra cost?",
     answer:
-      "The Starter plan is free. The Growth plan starts at ₹99 per user, per month (plus applicable GST). Every new company gets 30 days of Growth free (all features), then continues on Starter unless it upgrades. Enterprise pricing is available on request. See teamshastra.com/pricing for details."
+      "The Starter plan is free. The Growth plan starts at ₹200 per user, per month (plus applicable GST). Every new company gets 30 days of Growth free (all features), then continues on Starter unless it upgrades. Enterprise pricing is available on request. See teamshastra.com/pricing for details."
   },
   {
     question: "Does TeamShastra offer payroll?",
@@ -123,7 +123,7 @@ export const pricingFaqs = [
   {
     question: "Is there a yearly plan?",
     answer:
-      "Not right now. Growth is billed monthly at ₹99 per user, per month, plus GST. If you'd like yearly billing, contact us and our team will call you back."
+      "Not right now. Growth is billed monthly at ₹200 per user, per month, plus GST. If you'd like yearly billing, contact us and our team will call you back."
   },
   {
     question: "Can I get a refund after I'm billed?",

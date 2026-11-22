@@ -15,8 +15,8 @@ import {
 
 export const metadata: Metadata = pageMetadata(
   "/pricing",
-  "Pricing — Free Plan, Growth at ₹99/User/Month | TeamShastra",
-  "TeamShastra pricing: Starter is free. Growth starts at ₹99 per user per month (plus GST). Every new company gets 30 days of Growth free. Enterprise pricing on request."
+  "Pricing — Free Plan, Growth at ₹200/User/Month | TeamShastra",
+  "TeamShastra pricing: Starter is free. Growth starts at ₹200 per user per month (plus GST). Every new company gets 30 days of Growth free. Enterprise pricing on request."
 );
 
 const structuredData = {
@@ -43,7 +43,7 @@ const plans = [
   },
   {
     name: "Growth",
-    price: "₹99 / user / month",
+    price: "₹200 / user / month",
     priceNote: "+ GST · 30 days free for new companies",
     text: "For growing field teams that need richer operational controls.",
     cta: "Get started",
@@ -66,7 +66,7 @@ export default function PricingPage() {
       <section className="page-hero">
         <div className="section-inner">
           <span className="eyebrow">Pricing</span>
-          <h1>Start free. Plans start at just ₹99 per user, per month.</h1>
+          <h1>Start free. Plans start at just ₹200 per user, per month.</h1>
           <p className="page-lead">
             {betaStatus} Signup and login happen on app.teamshastra.com.
           </p>
