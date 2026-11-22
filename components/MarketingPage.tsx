@@ -1,17 +1,23 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { betaStatus, loginUrl, playStoreUrl, signupUrl, type MarketingPage as MarketingPageContent } from "@/lib/site";
+import { PageBreadcrumbs } from "./seo/PageBreadcrumbs";
 
 type Props = {
   content: MarketingPageContent;
+  /** Path of the page, for the breadcrumb line. */
+  path: string;
+  /** Screen-reader heading for the card grid, so headings go H1 → H2 → H3. */
+  cardsHeading: string;
   children?: ReactNode;
 };
 
-export function MarketingPage({ content, children }: Props) {
+export function MarketingPage({ content, path, cardsHeading, children }: Props) {
   return (
     <main>
       <section className="page-hero">
         <div className="section-inner">
+          <PageBreadcrumbs label={content.eyebrow} path={path} />
           <span className="eyebrow">{content.eyebrow}</span>
           <h1>{content.title}</h1>
           <p className="page-lead">{content.description}</p>
@@ -24,6 +30,7 @@ export function MarketingPage({ content, children }: Props) {
         </div>
       </section>
       <section className="section">
+        <h2 className="visually-hidden">{cardsHeading}</h2>
         <div className="section-inner card-grid">
           {content.cards.map((card) => (
             <article className="card" key={card.title}>

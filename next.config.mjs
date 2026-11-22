@@ -14,6 +14,24 @@ const citySlugs = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    formats: ["image/avif", "image/webp"],
+    // 440 and 500 match the hero phone (220–248 CSS px) on 2x screens, so it isn't served at 640.
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 440, 500]
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" }
+        ]
+      },
+      { source: "/api/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex" }] }
+    ];
+  },
   async redirects() {
     return [
       { source: "/login", destination: "https://app.teamshastra.com/login", permanent: false },

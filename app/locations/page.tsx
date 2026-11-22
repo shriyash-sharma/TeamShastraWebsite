@@ -3,6 +3,7 @@ import Link from "next/link";
 import { cities, tier1CitySlugs, tier2CitySlugs, tier3CitySlugs } from "@/lib/seo/cities";
 import { cityHubPath } from "@/lib/seo/content";
 import { pageMetadata } from "@/lib/site";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 
 export const metadata: Metadata = pageMetadata(
   "/locations",
@@ -35,6 +36,7 @@ export default function LocationsPage() {
     <main>
       <section className="page-hero">
         <div className="section-inner">
+          <PageBreadcrumbs label="Locations" path="/locations" />
           <span className="eyebrow">Locations</span>
           <h1>TeamShastra for businesses across India</h1>
           <p className="page-lead">

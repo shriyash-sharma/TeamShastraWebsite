@@ -2,9 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { googleAnalyticsId } from "@/lib/site";
-
-const STORAGE_KEY = "ts_cookie_consent_v1";
+import { cookieConsentStorageKey as STORAGE_KEY, googleAnalyticsId } from "@/lib/site";
 
 type ConsentChoice = "accepted" | "declined";
 
@@ -24,6 +22,17 @@ function ensureGtag() {
   }
 }
 
+/** gtag.js is only fetched once analytics is accepted; before that it would send nothing anyway. */
+function loadGtag() {
+  if (document.getElementById("gtag-js")) return;
+  window.gtag?.("js", new Date());
+  const script = document.createElement("script");
+  script.id = "gtag-js";
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`;
+  document.head.appendChild(script);
+}
+
 function applyConsent(choice: ConsentChoice) {
   ensureGtag();
   const granted = choice === "accepted";
@@ -34,12 +43,15 @@ function applyConsent(choice: ConsentChoice) {
     ad_personalization: "denied"
   });
   if (granted) {
+    loadGtag();
     window.gtag?.("config", googleAnalyticsId, { anonymize_ip: true });
   }
 }
 
 export function CookieConsent() {
-  const [visible, setVisible] = useState(false);
+  // Rendered in the server HTML so first-time visitors see it at first paint. Returning visitors
+  // never see it: the inline script in the layout marks <html data-ts-consent> before paint.
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     ensureGtag();

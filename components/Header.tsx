@@ -59,6 +59,7 @@ export function Header() {
         id="mobile-nav"
         className={`nav-drawer${open ? " is-open" : ""}`}
         aria-hidden={!open}
+        inert={!open}
       >
         <div className="nav-drawer-links">
           {navItems.map((item) => (

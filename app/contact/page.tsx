@@ -13,6 +13,7 @@ import {
   supportPhoneTel,
   supportPhoneWhatsApp
 } from "@/lib/site";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 
 export const metadata: Metadata = pageMetadata(
   "/contact",
@@ -25,6 +26,7 @@ export default function ContactPage() {
     <main>
       <section className="page-hero">
         <div className="section-inner">
+          <PageBreadcrumbs label="Contact" path="/contact" />
           <span className="eyebrow">Contact</span>
           <h1>Contact TeamShastra support</h1>
           <p className="page-lead">

@@ -8,6 +8,7 @@ import {
   qeCredit,
   signupUrl
 } from "@/lib/site";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 
 export const metadata: Metadata = pageMetadata(
   "/about",
@@ -20,6 +21,7 @@ export default function AboutPage() {
     <main>
       <section className="page-hero">
         <div className="section-inner">
+          <PageBreadcrumbs label="About" path="/about" />
           <span className="eyebrow">About</span>
           <h1>TeamShastra helps service teams run field operations from one workspace.</h1>
           <p className="page-lead">

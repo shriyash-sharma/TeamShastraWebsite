@@ -39,6 +39,8 @@ export const productFeatureList = [
 export const pricingSummary = {
   starterPrice: "Free",
   paidPrice: "₹200 per user, per month, plus applicable GST",
+  /** Same Growth price as a number, for structured data. Keep in step with paidPrice. */
+  paidPriceInr: 200,
   trial:
     "30-day free Growth trial (all features) for every new company, no charge until the trial ends; after 30 days the workspace moves to the free Starter plan unless you upgrade",
   refundPolicy:
@@ -163,6 +165,8 @@ export const supportPhoneWhatsApp = `https://wa.me/${supportPhoneE164.replace("+
 export const youtubeUrl = "https://www.youtube.com/@teamshastra";
 export const transactionalFromEmail = "noreply@mail.teamshastra.com";
 export const googleAnalyticsId = "G-QJ5430L068";
+/** localStorage key holding the visitor's cookie choice ("accepted" or "declined"). */
+export const cookieConsentStorageKey = "ts_cookie_consent_v1";
 /** Matches the live DNS TXT google-site-verification record. */
 export const googleSiteVerification = "eEtcmo7R51YXMtRBAWsnqhK7yDAPGXuZBpxihQL4Fbk";
 

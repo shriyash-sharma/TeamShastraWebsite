@@ -5,6 +5,7 @@ import { features, localSeoFeatureSlugs } from "@/lib/seo/features";
 import { solutions } from "@/lib/seo/solutions";
 import { buildCityFeatureSlug } from "@/lib/seo/slugs";
 import { pageMetadata } from "@/lib/site";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 
 export const metadata: Metadata = pageMetadata(
   "/solutions",
@@ -17,6 +18,7 @@ export default function SolutionsPage() {
     <main>
       <section className="page-hero">
         <div className="section-inner">
+          <PageBreadcrumbs label="Solutions" path="/solutions" />
           <span className="eyebrow">Solutions</span>
           <h1>Workforce and field service solutions for India</h1>
           <p className="page-lead">

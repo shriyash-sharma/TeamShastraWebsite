@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { AppScreenshotGallery, HeroAppPreview } from "@/components/AppScreenshots";
 import { SeoFaq } from "@/components/seo/SeoFaq";
 import {
@@ -9,6 +10,7 @@ import {
   organizationSchema,
   pageMetadata,
   playStoreUrl,
+  pricingSummary,
   productFeatureList,
   signupUrl,
   youtubeUrl
@@ -46,7 +48,23 @@ const structuredData = {
       downloadUrl: playStoreUrl,
       installUrl: playStoreUrl,
       sameAs: [playStoreUrl, appUrl, youtubeUrl],
-      offers: { "@type": "Offer", url: playStoreUrl, price: "0", priceCurrency: "INR" }
+      offers: [
+        { "@type": "Offer", name: "Starter", url: playStoreUrl, price: "0", priceCurrency: "INR" },
+        {
+          "@type": "Offer",
+          name: "Growth",
+          url: "https://teamshastra.com/pricing",
+          price: String(pricingSummary.paidPriceInr),
+          priceCurrency: "INR",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: String(pricingSummary.paidPriceInr),
+            priceCurrency: "INR",
+            unitText: "per user per month",
+            valueAddedTaxIncluded: false
+          }
+        }
+      ]
     },
     {
       "@type": "MobileApplication",
@@ -71,6 +89,22 @@ const structuredData = {
     }
   ]
 };
+
+const popularFeatures = [
+  { label: "GPS attendance with selfie", href: "/features/gps-attendance-app" },
+  { label: "Staff salary and payroll", href: "/features/staff-salary-payroll" },
+  { label: "GST billing and invoices", href: "/features/gst-billing-invoice" },
+  { label: "Jobs and work orders", href: "/features/job-work-order-management" },
+  { label: "AMC contracts", href: "/features/amc-contract-management" },
+  { label: "All features", href: "/features" }
+];
+
+const popularIndustries = [
+  { label: "CCTV installers", href: "/industries/cctv-installer-software" },
+  { label: "AC and HVAC service", href: "/hvac-service-management" },
+  { label: "Electricians", href: "/electrician-workforce-management" },
+  { label: "All industries", href: "/industries" }
+];
 
 export default function Home() {
   return (
@@ -125,6 +159,15 @@ export default function Home() {
             <article className="card"><div className="icon-box">06</div><h3>Customers &amp; AMC</h3><p>Directory, due visits, an optional portal for the jobs you share, and job history on every site.</p></article>
             <article className="card"><div className="icon-box">07</div><h3>Team map</h3><p>See who is on duty from check-in, job-start, and job-photo pins. Ask for a work-status update. Not all-day tracking.</p></article>
             <article className="card"><div className="icon-box">08</div><h3>Reports</h3><p>Jobs, technician performance, revenue, money in and out, expenses, and attendance.</p></article>
+          </div>
+          <div className="seo-index-group home-guides">
+            <h3>Read the guides</h3>
+            <nav className="seo-internal-links" aria-label="Popular feature guides">
+              {popularFeatures.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
+            </nav>
+            <nav className="seo-internal-links" aria-label="Guides by industry">
+              {popularIndustries.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
+            </nav>
           </div>
         </div>
       </section>

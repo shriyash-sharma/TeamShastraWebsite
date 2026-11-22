@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SeoFaq } from "@/components/seo/SeoFaq";
 import { homeFaqs, pageMetadata, pricingFaqs } from "@/lib/site";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 
 export const metadata: Metadata = pageMetadata(
   "/faq",
@@ -55,6 +56,7 @@ export default function FaqPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <section className="page-hero">
         <div className="section-inner">
+          <PageBreadcrumbs label="FAQ" path="/faq" />
           <span className="eyebrow">FAQ</span>
           <h1>Frequently asked questions about TeamShastra</h1>
           <p className="page-lead">

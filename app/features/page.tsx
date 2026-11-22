@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata(
 
 export default function FeaturesPage() {
   return (
-    <MarketingPage content={marketingPages.features}>
+    <MarketingPage content={marketingPages.features} path="/features" cardsHeading="Main features at a glance">
       <section className="section" aria-labelledby="every-feature-heading">
         <div className="section-inner">
           <div className="section-head">

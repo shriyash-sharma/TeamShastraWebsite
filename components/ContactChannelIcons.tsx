@@ -95,7 +95,6 @@ export function SupportChannels({ compact = false }: Props) {
         href={youtubeUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="YouTube tutorials"
       >
         <span className="support-channel-glyph" aria-hidden="true">
           <YouTubeIcon />

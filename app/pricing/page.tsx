@@ -12,6 +12,7 @@ import {
   supportEmail,
   supportPhoneDisplay
 } from "@/lib/site";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 
 export const metadata: Metadata = pageMetadata(
   "/pricing",
@@ -65,6 +66,7 @@ export default function PricingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <section className="page-hero">
         <div className="section-inner">
+          <PageBreadcrumbs label="Pricing" path="/pricing" />
           <span className="eyebrow">Pricing</span>
           <h1>Start free. Plans start at just ₹200 per user, per month.</h1>
           <p className="page-lead">
@@ -84,6 +86,7 @@ export default function PricingPage() {
         </div>
       </section>
       <section className="section">
+        <h2 className="visually-hidden">Plans and prices</h2>
         <div className="section-inner card-grid">
           {plans.map((plan) => (
             <article className={`price-card${plan.featured ? " featured" : ""}`} key={plan.name}>

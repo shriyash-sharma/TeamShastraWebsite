@@ -5,7 +5,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { LazyVisitorChat } from "@/components/LazyVisitorChat";
-import { googleAnalyticsId, marketingUrl } from "@/lib/site";
+import { cookieConsentStorageKey, marketingUrl } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -27,9 +27,15 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest"
 };
 
+const consentMarkerScript = `try{var c=localStorage.getItem(${JSON.stringify(cookieConsentStorageKey)});if(c)document.documentElement.setAttribute("data-ts-consent",c)}catch(e){}`;
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Runs while the page is parsed, so a stored cookie choice hides the banner before first paint. */}
+        <script dangerouslySetInnerHTML={{ __html: consentMarkerScript }} />
+      </head>
       <body>
         <Script id="ga-consent-default" strategy="beforeInteractive">
           {`
@@ -43,15 +49,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               ad_personalization: 'denied',
               wait_for_update: 500
             });
-          `}
-        </Script>
-        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('js', new Date());
           `}
         </Script>
         <Header />

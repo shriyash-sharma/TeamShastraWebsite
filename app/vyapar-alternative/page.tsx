@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SeoFaq } from "@/components/seo/SeoFaq";
 import { pageMetadata, playStoreUrl, signupUrl } from "@/lib/site";
+import { SeoBreadcrumbs } from "@/components/seo/SeoBreadcrumbs";
 
 export const metadata: Metadata = pageMetadata(
   "/vyapar-alternative",
@@ -79,6 +80,7 @@ export default function VyaparAlternativePage() {
       />
       <section className="page-hero">
         <div className="section-inner">
+          <SeoBreadcrumbs items={[{ label: "Home", href: "/" }, { label: "TeamShastra vs Vyapar" }]} />
           <span className="eyebrow">Comparison</span>
           <h1>TeamShastra vs Vyapar</h1>
           <p className="page-lead">
