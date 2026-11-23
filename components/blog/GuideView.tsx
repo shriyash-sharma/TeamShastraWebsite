@@ -81,7 +81,7 @@ function BlockBody({ block }: { block: GuideBlock }) {
         </ListTag>
       ) : null}
       {block.table ? (
-        <div className="compare-table-wrap" role="region" aria-label={block.table.caption} tabIndex={0}>
+        <div className="compare-table-wrap table-scroll" role="region" aria-label={block.table.caption} tabIndex={0}>
           <table className="comparison-table">
             <caption className="visually-hidden">{block.table.caption}</caption>
             <thead>

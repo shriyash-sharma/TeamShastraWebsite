@@ -90,9 +90,9 @@ export function ComparePageView({ page }: Props) {
 
       <section className="section alt" id="comparison">
         <div className="section-inner seo-prose">
-          <h2>TeamShastra and {page.shortName}, need by need</h2>
+          <h2 id="comparison-heading">TeamShastra and {page.shortName}, need by need</h2>
           <p>{page.tableIntro}</p>
-          <div className="compare-table-wrap" role="region" aria-label={`TeamShastra and ${page.competitor} comparison table`} tabIndex={0}>
+          <div className="compare-table-wrap table-scroll" role="region" aria-labelledby="comparison-heading" tabIndex={0}>
             <table className="comparison-table">
               <caption className="visually-hidden">
                 What {page.competitor} lists on its public pages and what TeamShastra does, checked {checked}

@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
+import { comparePages } from "../lib/seo/compare";
 import { dismissCookies } from "./helpers";
 import { keyPages } from "./key-pages";
 
@@ -23,12 +24,45 @@ for (const path of keyPages) {
   });
 }
 
-test("no axe violations on home at 360px", async ({ page }) => {
+// Prompt 16: phone width too, where wide tables scroll sideways (scrollable-region-focusable).
+const comparisonPaths = ["/compare", ...comparePages.filter((page) => page.path.startsWith("/compare/")).map((page) => page.path)];
+
+for (const path of [...keyPages, ...comparisonPaths]) {
+  test(`no axe violations on ${path} at 360px`, async ({ page }) => {
+    await page.setViewportSize({ width: 360, height: 740 });
+    await page.goto(path);
+    await page.waitForLoadState("networkidle");
+    const violations = await axeViolations(page);
+    expect(violations, violations.join("\n")).toEqual([]);
+  });
+}
+
+for (const width of [320, 412, 1366]) {
+  test(`no axe violations on /vyapar-alternative at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto("/vyapar-alternative");
+    await page.waitForLoadState("networkidle");
+    const violations = await axeViolations(page);
+    expect(violations, violations.join("\n")).toEqual([]);
+  });
+}
+
+test("comparison table on /vyapar-alternative scrolls with the keyboard at 360px", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 740 });
-  await page.goto("/");
-  await page.waitForLoadState("networkidle");
-  const violations = await axeViolations(page);
-  expect(violations, violations.join("\n")).toEqual([]);
+  await page.goto("/vyapar-alternative");
+  const heading = page.locator("#comparison-heading");
+  const region = page.getByRole("region", { name: await heading.innerText() });
+  await expect(region).toHaveCount(1);
+  // Tab from the heading area: the table region is the next stop.
+  await heading.click();
+  await page.keyboard.press("Tab");
+  await expect(region).toBeFocused();
+  const outline = await region.evaluate((el) => getComputedStyle(el).outlineStyle);
+  expect(outline).toBe("solid");
+  expect(await region.evaluate((el) => el.scrollWidth > el.clientWidth)).toBe(true);
+  await page.keyboard.press("ArrowRight");
+  await page.keyboard.press("ArrowRight");
+  await expect.poll(() => region.evaluate((el) => el.scrollLeft)).toBeGreaterThan(0);
 });
 
 test("footer YouTube link is named by its visible text", async ({ page }) => {
