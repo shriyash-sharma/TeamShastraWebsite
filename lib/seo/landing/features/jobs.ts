@@ -163,6 +163,7 @@ export const jobFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["job-work-order-management", "gps-attendance-app", "leave-management", "team-location-map"],
     relatedIndustries: ["appliance-repair-service-software", "ro-water-purifier-service-software", "cleaning-housekeeping-service-software", "hvac-service-management"],
+    compareWith: ["teamshastra-vs-zoho-fsm"],
     screenshot: {
       src: "/screenshots/03-todays-jobs.jpg",
       alt: "Today's jobs board in TeamShastra with not started and in progress columns listing the day's field visits"

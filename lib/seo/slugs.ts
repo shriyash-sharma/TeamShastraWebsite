@@ -67,7 +67,8 @@ export const reservedSlugs = new Set([
   "locations",
   "solutions",
   "faq",
-  "vyapar-alternative"
+  "vyapar-alternative",
+  "compare"
 ]);
 
 export function isSeoSlug(slug: string): boolean {

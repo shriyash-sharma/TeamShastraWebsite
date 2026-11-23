@@ -82,6 +82,7 @@ export const salaryFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["salary-advance-payslip", "gps-attendance-app", "leave-management", "staff-cash-bank-accounts"],
     relatedIndustries: ["cleaning-housekeeping-service-software", "cctv-installer-software", "inverter-battery-ups-service-software"],
+    compareWith: ["teamshastra-vs-mybillbook", "teamshastra-vs-khatabook"],
     screenshot: null
   },
   {

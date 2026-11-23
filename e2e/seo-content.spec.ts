@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { expect, test } from "@playwright/test";
+import { compareBodyText, comparePages } from "../lib/seo/compare";
 import { getContentForSlug } from "../lib/seo/content";
 import { featureLandings, getFeatureLanding } from "../lib/seo/landing/features";
 import { industryLandings, industryLink, rewrittenIndustrySolutions } from "../lib/seo/landing/industries";
@@ -23,7 +24,7 @@ import {
 
 type Page = {
   slug: string;
-  kind: "feature" | "industry" | "solution";
+  kind: "feature" | "industry" | "solution" | "compare";
   title: string;
   metaDescription: string;
   h1: string;
@@ -63,8 +64,18 @@ const solutionPages: Page[] = solutions.map((page) => ({
 }));
 const partCPages = solutionPages.filter((page) => rewrittenSlugs.has(page.slug));
 const newPages = [...featurePages, ...industryPages];
+/** Prompt 11: /vyapar-alternative and /compare/*. Table cells are included; they are visible copy too. */
+const compareContentPages: Page[] = comparePages.map((page) => ({
+  slug: page.path.slice(1),
+  kind: "compare",
+  title: page.title,
+  metaDescription: page.metaDescription,
+  h1: page.h1,
+  body: compareBodyText(page),
+  faqs: page.faqs
+}));
 /** Pages whose copy was written in this round and must be unique sentence by sentence. */
-const freshPages = [...newPages, ...partCPages];
+const freshPages = [...newPages, ...partCPages, ...compareContentPages];
 
 /** Titles from static routes (pageMetadata(path, title, description) calls). */
 function staticPageTitles(): Array<{ path: string; title: string; description: string }> {
@@ -99,6 +110,7 @@ test("titles, descriptions, H1s and slugs are unique across the site", () => {
   const all = [
     ...newPages.map((p) => ({ id: p.slug, title: p.title, description: p.metaDescription, h1: p.h1 })),
     ...solutionPages.map((p) => ({ id: p.slug, title: p.title, description: p.metaDescription, h1: p.h1 })),
+    ...compareContentPages.map((p) => ({ id: p.slug, title: p.title, description: p.metaDescription, h1: p.h1 })),
     ...statics.map((p) => ({ id: p.path, title: p.title, description: p.description, h1: "" }))
   ];
   // Every new or rewritten page must differ from every other page (older pages are compared only with these).
@@ -147,6 +159,14 @@ test("lengths of titles, descriptions, sections and FAQs", () => {
     range(page.slug, "limits", page.limits.length, 1, 3);
   }
   for (const page of partCPages) range(page.slug, "FAQ count", page.faqs.length, 5, 7);
+  for (const page of comparePages) {
+    range(page.slug, "title chars", page.title.length, 45, 60);
+    range(page.slug, "description chars", page.metaDescription.length, 130, 158);
+    range(page.slug, "FAQ count", page.faqs.length, 5, 7);
+    range(page.slug, "table rows", page.rows.length, 10, 16);
+    range(page.slug, "better-choice points", page.betterChoice.length, 3, 8);
+    if (!page.title.endsWith("| TeamShastra")) problems.push(`${page.slug}: title must end with "| TeamShastra"`);
+  }
   expect(problems, problems.join("\n")).toEqual([]);
 });
 
@@ -181,7 +201,7 @@ test("word counts, similarity and readability", () => {
     let maxScore = 0;
     let partner = "";
     const others = [
-      ...newPages.filter((p) => p.slug !== page.slug).map((p) => ({ id: p.slug, body: p.body })),
+      ...[...newPages, ...compareContentPages].filter((p) => p.slug !== page.slug).map((p) => ({ id: p.slug, body: p.body })),
       ...references.filter((r) => r.id !== page.slug)
     ];
     for (const other of others) {
@@ -193,7 +213,7 @@ test("word counts, similarity and readability", () => {
       if (score > 0.1) failures.push(`${page.slug} vs ${other.id}: ${score.toFixed(3)}`);
     }
     const count = words(page.body).length;
-    const min = page.kind === "feature" ? 700 : page.kind === "industry" ? 650 : 0;
+    const min = page.kind === "feature" || page.kind === "compare" ? 700 : page.kind === "industry" ? 650 : 0;
     if (count < min) failures.push(`${page.slug}: ${count} words (min ${min})`);
     rows.push(
       `${page.slug.padEnd(58)} ${String(count).padStart(5)}  ${maxScore.toFixed(3)} ${partner.padEnd(48)} ${fleschReadingEase(page.body).toFixed(0)}`
@@ -238,7 +258,9 @@ test("primary keyword placement and density", () => {
   const problems: string[] = [];
   const pages = [
     ...featureLandings.map((p) => ({ id: p.slug, keyword: p.primaryKeyword, title: p.title, h1: p.h1, description: p.metaDescription, intro: p.intro, heading: p.keywordHeading, body: featureBodyText(p) })),
-    ...industryLandings.map((p) => ({ id: p.slug, keyword: p.primaryKeyword, title: p.title, h1: p.h1, description: p.metaDescription, intro: p.intro, heading: p.keywordHeading, body: industryBodyText(p) }))
+    ...industryLandings.map((p) => ({ id: p.slug, keyword: p.primaryKeyword, title: p.title, h1: p.h1, description: p.metaDescription, intro: p.intro, heading: p.keywordHeading, body: industryBodyText(p) })),
+    // Comparison pages carry the keyword in the H1 rather than a separate H2.
+    ...comparePages.map((p) => ({ id: p.slug, keyword: p.primaryKeyword, title: p.title, h1: p.h1, description: p.metaDescription, intro: p.summary, heading: p.h1, body: compareBodyText(p) }))
   ];
   for (const page of pages) {
     const has = (text: string) => countPhrase(text, page.keyword) > 0;

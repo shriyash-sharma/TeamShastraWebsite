@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { marketingUrl, pages, siteContentUpdatedAt } from "@/lib/site";
 import { featureLandingPath, featureLandings } from "@/lib/seo/landing/features";
 import { industryLandingPath, industryLandings } from "@/lib/seo/landing/industries";
+import { compareHub, comparePages } from "@/lib/seo/compare";
 import { getAllSeoSlugs } from "@/lib/seo/slugs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -31,5 +32,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8
   }));
 
-  return [...staticPages, ...seoPages, ...landingPages];
+  // /vyapar-alternative is already in `pages`; the hub and the /compare/* pages are added here.
+  const comparisonPages: MetadataRoute.Sitemap = [compareHub, ...comparePages.filter((page) => page.path.startsWith("/compare/"))].map(
+    (page) => ({
+      url: `${marketingUrl}${page.path}`,
+      lastModified: new Date(page.lastChecked),
+      changeFrequency: "monthly" as const,
+      priority: 0.7
+    })
+  );
+
+  return [...staticPages, ...seoPages, ...landingPages, ...comparisonPages];
 }

@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { compareBodyText, compareHub, comparePages } from "../lib/seo/compare";
 import { featureLandings } from "../lib/seo/landing/features";
 import { industryLandings, rewrittenIndustrySolutions } from "../lib/seo/landing/industries";
 import { solutionMap } from "../lib/seo/solutions";
@@ -13,7 +14,8 @@ import {
 } from "../lib/seo/style-rules";
 import { featureBodyText, fleschReadingEase, industryBodyText, solutionBodyText, words } from "./seo-text";
 
-// "Sounds human" checks on every page added or rewritten in Prompt 08. Pure data, no browser.
+// "Sounds human" checks on every page added or rewritten in Prompt 08, plus /compare and the four
+// comparison pages from Prompt 11. Pure data, no browser.
 // Run with STYLE_REPORT=1 to print the audit table.
 
 type StylePage = {
@@ -50,7 +52,22 @@ const pages: StylePage[] = [
       prose: solutionBodyText({ ...page, faqs: page.faqs.map((faq) => ({ question: "", answer: faq.answer })) }),
       meta: [page.title, page.metaDescription].join("\n")
     };
-  })
+  }),
+  ...comparePages.map((page) => ({
+    slug: page.path,
+    intro: page.summary,
+    body: compareBodyText(page),
+    // Table cells use the required "Not listed on X's public pages" wording, so they are not prose.
+    prose: compareBodyText({ ...page, rows: [], faqs: page.faqs.map((faq) => ({ question: "", answer: faq.answer })) }),
+    meta: [page.title, page.metaDescription].join("\n")
+  })),
+  {
+    slug: compareHub.path,
+    intro: compareHub.intro[0],
+    body: [compareHub.h1, ...compareHub.intro, ...comparePages.map((page) => page.cardSummary)].join("\n"),
+    prose: [...compareHub.intro, ...comparePages.map((page) => page.cardSummary)].join("\n"),
+    meta: [compareHub.title, compareHub.metaDescription].join("\n")
+  }
 ];
 
 function firstSentence(text: string): string {
@@ -71,8 +88,8 @@ function openerPages(): Map<string, Set<string>> {
   return map;
 }
 
-test("covers all 42 pages from Prompt 08", () => {
-  expect(pages).toHaveLength(42);
+test("covers all 42 pages from Prompt 08 and the 5 comparison pages from Prompt 11", () => {
+  expect(pages).toHaveLength(47);
 });
 
 test("style audit report", () => {

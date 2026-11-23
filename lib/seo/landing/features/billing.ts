@@ -82,6 +82,7 @@ export const billingFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["quotation-estimate-app", "gst-reports-ca-export", "inventory-stock-management", "customer-management"],
     relatedIndustries: ["cctv-installer-software", "inverter-battery-ups-service-software", "it-networking-amc-software"],
+    compareWith: ["vyapar-alternative", "teamshastra-vs-mybillbook", "teamshastra-vs-khatabook"],
     screenshot: {
       src: "/screenshots/05-sales-quotations.jpg",
       alt: "Sales section in TeamShastra listing GST documents with customer names, totals and payment status"

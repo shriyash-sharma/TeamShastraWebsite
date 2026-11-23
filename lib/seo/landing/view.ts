@@ -1,3 +1,4 @@
+import { getComparePage } from "../compare";
 import type { FaqItem } from "../types";
 import { featureLandingPath, getFeatureLanding } from "./features";
 import { industryLandingPath, industryLink } from "./industries";
@@ -41,6 +42,14 @@ function featureLinks(slugs: string[]): LandingLink[] {
   });
 }
 
+function compareLinks(slugs: string[]): LandingLink[] {
+  const links = slugs.flatMap((slug) => {
+    const page = getComparePage(slug);
+    return page ? [{ href: page.path, label: `TeamShastra vs ${page.shortName}` }] : [];
+  });
+  return [...links, { href: "/compare", label: "All comparisons" }];
+}
+
 function industryLinks(slugs: string[]): LandingLink[] {
   return slugs.flatMap((slug) => {
     const link = industryLink(slug);
@@ -79,7 +88,8 @@ export function featureView(feature: FeatureLanding): LandingView {
     faqs: feature.faqs,
     related: [
       { heading: "Related features", links: [...featureLinks(feature.relatedFeatures), { href: "/features", label: "All features" }] },
-      { heading: "Businesses that use it", links: [...industryLinks(feature.relatedIndustries), { href: "/industries", label: "All industries" }] }
+      { heading: "Businesses that use it", links: [...industryLinks(feature.relatedIndustries), { href: "/industries", label: "All industries" }] },
+      ...(feature.compareWith ? [{ heading: "Compare with other apps", links: compareLinks(feature.compareWith) }] : [])
     ],
     featureList: [feature.name]
   };

@@ -43,6 +43,8 @@ export type FeatureLanding = {
   relatedIndustries: string[];
   screenshot: LandingScreenshot | null;
   existingSolutionLink?: { href: string; label: string };
+  /** Slugs from lib/seo/compare.ts, shown as "Compare with other apps" links. */
+  compareWith?: string[];
 };
 
 /** One /industries/<slug> page. */

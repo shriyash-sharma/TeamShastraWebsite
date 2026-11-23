@@ -238,6 +238,7 @@ export const appFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["inventory-stock-management", "customer-management", "gst-reports-ca-export", "gst-billing-invoice"],
     relatedIndustries: ["inverter-battery-ups-service-software", "cctv-installer-software", "appliance-repair-service-software"],
+    compareWith: ["vyapar-alternative", "teamshastra-vs-khatabook", "teamshastra-vs-mybillbook"],
     screenshot: null,
     existingSolutionLink: { href: "/vyapar-alternative", label: "TeamShastra as a Vyapar alternative" }
   },

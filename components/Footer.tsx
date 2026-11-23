@@ -13,7 +13,8 @@ const footerGroups = [
       { label: "Industries", href: "/industries" },
       { label: "Locations", href: "/locations" },
       { label: "Pricing", href: "/pricing" },
-      { label: "FAQ", href: "/faq" }
+      { label: "FAQ", href: "/faq" },
+      { label: "Compare", href: "/compare" }
     ]
   },
   {
