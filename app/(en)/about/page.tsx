@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import {
   betaStatus,
   engineeringCredit,
+  legalOperator,
   loginUrl,
   pageMetadata,
   playStoreUrl,
   qeCredit,
   signupUrl
 } from "@/lib/site";
+import Link from "next/link";
 import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 
 export const metadata: Metadata = pageMetadata(
   "/about",
   "About TeamShastra — Field Service Software Built in India",
-  "What TeamShastra is and who it is for: one workspace where Indian service owners, managers and technicians run jobs, attendance, GST bills and salary."
+  "TeamShastra is a sub-brand of Shri CCTV And Home Automation Services, built for its own installers: jobs, attendance, GST bills and salary in one app."
 );
 
 export default function AboutPage() {
@@ -43,6 +45,44 @@ export default function AboutPage() {
       <section className="section">
         <div className="section-inner split-grid">
           <div>
+            <h2>Built inside a CCTV and home automation business.</h2>
+            <p className="section-copy">
+              TeamShastra is a sub-brand of {legalOperator.split(",")[0]}, a CCTV and home automation installer with more than ten
+              years of work behind it, from its shop in Barwaha, Madhya Pradesh, and its teams in Wagholi and Hadapsar, Pune. The app
+              started as the tool that business needed for its own installers, and the same teams still run their work on it every day.
+            </p>
+            <p className="section-copy">
+              That is why it handles the parts of service work that generic office software skips: cameras and cable that leave the
+              store for a site, installs that take two or three days, AMC visits that come round every quarter, and photos a customer
+              asks for before paying. Read how it fits a <Link href="/industries/cctv-installer-software">CCTV installation team</Link> or a{" "}
+              <Link href="/industries/home-automation-installer-software">home automation installer</Link>.
+            </p>
+          </div>
+          <div className="card">
+            <h3>Who runs TeamShastra</h3>
+            <ul className="list">
+              <li>
+                <strong>Business:</strong> {legalOperator.split(",")[0]}
+              </li>
+              <li>
+                <strong>Brand:</strong> TeamShastra
+              </li>
+              <li>
+                <strong>Registered:</strong> GST-registered proprietorship in Madhya Pradesh since January 2020
+              </li>
+              <li>
+                <strong>Locations:</strong> Barwaha (Madhya Pradesh); Wagholi and Hadapsar (Pune)
+              </li>
+              <li>
+                Contact details, privacy and terms are on the <Link href="/contact">contact page</Link>.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className="section alt">
+        <div className="section-inner split-grid">
+          <div>
             <h2>One brand, two clear surfaces.</h2>
             <p className="section-copy">
               teamshastra.com is the public marketing website for product information and policy pages. app.teamshastra.com is the application for signup, login, and company workspaces.
@@ -59,7 +99,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="section alt">
+      <section className="section">
         <div className="section-inner split-grid">
           <div>
             <h2>Credits</h2>

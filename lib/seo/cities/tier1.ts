@@ -161,7 +161,7 @@ export const tier1Cities: CityProfile[] = [
     whyIntro: "Pune service companies split their day between IT parks in Hinjewadi and Kharadi, manufacturing plants in Chakan, Bhosari, and Talegaon, and the fast-growing housing societies of Wakad and Baner.",
     intro: [
       "Each customer type works differently. Plants want visits inside a shift window with a signed service report for their maintenance file. IT parks want vendor gate passes and a clean record of what was done. New societies want CCTV and access control installed before residents move in.",
-      "TeamShastra gives one workspace for all three: plant visits with service report PDFs, society installs with photos, and GST invoices raised from the same job. Plant technicians on shift work punch in from site, and leave or a half day goes into the same record that salary is worked out from."
+      "TeamShastra gives one workspace for all three: plant visits with service report PDFs, society installs with photos, and GST invoices raised from the same job. Plant technicians on shift work punch in from site, and leave or a half day goes into the same record that salary is worked out from. TeamShastra comes from a Pune installer too: its parent business, Shri CCTV And Home Automation Services, runs CCTV teams out of Wagholi and Hadapsar."
     ],
     localContext: {
       gstStateCode: "27 (Maharashtra)",

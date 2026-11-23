@@ -278,6 +278,11 @@ export const organizationSchema = {
   name: "TeamShastra",
   alternateName: "Team Shastra",
   legalName: legalOperator.split(",")[0],
+  parentOrganization: {
+    "@type": "Organization",
+    name: legalOperator.split(",")[0],
+    address: { "@type": "PostalAddress", addressLocality: "Barwaha", addressRegion: "Madhya Pradesh", postalCode: "451115", addressCountry: "IN" }
+  },
   url: `${marketingUrl}/`,
   logo: `${marketingUrl}/favicon-512x512.png`,
   email: supportEmail,
