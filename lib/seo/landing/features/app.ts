@@ -78,6 +78,7 @@ export const appFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["gst-reports-ca-export", "field-expense-tracking", "staff-cash-bank-accounts", "gps-attendance-app"],
     relatedIndustries: ["it-networking-amc-software", "cleaning-housekeeping-service-software", "lift-elevator-maintenance-software"],
+    relatedGuides: ["job-wise-profit-calculation", "manage-field-team-efficiently"],
     screenshot: {
       src: "/screenshots/10-reports-summary.jpg",
       alt: "Reports summary in TeamShastra with charts of jobs and revenue for the selected period"

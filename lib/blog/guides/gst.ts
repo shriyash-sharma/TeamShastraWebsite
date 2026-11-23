@@ -145,7 +145,7 @@ export const gstGuides: Guide[] = [
     legal: true,
     relatedFeatures: ["gst-billing-invoice", "quotation-estimate-app", "gst-reports-ca-export"],
     relatedIndustries: ["cctv-installer-software"],
-    relatedGuides: ["bill-of-supply-vs-tax-invoice", "gstr-1-vs-gstr-3b"]
+    relatedGuides: ["bill-of-supply-vs-tax-invoice", "gstr-1-vs-gstr-3b", "gst-registration-for-service-business"]
   },
   {
     slug: "bill-of-supply-vs-tax-invoice",

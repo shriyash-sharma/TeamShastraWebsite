@@ -167,7 +167,7 @@ export const teamFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["gps-attendance-app", "staff-salary-payroll", "technician-dispatch-today-board"],
     relatedIndustries: ["cleaning-housekeeping-service-software", "ro-water-purifier-service-software", "inverter-battery-ups-service-software"],
-    relatedGuides: ["staff-salary-calculation-per-day"],
+    relatedGuides: ["staff-salary-calculation-per-day", "retain-good-employees-small-business"],
     screenshot: {
       src: "/screenshots/04-team-attendance.jpg",
       alt: "Team attendance screen in TeamShastra listing which staff are on duty, not in or on approved leave today"
@@ -329,6 +329,7 @@ export const teamFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["customer-portal", "staff-salary-payroll", "multi-company-management", "job-alerts-notifications"],
     relatedIndustries: ["it-networking-amc-software", "fire-safety-service-software", "home-automation-installer-software"],
+    relatedGuides: ["manage-field-team-efficiently", "hire-technicians-india"],
     screenshot: {
       src: "/screenshots/07-team-members.jpg",
       alt: "Team members list in TeamShastra with each person's role such as owner, manager or technician and their active status"

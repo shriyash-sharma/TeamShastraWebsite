@@ -131,7 +131,7 @@ export const startGuides: Guide[] = [
     legal: false,
     relatedFeatures: ["quotation-estimate-app", "job-work-order-management", "amc-contract-management"],
     relatedIndustries: ["cctv-installer-software"],
-    relatedGuides: ["amc-contract-format", "gst-invoice-format-for-service-business"]
+    relatedGuides: ["amc-contract-format", "gst-invoice-format-for-service-business", "start-electrical-contracting-business"]
   },
   {
     slug: "start-ac-service-business",
@@ -262,7 +262,7 @@ export const startGuides: Guide[] = [
     legal: false,
     relatedFeatures: ["technician-dispatch-today-board", "amc-contract-management", "gst-billing-invoice"],
     relatedIndustries: ["hvac-service-management"],
-    relatedGuides: ["amc-contract-format", "overtime-calculation-for-staff"]
+    relatedGuides: ["amc-contract-format", "overtime-calculation-for-staff", "start-appliance-repair-business"]
   },
   {
     slug: "ro-service-business-guide",

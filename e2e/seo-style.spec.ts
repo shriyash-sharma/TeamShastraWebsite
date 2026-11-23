@@ -96,8 +96,8 @@ function openerPages(): Map<string, Set<string>> {
   return map;
 }
 
-test("covers the 42 pages from Prompt 08, 5 comparison pages from Prompt 11 and 12 guides from Prompt 13", () => {
-  expect(pages).toHaveLength(59);
+test("covers the 42 pages from Prompt 08, 5 comparison pages from Prompt 11 and 30 guides from Prompts 13 and 17", () => {
+  expect(pages).toHaveLength(77);
 });
 
 test("style audit report", () => {

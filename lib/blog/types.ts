@@ -1,6 +1,7 @@
 import type { FaqItem } from "../seo/types";
 
-export type GuideCategory = "salary" | "gst" | "service" | "start";
+/** Prompt 13 groups first, then the Prompt 17 groups. */
+export type GuideCategory = "salary" | "gst" | "service" | "start" | "money" | "team" | "jobs" | "grow" | "templates";
 
 export type GuideTable = {
   caption: string;
@@ -47,7 +48,11 @@ export type Guide = {
   sourcesChecked: string;
   /** Tax, labour or legal topics carry the disclaimer. */
   legal: boolean;
+  /** Prompt 17 guides: a sentence written for this guide, shown after the shared disclaimer sentence. */
+  disclaimerNote?: string;
   relatedFeatures: string[];
   relatedIndustries: string[];
+  /** Other marketing pages (by solution slug) worth a link from the help box. */
+  relatedSolutions?: string[];
   relatedGuides: string[];
 };

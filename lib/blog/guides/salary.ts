@@ -154,7 +154,7 @@ export const salaryGuides: Guide[] = [
     legal: true,
     relatedFeatures: ["staff-salary-payroll", "gps-attendance-app", "leave-management"],
     relatedIndustries: [],
-    relatedGuides: ["salary-slip-format", "overtime-calculation-for-staff", "salary-advance-rules-for-employers"]
+    relatedGuides: ["salary-slip-format", "overtime-calculation-for-staff", "pf-esi-rules-for-small-business"]
   },
   {
     slug: "salary-slip-format",
@@ -305,7 +305,7 @@ export const salaryGuides: Guide[] = [
     legal: true,
     relatedFeatures: ["salary-advance-payslip", "staff-salary-payroll"],
     relatedIndustries: [],
-    relatedGuides: ["staff-salary-calculation-per-day", "salary-advance-rules-for-employers", "overtime-calculation-for-staff"]
+    relatedGuides: ["staff-salary-calculation-per-day", "salary-advance-rules-for-employers", "pf-esi-rules-for-small-business"]
   },
   {
     slug: "overtime-calculation-for-staff",

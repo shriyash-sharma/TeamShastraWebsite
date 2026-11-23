@@ -137,7 +137,7 @@ export const serviceGuides: Guide[] = [
     legal: true,
     relatedFeatures: ["amc-contract-management", "service-report-pdf"],
     relatedIndustries: ["cctv-installer-software", "ro-water-purifier-service-software"],
-    relatedGuides: ["ro-service-business-guide", "gst-invoice-format-for-service-business"]
+    relatedGuides: ["ro-service-business-guide", "gst-invoice-format-for-service-business", "how-to-price-amc-contract"]
   },
   {
     slug: "stop-fake-attendance-field-staff",
@@ -288,6 +288,6 @@ export const serviceGuides: Guide[] = [
     legal: true,
     relatedFeatures: ["gps-attendance-app", "team-location-map", "offline-field-service-app"],
     relatedIndustries: ["cctv-installer-software"],
-    relatedGuides: ["staff-salary-calculation-per-day", "overtime-calculation-for-staff"]
+    relatedGuides: ["staff-salary-calculation-per-day", "overtime-calculation-for-staff", "manage-field-team-efficiently"]
   }
 ];

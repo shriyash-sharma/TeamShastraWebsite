@@ -162,6 +162,7 @@ export const customerFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["amc-contract-management", "customer-portal", "job-work-order-management", "vyapar-data-import"],
     relatedIndustries: ["ro-water-purifier-service-software", "appliance-repair-service-software", "pest-control-service-software"],
+    relatedGuides: ["get-more-customers-for-service-business", "get-google-reviews-service-business"],
     screenshot: {
       src: "/screenshots/08-customers.jpg",
       alt: "Customers directory in TeamShastra listing each customer's phone, email and saved address"

@@ -1,25 +1,53 @@
+import { growGuides } from "./guides/grow";
 import { gstGuides } from "./guides/gst";
+import { jobsGuides } from "./guides/jobs";
+import { moneyGuides } from "./guides/money";
 import { salaryGuides } from "./guides/salary";
 import { serviceGuides } from "./guides/service";
 import { startGuides } from "./guides/start";
+import { teamGuides } from "./guides/team";
+import { templateGuides } from "./guides/templates";
 import type { Guide, GuideBlock, GuideCategory } from "./types";
 
 export type { Guide, GuideCategory } from "./types";
 
-export const guides: Guide[] = [...salaryGuides, ...gstGuides, ...serviceGuides, ...startGuides];
+export const guides: Guide[] = [
+  ...salaryGuides,
+  ...gstGuides,
+  ...serviceGuides,
+  ...startGuides,
+  ...moneyGuides,
+  ...teamGuides,
+  ...jobsGuides,
+  ...growGuides,
+  ...templateGuides
+];
 
 /** Groups on /blog, in display order. */
 export const guideCategories: Array<{ id: GuideCategory; heading: string }> = [
   { id: "salary", heading: "Salary & staff" },
   { id: "gst", heading: "GST & billing" },
   { id: "service", heading: "AMC & service" },
-  { id: "start", heading: "Start a service business" }
+  { id: "start", heading: "Start a service business" },
+  { id: "money", heading: "GST & money" },
+  { id: "team", heading: "Team & hiring" },
+  { id: "jobs", heading: "Jobs & AMC" },
+  { id: "grow", heading: "Grow your business" },
+  { id: "templates", heading: "Templates" }
 ];
 
 export const guidesAuthor = { name: "TeamShastra team", url: "/about" };
 
 export const guideDisclaimer =
   "This guide is general information, not tax or legal advice. Rules change; check the official source or ask your CA.";
+
+/** The one fixed disclaimer sentence on Prompt 17 guides; each guide adds its own `disclaimerNote`. */
+export const guideDisclaimerShared =
+  "This guide is general information, not tax or legal advice. Rules change, so check the official source or ask your CA or lawyer.";
+
+export function guideDisclaimerText(guide: Guide): string {
+  return guide.disclaimerNote ? `${guideDisclaimerShared} ${guide.disclaimerNote}` : guideDisclaimer;
+}
 
 const guideMap = new Map(guides.map((guide) => [guide.slug, guide]));
 

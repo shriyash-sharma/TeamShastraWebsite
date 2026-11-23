@@ -78,7 +78,7 @@ export const moneyFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["purchase-bills-supplier-management", "gst-billing-invoice", "vyapar-data-import"],
     relatedIndustries: ["cctv-installer-software", "ro-water-purifier-service-software", "inverter-battery-ups-service-software"],
-    relatedGuides: ["ro-service-business-guide"],
+    relatedGuides: ["ro-service-business-guide", "spare-parts-stock-management"],
     screenshot: null
   },
   {
@@ -157,7 +157,7 @@ export const moneyFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["inventory-stock-management", "staff-cash-bank-accounts", "gst-reports-ca-export"],
     relatedIndustries: ["inverter-battery-ups-service-software", "home-automation-installer-software", "it-networking-amc-software"],
-    relatedGuides: ["gstr-1-vs-gstr-3b"],
+    relatedGuides: ["gstr-1-vs-gstr-3b", "spare-parts-stock-management"],
     screenshot: null
   },
   {
@@ -237,6 +237,7 @@ export const moneyFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["staff-cash-bank-accounts", "business-reports-dashboard", "offline-field-service-app"],
     relatedIndustries: ["pest-control-service-software", "lift-elevator-maintenance-software", "solar-installation-workforce-software"],
+    relatedGuides: ["manage-business-expenses", "job-wise-profit-calculation"],
     screenshot: {
       src: "/screenshots/06-expenses.jpg",
       alt: "Expenses screen in TeamShastra with field spends listed by category such as fuel and parts with their amounts"
@@ -320,7 +321,7 @@ export const moneyFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["field-expense-tracking", "salary-advance-payslip", "gst-billing-invoice", "business-reports-dashboard"],
     relatedIndustries: ["appliance-repair-service-software", "ro-water-purifier-service-software", "cleaning-housekeeping-service-software"],
-    relatedGuides: ["salary-advance-rules-for-employers"],
+    relatedGuides: ["salary-advance-rules-for-employers", "manage-business-expenses"],
     screenshot: null
   }
 ];

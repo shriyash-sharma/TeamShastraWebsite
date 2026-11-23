@@ -6,7 +6,7 @@ import { compareBodyText, comparePages } from "../lib/seo/compare";
 import { getContentForSlug } from "../lib/seo/content";
 import { featureLandings, getFeatureLanding } from "../lib/seo/landing/features";
 import { industryLandings, industryLink, rewrittenIndustrySolutions } from "../lib/seo/landing/industries";
-import { solutions } from "../lib/seo/solutions";
+import { getSolution, solutions } from "../lib/seo/solutions";
 import { homeFaqs, marketingPages, pricingFaqs } from "../lib/site";
 import {
   countPhrase,
@@ -75,10 +75,10 @@ const compareContentPages: Page[] = comparePages.map((page) => ({
   body: compareBodyText(page),
   faqs: page.faqs
 }));
-/** Prompt 13: the guides under /blog. "Start a business" guides have a lower word minimum. */
+/** Prompts 13 and 17: the guides under /blog. "Start" and "Grow your business" guides have a lower word minimum. */
 const guideContentPages: Page[] = guides.map((guide) => ({
   slug: guidePath(guide.slug).slice(1),
-  kind: guide.category === "start" ? "start-guide" : "guide",
+  kind: guide.category === "start" || guide.category === "grow" ? "start-guide" : "guide",
   title: guide.title,
   metaDescription: guide.metaDescription,
   h1: guide.h1,
@@ -86,6 +86,21 @@ const guideContentPages: Page[] = guides.map((guide) => ({
   faqs: guide.faqs
 }));
 /** Pages whose copy was written in this round and must be unique sentence by sentence. */
+const prompt13Categories = new Set(["salary", "gst", "service", "start"]);
+function isPrompt13Guide(guide: (typeof guides)[number]): boolean {
+  return prompt13Categories.has(guide.category);
+}
+/** Prompt 17 guides that must list at least one official source (section 5 of the prompt). */
+const guidesCitingOfficialRules = new Set([
+  "gst-registration-for-service-business",
+  "how-to-price-amc-contract",
+  "pf-esi-rules-for-small-business",
+  "hire-technicians-india",
+  "start-electrical-contracting-business",
+  "get-google-reviews-service-business",
+  "manage-business-expenses"
+]);
+
 const freshPages = [...newPages, ...partCPages, ...compareContentPages, ...guideContentPages];
 
 /** Titles from static routes (pageMetadata(path, title, description) calls). */
@@ -189,8 +204,12 @@ test("lengths of titles, descriptions, sections and FAQs", () => {
     range(guide.slug, "help box words", words(guide.helps).length, 20, 120);
     range(guide.slug, "related features", guide.relatedFeatures.length, 1, 4);
     range(guide.slug, "related guides", guide.relatedGuides.length, 2, 3);
-    range(guide.slug, "feature and industry links", guide.relatedFeatures.length + guide.relatedIndustries.length, 2, 4);
-    range(guide.slug, "official sources", guide.sources.length, 1, 8);
+    const pageLinks = guide.relatedFeatures.length + guide.relatedIndustries.length + (guide.relatedSolutions ?? []).length;
+    range(guide.slug, "feature, industry and solution links", pageLinks, 2, 4);
+    // Tax, labour and legal guides, and the Prompt 17 guides that state platform rules, must cite official pages.
+    const needsSources = guide.legal || isPrompt13Guide(guide) || guidesCitingOfficialRules.has(guide.slug);
+    range(guide.slug, "official sources", guide.sources.length, needsSources ? 1 : 0, 8);
+    if (guide.legal && !isPrompt13Guide(guide) && !guide.disclaimerNote) problems.push(`${guide.slug}: legal guide needs its own disclaimer note`);
   }
   expect(problems, problems.join("\n")).toEqual([]);
 });
@@ -296,6 +315,10 @@ test("primary keyword placement and density", () => {
     if (!has(page.description)) problems.push(`${page.id}: keyword missing from description`);
     if (!has(firstWords(`${page.h1} ${page.intro}`, 100))) problems.push(`${page.id}: keyword missing from first 100 words`);
     if (!has(page.heading)) problems.push(`${page.id}: keyword missing from an H2`);
+    const guide = guides.find((g) => g.slug === page.id);
+    if (guide && !isPrompt13Guide(guide) && !guide.sections.some((section) => has(section.heading))) {
+      problems.push(`${page.id}: keyword missing from every section H2`);
+    }
     const density = (countPhrase(page.body, page.keyword) * words(page.keyword).length) / words(page.body).length;
     if (density > 0.025) problems.push(`${page.id}: keyword density ${(density * 100).toFixed(2)}%`);
   }
@@ -374,6 +397,7 @@ test("guides link to real pages, and each guide is linked from a feature or indu
   for (const guide of guides) {
     for (const slug of guide.relatedFeatures) if (!getFeatureLanding(slug)) problems.push(`${guide.slug}: bad feature ${slug}`);
     for (const slug of guide.relatedIndustries) if (!industryLink(slug)) problems.push(`${guide.slug}: bad industry ${slug}`);
+    for (const slug of guide.relatedSolutions ?? []) if (!getSolution(slug)) problems.push(`${guide.slug}: bad solution page ${slug}`);
     for (const slug of guide.relatedGuides) {
       if (slug === guide.slug || !inbound.has(slug)) problems.push(`${guide.slug}: bad related guide ${slug}`);
     }
@@ -388,4 +412,15 @@ test("guides link to real pages, and each guide is linked from a feature or indu
   }
   for (const [slug, count] of inbound) if (count < 1) problems.push(`${slug}: no feature or industry page links to it`);
   expect(problems, problems.join("\n")).toEqual([]);
+});
+
+test("every Prompt 17 guide has at least three inbound internal links (the /blog hub plus two guides)", () => {
+  const fromGuides = new Map<string, number>(guides.map((g) => [g.slug, 0]));
+  for (const guide of guides) for (const slug of guide.relatedGuides) fromGuides.set(slug, (fromGuides.get(slug) ?? 0) + 1);
+  const orphans = guides
+    .filter((guide) => !isPrompt13Guide(guide))
+    .map((guide) => ({ slug: guide.slug, total: 1 + fromGuides.get(guide.slug)! }))
+    .filter((row) => row.total < 3)
+    .map((row) => `${row.slug}: ${row.total} inbound`);
+  expect(orphans, orphans.join("\n")).toEqual([]);
 });

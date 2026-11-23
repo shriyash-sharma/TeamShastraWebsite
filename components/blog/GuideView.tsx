@@ -2,10 +2,11 @@ import Link from "next/link";
 import { SeoBreadcrumbs } from "@/components/seo/SeoBreadcrumbs";
 import { SeoCta } from "@/components/seo/SeoCta";
 import { SeoFaq } from "@/components/seo/SeoFaq";
-import { formatGuideDate, getGuide, guideDisclaimer, guidePath, guidesAuthor, readingTime, type Guide } from "@/lib/blog";
+import { formatGuideDate, getGuide, guideDisclaimerText, guidePath, guidesAuthor, readingTime, type Guide } from "@/lib/blog";
 import type { GuideBlock } from "@/lib/blog/types";
 import { featureLandingPath, getFeatureLanding } from "@/lib/seo/landing/features";
 import { industryLink } from "@/lib/seo/landing/industries";
+import { getSolution } from "@/lib/seo/solutions";
 import { marketingUrl, organizationSchema } from "@/lib/site";
 
 type Props = {
@@ -111,6 +112,10 @@ export function GuideView({ guide }: Props) {
     const link = industryLink(slug);
     return link ? [link] : [];
   });
+  const otherPages = (guide.relatedSolutions ?? []).flatMap((slug) => {
+    const page = getSolution(slug);
+    return page ? [{ href: `/${slug}`, label: page.title }] : [];
+  });
   const related = guide.relatedGuides.flatMap((slug) => {
     const other = getGuide(slug);
     return other ? [other] : [];
@@ -144,7 +149,7 @@ export function GuideView({ guide }: Props) {
                 <li key={section.id}><a href={`#${section.id}`}>{section.heading}</a></li>
               ))}
               <li><a href="#faq">Questions</a></li>
-              <li><a href="#sources">Sources</a></li>
+              {guide.sources.length > 0 ? <li><a href="#sources">Sources</a></li> : null}
             </ol>
           </nav>
         </div>
@@ -173,6 +178,7 @@ export function GuideView({ guide }: Props) {
             <p className="seo-internal-links">
               {features.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
               {industries.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
+              {otherPages.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
             </p>
           </div>
         </div>
@@ -180,20 +186,22 @@ export function GuideView({ guide }: Props) {
 
       <SeoFaq items={guide.faqs} title="Questions owners ask" id="faq" intro="Short answers to what people ask us most about this." />
 
-      <section className="section alt" id="sources">
-        <div className="section-inner seo-prose">
-          <h2>Sources</h2>
-          <p>We read each official page below on {formatGuideDate(guide.sourcesChecked)}.</p>
-          <ol className="compare-sources">
-            {guide.sources.map((source) => (
-              <li key={source.url}>
-                <a href={source.url} rel="noopener" target="_blank">{source.label}</a>
-              </li>
-            ))}
-          </ol>
-          {guide.legal ? <p className="compare-disclaimer guide-disclaimer">{guideDisclaimer}</p> : null}
-        </div>
-      </section>
+      {guide.sources.length > 0 ? (
+        <section className="section alt" id="sources">
+          <div className="section-inner seo-prose">
+            <h2>Sources</h2>
+            <p>We read each official page below on {formatGuideDate(guide.sourcesChecked)}.</p>
+            <ol className="compare-sources">
+              {guide.sources.map((source) => (
+                <li key={source.url}>
+                  <a href={source.url} rel="noopener" target="_blank">{source.label}</a>
+                </li>
+              ))}
+            </ol>
+            {guide.legal ? <p className="compare-disclaimer guide-disclaimer">{guideDisclaimerText(guide)}</p> : null}
+          </div>
+        </section>
+      ) : null}
 
       <section className="section">
         <div className="section-inner seo-prose">

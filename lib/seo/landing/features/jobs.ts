@@ -81,6 +81,7 @@ export const jobFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["technician-dispatch-today-board", "service-report-pdf", "job-alerts-notifications", "customer-management"],
     relatedIndustries: ["cctv-installer-software", "appliance-repair-service-software", "lift-elevator-maintenance-software", "maintenance-management-software"],
+    relatedGuides: ["job-card-format", "collect-payments-faster-service-business"],
     screenshot: {
       src: "/screenshots/02-work-orders.jpg",
       alt: "Work orders list in the TeamShastra app showing each job with its status, priority, customer name and assigned technicians"
@@ -163,7 +164,7 @@ export const jobFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["job-work-order-management", "gps-attendance-app", "leave-management", "team-location-map"],
     relatedIndustries: ["appliance-repair-service-software", "ro-water-purifier-service-software", "cleaning-housekeeping-service-software", "hvac-service-management"],
-    relatedGuides: ["start-ac-service-business"],
+    relatedGuides: ["start-ac-service-business", "handle-more-service-calls-per-day"],
     compareWith: ["teamshastra-vs-zoho-fsm"],
     screenshot: {
       src: "/screenshots/03-todays-jobs.jpg",
@@ -247,7 +248,7 @@ export const jobFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["job-work-order-management", "customer-portal", "amc-contract-management"],
     relatedIndustries: ["fire-safety-service-software", "lift-elevator-maintenance-software", "home-automation-installer-software"],
-    relatedGuides: ["amc-contract-format"],
+    relatedGuides: ["amc-contract-format", "service-report-format"],
     screenshot: {
       src: "/screenshots/09-activity-photos.jpg",
       alt: "Job activity screen in TeamShastra with before and after site photos that are used in the service report PDF"
@@ -330,6 +331,7 @@ export const jobFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["job-work-order-management", "technician-dispatch-today-board", "roles-permissions"],
     relatedIndustries: ["pest-control-service-software", "appliance-repair-service-software", "ro-water-purifier-service-software"],
+    relatedGuides: ["handle-more-service-calls-per-day"],
     screenshot: {
       src: "/screenshots/11-quick-actions.jpg",
       alt: "TeamShastra home quick actions that a technician reaches after opening a job alert, with shortcuts to jobs, customers and team"

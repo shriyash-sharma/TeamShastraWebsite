@@ -317,6 +317,7 @@ export const industriesPart1: IndustryLanding[] = [
       }
     ],
     relatedIndustries: ["ro-water-purifier-service-software", "inverter-battery-ups-service-software", "hvac-service-management"],
+    relatedGuides: ["start-appliance-repair-business"],
     screenshot: {
       src: "/screenshots/03-todays-jobs.jpg",
       alt: "Today's jobs board an appliance repair shop uses to see which home visits are waiting and which are underway"
@@ -396,6 +397,7 @@ export const industriesPart1: IndustryLanding[] = [
       }
     ],
     relatedIndustries: ["cctv-installer-software", "home-automation-installer-software", "facility-management-software"],
+    relatedGuides: ["how-to-price-amc-contract"],
     screenshot: {
       src: "/screenshots/10-reports-summary.jpg",
       alt: "Reports summary an IT service firm uses to compare jobs and revenue across its office AMC clients"

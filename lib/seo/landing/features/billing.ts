@@ -166,7 +166,7 @@ export const billingFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["gst-billing-invoice", "job-work-order-management", "customer-management", "vyapar-data-import"],
     relatedIndustries: ["home-automation-installer-software", "cctv-installer-software", "fire-safety-service-software"],
-    relatedGuides: ["start-cctv-installation-business"],
+    relatedGuides: ["start-cctv-installation-business", "start-electrical-contracting-business"],
     screenshot: {
       src: "/screenshots/05-sales-quotations.jpg",
       alt: "Quotations list in TeamShastra with each estimate's customer, amount and whether it is pending or converted"
@@ -248,7 +248,7 @@ export const billingFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["gst-billing-invoice", "tds-form-26q", "purchase-bills-supplier-management", "vyapar-data-import"],
     relatedIndustries: ["it-networking-amc-software", "appliance-repair-service-software", "inverter-battery-ups-service-software"],
-    relatedGuides: ["gstr-1-vs-gstr-3b"],
+    relatedGuides: ["gstr-1-vs-gstr-3b", "gst-registration-for-service-business"],
     screenshot: null
   },
   {

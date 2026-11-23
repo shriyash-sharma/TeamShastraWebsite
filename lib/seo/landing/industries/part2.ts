@@ -153,6 +153,7 @@ export const industriesPart2: IndustryLanding[] = [
       }
     ],
     relatedIndustries: ["fire-safety-service-software", "facility-management-software", "maintenance-management-software"],
+    relatedGuides: ["train-new-technicians"],
     screenshot: null
   },
   {
@@ -309,6 +310,7 @@ export const industriesPart2: IndustryLanding[] = [
       }
     ],
     relatedIndustries: ["pest-control-service-software", "facility-management-software", "maintenance-management-software"],
+    relatedGuides: ["pf-esi-rules-for-small-business"],
     screenshot: {
       src: "/screenshots/04-team-attendance.jpg",
       alt: "Team attendance view a cleaning company uses to see which housekeepers are on duty at client sites today"
