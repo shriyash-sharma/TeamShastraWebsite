@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { cookieConsentStorageKey as STORAGE_KEY, googleAnalyticsId } from "@/lib/site";
 
 type ConsentChoice = "accepted" | "declined";
+
+const OFFSET_VAR = "--cookie-banner-offset";
 
 declare global {
   interface Window {
@@ -52,6 +54,7 @@ export function CookieConsent() {
   // Rendered in the server HTML so first-time visitors see it at first paint. Returning visitors
   // never see it: the inline script in the layout marks <html data-ts-consent> before paint.
   const [visible, setVisible] = useState(true);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     ensureGtag();
@@ -72,6 +75,22 @@ export function CookieConsent() {
     setVisible(true);
   }, []);
 
+  // While the banner is on screen, publish its height so the chat launcher sits above it
+  // instead of covering "Accept analytics".
+  useEffect(() => {
+    const banner = bannerRef.current;
+    if (!visible || !banner) return;
+    const root = document.documentElement;
+    const update = () => root.style.setProperty(OFFSET_VAR, `${Math.ceil(banner.getBoundingClientRect().height)}px`);
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(banner);
+    return () => {
+      observer.disconnect();
+      root.style.removeProperty(OFFSET_VAR);
+    };
+  }, [visible]);
+
   function choose(choice: ConsentChoice) {
     window.localStorage.setItem(STORAGE_KEY, choice);
     applyConsent(choice);
@@ -81,7 +100,7 @@ export function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <div ref={bannerRef} className="cookie-banner" role="dialog" aria-label="Cookie consent">
       <div className="cookie-banner-inner">
         <p>
           We use optional analytics cookies on this marketing site to understand traffic. The app does not use these cookies.{" "}

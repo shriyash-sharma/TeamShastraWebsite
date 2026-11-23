@@ -326,7 +326,7 @@ h3 { font-size: 1.18rem; }
 .cookie-banner .button.primary { background: #fff; color: var(--brand-dark); }
 .cookie-settings-link { background: none; border: none; padding: 0; color: var(--brand-dark); font-weight: 760; font-size: 0.92rem; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 
-.visitor-chat { position: fixed; right: 20px; bottom: 20px; z-index: 50; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.visitor-chat { position: fixed; right: 20px; bottom: calc(20px + var(--cookie-banner-offset, 0px)); z-index: 50; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
 .visitor-chat.is-moved { right: auto; bottom: auto; }
 .visitor-chat.is-dragging { user-select: none; }
 .visitor-chat-launch {
@@ -441,11 +441,13 @@ h3 { font-size: 1.18rem; }
 @media (min-width: 721px) {
   .visitor-chat-head { cursor: grab; touch-action: none; }
   .visitor-chat.is-dragging .visitor-chat-head { cursor: grabbing; }
+  /* A dragged chat panel stays under the cookie banner so Accept and Decline remain clickable. */
+  html:has(.cookie-banner) .visitor-chat.is-moved { z-index: 39; }
   .visitor-chat-close { cursor: pointer; }
 }
 @media (max-width: 720px) {
   .cookie-banner-inner { grid-template-columns: 1fr; }
-  .visitor-chat { right: 12px; bottom: 12px; }
+  .visitor-chat { right: 12px; bottom: calc(12px + var(--cookie-banner-offset, 0px)); }
   .visitor-chat.is-open .visitor-chat-launch { display: none; }
   .visitor-chat-panel {
     position: fixed;
