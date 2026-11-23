@@ -34,6 +34,9 @@ const median = (values) => {
 };
 
 const rows = [];
+// Prompt 15: legacy JS (Lighthouse legacy-javascript-insight) must stay at or under 2 KiB.
+const LEGACY_JS_LIMIT_BYTES = 2048;
+const overLegacyLimit = [];
 for (const page of pages) {
   const results = [];
   for (let run = 1; run <= runs; run += 1) {
@@ -71,6 +74,7 @@ for (const page of pages) {
     continue;
   }
   const pick = (key) => median(results.map((r) => r[key]));
+  if (pick("legacyJsKb") * 1024 > LEGACY_JS_LIMIT_BYTES) overLegacyLimit.push(page);
   rows.push(
     [
       page,
@@ -91,3 +95,7 @@ for (const page of pages) {
 console.log(`Lighthouse mobile, median of ${runs} runs, ${base}`);
 console.log("page | perf | a11y | bp | seo | LCP | TBT | CLS | unused JS | legacy JS | failing audits");
 console.log(rows.join("\n"));
+if (overLegacyLimit.length) {
+  console.error(`Legacy JS over ${LEGACY_JS_LIMIT_BYTES} bytes on: ${overLegacyLimit.join(", ")}`);
+  process.exitCode = 1;
+}

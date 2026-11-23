@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { mockSupport } from "./helpers";
 
 // The floating "Chat with us" launcher must never cover the cookie banner's buttons.
 // GA hits are intercepted and aborted, so tests never send data to the real property.
@@ -16,6 +17,11 @@ const viewports = [
 
 const buttons = ["cookie-accept", "cookie-decline"] as const;
 const POSITION_KEY = "ts_visitor_chat_pos_v1";
+
+// Opening the chat starts a support session; keep it off the real support API.
+test.beforeEach(async ({ page }) => {
+  await mockSupport(page);
+});
 
 /** Which element sits at the left edge + 4 px, centre and right edge − 4 px of a button. */
 async function hitTest(page: Page, testId: string) {

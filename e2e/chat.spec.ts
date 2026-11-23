@@ -1,8 +1,11 @@
 import { expect, test } from "@playwright/test";
-import { dismissCookies, openVisitorChat } from "./helpers";
+import { dismissCookies, mockSupport, openVisitorChat } from "./helpers";
+
+// The support API is mocked: these tests never reach the real support inbox.
 
 test.beforeEach(async ({ page }) => {
   await dismissCookies(page);
+  await mockSupport(page);
 });
 
 test("visitor can open chat and send a message immediately, no form", async ({ page }) => {

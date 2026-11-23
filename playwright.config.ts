@@ -17,7 +17,12 @@ export default defineConfig({
     trace: "on-first-retry",
     screenshot: "only-on-failure"
   },
-  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
+  projects: [
+    { name: "chromium", use: { ...devices["Desktop Chrome"] } },
+    // Cross-browser check for the polyfill swap in next.config.mjs.
+    { name: "firefox", use: { ...devices["Desktop Firefox"] }, testMatch: /legacy-polyfills\.spec\.ts/ },
+    { name: "webkit", use: { ...devices["Desktop Safari"] }, testMatch: /legacy-polyfills\.spec\.ts/ }
+  ],
   webServer: remoteBase
     ? undefined
     : {

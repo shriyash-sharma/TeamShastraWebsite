@@ -19,6 +19,14 @@ const nextConfig = {
     // 440 and 500 match the hero phone (220–248 CSS px) on 2x screens, so it isn't served at 640.
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 440, 500]
   },
+  // Next always ships polyfills our browserslist doesn't need (vercel/next.js#86785); swap them
+  // for the one we do need. Re-check that the alias still applies on every Next upgrade.
+  turbopack: {
+    resolveAlias: {
+      "../build/polyfills/polyfill-module": "./lib/polyfills/modern-polyfill.js",
+      "next/dist/build/polyfills/polyfill-module": "./lib/polyfills/modern-polyfill.js"
+    }
+  },
   async headers() {
     return [
       {
