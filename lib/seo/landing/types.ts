@@ -45,6 +45,8 @@ export type FeatureLanding = {
   existingSolutionLink?: { href: string; label: string };
   /** Slugs from lib/seo/compare.ts, shown as "Compare with other apps" links. */
   compareWith?: string[];
+  /** Up to two slugs from lib/blog, shown as "Related guides" links. */
+  relatedGuides?: string[];
 };
 
 /** One /industries/<slug> page. */
@@ -66,5 +68,7 @@ export type IndustryLanding = {
   limits: string[];
   faqs: FaqItem[];
   relatedIndustries: string[];
+  /** Up to two slugs from lib/blog, shown as "Related guides" links. */
+  relatedGuides?: string[];
   screenshot: LandingScreenshot | null;
 };

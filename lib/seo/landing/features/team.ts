@@ -83,6 +83,7 @@ export const teamFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["leave-management", "staff-salary-payroll", "team-location-map", "offline-field-service-app", "hindi-multi-language-app"],
     relatedIndustries: ["cleaning-housekeeping-service-software", "cctv-installer-software", "fire-safety-service-software"],
+    relatedGuides: ["stop-fake-attendance-field-staff", "staff-salary-calculation-per-day"],
     screenshot: {
       src: "/screenshots/12-attendance-checkin.jpg",
       alt: "Attendance check-in screen in TeamShastra showing the on-duty status after a staff member taps Check in"
@@ -166,6 +167,7 @@ export const teamFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["gps-attendance-app", "staff-salary-payroll", "technician-dispatch-today-board"],
     relatedIndustries: ["cleaning-housekeeping-service-software", "ro-water-purifier-service-software", "inverter-battery-ups-service-software"],
+    relatedGuides: ["staff-salary-calculation-per-day"],
     screenshot: {
       src: "/screenshots/04-team-attendance.jpg",
       alt: "Team attendance screen in TeamShastra listing which staff are on duty, not in or on approved leave today"
@@ -247,6 +249,7 @@ export const teamFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["gps-attendance-app", "job-work-order-management", "technician-dispatch-today-board"],
     relatedIndustries: ["pest-control-service-software", "lift-elevator-maintenance-software", "cctv-installer-software"],
+    relatedGuides: ["stop-fake-attendance-field-staff"],
     screenshot: null,
     existingSolutionLink: { href: "/field-employee-tracking", label: "field employee tracking page" }
   },

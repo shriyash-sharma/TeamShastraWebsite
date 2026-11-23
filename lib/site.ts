@@ -357,17 +357,14 @@ export const marketingPages: Record<string, MarketingPage> = {
     bannerCta: "Get started"
   },
   blog: {
-    eyebrow: "Blog",
+    eyebrow: "Guides",
     title: "Field service guides for Indian service businesses.",
-    description: "Notes and guides for field service operators using TeamShastra.",
+    description:
+      "Plain how-to guides for owners of CCTV, AC, RO and other service businesses in India: per-day salary, payslips, overtime, GST bills and returns, AMCs and attendance. Each one links to the official source for any rule it states.",
     cta: "Get started",
-    cards: [
-      { title: "How to reduce dispatch delays", text: "Practical ways to keep technicians, jobs, and customer expectations aligned." },
-      { title: "What to track in field service software", text: "Metrics that help managers understand throughput, utilization, and service quality." },
-      { title: "Why marketing and app domains should stay separate", text: "Use public pages for discovery and protected app routes for authenticated workflows." }
-    ],
-    bannerTitle: "Start using TeamShastra.",
-    bannerText: "Article CTAs open signup on the application domain.",
+    cards: [],
+    bannerTitle: "Put the guides to work in one app.",
+    bannerText: "Run attendance, salary, GST bills and AMC visits from one place. Every new company gets a 30-day free Growth trial.",
     bannerCta: "Get started"
   }
 };

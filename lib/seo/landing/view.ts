@@ -1,3 +1,4 @@
+import { getGuide, guidePath } from "../../blog";
 import { getComparePage } from "../compare";
 import type { FaqItem } from "../types";
 import { featureLandingPath, getFeatureLanding } from "./features";
@@ -50,6 +51,14 @@ function compareLinks(slugs: string[]): LandingLink[] {
   return [...links, { href: "/compare", label: "All comparisons" }];
 }
 
+function guideLinks(slugs: string[]): LandingLink[] {
+  const links = slugs.flatMap((slug) => {
+    const guide = getGuide(slug);
+    return guide ? [{ href: guidePath(slug), label: guide.h1 }] : [];
+  });
+  return [...links, { href: "/blog", label: "All guides" }];
+}
+
 function industryLinks(slugs: string[]): LandingLink[] {
   return slugs.flatMap((slug) => {
     const link = industryLink(slug);
@@ -89,7 +98,8 @@ export function featureView(feature: FeatureLanding): LandingView {
     related: [
       { heading: "Related features", links: [...featureLinks(feature.relatedFeatures), { href: "/features", label: "All features" }] },
       { heading: "Businesses that use it", links: [...industryLinks(feature.relatedIndustries), { href: "/industries", label: "All industries" }] },
-      ...(feature.compareWith ? [{ heading: "Compare with other apps", links: compareLinks(feature.compareWith) }] : [])
+      ...(feature.compareWith ? [{ heading: "Compare with other apps", links: compareLinks(feature.compareWith) }] : []),
+      ...(feature.relatedGuides ? [{ heading: "Related guides", links: guideLinks(feature.relatedGuides) }] : [])
     ],
     featureList: [feature.name]
   };
@@ -123,7 +133,8 @@ export function industryView(industry: IndustryLanding): LandingView {
     faqs: industry.faqs,
     related: [
       { heading: "Features used most", links: [...helps.map(({ href, label }) => ({ href, label })), { href: "/features", label: "All features" }] },
-      { heading: "Similar businesses", links: [...industryLinks(industry.relatedIndustries), { href: "/industries", label: "All industries" }] }
+      { heading: "Similar businesses", links: [...industryLinks(industry.relatedIndustries), { href: "/industries", label: "All industries" }] },
+      ...(industry.relatedGuides ? [{ heading: "Related guides", links: guideLinks(industry.relatedGuides) }] : [])
     ],
     featureList: helps.map((item) => item.label)
   };

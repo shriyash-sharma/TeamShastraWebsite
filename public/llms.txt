@@ -108,6 +108,22 @@ Some capabilities (customer portal, bulk data export, data restore from a snapsh
 - Facility management: https://teamshastra.com/facility-management-software
 - Equipment maintenance: https://teamshastra.com/maintenance-management-software
 
+## Guides
+
+- All guides: https://teamshastra.com/blog
+- Salary calculation per day: a simple method for small teams: https://teamshastra.com/blog/staff-salary-calculation-per-day
+- Salary slip format for a small business, with a sample you can copy: https://teamshastra.com/blog/salary-slip-format
+- Overtime calculation for monthly and hourly staff: https://teamshastra.com/blog/overtime-calculation-for-staff
+- Salary advance to an employee: how to give it and get it back fairly: https://teamshastra.com/blog/salary-advance-rules-for-employers
+- GST invoice format for service businesses: the fields that matter: https://teamshastra.com/blog/gst-invoice-format-for-service-business
+- Bill of supply vs tax invoice: which one should you issue?: https://teamshastra.com/blog/bill-of-supply-vs-tax-invoice
+- GSTR-1 vs GSTR-3B: what each return is for: https://teamshastra.com/blog/gstr-1-vs-gstr-3b
+- AMC contract format: what to put in an annual maintenance contract: https://teamshastra.com/blog/amc-contract-format
+- Fake attendance by field staff: practical ways to stop it: https://teamshastra.com/blog/stop-fake-attendance-field-staff
+- How to start a CCTV installation business in India: https://teamshastra.com/blog/start-cctv-installation-business
+- How to start an AC service business in India: https://teamshastra.com/blog/start-ac-service-business
+- RO service business: visits, spare stock and AMCs that renew: https://teamshastra.com/blog/ro-service-business-guide
+
 ## Legal and support
 
 - Privacy: https://teamshastra.com/privacy

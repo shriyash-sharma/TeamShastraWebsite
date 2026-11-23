@@ -78,6 +78,7 @@ export const moneyFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["purchase-bills-supplier-management", "gst-billing-invoice", "vyapar-data-import"],
     relatedIndustries: ["cctv-installer-software", "ro-water-purifier-service-software", "inverter-battery-ups-service-software"],
+    relatedGuides: ["ro-service-business-guide"],
     screenshot: null
   },
   {
@@ -156,6 +157,7 @@ export const moneyFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["inventory-stock-management", "staff-cash-bank-accounts", "gst-reports-ca-export"],
     relatedIndustries: ["inverter-battery-ups-service-software", "home-automation-installer-software", "it-networking-amc-software"],
+    relatedGuides: ["gstr-1-vs-gstr-3b"],
     screenshot: null
   },
   {
@@ -318,6 +320,7 @@ export const moneyFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["field-expense-tracking", "salary-advance-payslip", "gst-billing-invoice", "business-reports-dashboard"],
     relatedIndustries: ["appliance-repair-service-software", "ro-water-purifier-service-software", "cleaning-housekeeping-service-software"],
+    relatedGuides: ["salary-advance-rules-for-employers"],
     screenshot: null
   }
 ];

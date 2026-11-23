@@ -2,11 +2,13 @@ import { expect, test } from "@playwright/test";
 import { featureLandingPath, featureLandings } from "../lib/seo/landing/features";
 import { industryLandingPath, industryLandings, rewrittenIndustrySolutions } from "../lib/seo/landing/industries";
 import { compareHub, comparePages } from "../lib/seo/compare";
+import { guidePath, guides } from "../lib/blog";
 import { hindiPages } from "../lib/seo/landing/hi";
 import legacyPaths from "./fixtures/legacy-urls.json";
 import retiredCityUrls from "./fixtures/retired-city-urls.json";
 
-// Sitemap, robots and routing. Legacy URLs are every URL in the live sitemap on 23 Nov 2026 after Prompt 11 (84 URLs).
+// Sitemap, robots and routing. Legacy URLs are every URL in the live sitemap on 23 Nov 2026 after Prompt 12 (98 URLs,
+// including the 14 Hindi pages). Prompt 13 adds the 12 guides under /blog.
 
 const origin = "https://teamshastra.com";
 const newPaths = [
@@ -30,8 +32,9 @@ test("sitemap lists every legacy and new URL once, and no retired city URL", asy
   for (const item of rewrittenIndustrySolutions) expect(paths.has(`/${item.slug}`)).toBe(true);
   for (const path of comparePaths) expect(paths.has(path), `compare ${path}`).toBe(true);
   for (const page of hindiPages) expect(paths.has(page.path), `hindi ${page.path}`).toBe(true);
+  for (const guide of guides) expect(paths.has(guidePath(guide.slug)), `guide ${guide.slug}`).toBe(true);
   for (const item of retiredCityUrls) expect(paths.has(item.path), `retired ${item.path}`).toBe(false);
-  expect(locs).toHaveLength(legacyPaths.length + hindiPages.length);
+  expect(locs).toHaveLength(legacyPaths.length + guides.length);
 });
 
 test("robots.txt allows crawling and points to the sitemap", async ({ request }) => {

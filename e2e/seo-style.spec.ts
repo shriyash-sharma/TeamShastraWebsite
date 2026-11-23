@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { guideBodyText, guidePath, guides } from "../lib/blog";
 import { compareBodyText, compareHub, comparePages } from "../lib/seo/compare";
 import { featureLandings } from "../lib/seo/landing/features";
 import { industryLandings, rewrittenIndustrySolutions } from "../lib/seo/landing/industries";
@@ -12,10 +13,10 @@ import {
   sentences,
   styleHits
 } from "../lib/seo/style-rules";
-import { featureBodyText, fleschReadingEase, industryBodyText, solutionBodyText, words } from "./seo-text";
+import { featureBodyText, fleschReadingEase, guideProseText, industryBodyText, solutionBodyText, words } from "./seo-text";
 
 // "Sounds human" checks on every page added or rewritten in Prompt 08, plus /compare and the four
-// comparison pages from Prompt 11. Pure data, no browser.
+// comparison pages from Prompt 11, and the 12 guides under /blog from Prompt 13. Pure data, no browser.
 // Run with STYLE_REPORT=1 to print the audit table.
 
 type StylePage = {
@@ -67,7 +68,14 @@ const pages: StylePage[] = [
     body: [compareHub.h1, ...compareHub.intro, ...comparePages.map((page) => page.cardSummary)].join("\n"),
     prose: [...compareHub.intro, ...comparePages.map((page) => page.cardSummary)].join("\n"),
     meta: [compareHub.title, compareHub.metaDescription].join("\n")
-  }
+  },
+  ...guides.map((guide) => ({
+    slug: guidePath(guide.slug),
+    intro: guide.summary,
+    body: guideBodyText(guide),
+    prose: guideProseText(guide),
+    meta: [guide.title, guide.metaDescription].join("\n")
+  }))
 ];
 
 function firstSentence(text: string): string {
@@ -88,8 +96,8 @@ function openerPages(): Map<string, Set<string>> {
   return map;
 }
 
-test("covers all 42 pages from Prompt 08 and the 5 comparison pages from Prompt 11", () => {
-  expect(pages).toHaveLength(47);
+test("covers the 42 pages from Prompt 08, 5 comparison pages from Prompt 11 and 12 guides from Prompt 13", () => {
+  expect(pages).toHaveLength(59);
 });
 
 test("style audit report", () => {

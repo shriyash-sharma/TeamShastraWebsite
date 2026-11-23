@@ -81,6 +81,7 @@ export const industriesPart1: IndustryLanding[] = [
       }
     ],
     relatedIndustries: ["home-automation-installer-software", "it-networking-amc-software", "fire-safety-service-software"],
+    relatedGuides: ["start-cctv-installation-business", "amc-contract-format"],
     screenshot: {
       src: "/screenshots/09-activity-photos.jpg",
       alt: "Job timeline with before and after photos, as used by a CCTV installer to show camera positions at handover"
@@ -160,6 +161,7 @@ export const industriesPart1: IndustryLanding[] = [
       }
     ],
     relatedIndustries: ["appliance-repair-service-software", "pest-control-service-software", "inverter-battery-ups-service-software"],
+    relatedGuides: ["ro-service-business-guide", "bill-of-supply-vs-tax-invoice"],
     screenshot: {
       src: "/screenshots/08-customers.jpg",
       alt: "Customer list that an RO service shop uses to keep purifier owners' phone numbers and home addresses"

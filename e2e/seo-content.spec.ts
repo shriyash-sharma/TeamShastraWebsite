@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { expect, test } from "@playwright/test";
+import { guideBodyText, guidePath, guides } from "../lib/blog";
 import { compareBodyText, comparePages } from "../lib/seo/compare";
 import { getContentForSlug } from "../lib/seo/content";
 import { featureLandings, getFeatureLanding } from "../lib/seo/landing/features";
@@ -24,7 +25,7 @@ import {
 
 type Page = {
   slug: string;
-  kind: "feature" | "industry" | "solution" | "compare";
+  kind: "feature" | "industry" | "solution" | "compare" | "guide" | "start-guide";
   title: string;
   metaDescription: string;
   h1: string;
@@ -74,8 +75,18 @@ const compareContentPages: Page[] = comparePages.map((page) => ({
   body: compareBodyText(page),
   faqs: page.faqs
 }));
+/** Prompt 13: the guides under /blog. "Start a business" guides have a lower word minimum. */
+const guideContentPages: Page[] = guides.map((guide) => ({
+  slug: guidePath(guide.slug).slice(1),
+  kind: guide.category === "start" ? "start-guide" : "guide",
+  title: guide.title,
+  metaDescription: guide.metaDescription,
+  h1: guide.h1,
+  body: guideBodyText(guide),
+  faqs: guide.faqs
+}));
 /** Pages whose copy was written in this round and must be unique sentence by sentence. */
-const freshPages = [...newPages, ...partCPages, ...compareContentPages];
+const freshPages = [...newPages, ...partCPages, ...compareContentPages, ...guideContentPages];
 
 /** Titles from static routes (pageMetadata(path, title, description) calls). */
 function staticPageTitles(): Array<{ path: string; title: string; description: string }> {
@@ -111,6 +122,7 @@ test("titles, descriptions, H1s and slugs are unique across the site", () => {
     ...newPages.map((p) => ({ id: p.slug, title: p.title, description: p.metaDescription, h1: p.h1 })),
     ...solutionPages.map((p) => ({ id: p.slug, title: p.title, description: p.metaDescription, h1: p.h1 })),
     ...compareContentPages.map((p) => ({ id: p.slug, title: p.title, description: p.metaDescription, h1: p.h1 })),
+    ...guideContentPages.map((p) => ({ id: p.slug, title: p.title, description: p.metaDescription, h1: p.h1 })),
     ...statics.map((p) => ({ id: p.path, title: p.title, description: p.description, h1: "" }))
   ];
   // Every new or rewritten page must differ from every other page (older pages are compared only with these).
@@ -167,6 +179,19 @@ test("lengths of titles, descriptions, sections and FAQs", () => {
     range(page.slug, "better-choice points", page.betterChoice.length, 3, 8);
     if (!page.title.endsWith("| TeamShastra")) problems.push(`${page.slug}: title must end with "| TeamShastra"`);
   }
+  for (const page of guideContentPages) {
+    range(page.slug, "title chars", page.title.length, 45, 60);
+    range(page.slug, "description chars", page.metaDescription.length, 130, 158);
+    range(page.slug, "FAQ count", page.faqs.length, 4, 6);
+    if (!page.title.endsWith("| TeamShastra")) problems.push(`${page.slug}: title must end with "| TeamShastra"`);
+  }
+  for (const guide of guides) {
+    range(guide.slug, "help box words", words(guide.helps).length, 20, 120);
+    range(guide.slug, "related features", guide.relatedFeatures.length, 1, 4);
+    range(guide.slug, "related guides", guide.relatedGuides.length, 2, 3);
+    range(guide.slug, "feature and industry links", guide.relatedFeatures.length + guide.relatedIndustries.length, 2, 4);
+    range(guide.slug, "official sources", guide.sources.length, 1, 8);
+  }
   expect(problems, problems.join("\n")).toEqual([]);
 });
 
@@ -201,7 +226,7 @@ test("word counts, similarity and readability", () => {
     let maxScore = 0;
     let partner = "";
     const others = [
-      ...[...newPages, ...compareContentPages].filter((p) => p.slug !== page.slug).map((p) => ({ id: p.slug, body: p.body })),
+      ...[...newPages, ...compareContentPages, ...guideContentPages].filter((p) => p.slug !== page.slug).map((p) => ({ id: p.slug, body: p.body })),
       ...references.filter((r) => r.id !== page.slug)
     ];
     for (const other of others) {
@@ -213,7 +238,7 @@ test("word counts, similarity and readability", () => {
       if (score > 0.1) failures.push(`${page.slug} vs ${other.id}: ${score.toFixed(3)}`);
     }
     const count = words(page.body).length;
-    const min = page.kind === "feature" || page.kind === "compare" ? 700 : page.kind === "industry" ? 650 : 0;
+    const min = { feature: 700, compare: 700, industry: 650, guide: 1000, "start-guide": 900, solution: 0 }[page.kind];
     if (count < min) failures.push(`${page.slug}: ${count} words (min ${min})`);
     rows.push(
       `${page.slug.padEnd(58)} ${String(count).padStart(5)}  ${maxScore.toFixed(3)} ${partner.padEnd(48)} ${fleschReadingEase(page.body).toFixed(0)}`
@@ -260,7 +285,9 @@ test("primary keyword placement and density", () => {
     ...featureLandings.map((p) => ({ id: p.slug, keyword: p.primaryKeyword, title: p.title, h1: p.h1, description: p.metaDescription, intro: p.intro, heading: p.keywordHeading, body: featureBodyText(p) })),
     ...industryLandings.map((p) => ({ id: p.slug, keyword: p.primaryKeyword, title: p.title, h1: p.h1, description: p.metaDescription, intro: p.intro, heading: p.keywordHeading, body: industryBodyText(p) })),
     // Comparison pages carry the keyword in the H1 rather than a separate H2.
-    ...comparePages.map((p) => ({ id: p.slug, keyword: p.primaryKeyword, title: p.title, h1: p.h1, description: p.metaDescription, intro: p.summary, heading: p.h1, body: compareBodyText(p) }))
+    ...comparePages.map((p) => ({ id: p.slug, keyword: p.primaryKeyword, title: p.title, h1: p.h1, description: p.metaDescription, intro: p.summary, heading: p.h1, body: compareBodyText(p) })),
+    // Guides: keyword in title, H1, description and the first 100 words (H1 plus the quick answer).
+    ...guides.map((p) => ({ id: p.slug, keyword: p.primaryKeyword, title: p.title, h1: p.h1, description: p.metaDescription, intro: p.summary, heading: p.h1, body: guideBodyText(p) }))
   ];
   for (const page of pages) {
     const has = (text: string) => countPhrase(text, page.keyword) > 0;
@@ -281,7 +308,8 @@ test("banned claims never appear on new or rewritten pages", () => {
   const pageTexts = [
     ...featureLandings.map((p) => ({ id: p.slug, text: JSON.stringify(p), benefits: p.benefits })),
     ...industryLandings.map((p) => ({ id: p.slug, text: JSON.stringify(p), benefits: [] as string[] })),
-    ...solutions.filter((s) => rewrittenSlugs.has(s.slug)).map((s) => ({ id: s.slug, text: JSON.stringify(s), benefits: s.benefits ?? [] }))
+    ...solutions.filter((s) => rewrittenSlugs.has(s.slug)).map((s) => ({ id: s.slug, text: JSON.stringify(s), benefits: s.benefits ?? [] })),
+    ...guides.map((g) => ({ id: g.slug, text: JSON.stringify(g), benefits: [] as string[] }))
   ];
   for (const page of pageTexts) {
     const lower = page.text.toLowerCase();
@@ -338,4 +366,26 @@ test("alt text is unique for every screenshot used on new pages", () => {
   const alts = [...featureLandings, ...industryLandings].flatMap((p) => (p.screenshot ? [p.screenshot.alt] : []));
   expect(new Set(alts).size).toBe(alts.length);
   for (const alt of alts) expect(alt.length).toBeGreaterThan(30);
+});
+
+test("guides link to real pages, and each guide is linked from a feature or industry page", () => {
+  const problems: string[] = [];
+  const inbound = new Map<string, number>(guides.map((g) => [g.slug, 0]));
+  for (const guide of guides) {
+    for (const slug of guide.relatedFeatures) if (!getFeatureLanding(slug)) problems.push(`${guide.slug}: bad feature ${slug}`);
+    for (const slug of guide.relatedIndustries) if (!industryLink(slug)) problems.push(`${guide.slug}: bad industry ${slug}`);
+    for (const slug of guide.relatedGuides) {
+      if (slug === guide.slug || !inbound.has(slug)) problems.push(`${guide.slug}: bad related guide ${slug}`);
+    }
+  }
+  for (const page of [...featureLandings, ...industryLandings]) {
+    const list = page.relatedGuides ?? [];
+    if (list.length > 2) problems.push(`${page.slug}: ${list.length} related guides (max 2)`);
+    for (const slug of list) {
+      if (!inbound.has(slug)) problems.push(`${page.slug}: bad guide ${slug}`);
+      else inbound.set(slug, inbound.get(slug)! + 1);
+    }
+  }
+  for (const [slug, count] of inbound) if (count < 1) problems.push(`${slug}: no feature or industry page links to it`);
+  expect(problems, problems.join("\n")).toEqual([]);
 });

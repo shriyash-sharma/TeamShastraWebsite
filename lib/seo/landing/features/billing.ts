@@ -82,6 +82,7 @@ export const billingFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["quotation-estimate-app", "gst-reports-ca-export", "inventory-stock-management", "customer-management"],
     relatedIndustries: ["cctv-installer-software", "inverter-battery-ups-service-software", "it-networking-amc-software"],
+    relatedGuides: ["gst-invoice-format-for-service-business", "bill-of-supply-vs-tax-invoice"],
     compareWith: ["vyapar-alternative", "teamshastra-vs-mybillbook", "teamshastra-vs-khatabook"],
     screenshot: {
       src: "/screenshots/05-sales-quotations.jpg",
@@ -165,6 +166,7 @@ export const billingFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["gst-billing-invoice", "job-work-order-management", "customer-management", "vyapar-data-import"],
     relatedIndustries: ["home-automation-installer-software", "cctv-installer-software", "fire-safety-service-software"],
+    relatedGuides: ["start-cctv-installation-business"],
     screenshot: {
       src: "/screenshots/05-sales-quotations.jpg",
       alt: "Quotations list in TeamShastra with each estimate's customer, amount and whether it is pending or converted"
@@ -246,6 +248,7 @@ export const billingFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["gst-billing-invoice", "tds-form-26q", "purchase-bills-supplier-management", "vyapar-data-import"],
     relatedIndustries: ["it-networking-amc-software", "appliance-repair-service-software", "inverter-battery-ups-service-software"],
+    relatedGuides: ["gstr-1-vs-gstr-3b"],
     screenshot: null
   },
   {

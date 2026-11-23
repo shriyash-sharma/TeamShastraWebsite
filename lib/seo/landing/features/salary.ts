@@ -82,6 +82,7 @@ export const salaryFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["salary-advance-payslip", "gps-attendance-app", "leave-management", "staff-cash-bank-accounts"],
     relatedIndustries: ["cleaning-housekeeping-service-software", "cctv-installer-software", "inverter-battery-ups-service-software"],
+    relatedGuides: ["staff-salary-calculation-per-day", "overtime-calculation-for-staff"],
     compareWith: ["teamshastra-vs-mybillbook", "teamshastra-vs-khatabook"],
     screenshot: null
   },
@@ -162,6 +163,7 @@ export const salaryFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["staff-salary-payroll", "staff-cash-bank-accounts", "roles-permissions"],
     relatedIndustries: ["appliance-repair-service-software", "pest-control-service-software", "cleaning-housekeeping-service-software"],
+    relatedGuides: ["salary-slip-format", "salary-advance-rules-for-employers"],
     screenshot: null
   }
 ];

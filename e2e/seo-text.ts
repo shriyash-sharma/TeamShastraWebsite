@@ -1,3 +1,5 @@
+import { guideBodyText } from "../lib/blog";
+import type { Guide } from "../lib/blog/types";
 import type { FeatureLanding, IndustryLanding } from "../lib/seo/landing/types";
 import type { SolutionPage } from "../lib/seo/types";
 
@@ -43,6 +45,16 @@ export function solutionBodyText(page: SolutionPage): string {
     ...(page.benefits ?? []),
     ...page.faqs.flatMap((faq) => [faq.question, faq.answer])
   ].join("\n");
+}
+
+/** Guide copy without tables and FAQ questions: the sentences we check for template openers. */
+export function guideProseText(guide: Guide): string {
+  const noTable = <T extends { table?: unknown }>(block: T): T => ({ ...block, table: undefined });
+  return guideBodyText({
+    ...guide,
+    sections: guide.sections.map((section) => ({ ...noTable(section), subsections: section.subsections?.map(noTable) })),
+    faqs: guide.faqs.map((faq) => ({ question: "", answer: faq.answer }))
+  });
 }
 
 export function words(text: string): string[] {

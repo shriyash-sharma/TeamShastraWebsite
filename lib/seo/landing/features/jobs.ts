@@ -163,6 +163,7 @@ export const jobFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["job-work-order-management", "gps-attendance-app", "leave-management", "team-location-map"],
     relatedIndustries: ["appliance-repair-service-software", "ro-water-purifier-service-software", "cleaning-housekeeping-service-software", "hvac-service-management"],
+    relatedGuides: ["start-ac-service-business"],
     compareWith: ["teamshastra-vs-zoho-fsm"],
     screenshot: {
       src: "/screenshots/03-todays-jobs.jpg",
@@ -246,6 +247,7 @@ export const jobFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["job-work-order-management", "customer-portal", "amc-contract-management"],
     relatedIndustries: ["fire-safety-service-software", "lift-elevator-maintenance-software", "home-automation-installer-software"],
+    relatedGuides: ["amc-contract-format"],
     screenshot: {
       src: "/screenshots/09-activity-photos.jpg",
       alt: "Job activity screen in TeamShastra with before and after site photos that are used in the service report PDF"

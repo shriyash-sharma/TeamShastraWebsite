@@ -82,6 +82,7 @@ export const customerFeatures: FeatureLanding[] = [
     ],
     relatedFeatures: ["job-work-order-management", "customer-management", "service-report-pdf", "gst-billing-invoice"],
     relatedIndustries: ["lift-elevator-maintenance-software", "fire-safety-service-software", "it-networking-amc-software", "hvac-service-management"],
+    relatedGuides: ["amc-contract-format", "ro-service-business-guide"],
     screenshot: null
   },
   {
