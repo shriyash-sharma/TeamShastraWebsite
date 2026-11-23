@@ -142,7 +142,7 @@ export const teamGuides: Guide[] = [
   {
     slug: "manage-field-team-efficiently",
     category: "team",
-    title: "How to Manage Field Team Without Micromanaging | TeamShastra",
+    title: "How to Manage Field Team Without Chasing | TeamShastra",
     metaDescription:
       "How to manage field team members you can't see all day: clear roles, a short morning plan, rules everyone knows, fair checks and a weekly review that works.",
     h1: "How to manage field team members you don't see all day",

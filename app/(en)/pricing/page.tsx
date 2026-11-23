@@ -17,7 +17,7 @@ import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 export const metadata: Metadata = pageMetadata(
   "/pricing",
   "Pricing — Free Plan, Growth at ₹200/User/Month | TeamShastra",
-  "TeamShastra pricing: Starter is free. Growth starts at ₹200 per user per month (plus GST). Every new company gets 30 days of Growth free. Enterprise pricing on request."
+  "TeamShastra pricing: Starter is free. Growth is ₹200 per user per month plus GST, with 30 days of Growth free for every new company. Enterprise on request."
 );
 
 const structuredData = {
@@ -39,7 +39,7 @@ const plans = [
     name: "Starter",
     price: "Free",
     text: "For teams getting started with jobs, attendance, and a company workspace.",
-    cta: "Get started",
+    cta: "Start on the free plan",
     features: ["Company workspace", "Jobs and attendance", "Team invites"]
   },
   {
@@ -47,7 +47,7 @@ const plans = [
     price: "₹200 / user / month",
     priceNote: "+ GST · 30 days free for new companies",
     text: "For growing field teams that need richer operational controls.",
-    cta: "Get started",
+    cta: "Try Growth free for 30 days",
     featured: true,
     features: ["Advanced dispatch", "Payroll", "Reporting", "Role management"]
   },

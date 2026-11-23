@@ -13,7 +13,7 @@ import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 export const metadata: Metadata = pageMetadata(
   "/about",
   "About TeamShastra — Field Service Software Built in India",
-  "TeamShastra is field service software built in India for owners, managers, and technicians — jobs, attendance, GST invoices, salary, and expenses in one app."
+  "What TeamShastra is and who it is for: one workspace where Indian service owners, managers and technicians run jobs, attendance, GST bills and salary."
 );
 
 export default function AboutPage() {

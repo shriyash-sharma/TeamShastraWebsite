@@ -23,6 +23,8 @@ const indiaSolutionLinks = [
   { label: "Field expense software India", href: "/field-expense-software-india" }
 ];
 
+const wideTitleCities = new Set(["ahmedabad", "hyderabad", "coimbatore"]);
+
 const coreLinks = [
   { label: "All locations", href: "/locations" },
   { label: "All solutions", href: "/solutions" },
@@ -49,7 +51,8 @@ export function buildCityFeatureContent(featureSlug: string, citySlug: string): 
     slug,
     path: `/${slug}`,
     pageType: "city-feature",
-    title: `${feature.headline} in ${city.name} | TeamShastra`,
+    // "Software" pushes the longest city names past Google's ~580 px title width, so those say "App".
+    title: wideTitleCities.has(citySlug) ? `Field Service Management App in ${city.name} | TeamShastra` : `${feature.headline} in ${city.name} | TeamShastra`,
     metaDescription: city.metaDescription,
     eyebrow: `${feature.shortName} · ${city.name}`,
     h1: `Field Service Management Software in ${city.name}`,

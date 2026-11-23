@@ -19,8 +19,8 @@ import { LanguageSwitch } from "@/components/LanguageSwitch";
 
 export const metadata: Metadata = pageMetadata(
   "/",
-  "TeamShastra | Field Service Software for Jobs, GST Invoices & Attendance",
-  "Field service app for Indian teams: jobs, attendance, GST invoices, staff salary, purchases, expenses, and reports. Android on Google Play and web."
+  "TeamShastra: Field Service App for Jobs, Attendance & GST",
+  "Assign jobs, mark attendance at punch-in, send GST invoices on WhatsApp and pay staff salary. TeamShastra is a field service app for Android and the web."
 );
 
 const structuredData = {
@@ -131,8 +131,8 @@ export default function Home() {
             </ul>
             <div className="hero-actions" aria-label="Primary calls to action">
               <a className="button primary" href={playStoreUrl}>Get it on Google Play</a>
-              <a className="button secondary" href={signupUrl}>Get started</a>
-              <a className="button ghost" href={loginUrl}>Login</a>
+              <a className="button secondary" href={signupUrl}>Create your company</a>
+              <a className="button ghost" href={loginUrl}>Sign in on the web</a>
             </div>
             <p className="beta-note">{betaStatus}</p>
             <div className="trust-row" aria-label="TeamShastra product surfaces">
@@ -182,8 +182,8 @@ export default function Home() {
             <p>Download the Android app on Google Play, or create a workspace on the web at app.teamshastra.com.</p>
           </div>
           <div className="hero-actions">
-            <a className="button primary" href={playStoreUrl}>Get it on Google Play</a>
-            <a className="button secondary" href={signupUrl}>Get started</a>
+            <a className="button primary" href={playStoreUrl}>Download the Android app</a>
+            <a className="button secondary" href={signupUrl}>Create a free workspace</a>
           </div>
         </div>
       </section>

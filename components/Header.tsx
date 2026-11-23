@@ -7,6 +7,9 @@ import { loginUrl, navItems, playStoreUrl, signupUrl } from "@/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  // The drawer's links mount on first open, so the page HTML lists each nav link once (Prompt 18). They stay mounted
+  // afterwards so the close animation still has content.
+  const [drawerReady, setDrawerReady] = useState(false);
 
   useEffect(() => {
     if (!open) return;
@@ -39,7 +42,7 @@ export function Header() {
             Login
           </a>
           <a className="button primary" href={signupUrl}>
-            Get started
+            Start free trial
           </a>
         </div>
         <button
@@ -48,7 +51,10 @@ export function Header() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-nav"
-          onClick={() => setOpen((value) => !value)}
+          onClick={() => {
+            setDrawerReady(true);
+            setOpen((value) => !value);
+          }}
         >
           <span />
           <span />
@@ -61,24 +67,28 @@ export function Header() {
         aria-hidden={!open}
         inert={!open}
       >
-        <div className="nav-drawer-links">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
-              {item.label}
-            </Link>
-          ))}
-        </div>
-        <div className="nav-drawer-actions">
-          <a className="button secondary" href={loginUrl} onClick={() => setOpen(false)}>
-            Login
-          </a>
-          <a className="button primary" href={signupUrl} onClick={() => setOpen(false)}>
-            Get started
-          </a>
-          <a className="button ghost" href={playStoreUrl} onClick={() => setOpen(false)}>
-            Get it on Google Play
-          </a>
-        </div>
+        {drawerReady ? (
+          <>
+            <div className="nav-drawer-links">
+              {navItems.map((item) => (
+                <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            <div className="nav-drawer-actions">
+              <a className="button secondary" href={loginUrl} onClick={() => setOpen(false)}>
+                Login
+              </a>
+              <a className="button primary" href={signupUrl} onClick={() => setOpen(false)}>
+                Start free trial
+              </a>
+              <a className="button ghost" href={playStoreUrl} onClick={() => setOpen(false)}>
+                Get it on Google Play
+              </a>
+            </div>
+          </>
+        ) : null}
       </div>
       {open ? <button type="button" className="nav-scrim" aria-label="Close menu" onClick={() => setOpen(false)} /> : null}
     </header>

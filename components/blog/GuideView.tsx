@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ShareLinks } from "@/components/seo/ShareLinks";
 import { SeoBreadcrumbs } from "@/components/seo/SeoBreadcrumbs";
 import { SeoCta } from "@/components/seo/SeoCta";
 import { SeoFaq } from "@/components/seo/SeoFaq";
@@ -180,6 +181,7 @@ export function GuideView({ guide }: Props) {
               {industries.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
               {otherPages.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
             </p>
+            <ShareLinks url={`${marketingUrl}${guidePath(guide.slug)}`} title={guide.h1} label="Share this guide" />
           </div>
         </div>
       </section>

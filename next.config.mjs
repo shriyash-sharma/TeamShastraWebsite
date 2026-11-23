@@ -1,3 +1,5 @@
+import { legacySearchRedirects } from "./lib/seo/legacy-search-redirects.mjs";
+
 // Feature × city pages that were retired in favour of one hand-written hub per city
 // (/field-service-management-[city]). Keep in sync with lib/seo/cities.
 const retiredCityFeatures = [
@@ -54,7 +56,8 @@ const nextConfig = {
           destination: `/field-service-management-${city}`,
           permanent: true
         }))
-      )
+      ),
+      ...legacySearchRedirects.map(([source, destination]) => ({ source, destination, permanent: true }))
     ];
   }
 };

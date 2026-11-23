@@ -534,6 +534,8 @@ h3 { font-size: 1.18rem; }
 }
 .seo-internal-links { display: flex; flex-wrap: wrap; gap: 10px 16px; }
 .seo-internal-links a { color: var(--brand-dark); font-weight: 650; font-size: 0.92rem; text-decoration: underline; text-underline-offset: 3px; }
+.share-links { margin-top: 16px; align-items: baseline; }
+.share-links-label { color: var(--muted); font-weight: 650; font-size: 0.92rem; }
 .seo-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .seo-cta-note { margin-top: 12px; color: rgba(255, 255, 255, 0.75); font-size: 0.88rem; }
 .seo-cta-ghost { color: #ffffff !important; border-color: rgba(255, 255, 255, 0.4) !important; }

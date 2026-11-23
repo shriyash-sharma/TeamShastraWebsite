@@ -18,7 +18,7 @@ import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 export const metadata: Metadata = pageMetadata(
   "/contact",
   "Contact TeamShastra — Call, WhatsApp or Chat Support",
-  "Call or WhatsApp +91 76970 12040, email care@teamshastra.com, or chat with TeamShastra support. Mon–Sat, 10 AM–7 PM IST."
+  "Phone or WhatsApp TeamShastra on +91 76970 12040, Monday to Saturday, 10 AM to 7 PM IST. You can also email care@teamshastra.com or open the chat."
 );
 
 export default function ContactPage() {

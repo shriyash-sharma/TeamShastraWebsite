@@ -4,7 +4,7 @@ export const solutions: SolutionPage[] = [
   {
     slug: "field-service-management-software-india",
     title: "Field Service Management Software India",
-    metaDescription: "TeamShastra field service management software for Indian businesses. Dispatch technicians, track visits, capture digital reports, and manage jobs nationwide.",
+    metaDescription: "Field service management software for Indian teams: assign jobs to technicians, mark attendance at punch-in, send GST bills and pay salary each month.",
     eyebrow: "Field Service Management",
     headline: "Field Service Management Software for Businesses Across India",
     lead: "End-to-end field service platform for Indian companies that dispatch technicians, electricians, and installation staff to customer locations every day — from metro cities to tier-2 industrial towns.",
@@ -47,7 +47,7 @@ export const solutions: SolutionPage[] = [
   {
     slug: "gst-invoicing-software-india",
     title: "GST Invoicing Software India",
-    metaDescription: "GST invoicing software for Indian field service companies. Create tax invoices and quotations, record payments, share PDFs on WhatsApp, and export CA-ready GST workbooks.",
+    metaDescription: "GST invoicing software for Indian field service companies: tax invoices, quotations, payments, PDFs on WhatsApp and CA-ready GST workbooks.",
     eyebrow: "GST Invoicing",
     headline: "GST Invoicing Software for Indian Field Service Companies",
     lead: "Issue GST tax invoices, send quotations, collect payments, and keep purchase bills in the same app as jobs and attendance — built for CCTV installers, electricians, and maintenance teams across India.",
@@ -166,7 +166,7 @@ export const solutions: SolutionPage[] = [
   {
     slug: "technician-management-software",
     title: "Technician Management Software",
-    metaDescription: "Technician management software for Indian service companies. Assign, track, and manage field technicians with GPS attendance, work orders, and digital service reports.",
+    metaDescription: "Technician management software for Indian service companies: assign jobs, see punch-in attendance, follow work orders and share digital service reports.",
     eyebrow: "Technician Management",
     headline: "Technician Management Software for Service Companies",
     lead: "Manage field technicians from assignment to completion — job assignment, work orders, GPS attendance, and photo-based proof of work in one platform.",
@@ -190,7 +190,7 @@ export const solutions: SolutionPage[] = [
   {
     slug: "field-employee-tracking",
     title: "Field Employee Tracking Software",
-    metaDescription: "Field employee tracking software for Indian field service teams. Monitor site visits, job progress, attendance, and daily activity for technicians and installers.",
+    metaDescription: "Field employee tracking software for Indian service teams: see site visits, job progress, attendance and each technician's and installer's day.",
     eyebrow: "Field Employee Tracking",
     headline: "Field Employee Tracking for Service Teams",
     lead: "Visibility into field job status and visit check-ins, job progress, and daily activity for businesses whose technicians work away from the office.",
@@ -229,7 +229,7 @@ export const solutions: SolutionPage[] = [
   {
     slug: "service-report-software",
     title: "Service Report Software",
-    metaDescription: "Digital service report software for Indian field teams. Share a service report or progress report PDF with job photos, replacing paper job sheets.",
+    metaDescription: "Service reporting for Indian field teams: share a service report or progress report PDF with the job photos, instead of a paper job sheet.",
     eyebrow: "Service Reports",
     headline: "Digital Service Report Software for Field Teams",
     lead: "Replace paper job sheets with a service report or progress report PDF, and keep the visit photos on the job.",
@@ -250,11 +250,11 @@ export const solutions: SolutionPage[] = [
     slug: "facility-management-software",
     title: "Facility Management Software",
     metaDescription:
-      "Facility management software for vendors who maintain offices, malls and societies: site-wise staff check-in, daily task jobs, photo proof and AMC visits.",
+      "Task management for facility services across offices, malls and societies: site-wise staff check-in, daily task jobs, photo proof and AMC visits.",
     eyebrow: "Facility Management",
     headline: "Facility Management Software for Multi-Site Maintenance Vendors",
     lead: "Your housekeeping staff are at a mall, your electrician is at a hospital, and a society wants its pump report. Facility management software should hold all of that in one app. TeamShastra brings site staff, daily tasks, planned maintenance and client reports together for vendors who keep offices, malls, hospitals and housing societies running.",
-    overviewTitle: "What a facility vendor's week looks like",
+    overviewTitle: "Task management for facility services, one site at a time",
     overview: [
       "A facility vendor looks after buildings that belong to someone else. One contract covers an office tower, another a hospital wing, a third a gated society. Each site has its own resident staff, such as an electrician, a plumber and a multi-skill technician, plus specialists who come in for pumps, DG sets or the STP.",
       "The client's facility manager wants three things: staff present every shift, small faults fixed the same day, and planned maintenance done on time. They ask for a monthly report and hold back payment when it is late or thin.",
@@ -491,9 +491,9 @@ export const solutions: SolutionPage[] = [
     slug: "solar-installation-workforce-software",
     title: "Solar Installation Workforce Software",
     metaDescription:
-      "Solar installation workforce software for rooftop installers: survey and quote, run multi-day installs with crew attendance, track panels and do O&M visits.",
+      "Solar workforce management for rooftop installers: survey and quote, run multi-day installs with crew attendance, track panels and book O&M visits.",
     eyebrow: "Solar & Renewable",
-    headline: "Solar Installation Workforce Software for Rooftop Installers",
+    headline: "Solar Workforce Management for Rooftop Installation Teams",
     lead: "A rooftop solar job runs from survey to commissioning over several days, then needs panel cleaning for years. TeamShastra is solar installation workforce software for rooftop solar companies. It covers survey and quote, multi-day installs with crew attendance, panel and inverter stock, and O&M visits after commissioning.",
     overviewTitle: "From rooftop survey to O&M",
     overview: [

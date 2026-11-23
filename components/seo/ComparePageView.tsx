@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SeoBreadcrumbs } from "@/components/seo/SeoBreadcrumbs";
 import { SeoCta } from "@/components/seo/SeoCta";
+import { ShareLinks } from "@/components/seo/ShareLinks";
 import { SeoFaq } from "@/components/seo/SeoFaq";
 import { compareDisclaimer, formatCheckedDate, type ComparePage } from "@/lib/seo/compare";
 import { marketingUrl, organizationSchema, playStoreUrl, signupUrl } from "@/lib/site";
@@ -148,6 +149,7 @@ export function ComparePageView({ page }: Props) {
             <Link href="/pricing">TeamShastra pricing</Link>
             <Link href="/compare">All comparisons</Link>
           </p>
+          <ShareLinks url={`${marketingUrl}${page.path}`} title={page.h1} label="Share this comparison" />
         </div>
       </section>
 

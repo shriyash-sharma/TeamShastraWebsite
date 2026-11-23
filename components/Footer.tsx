@@ -38,8 +38,8 @@ const footerGroups = [
   {
     title: "Get started",
     links: [
-      { label: "Get it on Google Play", href: playStoreUrl },
-      { label: "Login", href: loginUrl },
+      { label: "Install TeamShastra from Google Play", href: playStoreUrl },
+      { label: "Log in to the web app", href: loginUrl },
       { label: "Create an account", href: signupUrl },
       { label: "Open the app", href: appUrl }
     ]

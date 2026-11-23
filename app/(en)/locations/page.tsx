@@ -8,7 +8,7 @@ import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 export const metadata: Metadata = pageMetadata(
   "/locations",
   "Field Service Software by City in India | TeamShastra",
-  "Field service software for 14 Indian cities, each with local GST, Professional Tax, language, and season notes — Mumbai, Delhi, Bengaluru, Pune, Surat, and more."
+  "Pick your city for notes on field service work in 14 Indian cities: state GST, professional tax, the local language and when the busy season starts."
 );
 
 function CityGroup({ title, slugs }: { title: string; slugs: string[] }) {

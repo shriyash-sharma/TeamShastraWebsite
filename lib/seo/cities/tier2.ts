@@ -145,7 +145,7 @@ export const tier2Cities: CityProfile[] = [
     tier: "tier-2",
     localAreas: ["Gomti Nagar", "Hazratganj", "Aliganj", "Indira Nagar", "Alambagh", "Chinhat", "Transport Nagar", "Amausi"],
     nearbyCitySlugs: ["delhi", "jaipur"],
-    metaDescription: "Field service software for Lucknow: clinic and hospital maintenance, wedding-season electrical work, foggy-winter scheduling, a Hindi app, and UP GST invoices.",
+    metaDescription: "Field service software for Lucknow: clinic and hospital maintenance, wedding-season electrical work, foggy-winter scheduling, a Hindi app and UP GST bills.",
     whyIntro: "Lucknow's service businesses look after a growing mix of homes, shops, hospitals and clinics, offices, and warehouses around Transport Nagar and Amausi.",
     intro: [
       "Summers are hot, so AC and electrical calls peak from April to June. Winters bring dense fog in December and January, which slows travel and shortens the working day. The November–February wedding season adds lighting, power, and temporary electrical work for venues and homes.",

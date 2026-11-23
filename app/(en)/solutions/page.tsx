@@ -10,7 +10,7 @@ import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 export const metadata: Metadata = pageMetadata(
   "/solutions",
   "Workforce & Field Service Solutions India | TeamShastra",
-  "Field service management, GST invoicing, attendance, technician dispatch, work orders, expenses, and industry solutions for Indian businesses."
+  "Find the TeamShastra page for the job you need done: dispatching technicians, GST bills, attendance, work orders, field expenses or your own trade."
 );
 
 export default function SolutionsPage() {

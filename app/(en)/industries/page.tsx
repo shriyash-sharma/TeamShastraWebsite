@@ -8,7 +8,7 @@ import { marketingPages, pageMetadata } from "@/lib/site";
 export const metadata: Metadata = pageMetadata(
   "/industries",
   "Industries | CCTV, Electricians & Field Service | TeamShastra",
-  "Software for all field service businesses: CCTV, AC, electricians, plumbers, solar, RO, pest control, appliance repair, IT, fire safety, lifts and more."
+  "CCTV, AC, electrical work, solar, RO, pest control, lifts and more: see how TeamShastra fits the way each field service trade actually runs day to day."
 );
 
 export default function IndustriesPage() {

@@ -18,7 +18,7 @@ test("home shows chat launcher and core CTAs", async ({ page }) => {
     () => document.documentElement.scrollWidth <= window.innerWidth + 4
   );
   expect(noHorizontalScroll).toBe(true);
-  await expect(page.getByRole("link", { name: "Get started" }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "Create your company" }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: "Get it on Google Play" }).first()).toHaveAttribute(
     "href",
     "https://play.google.com/store/apps/details?id=com.teamshastra.mobile"

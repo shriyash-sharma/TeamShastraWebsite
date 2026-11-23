@@ -7,8 +7,8 @@ import { marketingPages, pageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata(
   "/features",
-  "Features | Jobs, GST Invoices, Attendance & Salary | TeamShastra",
-  "TeamShastra features for field service teams: work orders, attendance, GST invoices, staff salary, TDS, stock, purchases, expenses, reports, and Hindi support."
+  "Features: Jobs, GST Bills, Attendance, Salary | TeamShastra",
+  "Every TeamShastra feature in one list: work orders, attendance, GST invoices, salary and TDS, stock, purchases, expenses, reports and Hindi support."
 );
 
 export default function FeaturesPage() {
