@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
-import { marketingUrl, pages, siteContentUpdatedAt } from "@/lib/site";
+import { hreflangLanguages, marketingUrl, pages, siteContentUpdatedAt } from "@/lib/site";
 import { featureLandingPath, featureLandings } from "@/lib/seo/landing/features";
 import { industryLandingPath, industryLandings } from "@/lib/seo/landing/industries";
 import { compareHub, comparePages } from "@/lib/seo/compare";
+import { hindiPages } from "@/lib/seo/landing/hi";
+import { hindiPathFor } from "@/lib/seo/landing/hi/paths";
 import { getAllSeoSlugs } from "@/lib/seo/slugs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -42,5 +44,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  return [...staticPages, ...seoPages, ...landingPages, ...comparisonPages];
+  const hindi: MetadataRoute.Sitemap = hindiPages.map((page) => ({
+    url: `${marketingUrl}${page.path}`,
+    lastModified: new Date(page.lastUpdated),
+    changeFrequency: "monthly" as const,
+    priority: page.kind === "home" ? 0.8 : 0.7
+  }));
+
+  // English pages with a Hindi version list both as hreflang alternates (xhtml:link), as do the Hindi pages.
+  return [...staticPages, ...seoPages, ...landingPages, ...comparisonPages, ...hindi].map((entry) => {
+    const path = entry.url.slice(marketingUrl.length) || "/";
+    const hindiPage = hindiPages.find((page) => page.path === path);
+    const englishPath = hindiPage ? hindiPage.enPath : path;
+    const hindiPath = hindiPage ? hindiPage.path : hindiPathFor(path);
+    return hindiPath ? { ...entry, alternates: { languages: hreflangLanguages(englishPath, hindiPath) } } : entry;
+  });
 }

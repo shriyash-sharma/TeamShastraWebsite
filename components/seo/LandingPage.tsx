@@ -5,6 +5,7 @@ import { playStoreUrl, pricingSummary, signupUrl, supportHours, supportPhoneDisp
 import { LandingStructuredData } from "./LandingStructuredData";
 import { SeoBreadcrumbs } from "./SeoBreadcrumbs";
 import { SeoFaq } from "./SeoFaq";
+import { LanguageSwitch } from "@/components/LanguageSwitch";
 
 type Props = {
   view: LandingView;
@@ -48,6 +49,7 @@ export function LandingPage({ view }: Props) {
         <div className={`section-inner${view.screenshot ? " split-grid landing-hero" : ""}`}>
           <div>
             <SeoBreadcrumbs items={view.breadcrumbs} />
+            <LanguageSwitch englishPath={view.path} />
             <span className="eyebrow">{view.eyebrow}</span>
             <h1>{view.h1}</h1>
             <p className="page-lead">{view.intro}</p>

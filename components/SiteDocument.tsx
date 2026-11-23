@@ -6,9 +6,9 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { LazyVisitorChat } from "@/components/LazyVisitorChat";
 import { cookieConsentStorageKey, marketingUrl } from "@/lib/site";
-import "./globals.css";
 
-export const metadata: Metadata = {
+/** Site-wide metadata shared by every root layout. */
+export const siteMetadata: Metadata = {
   metadataBase: new URL(marketingUrl),
   applicationName: "TeamShastra",
   description:
@@ -29,9 +29,13 @@ export const metadata: Metadata = {
 
 const consentMarkerScript = `try{var c=localStorage.getItem(${JSON.stringify(cookieConsentStorageKey)});if(c)document.documentElement.setAttribute("data-ts-consent",c)}catch(e){}`;
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+/**
+ * The <html> and <body> every page shares. Each root layout (English, Hindi) and the global 404
+ * render it with their own `lang`, so the site looks and behaves the same everywhere.
+ */
+export function SiteDocument({ lang, children }: Readonly<{ lang: string; children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <head>
         {/* Runs while the page is parsed, so a stored cookie choice hides the banner before first paint. */}
         <script dangerouslySetInnerHTML={{ __html: consentMarkerScript }} />

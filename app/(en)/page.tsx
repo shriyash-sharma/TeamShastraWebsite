@@ -15,6 +15,7 @@ import {
   signupUrl,
   youtubeUrl
 } from "@/lib/site";
+import { LanguageSwitch } from "@/components/LanguageSwitch";
 
 export const metadata: Metadata = pageMetadata(
   "/",
@@ -113,6 +114,7 @@ export default function Home() {
       <section className="hero">
         <div className="section-inner hero-grid">
           <div>
+            <LanguageSwitch englishPath="/" />
             <span className="eyebrow">Made in India for field service teams</span>
             <h1>
               TeamShastra{" "}

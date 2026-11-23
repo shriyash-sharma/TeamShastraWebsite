@@ -10,6 +10,7 @@ import { SeoIndustries } from "./SeoIndustries";
 import { SeoLocalAreas } from "./SeoLocalAreas";
 import { SeoLocalContext } from "./SeoLocalContext";
 import { SeoStructuredData } from "./SeoStructuredData";
+import { LanguageSwitch } from "@/components/LanguageSwitch";
 
 type Props = {
   content: SeoPageContent;
@@ -33,6 +34,7 @@ export function SeoLandingPage({ content }: Props) {
       <section className="page-hero">
         <div className="section-inner">
           <SeoBreadcrumbs items={content.breadcrumbs} />
+          <LanguageSwitch englishPath={content.path} />
           <span className="eyebrow">{content.eyebrow}</span>
           <h1>{content.h1}</h1>
           <p className="page-lead">{content.heroLead}</p>

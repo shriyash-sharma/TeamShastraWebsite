@@ -1,0 +1,506 @@
+{
+  "/": {
+    "title": "TeamShastra | Field Service Software for Jobs, GST Invoices & Attendance",
+    "canonical": "https://teamshastra.com",
+    "h1": "TeamShastra Field service software for jobs, GST invoices & attendance",
+    "lang": "en"
+  },
+  "/about": {
+    "title": "About TeamShastra — Field Service Software Built in India",
+    "canonical": "https://teamshastra.com/about",
+    "h1": "TeamShastra helps service teams run field operations from one workspace.",
+    "lang": "en"
+  },
+  "/account-deletion": {
+    "title": "Account Deletion | TeamShastra",
+    "canonical": "https://teamshastra.com/account-deletion",
+    "h1": "TeamShastra Account Deletion",
+    "lang": "en"
+  },
+  "/attendance-management-software-india": {
+    "title": "Attendance Management Software India | TeamShastra",
+    "canonical": "https://teamshastra.com/attendance-management-software-india",
+    "h1": "Attendance Management Software for Indian Field Teams",
+    "lang": "en"
+  },
+  "/blog": {
+    "title": "Field Service Blog for Indian Businesses | TeamShastra",
+    "canonical": "https://teamshastra.com/blog",
+    "h1": "Field service guides for Indian service businesses.",
+    "lang": "en"
+  },
+  "/compare": {
+    "title": "Compare TeamShastra with Other Business Apps | TeamShastra",
+    "canonical": "https://teamshastra.com/compare",
+    "h1": "Compare TeamShastra with other business apps",
+    "lang": "en"
+  },
+  "/compare/teamshastra-vs-khatabook": {
+    "title": "Khatabook Alternative for Service Business | TeamShastra",
+    "canonical": "https://teamshastra.com/compare/teamshastra-vs-khatabook",
+    "h1": "A Khatabook alternative for service business owners with field teams",
+    "lang": "en"
+  },
+  "/compare/teamshastra-vs-mybillbook": {
+    "title": "myBillBook Alternative for Field Service Teams | TeamShastra",
+    "canonical": "https://teamshastra.com/compare/teamshastra-vs-mybillbook",
+    "h1": "A myBillBook alternative for businesses that send out technicians",
+    "lang": "en"
+  },
+  "/compare/teamshastra-vs-zoho-fsm": {
+    "title": "Zoho FSM Alternative India for Small Teams | TeamShastra",
+    "canonical": "https://teamshastra.com/compare/teamshastra-vs-zoho-fsm",
+    "h1": "A Zoho FSM alternative India's small service teams can run on Android",
+    "lang": "en"
+  },
+  "/contact": {
+    "title": "Contact TeamShastra — Call, WhatsApp or Chat Support",
+    "canonical": "https://teamshastra.com/contact",
+    "h1": "Contact TeamShastra support",
+    "lang": "en"
+  },
+  "/cookies": {
+    "title": "Cookie Policy | TeamShastra",
+    "canonical": "https://teamshastra.com/cookies",
+    "h1": "TeamShastra Cookie Policy",
+    "lang": "en"
+  },
+  "/digital-work-orders": {
+    "title": "Digital Work Orders Software | TeamShastra",
+    "canonical": "https://teamshastra.com/digital-work-orders",
+    "h1": "Digital Work Orders for Field and Maintenance Teams",
+    "lang": "en"
+  },
+  "/electrician-workforce-management": {
+    "title": "Electrician Workforce Management Software | TeamShastra",
+    "canonical": "https://teamshastra.com/electrician-workforce-management",
+    "h1": "Electrician Workforce Management Software for Electrical Contractors",
+    "lang": "en"
+  },
+  "/facility-management-software": {
+    "title": "Facility Management Software | TeamShastra",
+    "canonical": "https://teamshastra.com/facility-management-software",
+    "h1": "Facility Management Software for Multi-Site Maintenance Vendors",
+    "lang": "en"
+  },
+  "/faq": {
+    "title": "Frequently Asked Questions | TeamShastra",
+    "canonical": "https://teamshastra.com/faq",
+    "h1": "Frequently asked questions about TeamShastra",
+    "lang": "en"
+  },
+  "/features": {
+    "title": "Features | Jobs, GST Invoices, Attendance & Salary | TeamShastra",
+    "canonical": "https://teamshastra.com/features",
+    "h1": "Field service app features: jobs, attendance, GST invoices, and salary.",
+    "lang": "en"
+  },
+  "/features/amc-contract-management": {
+    "title": "AMC Management Software for Service Teams | TeamShastra",
+    "canonical": "https://teamshastra.com/features/amc-contract-management",
+    "h1": "AMC management software that never misses a due visit",
+    "lang": "en"
+  },
+  "/features/business-reports-dashboard": {
+    "title": "Business Reports App and Team Scorecard | TeamShastra",
+    "canonical": "https://teamshastra.com/features/business-reports-dashboard",
+    "h1": "See your business clearly with a business reports app",
+    "lang": "en"
+  },
+  "/features/customer-management": {
+    "title": "Customer Management App for Service Firms | TeamShastra",
+    "canonical": "https://teamshastra.com/features/customer-management",
+    "h1": "A customer management app with every job and bill in one record",
+    "lang": "en"
+  },
+  "/features/customer-portal": {
+    "title": "Customer Portal for Job Status Updates | TeamShastra",
+    "canonical": "https://teamshastra.com/features/customer-portal",
+    "h1": "A customer portal that answers \"what is the status?\" for you",
+    "lang": "en"
+  },
+  "/features/field-expense-tracking": {
+    "title": "Field Expense Tracking App for Technicians | TeamShastra",
+    "canonical": "https://teamshastra.com/features/field-expense-tracking",
+    "h1": "Field expense tracking with receipts and owner approval",
+    "lang": "en"
+  },
+  "/features/gps-attendance-app": {
+    "title": "GPS Attendance App with Selfie for Staff | TeamShastra",
+    "canonical": "https://teamshastra.com/features/gps-attendance-app",
+    "h1": "GPS attendance app with selfie check-in for field staff",
+    "lang": "en"
+  },
+  "/features/gst-billing-invoice": {
+    "title": "GST Billing App for Service Businesses | TeamShastra",
+    "canonical": "https://teamshastra.com/features/gst-billing-invoice",
+    "h1": "A GST billing app built into your job workflow",
+    "lang": "en"
+  },
+  "/features/gst-reports-ca-export": {
+    "title": "GSTR-1 and GSTR-3B Reports in Excel | TeamShastra",
+    "canonical": "https://teamshastra.com/features/gst-reports-ca-export",
+    "h1": "Ready GSTR-1 and GSTR-3B reports for your CA every month",
+    "lang": "en"
+  },
+  "/features/hindi-multi-language-app": {
+    "title": "Business App in Hindi, Gujarati and Marathi | TeamShastra",
+    "canonical": "https://teamshastra.com/features/hindi-multi-language-app",
+    "h1": "A business app in Hindi and four more Indian languages",
+    "lang": "en"
+  },
+  "/features/inventory-stock-management": {
+    "title": "Inventory Management App for Service Firms | TeamShastra",
+    "canonical": "https://teamshastra.com/features/inventory-stock-management",
+    "h1": "Inventory management app for parts, cameras and spares",
+    "lang": "en"
+  },
+  "/features/job-alerts-notifications": {
+    "title": "Job Alert Notifications for Technicians | TeamShastra",
+    "canonical": "https://teamshastra.com/features/job-alerts-notifications",
+    "h1": "Job alert notifications your field team will not miss",
+    "lang": "en"
+  },
+  "/features/job-work-order-management": {
+    "title": "Work Order Management App for Field Jobs | TeamShastra",
+    "canonical": "https://teamshastra.com/features/job-work-order-management",
+    "h1": "Work order management app that keeps every job in one place",
+    "lang": "en"
+  },
+  "/features/leave-management": {
+    "title": "Leave Management App for Small Teams | TeamShastra",
+    "canonical": "https://teamshastra.com/features/leave-management",
+    "h1": "Leave management app for staff, half days and holidays",
+    "lang": "en"
+  },
+  "/features/multi-company-management": {
+    "title": "Manage Multiple Companies with One Login | TeamShastra",
+    "canonical": "https://teamshastra.com/features/multi-company-management",
+    "h1": "Manage multiple companies without juggling logins",
+    "lang": "en"
+  },
+  "/features/offline-field-service-app": {
+    "title": "Offline Field Service App for Low Network | TeamShastra",
+    "canonical": "https://teamshastra.com/features/offline-field-service-app",
+    "h1": "An offline field service app for basements, rooftops and villages",
+    "lang": "en"
+  },
+  "/features/purchase-bills-supplier-management": {
+    "title": "Purchase Bill Tracking and Supplier Dues | TeamShastra",
+    "canonical": "https://teamshastra.com/features/purchase-bills-supplier-management",
+    "h1": "Purchase bill tracking that shows what you owe each supplier",
+    "lang": "en"
+  },
+  "/features/quotation-estimate-app": {
+    "title": "Quotation and Estimate App for Service Jobs | TeamShastra",
+    "canonical": "https://teamshastra.com/features/quotation-estimate-app",
+    "h1": "From site visit to approved quote with a quotation and estimate app",
+    "lang": "en"
+  },
+  "/features/roles-permissions": {
+    "title": "Staff Roles and Permissions in One App | TeamShastra",
+    "canonical": "https://teamshastra.com/features/roles-permissions",
+    "h1": "Staff roles and permissions for owner, manager and technician",
+    "lang": "en"
+  },
+  "/features/salary-advance-payslip": {
+    "title": "Salary Advance and Payslip Tracking App | TeamShastra",
+    "canonical": "https://teamshastra.com/features/salary-advance-payslip",
+    "h1": "Keep each salary advance and payslip on record",
+    "lang": "en"
+  },
+  "/features/service-report-pdf": {
+    "title": "Digital Service Report PDF with Photos | TeamShastra",
+    "canonical": "https://teamshastra.com/features/service-report-pdf",
+    "h1": "Send a digital service report the moment a job is done",
+    "lang": "en"
+  },
+  "/features/staff-cash-bank-accounts": {
+    "title": "Staff Cash Tracking and Bank Balances | TeamShastra",
+    "canonical": "https://teamshastra.com/features/staff-cash-bank-accounts",
+    "h1": "Staff cash tracking that settles every rupee",
+    "lang": "en"
+  },
+  "/features/staff-salary-payroll": {
+    "title": "Payroll App for Small Business Staff | TeamShastra",
+    "canonical": "https://teamshastra.com/features/staff-salary-payroll",
+    "h1": "Staff salary made simple with a payroll app for small business",
+    "lang": "en"
+  },
+  "/features/tds-form-26q": {
+    "title": "TDS Management and Form 26Q Summary | TeamShastra",
+    "canonical": "https://teamshastra.com/features/tds-form-26q",
+    "h1": "TDS management without the spreadsheet",
+    "lang": "en"
+  },
+  "/features/team-location-map": {
+    "title": "Field Staff Location Map Without Tracking | TeamShastra",
+    "canonical": "https://teamshastra.com/features/team-location-map",
+    "h1": "A field staff location map that respects privacy",
+    "lang": "en"
+  },
+  "/features/technician-dispatch-today-board": {
+    "title": "Technician Dispatch Board for Daily Jobs | TeamShastra",
+    "canonical": "https://teamshastra.com/features/technician-dispatch-today-board",
+    "h1": "A technician dispatch board for planning today's work",
+    "lang": "en"
+  },
+  "/features/vyapar-data-import": {
+    "title": "Import Data from Vyapar or Excel Safely | TeamShastra",
+    "canonical": "https://teamshastra.com/features/vyapar-data-import",
+    "h1": "Import data from Vyapar without starting from zero",
+    "lang": "en"
+  },
+  "/field-employee-tracking": {
+    "title": "Field Employee Tracking Software | TeamShastra",
+    "canonical": "https://teamshastra.com/field-employee-tracking",
+    "h1": "Field Employee Tracking for Service Teams",
+    "lang": "en"
+  },
+  "/field-expense-software-india": {
+    "title": "Field Expense Software India | TeamShastra",
+    "canonical": "https://teamshastra.com/field-expense-software-india",
+    "h1": "Field Expense, Float, and Bank Software for Indian Teams",
+    "lang": "en"
+  },
+  "/field-service-management-ahmedabad": {
+    "title": "Field Service Management Software in Ahmedabad | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-ahmedabad",
+    "h1": "Field Service Management Software in Ahmedabad",
+    "lang": "en"
+  },
+  "/field-service-management-bengaluru": {
+    "title": "Field Service Management Software in Bengaluru | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-bengaluru",
+    "h1": "Field Service Management Software in Bengaluru",
+    "lang": "en"
+  },
+  "/field-service-management-chennai": {
+    "title": "Field Service Management Software in Chennai | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-chennai",
+    "h1": "Field Service Management Software in Chennai",
+    "lang": "en"
+  },
+  "/field-service-management-coimbatore": {
+    "title": "Field Service Management Software in Coimbatore | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-coimbatore",
+    "h1": "Field Service Management Software in Coimbatore",
+    "lang": "en"
+  },
+  "/field-service-management-delhi": {
+    "title": "Field Service Management Software in Delhi | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-delhi",
+    "h1": "Field Service Management Software in Delhi",
+    "lang": "en"
+  },
+  "/field-service-management-hyderabad": {
+    "title": "Field Service Management Software in Hyderabad | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-hyderabad",
+    "h1": "Field Service Management Software in Hyderabad",
+    "lang": "en"
+  },
+  "/field-service-management-indore": {
+    "title": "Field Service Management Software in Indore | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-indore",
+    "h1": "Field Service Management Software in Indore",
+    "lang": "en"
+  },
+  "/field-service-management-jaipur": {
+    "title": "Field Service Management Software in Jaipur | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-jaipur",
+    "h1": "Field Service Management Software in Jaipur",
+    "lang": "en"
+  },
+  "/field-service-management-kolkata": {
+    "title": "Field Service Management Software in Kolkata | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-kolkata",
+    "h1": "Field Service Management Software in Kolkata",
+    "lang": "en"
+  },
+  "/field-service-management-lucknow": {
+    "title": "Field Service Management Software in Lucknow | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-lucknow",
+    "h1": "Field Service Management Software in Lucknow",
+    "lang": "en"
+  },
+  "/field-service-management-mumbai": {
+    "title": "Field Service Management Software in Mumbai | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-mumbai",
+    "h1": "Field Service Management Software in Mumbai",
+    "lang": "en"
+  },
+  "/field-service-management-pune": {
+    "title": "Field Service Management Software in Pune | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-pune",
+    "h1": "Field Service Management Software in Pune",
+    "lang": "en"
+  },
+  "/field-service-management-software-india": {
+    "title": "Field Service Management Software India | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-software-india",
+    "h1": "Field Service Management Software for Businesses Across India",
+    "lang": "en"
+  },
+  "/field-service-management-surat": {
+    "title": "Field Service Management Software in Surat | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-surat",
+    "h1": "Field Service Management Software in Surat",
+    "lang": "en"
+  },
+  "/field-service-management-vadodara": {
+    "title": "Field Service Management Software in Vadodara | TeamShastra",
+    "canonical": "https://teamshastra.com/field-service-management-vadodara",
+    "h1": "Field Service Management Software in Vadodara",
+    "lang": "en"
+  },
+  "/gst-invoicing-software-india": {
+    "title": "GST Invoicing Software India | TeamShastra",
+    "canonical": "https://teamshastra.com/gst-invoicing-software-india",
+    "h1": "GST Invoicing Software for Indian Field Service Companies",
+    "lang": "en"
+  },
+  "/hvac-service-management": {
+    "title": "HVAC Service Management Software | TeamShastra",
+    "canonical": "https://teamshastra.com/hvac-service-management",
+    "h1": "HVAC Service Management Software for AC Service Companies",
+    "lang": "en"
+  },
+  "/industries": {
+    "title": "Industries | CCTV, Electricians & Field Service | TeamShastra",
+    "canonical": "https://teamshastra.com/industries",
+    "h1": "Field service software for CCTV installers, electricians, and maintenance teams.",
+    "lang": "en"
+  },
+  "/industries/appliance-repair-service-software": {
+    "title": "Appliance Repair Software for Service Centres | TeamShastra",
+    "canonical": "https://teamshastra.com/industries/appliance-repair-service-software",
+    "h1": "Appliance repair software for busy home-visit teams",
+    "lang": "en"
+  },
+  "/industries/cctv-installer-software": {
+    "title": "CCTV Installation Business Software India | TeamShastra",
+    "canonical": "https://teamshastra.com/industries/cctv-installer-software",
+    "h1": "CCTV installation business software from survey to AMC",
+    "lang": "en"
+  },
+  "/industries/cleaning-housekeeping-service-software": {
+    "title": "Cleaning Service Software for Housekeeping | TeamShastra",
+    "canonical": "https://teamshastra.com/industries/cleaning-housekeeping-service-software",
+    "h1": "Cleaning service software for crews, wages and site proof",
+    "lang": "en"
+  },
+  "/industries/fire-safety-service-software": {
+    "title": "Fire Safety Service Software for Refill & AMC | TeamShastra",
+    "canonical": "https://teamshastra.com/industries/fire-safety-service-software",
+    "h1": "Fire safety service software for refills and inspections",
+    "lang": "en"
+  },
+  "/industries/home-automation-installer-software": {
+    "title": "Home Automation Business Software | TeamShastra",
+    "canonical": "https://teamshastra.com/industries/home-automation-installer-software",
+    "h1": "Home automation business software for smart home projects",
+    "lang": "en"
+  },
+  "/industries/inverter-battery-ups-service-software": {
+    "title": "Inverter and Battery Service Software India | TeamShastra",
+    "canonical": "https://teamshastra.com/industries/inverter-battery-ups-service-software",
+    "h1": "Inverter and battery service software for dealers and service teams",
+    "lang": "en"
+  },
+  "/industries/it-networking-amc-software": {
+    "title": "IT AMC Software for Computer Service Firms | TeamShastra",
+    "canonical": "https://teamshastra.com/industries/it-networking-amc-software",
+    "h1": "IT AMC software for computer and networking service companies",
+    "lang": "en"
+  },
+  "/industries/lift-elevator-maintenance-software": {
+    "title": "Lift Maintenance Software for AMC Companies | TeamShastra",
+    "canonical": "https://teamshastra.com/industries/lift-elevator-maintenance-software",
+    "h1": "Lift maintenance software for preventive visits and breakdowns",
+    "lang": "en"
+  },
+  "/industries/pest-control-service-software": {
+    "title": "Pest Control Software for Service Companies | TeamShastra",
+    "canonical": "https://teamshastra.com/industries/pest-control-service-software",
+    "h1": "Pest control software for repeat treatments and service proof",
+    "lang": "en"
+  },
+  "/industries/ro-water-purifier-service-software": {
+    "title": "RO Service Software for Water Purifier Dealers | TeamShastra",
+    "canonical": "https://teamshastra.com/industries/ro-water-purifier-service-software",
+    "h1": "RO service software for water purifier sales and service",
+    "lang": "en"
+  },
+  "/locations": {
+    "title": "Field Service Software by City in India | TeamShastra",
+    "canonical": "https://teamshastra.com/locations",
+    "h1": "TeamShastra for businesses across India",
+    "lang": "en"
+  },
+  "/maintenance-management-software": {
+    "title": "Maintenance Management Software | TeamShastra",
+    "canonical": "https://teamshastra.com/maintenance-management-software",
+    "h1": "Maintenance Management Software for Equipment Service Teams",
+    "lang": "en"
+  },
+  "/plumbing-service-software": {
+    "title": "Plumbing Service Software | TeamShastra",
+    "canonical": "https://teamshastra.com/plumbing-service-software",
+    "h1": "Plumbing Service Software for Plumbers and Plumbing Contractors",
+    "lang": "en"
+  },
+  "/pricing": {
+    "title": "Pricing — Free Plan, Growth at ₹200/User/Month | TeamShastra",
+    "canonical": "https://teamshastra.com/pricing",
+    "h1": "Start free. Plans start at just ₹200 per user, per month.",
+    "lang": "en"
+  },
+  "/privacy": {
+    "title": "Privacy Policy | TeamShastra",
+    "canonical": "https://teamshastra.com/privacy",
+    "h1": "TeamShastra Privacy Policy",
+    "lang": "en"
+  },
+  "/privacy-policy": {
+    "title": "Privacy Policy | TeamShastra",
+    "canonical": "https://teamshastra.com/privacy-policy",
+    "h1": "Privacy information for TeamShastra visitors and users.",
+    "lang": "en"
+  },
+  "/service-report-software": {
+    "title": "Service Report Software | TeamShastra",
+    "canonical": "https://teamshastra.com/service-report-software",
+    "h1": "Digital Service Report Software for Field Teams",
+    "lang": "en"
+  },
+  "/solar-installation-workforce-software": {
+    "title": "Solar Installation Workforce Software | TeamShastra",
+    "canonical": "https://teamshastra.com/solar-installation-workforce-software",
+    "h1": "Solar Installation Workforce Software for Rooftop Installers",
+    "lang": "en"
+  },
+  "/solutions": {
+    "title": "Workforce & Field Service Solutions India | TeamShastra",
+    "canonical": "https://teamshastra.com/solutions",
+    "h1": "Workforce and field service solutions for India",
+    "lang": "en"
+  },
+  "/technician-management-software": {
+    "title": "Technician Management Software | TeamShastra",
+    "canonical": "https://teamshastra.com/technician-management-software",
+    "h1": "Technician Management Software for Service Companies",
+    "lang": "en"
+  },
+  "/terms": {
+    "title": "Terms of Service | TeamShastra",
+    "canonical": "https://teamshastra.com/terms",
+    "h1": "TeamShastra Terms of Service",
+    "lang": "en"
+  },
+  "/vyapar-alternative": {
+    "title": "Vyapar Alternative for Service Businesses | TeamShastra",
+    "canonical": "https://teamshastra.com/vyapar-alternative",
+    "h1": "A Vyapar alternative for teams that work at customer sites",
+    "lang": "en"
+  }
+}

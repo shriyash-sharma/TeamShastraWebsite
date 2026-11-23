@@ -29,6 +29,19 @@ export const BANNED_PHRASES = [
   "in conclusion"
 ] as const;
 
+/** Stiff or machine-sounding Hindi phrases (Prompt 12). Hindi pages are checked for these and BANNED_PHRASES. */
+export const BANNED_HINDI_PHRASES = [
+  "सहज रूप से",
+  "अत्याधुनिक",
+  "क्रांतिकारी",
+  "सशक्त बनाएं",
+  "सशक्त बनाएँ",
+  "आज की तेज़ रफ़्तार दुनिया",
+  "आज की तेज रफ्तार दुनिया",
+  "निष्कर्ष में",
+  "अद्वितीय समाधान"
+] as const;
+
 /** Sentence patterns that read as templates. */
 export const BANNED_PATTERNS: ReadonlyArray<{ name: string; pattern: RegExp }> = [
   { name: "Whether you're … or … opener", pattern: /(^|[.!?]\s+|\n)whether you('|’)re\b[^.!?\n]*\bor\b/i },

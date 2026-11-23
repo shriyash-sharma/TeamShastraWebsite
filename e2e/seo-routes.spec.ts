@@ -2,17 +2,18 @@ import { expect, test } from "@playwright/test";
 import { featureLandingPath, featureLandings } from "../lib/seo/landing/features";
 import { industryLandingPath, industryLandings, rewrittenIndustrySolutions } from "../lib/seo/landing/industries";
 import { compareHub, comparePages } from "../lib/seo/compare";
+import { hindiPages } from "../lib/seo/landing/hi";
 import legacyPaths from "./fixtures/legacy-urls.json";
 import retiredCityUrls from "./fixtures/retired-city-urls.json";
 
-// Sitemap, robots and routing. Legacy URLs are every URL in the live sitemap on 23 Nov 2026 after Prompt 08 (80 URLs).
+// Sitemap, robots and routing. Legacy URLs are every URL in the live sitemap on 23 Nov 2026 after Prompt 11 (84 URLs).
 
 const origin = "https://teamshastra.com";
 const newPaths = [
   ...featureLandings.map((page) => featureLandingPath(page.slug)),
   ...industryLandings.map((page) => industryLandingPath(page.slug))
 ];
-/** Added by Prompt 11; /vyapar-alternative is a legacy URL and keeps its path. */
+/** Added by Prompt 11 (now also in the legacy fixture); /vyapar-alternative keeps its path. */
 const comparePaths = [compareHub.path, ...comparePages.filter((page) => page.path.startsWith("/compare/")).map((page) => page.path)];
 
 test("sitemap lists every legacy and new URL once, and no retired city URL", async ({ request }) => {
@@ -28,8 +29,9 @@ test("sitemap lists every legacy and new URL once, and no retired city URL", asy
   for (const path of newPaths) expect(paths.has(path), `new ${path}`).toBe(true);
   for (const item of rewrittenIndustrySolutions) expect(paths.has(`/${item.slug}`)).toBe(true);
   for (const path of comparePaths) expect(paths.has(path), `compare ${path}`).toBe(true);
+  for (const page of hindiPages) expect(paths.has(page.path), `hindi ${page.path}`).toBe(true);
   for (const item of retiredCityUrls) expect(paths.has(item.path), `retired ${item.path}`).toBe(false);
-  expect(locs).toHaveLength(legacyPaths.length + comparePaths.length);
+  expect(locs).toHaveLength(legacyPaths.length + hindiPages.length);
 });
 
 test("robots.txt allows crawling and points to the sitemap", async ({ request }) => {

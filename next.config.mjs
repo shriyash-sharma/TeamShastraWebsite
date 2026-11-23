@@ -14,6 +14,10 @@ const citySlugs = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // English and Hindi pages have separate root layouts (app/(en), app/(hi)) so each gets its own
+  // <html lang>. app/global-not-found.tsx renders the 404 for URLs that match neither.
+  // The opengraph-image files stay outside the groups: inside one, Next adds a hash to their URLs.
+  experimental: { globalNotFound: true },
   images: {
     formats: ["image/avif", "image/webp"],
     // 440 and 500 match the hero phone (220–248 CSS px) on 2x screens, so it isn't served at 640.

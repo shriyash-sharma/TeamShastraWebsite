@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { hindiPathFor } from "./seo/landing/hi/paths";
 
 export const marketingUrl = "https://teamshastra.com";
 export const appUrl = "https://app.teamshastra.com";
@@ -212,12 +213,13 @@ export const pages = [
 export function pageMetadata(path: string, title: string, description: string, ogImage = "/opengraph-image"): Metadata {
   const url = `${marketingUrl}${path === "/" ? "" : path}`;
   const image = { url: ogImage, width: 1200, height: 630, alt: title };
+  const hindiPath = hindiPathFor(path);
 
   return {
     title,
     description,
     metadataBase: new URL(marketingUrl),
-    alternates: { canonical: url },
+    alternates: hindiPath ? { canonical: url, languages: hreflangLanguages(path, hindiPath) } : { canonical: url },
     robots: { index: true, follow: true },
     verification: { google: googleSiteVerification },
     openGraph: {
@@ -235,6 +237,37 @@ export function pageMetadata(path: string, title: string, description: string, o
       description,
       images: [image]
     }
+  };
+}
+
+/** hreflang map for an English page and its Hindi version; both pages carry the same map. */
+export function hreflangLanguages(englishPath: string, hindiPath: string): Record<string, string> {
+  const english = `${marketingUrl}${englishPath === "/" ? "" : englishPath}`;
+  return { "en-IN": english, "hi-IN": `${marketingUrl}${hindiPath}`, "x-default": english };
+}
+
+/**
+ * Metadata for a page under /hi: canonical is the Hindi URL itself, og:locale is hi_IN, and the
+ * share image is the English page's card (the OG renderer has no Devanagari font).
+ */
+export function hindiPageMetadata(
+  path: string,
+  englishPath: string,
+  title: string,
+  description: string,
+  ogImage: string
+): Metadata {
+  const url = `${marketingUrl}${path}`;
+  const image = { url: ogImage, width: 1200, height: 630, alt: title };
+  return {
+    title,
+    description,
+    metadataBase: new URL(marketingUrl),
+    alternates: { canonical: url, languages: hreflangLanguages(englishPath, path) },
+    robots: { index: true, follow: true },
+    verification: { google: googleSiteVerification },
+    openGraph: { type: "website", siteName: "TeamShastra", locale: "hi_IN", title, description, url, images: [image] },
+    twitter: { card: "summary_large_image", title, description, images: [image] }
   };
 }
 
