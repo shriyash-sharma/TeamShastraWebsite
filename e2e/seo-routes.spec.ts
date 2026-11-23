@@ -7,8 +7,8 @@ import { hindiPages } from "../lib/seo/landing/hi";
 import legacyPaths from "./fixtures/legacy-urls.json";
 import retiredCityUrls from "./fixtures/retired-city-urls.json";
 
-// Sitemap, robots and routing. Legacy URLs are every URL in the live sitemap on 23 Nov 2026 after Prompt 16 (110 URLs,
-// including the 14 Hindi pages and Prompt 13's 12 guides). Prompt 17 adds 18 more guides under /blog.
+// Sitemap, robots and routing. Legacy URLs are every URL in the live sitemap on 23 Nov 2026 after Prompt 17 (128 URLs,
+// including the 14 Hindi pages and all 30 guides).
 
 const origin = "https://teamshastra.com";
 const newPaths = [
