@@ -21,11 +21,11 @@ export const tier1Cities: CityProfile[] = [
     tier: "tier-1",
     localAreas: ["Andheri", "Powai", "Navi Mumbai", "Thane", "BKC", "Lower Parel", "Malad", "Bhiwandi"],
     nearbyCitySlugs: ["pune", "surat", "ahmedabad"],
-    metaDescription: "Field service app for Mumbai: society CCTV and AMC jobs, monsoon rescheduling, Maharashtra GST invoices, and Marathi for technicians. Free to start.",
+    metaDescription: "Field service app for Mumbai: society CCTV and AMC jobs, monsoon rescheduling, field expenses with receipts, Maharashtra GST invoices and a Marathi app.",
     whyIntro: "Mumbai service businesses work in housing societies, offices, and warehouses spread from Colaba to Virar and across the harbour to Navi Mumbai. A technician can spend more time on the local train or the Western Express Highway than on the job itself.",
     intro: [
       "Much of the work here is society-driven: CCTV and intercom upkeep for cooperative housing societies, rewiring in older buildings, and AMC visits for offices in BKC, Lower Parel, and Andheri. A society usually wants a gate entry, the secretary's sign-off, and photos before it releases payment.",
-      "TeamShastra keeps each society as a customer with its own job history, so before/after photos, the service report PDF, and the GST invoice sit together — the paper trail a committee asks for at its next meeting."
+      "TeamShastra keeps each society as a customer with its own job history, so before/after photos, the service report PDF, and the GST invoice sit together — the paper trail a committee asks for at its next meeting. Train fares, parking and parts bought near a site go in as expenses with a receipt photo, so you approve them from your phone instead of a pile of chits."
     ],
     localContext: {
       gstStateCode: "27 (Maharashtra)",
@@ -89,11 +89,11 @@ export const tier1Cities: CityProfile[] = [
     tier: "tier-1",
     localAreas: ["Nehru Place", "Okhla", "Dwarka", "Rohini", "Karol Bagh", "Saket", "Gurugram", "Noida"],
     nearbyCitySlugs: ["jaipur", "lucknow"],
-    metaDescription: "Field service software for Delhi NCR: AC, CCTV, and electrical jobs across Delhi, Gurugram, and Noida, with correct IGST for cross-state work. Hindi app.",
+    metaDescription: "Field service software for Delhi NCR: AC, CCTV and electrical jobs, staff attendance across Delhi, Gurugram and Noida, correct IGST and a Hindi app.",
     whyIntro: "A Delhi service business rarely stays inside Delhi. One team can cover Nehru Place in the morning, a Gurugram office after lunch, and a Noida housing society by evening — three different states for GST.",
     intro: [
       "Demand here is shaped by the weather: AC, inverter, and electrical calls jump in May and June, while the October–November festive season brings lighting, CCTV, and new installations for shops and homes. Resident welfare associations (RWAs) and market associations often buy CCTV and maintenance for a whole colony or market.",
-      "TeamShastra lets the office see the whole NCR team on one board, keep each RWA or shop as a customer, and raise the right GST invoice for where the work was done."
+      "TeamShastra lets the office see the whole NCR team on one board, keep each RWA or shop as a customer, and raise the right GST invoice for where the work was done. Technicians who start the day in Noida and end it in Gurugram punch in where they are, and the office sees one attendance list for the whole NCR team."
     ],
     localContext: {
       gstStateCode: "07 (Delhi)",
@@ -157,11 +157,11 @@ export const tier1Cities: CityProfile[] = [
     tier: "tier-1",
     localAreas: ["Hinjewadi", "Kharadi", "Wakad", "Baner", "Hadapsar", "PCMC", "Chakan", "Talegaon"],
     nearbyCitySlugs: ["mumbai", "ahmedabad"],
-    metaDescription: "Field service software for Pune: IT-park maintenance, Chakan and PCMC plant visits, society CCTV, Marathi app, and Maharashtra GST invoices.",
+    metaDescription: "Field service software for Pune: IT-park upkeep, Chakan and PCMC plant visits, society CCTV, staff attendance and leave, a Marathi app and Maharashtra GST.",
     whyIntro: "Pune service companies split their day between IT parks in Hinjewadi and Kharadi, manufacturing plants in Chakan, Bhosari, and Talegaon, and the fast-growing housing societies of Wakad and Baner.",
     intro: [
       "Each customer type works differently. Plants want visits inside a shift window with a signed service report for their maintenance file. IT parks want vendor gate passes and a clean record of what was done. New societies want CCTV and access control installed before residents move in.",
-      "TeamShastra gives one workspace for all three: plant visits with service report PDFs, society installs with photos, and GST invoices raised from the same job."
+      "TeamShastra gives one workspace for all three: plant visits with service report PDFs, society installs with photos, and GST invoices raised from the same job. Plant technicians on shift work punch in from site, and leave or a half day goes into the same record that salary is worked out from."
     ],
     localContext: {
       gstStateCode: "27 (Maharashtra)",
@@ -225,11 +225,11 @@ export const tier1Cities: CityProfile[] = [
     tier: "tier-1",
     localAreas: ["Whitefield", "Electronic City", "HSR Layout", "Koramangala", "Marathahalli", "Peenya", "Yelahanka", "Hosur Road"],
     nearbyCitySlugs: ["chennai", "coimbatore"],
-    metaDescription: "Field service software for Bengaluru: tech-park and apartment maintenance, Peenya equipment service, IGST for Hosur jobs, and Karnataka PT on payslips.",
+    metaDescription: "Field service software for Bengaluru: work orders for apartments and tech parks, Peenya equipment service, IGST for Hosur jobs and Karnataka PT on payslips.",
     whyIntro: "Bengaluru field teams lose more time to traffic than to weather. A technician on the Outer Ring Road can manage two visits in an afternoon only if the jobs are planned by area.",
     intro: [
       "Typical work is split between large apartment complexes, tech parks along the ORR and in Whitefield and Electronic City, and the industrial units of Peenya. Apartment associations buy CCTV and access-control AMCs, while tech parks usually require vendor registration and gate passes before a technician can enter.",
-      "TeamShastra lets the office plan jobs by area on today's board, keep each apartment association's AMC and visit history, and invoice Karnataka and Tamil Nadu customers correctly."
+      "TeamShastra lets the office plan jobs by area on today's board, keep each apartment association's AMC and visit history, and invoice Karnataka and Tamil Nadu customers correctly. Each work order carries the customer, the problem and the technician assigned, so an apartment complaint doesn't vanish when the supervisor changes shift."
     ],
     localContext: {
       gstStateCode: "29 (Karnataka)",
@@ -497,11 +497,11 @@ export const tier1Cities: CityProfile[] = [
     tier: "tier-1",
     localAreas: ["SG Highway", "GIFT City", "Naroda", "Vatva", "Sanand", "Bopal", "Maninagar", "Prahladnagar"],
     nearbyCitySlugs: ["vadodara", "surat", "jaipur"],
-    metaDescription: "Field service software for Ahmedabad: GIDC equipment service, shop and society CCTV, summer AC peaks, a Gujarati app, and Gujarat GST invoices.",
+    metaDescription: "Field service app for Ahmedabad: GIDC plant visits, society CCTV, summer AC peaks, staff attendance and leave, a Gujarati app and Gujarat GST invoices.",
     whyIntro: "Ahmedabad's service work is split between the industrial estates of Naroda, Vatva, and Sanand, the offices along SG Highway and in GIFT City, and thousands of shops and housing societies across the city.",
     intro: [
       "Industrial customers in the GIDC estates want planned maintenance and a report for each visit. Shops and societies want CCTV and electrical work done quickly and billed with GST. April to June heat makes AC and cooling work the busiest part of the year, and the Navratri–Diwali stretch slows offices while lighting work picks up.",
-      "TeamShastra runs both sides from one workspace, in Gujarati if the team prefers: industrial visits with service reports, and quick shop jobs with WhatsApp invoices."
+      "TeamShastra runs both sides from one workspace, in Gujarati if the team prefers: industrial visits with service reports, and quick shop jobs with WhatsApp invoices. Staff punch in from the plant gate or the society, and leave and half days are marked in the same app, so month-end salary doesn't start with a register hunt."
     ],
     localContext: {
       gstStateCode: "24 (Gujarat)",

@@ -276,6 +276,7 @@ export const organizationSchema = {
   "@type": "Organization",
   "@id": `${marketingUrl}/#organization`,
   name: "TeamShastra",
+  alternateName: "Team Shastra",
   legalName: legalOperator.split(",")[0],
   url: `${marketingUrl}/`,
   logo: `${marketingUrl}/favicon-512x512.png`,

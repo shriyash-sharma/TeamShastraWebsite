@@ -145,11 +145,11 @@ export const tier2Cities: CityProfile[] = [
     tier: "tier-2",
     localAreas: ["Gomti Nagar", "Hazratganj", "Aliganj", "Indira Nagar", "Alambagh", "Chinhat", "Transport Nagar", "Amausi"],
     nearbyCitySlugs: ["delhi", "jaipur"],
-    metaDescription: "Field service software for Lucknow: clinic and hospital maintenance, wedding-season electrical work, foggy-winter scheduling, a Hindi app and UP GST bills.",
+    metaDescription: "Field service software for Lucknow: hospital and clinic upkeep, wedding-season electrical work, foggy days, staff attendance, a Hindi app and UP GST bills.",
     whyIntro: "Lucknow's service businesses look after a growing mix of homes, shops, hospitals and clinics, offices, and warehouses around Transport Nagar and Amausi.",
     intro: [
       "Summers are hot, so AC and electrical calls peak from April to June. Winters bring dense fog in December and January, which slows travel and shortens the working day. The November–February wedding season adds lighting, power, and temporary electrical work for venues and homes.",
-      "TeamShastra gives a Lucknow team one place for jobs, attendance, and GST invoices, fully in Hindi."
+      "TeamShastra gives a Lucknow team one place for jobs, attendance, and GST invoices, fully in Hindi. Attendance is marked at punch-in with the location, so on a foggy morning you know who actually reached the hospital and who is still on the road."
     ],
     localContext: {
       gstStateCode: "09 (Uttar Pradesh)",
