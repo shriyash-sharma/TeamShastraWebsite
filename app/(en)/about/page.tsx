@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {
   betaStatus,
   engineeringCredit,
+  engineeringCreditUrl,
   legalOperator,
   loginUrl,
   pageMetadata,
@@ -111,7 +112,10 @@ export default function AboutPage() {
             <h3>Product contributors</h3>
             <ul className="list">
               <li>
-                <strong>Engineering:</strong> {engineeringCredit}
+                <strong>Engineering:</strong>{" "}
+                <a href={engineeringCreditUrl} target="_blank" rel="noopener noreferrer">
+                  {engineeringCredit}
+                </a>
               </li>
               <li>
                 <strong>QE:</strong> {qeCredit}

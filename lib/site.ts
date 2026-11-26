@@ -152,6 +152,7 @@ export const legalOperator =
 export const legalAdmin = "Jagrati Mukati";
 /** Contributor credits on About only — not the legal operator. */
 export const engineeringCredit = "Shriyash Sharma";
+export const engineeringCreditUrl = "https://shriyashsharma.com";
 export const qeCredit = "Jagrati Mukati";
 export const legalJurisdiction = "India";
 export const supportEmail = "care@teamshastra.com";
