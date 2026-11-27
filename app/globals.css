@@ -148,6 +148,7 @@ h3 { font-size: 1.18rem; }
 .page-lead { max-width: 780px; margin: 18px 0 0; }
 .list { padding-left: 20px; color: var(--muted); }
 .list li + li { margin-top: 8px; }
+.list a.credit-link { color: var(--brand-dark); font-weight: 760; text-decoration: underline; text-underline-offset: 3px; }
 .price-card.featured { border-color: rgba(23, 111, 88, 0.5); box-shadow: var(--shadow); }
 .price { font-size: 2.2rem; line-height: 1; margin: 16px 0; font-weight: 850; }
 .contact-panel { display: grid; gap: 16px; max-width: 760px; }

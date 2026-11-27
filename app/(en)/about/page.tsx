@@ -113,7 +113,7 @@ export default function AboutPage() {
             <ul className="list">
               <li>
                 <strong>Engineering:</strong>{" "}
-                <a href={engineeringCreditUrl} target="_blank" rel="noopener noreferrer">
+                <a className="credit-link" href={engineeringCreditUrl} target="_blank" rel="noopener noreferrer">
                   {engineeringCredit}
                 </a>
               </li>
